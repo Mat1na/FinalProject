@@ -6,7 +6,7 @@ function CreateLabMembers() {
   return (
     <>
       <Container>
-        <h1>Create Lab Members</h1>
+        <h1>Create new Lab Member</h1>
         <Form>
           <Form.Group className="mb-3" controlId="formGridName">
             <Form.Label>Name</Form.Label>
