@@ -2,7 +2,7 @@ import React from 'react'
 
 function Authors() {
   return (
-    <div>Authors</div>
+    <div>Authors List</div>
   )
 }
 
