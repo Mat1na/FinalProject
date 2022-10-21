@@ -8,8 +8,8 @@ import Projects from "./DashboardComponents/Projects";
 import Authors from "./DashboardComponents/Authors";
 import Header from './Components/Header';
 import Footer from "./Components/Footer";
-import CreateLabMembers from './DashboardComponents/CreateLabMembers';
-import EditLabMembers from './DashboardComponents/EditLabMembers';
+import CreateLabMembers from './DashboardComponents/CreateLabMember';
+import EditLabMembers from './DashboardComponents/EditLabMember';
 function App() {
     return (
 
@@ -20,7 +20,7 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/labmembers" element={<LabMembers />} />
                 <Route path="/labmembers/create" element={<CreateLabMembers />} />
-                <Route path="/labmembers/edit/:member_id" element={<EditLabMembers />} />
+                <Route path="/labmembers/editlabmembers/:member_id" element={<EditLabMembers />} />
                 <Route path="/publications" element={<Publications />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/authors" element={<Authors />} />
