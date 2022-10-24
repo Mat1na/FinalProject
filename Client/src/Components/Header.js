@@ -10,7 +10,20 @@ function Header() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+          <NavDropdown  title="Dashboard" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/labmembers">
+                Labmembers
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/publications">Publications</NavDropdown.Item>
+              <NavDropdown.Item href="/projects">
+                Projects
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/authors">
+                Authors
+              </NavDropdown.Item>
+            </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Container>

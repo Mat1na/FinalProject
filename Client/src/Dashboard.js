@@ -14,13 +14,13 @@ function Dashboard() {
      <Link to={"/labmembers"} className="btn btn-secondary mb-2" >Go to Labmebers List</Link>
      </section>
      <section className='publications-section'>
-     <Link to={"/publications"} className="btn btn-secondary mb-2" >Go to Labmebers List</Link>
+     <Link to={"/publications"} className="btn btn-secondary mb-2" >Go to Publications List</Link>
      </section>
      <section className='project-section'>
-     <Link to={"/projects"} className="btn btn-secondary mb-2" >Go to Labmebers List</Link>
+     <Link to={"/projects"} className="btn btn-secondary mb-2" >Go to Projects List</Link>
      </section>
      <section className='authors-section'>
-     <Link to={"/authors"} className="btn btn-secondary mb-2" >Go to Labmebers List</Link>
+     <Link to={"/authors"} className="btn btn-secondary mb-2" >Go to Authors List</Link>
      </section>
 
 
