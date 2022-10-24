@@ -12,7 +12,7 @@ function Projects() {
       <h1>Projects</h1>
       <div>
         
-      <Link to={"/projects/create_project"} className="btn btn-secondary mb-2" > Add new project</Link>
+      <Link to={"/projects/create-project"} className="btn btn-secondary mb-2" > Add new project</Link>
       
       </div>
       <Table striped bordered hover>
@@ -36,7 +36,7 @@ function Projects() {
             <td>Mark</td>
             <td>Otto</td>
               <td>
-              <Link to={"/projects/editproject/:project_id"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
+              <Link to={"/projects/editproject/:projectid"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
               <Button variant="danger" className='mx-1'><RiDeleteBin6Fill/></Button>
             </td>
           </tr>

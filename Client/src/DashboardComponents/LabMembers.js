@@ -12,7 +12,7 @@ function LabMembers() {
       <h1>Lab Members List </h1>
       <div>
         
-      <Link to={"/labmembers/create_member"} className="btn btn-secondary mb-2" ><BsFillPersonPlusFill></BsFillPersonPlusFill> Add new member</Link>
+      <Link to={"/labmembers/create-member"} className="btn btn-secondary mb-2" ><BsFillPersonPlusFill></BsFillPersonPlusFill> Add new member</Link>
       
       </div>
       <Table striped bordered hover>
@@ -32,7 +32,7 @@ function LabMembers() {
             <td>Otto</td>
             <td>@mdo</td>
             <td>
-              <Link to={"/labmembers/editlabmembers/:member_id"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
+              <Link to={"/labmembers/editlabmembers/:memberid"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
               <Button variant="danger" className='mx-1'><RiDeleteBin6Fill/></Button>
             </td>
           </tr>

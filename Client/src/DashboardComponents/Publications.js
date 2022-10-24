@@ -12,7 +12,7 @@ function Publications() {
         <h1>Publications List </h1>
         <div>
           <Link
-            to={"/publications/create_pub"}
+            to={"/publications/create-pub"}
             className="btn btn-secondary mb-2"
           >
             <BsFillPersonPlusFill></BsFillPersonPlusFill> Add new publication
@@ -47,7 +47,7 @@ function Publications() {
 
               <td>
                 <Link
-                  to={"/publications/editpub/:pub_id"}
+                  to={"/publications/editpub/:pubid"}
                   className="btn btn-primary mx-2"
                 >
                   <AiFillEdit />

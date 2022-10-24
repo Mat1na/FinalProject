@@ -27,17 +27,17 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/labmembers" element={<LabMembers />} />
-                <Route path="/labmembers/create_member" element={<CreateLabMembers />} />
-                <Route path="/labmembers/editlabmembers/:member_id" element={<EditLabMembers />} />
+                <Route path="/labmembers/create-member" element={<CreateLabMembers />} />
+                <Route path="/labmembers/editlabmembers/:memberid" element={<EditLabMembers />} />
                 <Route path="/publications" element={<Publications />} />
-                <Route path="/publications/create_pub" element={<CreatePub/>} />
-                <Route path="/publications/editpub/:pub_id" element={<EditPub/>} />
+                <Route path="/publications/create-pub" element={<CreatePub/>} />
+                <Route path="/publications/editpub/:pubid" element={<EditPub/>} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/projects/create_project" element={<CreateProject />} />
-                <Route path="/projects/editproject/:project_id" element={<EditProject/>} />
+                <Route path="/projects/create-project" element={<CreateProject />} />
+                <Route path="/projects/editproject/:projectid" element={<EditProject/>} />
                 <Route path="/authors" element={<Authors />} />
                 <Route path="/authors/create_author" element={<CreateAuthor />} />
-                <Route path="/authors/editauthor/:author_id" element={<EditAuthor />} />
+                <Route path="/authors/editauthor/:authorid" element={<EditAuthor />} />
             </Routes>
             <Footer />
         </BrowserRouter>
