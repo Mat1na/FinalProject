@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
 function CreateProject() {
+
+
+
   const [input, setInput] = useState({
     title: '',
     image: '',
@@ -16,7 +19,6 @@ function CreateProject() {
 
   function handleChange(event) {
     const { name, value } = event.target
-
     setInput(prevInput => {
       return {
         ...prevInput,
@@ -39,6 +41,7 @@ function CreateProject() {
       .then(() => {
         alert('Project has been added to the system!');
       })
+   
   }
 
   return (
@@ -47,12 +50,12 @@ function CreateProject() {
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" >
         <Form.Label>Titel</Form.Label>
-        <Form.Control required name="title" onChange={handleChange} value={input.title} />
+        <Form.Control required name="title" onChange={handleChange} value={input.title}  />
       </Form.Group>
 
       <Form.Group className="mb-3" >
         <Form.Label>Link image</Form.Label>
-        <Form.Control required name="image" onChange={handleChange} value={input.image} />
+        <Form.Control required name="image" onChange={handleChange} value={input.image}  />
       </Form.Group>
   
       <Form.Group className="mb-3">
@@ -80,7 +83,7 @@ function CreateProject() {
         <Form.Control name="imagetextlink" onChange={handleChange} value={input.imagetextlink} />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" >
         Submit
       </Button>
       <Link to={"/projects"} className="btn btn-danger mx-2">
