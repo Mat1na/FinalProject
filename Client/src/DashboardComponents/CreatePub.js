@@ -39,6 +39,7 @@ function CreatePub() {
     })
   }
 
+
   function handleSubmit(event) {
     event.preventDefault();
     console.log(input);
@@ -64,34 +65,35 @@ function btnClick(){
     alert("Journal is required") 
   }
 
-  
+
   }
 
   return (
     <Container>
       <h1>Create new publication</h1>
       <Form onSubmit={handleSubmit}>
+
       <Form.Group className="mb-3" >
         <Form.Label>Titel</Form.Label>
-        <Form.Control required name="title" onChange={handleChange} value={input.title} />
+        <Form.Control required name="title" placeholder="Title goes here"  onChange={handleChange} value={input.title} />
       </Form.Group>
 
-        <Form.Group className="mb-3" controlId="journal">
+        <Form.Group className="mb-3" >
           <Form.Label>Journal</Form.Label>
-          <Form.Control required type="text" placeholder="Enter journal name"  onChange={handleChange} value={input.journal}/>
+          <Form.Control required name="journal" placeholder="Enter journal name"  onChange={handleChange} value={input.journal}/>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="year">
+        <Form.Group className="mb-3">
           <Form.Label>Year</Form.Label>
-          <Form.Control  type="text" placeholder="Enter year of issue"  onChange={handleChange} value={input.year}/>
+          <Form.Control name="year" placeholder="Enter year of issue"  onChange={handleChange} value={input.year}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="issue">
           <Form.Label>Issue & page No</Form.Label>
-          <Form.Control type="text" placeholder="Issue & page No" />
+          <Form.Control type="text" name="issue" placeholder="Issue & page No" />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="authors">
+          <Form.Group className="mb-3" controlId="authors">
           <Form.Label>Authors</Form.Label>
           <Form.Control
             type="text"
@@ -137,15 +139,15 @@ function btnClick(){
 
         <Form.Group className="mb-3">
         <Form.Label>Link</Form.Label>
-        <Form.Control name="link" onChange={handleChange} value={input.link} />
+        <Form.Control name="link" onChange={handleChange} value={input.link}/>
       </Form.Group>
 
         <Form.Group className="mb-3" >
         <Form.Label>Link image</Form.Label>
-        <Form.Control name="image" onChange={handleChange} value={input.image} />
+        <Form.Control name="image" onChange={handleChange} value={input.image}/>
       </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={btnClick}>
           Submit
         </Button>
         <Link to={"/publications"} className="btn btn-danger mx-2">

@@ -1,0 +1,35 @@
+  const [input, setInput] = useState({
+    title: '',
+    journal: '',
+    year: '',
+    issue: '',
+    author1: '',
+    author2: '',
+    author3: '',
+    author4: '',
+    author5: '',
+    author6: '',
+    author7: '',
+    author8: '',
+    author9: '',
+    author10: '',
+    author11: '',
+    author12: '',
+    author13: '',
+    author14: '',
+    author15: '',
+    abstract: '',
+    link: '',
+    image: ''
+  })
+
+  function handleChange(event) {
+    const { name, value } = event.target
+
+    setInput(prevInput => {
+      return {
+        ...prevInput,
+        [name]: value
+      }
+    })
+  }
