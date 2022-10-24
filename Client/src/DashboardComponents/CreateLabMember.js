@@ -125,7 +125,7 @@ function CreateLabMembers() {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label className="me-2">Huidig lid? </Form.Label>
+            <Form.Label className="me-2">Huidig lid?</Form.Label>
             <Form.Check required inline name="currentmember" type="radio" label="Yes" value="yes" onClick={handleChange} />
             <Form.Check inline name="currentmember" type="radio" label="No" value="no" onClick={handleChange} />
           </Form.Group>

@@ -37,19 +37,10 @@ const profileSchema = mongoose.Schema({
 const Profile = mongoose.model('Profiles', profileSchema)
 
 //post request
-app.post('/labmembers/create', (req, res) => {
+app.post('/labmembers/create-member', (req, res) => {
     console.log(req.body)
-    const profile = new Profile({ membername: req.body.membername, 
-        image: req.body.image, 
-        functionbasic: req.body.functionbasic, 
-        functionextra: req.body.functionextra, 
-        interests: [req.body.interest1, req.body.interest2, req.body.interest3, req.body.interest4, req.body.interest5], 
-        googlescholar: req.body.googlescholar, 
-        researchgate: req.body.researchgate, 
-        orcid: req.body.orcid, 
-        twitter: req.body.twitter, 
-        email: req.body.email, 
-        currentmember: req.body.currentmember })
+    const { membername, image, functionbasic, functionextra, interest1, interest2, interest3, interest4, interest5, googlescholar, researchgate, orcid, twitter, email, currentmember } = req.body
+    const profile = new Profile({ membername, image, functionbasic, functionextra, interests: [interest1, interest2, interest3, interest4, interest5], googlescholar, researchgate, orcid, twitter, email, currentmember })
     profile.save()
         .then(res => {
             console.log(res, req.body)
