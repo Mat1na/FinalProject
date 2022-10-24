@@ -52,7 +52,7 @@ function CreateLabMembers() {
   return (
     <>
       <Container>
-        <h1>Create new Lab Member</h1>
+        <h1>Create new lab member</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Naam</Form.Label>

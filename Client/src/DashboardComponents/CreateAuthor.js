@@ -37,7 +37,7 @@ function CreateAuthor() {
 
   return (
     <Container>
-    <h1>Create new Author</h1>
+    <h1>Create new author</h1>
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" >
         <Form.Label>Name</Form.Label>

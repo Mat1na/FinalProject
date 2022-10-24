@@ -43,7 +43,7 @@ function CreateProject() {
 
   return (
     <Container>
-    <h1>Create new Project</h1>
+    <h1>Create new project</h1>
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" >
         <Form.Label>Titel</Form.Label>
