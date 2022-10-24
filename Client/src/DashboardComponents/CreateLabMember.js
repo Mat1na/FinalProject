@@ -56,7 +56,7 @@ function CreateLabMembers() {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Naam</Form.Label>
-            <Form.Control required name="membername" onChange={handleChange} value={input.name} />
+            <Form.Control required name="membername" onChange={handleChange} value={input.membername} />
           </Form.Group>
 
           <Form.Group className="mb-3">
