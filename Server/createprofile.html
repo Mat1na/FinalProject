@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .text {
+        width: 800px;
+        display: block;
+    }
+
+    body {
+        margin-left: 20px;
+    }
+
+    .submit-success,
+    .submit-error {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="submit-success">
+        <h1>Form submitted 🎉</h1>
+    </div>
+    <div class="submit-error">
+        <h1>Error.</h1>
+    </div>
+    <h1>Maak nieuw profiel aan:</h1>
+    <form action="/" method="POST">
+        <label>Naam: <input type="text" name="name" class="text" required></label>
+        <br>
+        <label>Link afbeelding: <input type="text" name="image" class="text" required></label>
+        <br>
+        <label>Functie: <input type="text" name="functionbasic" class="text" required></label>
+        <br>
+        <label>Functie (extra lijn): <input type="text" name="functionextra" class="text"></label>
+        <br>
+        <label>Interesse 1: <input type="text" name="interest1" class="text"></label>
+        <br>
+        <label>Interesse 2: <input type="text" name="interest2" class="text"></label>
+        <br>
+        <label>Interesse 3: <input type="text" name="interest3" class="text"></label>
+        <br>
+        <label>Interesse 4: <input type="text" name="interest4" class="text"></label>
+        <br>
+        <label>Interesse 5: <input type="text" name="interest5" class="text"></label>
+        <br>
+        <label>Link Google Scholar: <input type="text" name="googlescholar" class="text"></label>
+        <br>
+        <label>Link ResearchGate: <input type="text" name="researchgate" class="text"></label>
+        <br>
+        <label>Link ORCiD: <input type="text" name="orcid" class="text"></label>
+        <br>
+        <label>Link Twitter: <input type="text" name="twitter" class="text"></label>
+        <br>
+        <label>E-mailadres: <input type="text" name="email" class="text"></label>
+        <br>
+        <label>Huidig lid? <label for="yes"><input type="radio" name="currentmember" value="yes"
+                    required>Ja</label><label for="no"><input type="radio" name="currentmember"
+                    value="no">Nee</label></label>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script src="create_profile.js"></script>
+
+</html>
