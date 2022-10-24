@@ -8,14 +8,14 @@ app.use(cors());
 app.use(express.json());
 
 //db connection (Atlass)
-// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
-//     console.log('Connected to database')
-// })
-
-//db connection (Compass)
-mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
     console.log('Connected to database')
 })
+
+//db connection (Compass)
+// mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+//     console.log('Connected to database')
+// })
 
 
 //create post schema

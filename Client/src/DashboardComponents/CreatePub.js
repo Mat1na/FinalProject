@@ -55,6 +55,18 @@ function CreatePub() {
       })
   }
 
+    // Requierd field alert
+function btnClick(){
+  if (input.title==undefined || input.title=="" ){
+  alert("Title is required")
+  }
+  if(input.journal==undefined || input.journal=="") {
+    alert("Journal is required") 
+  }
+
+  
+  }
+
   return (
     <Container>
       <h1>Create new publication</h1>
@@ -66,12 +78,12 @@ function CreatePub() {
 
         <Form.Group className="mb-3" controlId="journal">
           <Form.Label>Journal</Form.Label>
-          <Form.Control type="text" placeholder="Enter journal name" />
+          <Form.Control required type="text" placeholder="Enter journal name"  onChange={handleChange} value={input.journal}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="year">
           <Form.Label>Year</Form.Label>
-          <Form.Control required type="text" placeholder="Enter year of issue" />
+          <Form.Control  type="text" placeholder="Enter year of issue"  onChange={handleChange} value={input.year}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="issue">

@@ -3,6 +3,7 @@ import { Container, Form, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
 function CreateLabMembers() {
+  const[val, setVal]=useState([])
   const [input, setInput] = useState({
     membername: '',
     image: '',
@@ -23,6 +24,7 @@ function CreateLabMembers() {
 
   function handleChange(event) {
     const { name, value } = event.target
+ 
 
     setInput(prevInput => {
       return {
@@ -30,7 +32,22 @@ function CreateLabMembers() {
         [name]: value
       }
     })
+ 
   }
+
+  // Requierd field alert
+function btnClick(){
+if (input.membername==undefined || input.membername=="" ){
+alert("Name isrequired")
+}
+if(input.image==undefined || input.image=="") {
+  alert("Image is required") 
+}
+if(input.functionbasic==undefined || input.functionbasic=="") {
+  alert("function is required") 
+}
+
+}
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -49,6 +66,7 @@ function CreateLabMembers() {
   }
 
 
+
   return (
     <>
       <Container>
@@ -56,12 +74,12 @@ function CreateLabMembers() {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Naam</Form.Label>
-            <Form.Control required name="membername" onChange={handleChange} value={input.membername} />
+            <Form.Control required= "This is required." name="membername" onChange={handleChange} value={input.membername} />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Link image</Form.Label>
-            <Form.Control required name="image" onChange={handleChange} value={input.image} />
+            <Form.Control required name="image" onChange={handleChange} value={input.image}/>
           </Form.Group>
 
           <Form.Group className="mb-3">
@@ -73,7 +91,7 @@ function CreateLabMembers() {
             <Form.Label>Functie (extra lijn)</Form.Label>
             <Form.Control onChange={handleChange} name="functionextra" value={input.functionextra} />
           </Form.Group>
-
+   
           <Form.Group className="mb-3">
             <Form.Label>Interesse 1</Form.Label>
             <Form.Control name="interest1" onChange={handleChange} value={input.interest1} />
@@ -131,7 +149,7 @@ function CreateLabMembers() {
           </Form.Group>
 
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={e=>btnClick()}>
             Submit
           </Button>
           <Link to={'/labmembers'} className="btn btn-danger mx-2">

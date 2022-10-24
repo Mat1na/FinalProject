@@ -35,16 +35,25 @@ function CreateAuthor() {
       })
   }
 
+    // Requierd field alert
+function btnClick(){
+  if (input.authorname==undefined || input.authorname=="" ){
+  alert("Name is required")
+  }
+  // How to validate according name input format?? => (Lastname, F.)
+
+  }
+
   return (
     <Container>
     <h1>Create new author</h1>
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" >
         <Form.Label>Name</Form.Label>
-        <Form.Control required placeholder="Van Meerbeek, K." name="authorname" onChange={handleChange} value={input.authorname}/>
+        <Form.Control required placeholder="Van Meerbeek, K." name="authorname" onChange={handleChange}  value={input.authorname}/>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={btnClick}>
         Submit
       </Button>
       <Link to={"/authors"} className="btn btn-danger mx-2">

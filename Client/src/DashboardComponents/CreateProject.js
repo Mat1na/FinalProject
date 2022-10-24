@@ -43,7 +43,26 @@ function CreateProject() {
       })
    
   }
-
+    // Requierd field alert
+    function btnClick(){
+      if (input.title==undefined || input.title=="" ){
+      alert("Title is required")
+      }
+      if(input.image==undefined || input.image=="") {
+        alert("Image link is required") 
+      }
+      if(input.content==undefined || input.content=="") {
+        alert("Content is required") 
+      }
+      if(input.researcher==undefined || input.researcher=="") {
+        alert("Researcher is required") 
+      }
+    
+      if(input.summary==undefined || input.summary=="") {
+        alert("Summary is required") 
+      }
+      
+      }
   return (
     <Container>
     <h1>Create new project</h1>
@@ -83,7 +102,7 @@ function CreateProject() {
         <Form.Control name="imagetextlink" onChange={handleChange} value={input.imagetextlink} />
       </Form.Group>
 
-      <Button variant="primary" type="submit" >
+      <Button variant="primary" type="submit" onClick={btnClick}>
         Submit
       </Button>
       <Link to={"/projects"} className="btn btn-danger mx-2">
