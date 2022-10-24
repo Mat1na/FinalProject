@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Authors from './DashboardComponents/Authors'
 import LabMembers from './DashboardComponents/LabMembers'
 import Projects from './DashboardComponents/Projects'
@@ -10,16 +11,16 @@ function Dashboard() {
     <Container>
      <h1> Dashboard</h1>
      <section className='members-section'>
-     <LabMembers/>
+     <Link to={"/labmembers"} className="btn btn-secondary mb-2" >Go to Labmebers List</Link>
      </section>
      <section className='publications-section'>
-      <Publications/>
+     <Link to={"/publications"} className="btn btn-secondary mb-2" >Go to Publications List</Link>
      </section>
      <section className='project-section'>
-      <Projects/>
+     <Link to={"/projects"} className="btn btn-secondary mb-2" >Go to Projects List</Link>
      </section>
      <section className='authors-section'>
-      <Authors/>
+     <Link to={"/authors"} className="btn btn-secondary mb-2" >Go to Authors List</Link>
      </section>
 
 
