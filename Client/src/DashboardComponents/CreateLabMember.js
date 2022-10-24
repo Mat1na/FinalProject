@@ -66,7 +66,7 @@ function CreateLabMembers() {
 
           <Form.Group className="mb-3">
             <Form.Label>Functie</Form.Label>
-            <Form.Control name="functionbasic" onChange={handleChange} value={input.functionbasic} />
+            <Form.Control required name="functionbasic" onChange={handleChange} value={input.functionbasic} />
           </Form.Group>
 
           <Form.Group className="mb-3">
