@@ -30,7 +30,7 @@ function CreateProject() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(input);
-    fetch('http://localhost:3001/labmembers/create-project', {
+    fetch('http://localhost:3001/projects/create-project', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
