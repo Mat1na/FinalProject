@@ -21,7 +21,7 @@ function CreateLabMembers() {
           <Button variant="primary" type="submit">
             Submit
           </Button>
-          <Link to={'/dashboard'} className="btn btn-danger mx-2">
+          <Link to={'/labmembers'} className="btn btn-danger mx-2">
             Cancel
           </Link>
         </Form>

@@ -33,10 +33,10 @@ function App() {
                 <Route path="/publications/create_pub" element={<CreatePub/>} />
                 <Route path="/publications/editpub/:pub_id" element={<EditPub/>} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/projects/create" element={<CreateProject />} />
+                <Route path="/projects/create_project" element={<CreateProject />} />
                 <Route path="/projects/editproject/:project_id" element={<EditProject/>} />
                 <Route path="/authors" element={<Authors />} />
-                <Route path="/authors/create" element={<CreateAuthor />} />
+                <Route path="/authors/create_author" element={<CreateAuthor />} />
                 <Route path="/authors/editauthor/:author_id" element={<EditAuthor />} />
             </Routes>
             <Footer />
