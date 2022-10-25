@@ -43,7 +43,7 @@ function CreatePub() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(input);
-    fetch('http://localhost:3001/projects/create-project', {
+    fetch('http://localhost:3001/publications/create-pub', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
