@@ -69,7 +69,7 @@ function CreateLabMembers() {
           <Form.Group className="mb-3">
             <Form.Label>Naam</Form.Label>
             <Form.Control
-              required="This is required."
+              required
               name="membername"
               onChange={handleChange}
               value={input.membername}
