@@ -36,8 +36,8 @@ function CreatePub() {
     event.preventDefault();
     input.authors = authArray;
     console.log(input);
-    fetch("http://localhost:3001/projects/create-project", {
-      method: "POST",
+    fetch('http://localhost:3001/publications/create-pub', {
+      method: 'POST',
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
