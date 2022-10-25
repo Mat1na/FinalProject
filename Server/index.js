@@ -8,19 +8,25 @@ app.use(cors());
 app.use(express.json());
 
 //db connection (Atlass)
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
+// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
+//     console.log('Connected to database')
+// })
+
+//db connection (Compass)
+mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
     console.log('Connected to database')
 })
 
-//create post schema
+
+//author scheme
 const authorSchema = mongoose.Schema({
     authorname: String
 })
 
-//compile schema to model
-const Author = mongoose.model('Author', authorSchema)
+//author model
+const Author = mongoose.model('Authors', authorSchema)
 
-//post request
+//post request authors
 app.post('/authors/create-author', (req, res) => {
     console.log(req.body)
     const author = new Author({ authorname:req.body.authorname})
@@ -30,7 +36,7 @@ app.post('/authors/create-author', (req, res) => {
         })
 })
 
-//create post schema
+//project scheme
 const projectSchema = mongoose.Schema({
     title: String,
     image: String,
@@ -41,10 +47,10 @@ const projectSchema = mongoose.Schema({
     imagetextlink: String,
 })
 
-//compile schema to model
-const Project = mongoose.model('Project', projectSchema)
+//project model
+const Project = mongoose.model('Projects', projectSchema)
 
-//post request
+//post request projects
 app.post('/projects/create-project', (req, res) => {
     console.log(req.body)
     const { title, image, content, summary, researcher, imagetext, imagetextlink } = req.body
@@ -55,7 +61,7 @@ app.post('/projects/create-project', (req, res) => {
         })
 })
 
-//create post schema
+//lab member scheme
 const profileSchema = mongoose.Schema({
     membername: String,
     image: String,
@@ -70,15 +76,40 @@ const profileSchema = mongoose.Schema({
     currentmember: String
 })
 
-//compile schema to model
+//lab member model
 const Profile = mongoose.model('Profiles', profileSchema)
 
-//post request
+//post request lab members
 app.post('/labmembers/create-member', (req, res) => {
     console.log(req.body)
     const { membername, image, functionbasic, functionextra, interest1, interest2, interest3, interest4, interest5, googlescholar, researchgate, orcid, twitter, email, currentmember } = req.body
     const profile = new Profile({ membername, image, functionbasic, functionextra, interests: [interest1, interest2, interest3, interest4, interest5], googlescholar, researchgate, orcid, twitter, email, currentmember })
     profile.save()
+        .then(res => {
+            console.log(res, req.body)
+        })
+})
+
+//publication member scheme
+const publicationSchema = mongoose.Schema({
+    publicationtitle: String,
+    journal: String,
+    year: String,
+    issue: String,
+    authors: Array,
+    link: String,
+    image: String
+})
+
+//publication member model
+const Publication = mongoose.model('Publications', publicationSchema)
+
+//post request publications
+app.post('/publications/create-pub', (req, res) => {
+    console.log(req.body)
+    const { publicationtitle, journal, year, issue, author1, author2, author3, author4, author5, author6, author7, author8, author9, author10, author11, author12, author13, author14, author15, link, image } = req.body
+    const publication = new Publication({ publicationtitle, journal, year, issue, authors: [author1, author2, author3, author4, author5, author6, author7, author8, author9, author10, author11, author12, author13, author14, author15], link, image })
+    publication.save()
         .then(res => {
             console.log(res, req.body)
         })
