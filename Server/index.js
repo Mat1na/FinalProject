@@ -29,10 +29,18 @@ const Author = mongoose.model('Authors', authorSchema)
 //post request authors
 app.post('/authors/create-author', (req, res) => {
     console.log(req.body)
-    const author = new Author({ authorname:req.body.authorname})
+    const author = new Author({ authorname: req.body.authorname })
     author.save()
         .then(res => {
             console.log(res, req.body)
+        })
+})
+
+//sending authors to rest api
+app.get('/authors/fetch-authors', (req, res) => {
+    Author.find({})
+        .then(items => {
+            res.json(items)
         })
 })
 
