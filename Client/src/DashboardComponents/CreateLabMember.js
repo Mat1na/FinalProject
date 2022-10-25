@@ -3,7 +3,6 @@ import { Container, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function CreateLabMembers() {
-  const [val, setVal] = useState([]);
   const [input, setInput] = useState({
     membername: "",
     image: "",
@@ -35,13 +34,13 @@ function CreateLabMembers() {
 
   // Requierd field alert
   function btnClick() {
-    if (input.membername == undefined || input.membername == "") {
+    if (input.membername === undefined || input.membername === "") {
       alert("Name isrequired");
     }
-    if (input.image == undefined || input.image == "") {
+    if (input.image === undefined || input.image === "") {
       alert("Image is required");
     }
-    if (input.functionbasic == undefined || input.functionbasic == "") {
+    if (input.functionbasic === undefined || input.functionbasic === "") {
       alert("function is required");
     }
   }

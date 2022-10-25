@@ -58,10 +58,10 @@ function CreatePub() {
 
   // Requierd field alert
   function btnClick() {
-    if (input.publicationtitle == undefined || input.publicationtitle == "") {
+    if (input.publicationtitle === undefined || input.publicationtitle === "") {
       alert("Title is required")
     }
-    if (input.journal == undefined || input.journal == "") {
+    if (input.journal === undefined || input.journal === "") {
       alert("Journal is required")
     }
 

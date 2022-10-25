@@ -45,20 +45,20 @@ function CreateProject() {
   }
     // Requierd field alert
     function btnClick(){
-      if (input.title==undefined || input.title=="" ){
+      if (input.title===undefined || input.title==="" ){
       alert("Title is required")
       }
-      if(input.image==undefined || input.image=="") {
+      if(input.image===undefined || input.image==="") {
         alert("Image link is required") 
       }
-      if(input.content==undefined || input.content=="") {
+      if(input.content===undefined || input.content==="") {
         alert("Content is required") 
       }
-      if(input.researcher==undefined || input.researcher=="") {
+      if(input.researcher===undefined || input.researcher==="") {
         alert("Researcher is required") 
       }
     
-      if(input.summary==undefined || input.summary=="") {
+      if(input.summary===undefined || input.summary==="") {
         alert("Summary is required") 
       }
       
