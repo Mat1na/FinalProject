@@ -104,9 +104,9 @@ const publicationSchema = mongoose.Schema({
     journal: String,
     year: String,
     issue: String,
-    authors: Array,
     link: String,
-    image: String
+    image: String,
+    authors: Array,
 })
 
 //publication member model
@@ -115,8 +115,8 @@ const Publication = mongoose.model('Publications', publicationSchema)
 //post request publications
 app.post('/publications/create-pub', (req, res) => {
     console.log(req.body)
-    const { publicationtitle, journal, year, issue, author1, author2, author3, author4, author5, author6, author7, author8, author9, author10, author11, author12, author13, author14, author15, link, image } = req.body
-    const publication = new Publication({ publicationtitle, journal, year, issue, authors: [author1, author2, author3, author4, author5, author6, author7, author8, author9, author10, author11, author12, author13, author14, author15], link, image })
+    const { publicationtitle, journal, year, issue, authors, link, image } = req.body
+    const publication = new Publication({ publicationtitle, journal, year, issue, authors, link, image })
     publication.save()
         .then(res => {
             console.log(res, req.body)

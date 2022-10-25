@@ -1,108 +1,160 @@
 import React, { useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function CreatePub() {
+  const [authArray, setAuthArray] = useState([{ author: ""}]);
   const [input, setInput] = useState({
-    publicationtitle: '',
-    journal: '',
-    year: '',
-    issue: '',
-    author1: '',
-    author2: '',
-    author3: '',
-    author4: '',
-    author5: '',
-    author6: '',
-    author7: '',
-    author8: '',
-    author9: '',
-    author10: '',
-    author11: '',
-    author12: '',
-    author13: '',
-    author14: '',
-    author15: '',
-    abstract: '',
-    link: '',
-    image: ''
-  })
+    publicationtitle: "",
+    journal: "",
+    year: "",
+    issue: "",
+    abstract: "",
+    link: "",
+    image: "",
+  });
 
-  function handleChange(event) {
-    const { name, value } = event.target
+  function handleChange(event, index) {
+    const { name, value } = event.target;
 
-    setInput(prevInput => {
+    setInput((prevInput) => {
       return {
         ...prevInput,
-        [name]: value
-      }
-    })
+        [name]: value,
+      };
+    });
   }
-
+  function handleChangeAuth(event, index) {
+    const { name, value } = event.target;
+    const authors = [...authArray];
+    authors[index][name] = value;
+    setAuthArray(authors);
+    
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
+    input.authors = authArray;
     console.log(input);
     fetch('http://localhost:3001/publications/create-pub', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(input)
-    })
-      .then(() => {
-        alert('Project has been added to the system!');
-      })
+      body: JSON.stringify(input),
+    }).then(() => {
+      alert("Project has been added to the system!");
+    });
   }
 
   // Requierd field alert
   function btnClick() {
     if (input.publicationtitle === undefined || input.publicationtitle === "") {
-      alert("Title is required")
+      alert("Title is required");
     }
     if (input.journal === undefined || input.journal === "") {
-      alert("Journal is required")
+      alert("Journal is required");
     }
-
-
   }
+
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const authors = [...authArray];
+    authors.splice(index, 1);
+    setAuthArray(authors);
+  };
+
+  // handle click event of the Add button
+  const handleAddClick = (i) => {
+    setAuthArray([...authArray, {author:""}]);
+    console.log(authArray);
+   ;
+  };
 
   return (
     <Container>
       <h1>Create new publication</h1>
       <Form onSubmit={handleSubmit}>
-
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
-          <Form.Control required name="publicationtitle" onChange={handleChange} value={input.publicationtitle} />
+          <Form.Control
+            required
+            name="publicationtitle"
+            onChange={handleChange}
+            value={input.publicationtitle}
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Journal</Form.Label>
-          <Form.Control required name="journal" onChange={handleChange} value={input.journal} />
+          <Form.Control
+            required
+            name="journal"
+            onChange={handleChange}
+            value={input.journal}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Year</Form.Label>
-          <Form.Control name="year" onChange={handleChange} value={input.year} />
+          <Form.Control
+            name="year"
+            onChange={handleChange}
+            value={input.year}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="issue">
           <Form.Label>Issue & page number</Form.Label>
-          <Form.Control type="text" name="issue" onChange={handleChange} value={input.issue} />
+          <Form.Control
+            type="text"
+            name="issue"
+            onChange={handleChange}
+            value={input.issue}
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="authors">
-          <Form.Label>Authors</Form.Label>
-          <Form.Control
-            placeholder="Enter first author name"
-            required
-            onChange={handleChange}
-            name="author1"
-            value={input.author1}
-          />
-          <Form.Control
+        {authArray.map((x, i) => {
+          return (
+            <Row className="box ">
+              <Col md={10} className="">
+                <Form.Group className="mb-3" >
+                  <Form.Label>{`Author No.${i + 1}`}</Form.Label>
+                  <Form.Control
+                    placeholder={`Enter Author No.${i + 1} `}
+                    required
+                    onChange={e=>handleChangeAuth(e,i)}
+                    name="author"
+                    value={x.author}
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={2} className="btn-box mb-3 ">
+                <Form.Label className="hidden-label ">
+                  Buttonhghhhghhhhh
+                </Form.Label>
+                {authArray.length !== 1 && (
+                  <Button
+                    className="mx-2 mb-2"
+                    onClick={() => handleRemoveClick(i)}
+                  >
+                    Remove
+                  </Button>
+                )}
+
+                {authArray.length - 1 === i && (
+                  <Button className="mx-2 mb-2" onClick={handleAddClick}>
+                    Add
+                  </Button>
+                )}
+              </Col>
+            </Row>
+          );
+        })}
+
+        {/* <Form.Control
             onChange={handleChange}
             placeholder="Enter second author name"
             className="mt-2"
@@ -200,21 +252,34 @@ function CreatePub() {
             name="author15"
             value={input.author15}
           />
-        </Form.Group>
+        </Form.Group> */}
 
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Abstract</Form.Label>
-          <Form.Control name="abstract" onChange={handleChange} value={input.abstract} />
+          <Form.Control
+            name="abstract"
+            onChange={handleChange}
+            value={input.abstract}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Link</Form.Label>
-          <Form.Control name="link" onChange={handleChange} value={input.link} />
+          <Form.Control
+            name="link"
+            onChange={handleChange}
+            value={input.link}
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Link image</Form.Label>
-          <Form.Control name="image" placeholder="Enter the link of the image you uploaded" onChange={handleChange} value={input.image} />
+          <Form.Control
+            name="image"
+            placeholder="Enter the link of the image you uploaded"
+            onChange={handleChange}
+            value={input.image}
+          />
         </Form.Group>
 
         <Button variant="primary" type="submit" onClick={btnClick}>
