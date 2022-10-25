@@ -90,7 +90,7 @@ function btnClick(){
 
         <Form.Group className="mb-3" controlId="issue">
           <Form.Label>Issue & page No</Form.Label>
-          <Form.Control type="text" name="issue" placeholder="Issue & page No" />
+          <Form.Control type="text" name="issue" placeholder="Issue & page No" onChange={handleChange} value={input.issue} />
         </Form.Group>
 
           <Form.Group className="mb-3" controlId="authors">
