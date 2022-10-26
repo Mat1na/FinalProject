@@ -34,7 +34,7 @@ function CreateAuthor() {
         alert('Author has been added to the system!');
       })
 
-       setInput({
+     setInput({
         authorname: ''
       })
   }

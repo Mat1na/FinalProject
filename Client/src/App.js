@@ -37,7 +37,7 @@ function App() {
                 <Route path="/projects/editproject/:projectid" element={<EditProject/>} />
                 <Route path="/authors" element={<Authors />} />
                 <Route path="/authors/create-author" element={<CreateAuthor />} />
-                <Route path="/authors/editauthor/:authorid" element={<EditAuthor />} />
+                <Route path="/authors/author/:authorid" element={<EditAuthor />} />
             </Routes>
             <Footer />
         </BrowserRouter>

@@ -18,6 +18,29 @@ function Authors() {
     fetchAuthors()
   }, []);
 
+  // Delete button
+  const handleDeleteBtn = (_id) => {
+  
+    
+    console.log(_id)
+  
+// authorList.map(selectedAuthor=>fetch(`http://localhost:3001/authors/author/${selectedAuthor.id}`,{
+//       method: "DELETE",
+//       headers: {
+//           'Content-type': 'application/json'
+//       }
+//   }).catch((error) => {
+//     window.alert(error);
+//     return;
+//   }) 
+//   )
+ 
+//   const newAuthList = authorList.filter((author) => author._id !== selectedAuthor._id);
+//    setAuthorlist(newAuthList);
+  
+  
+  };
+
   return (
     <Container>
 
@@ -36,13 +59,15 @@ function Authors() {
             {authorList.length > 0 && authorList.map((author, index) => {
               return <tr>
                 <td>{index + 1}</td>
-                <td>{authorList[index].authorname}</td>
+                <td   
+                key={author._id}
+                 id={author._id}>{authorList[index].authorname}</td>
                 <td>
                   <Link
-                    to={"/authors/editauthor/:authorid"}
+                    to={"/authors/author/:authorid"}
                     className="btn btn-primary mx-2"><AiFillEdit />
                   </Link>
-                  <Button variant="danger" className="mx-1">
+                  <Button variant="danger" className="mx-1" onClick={()=>handleDeleteBtn(author._id)}>
                     <RiDeleteBin6Fill />
                   </Button>
                 </td>

@@ -52,6 +52,18 @@ app.get('/authors/fetch-authors', (req, res) => {
         })
 })
 
+// //delete author
+// app.delete("/authors/author/:_id", (req, res)=> {
+//     const {_id } = req.params //get id
+//     Author.findByIdAndDelete(_id)
+//         .then(result => {
+//             res.json({
+//                 message: 'deleted',
+//                 data: result
+//             })
+//         })
+// })
+
 
 
 
