@@ -64,6 +64,7 @@ function CreatePub() {
     })
   }
 
+  
   // Requierd field alert
   function btnClick() {
     if (input.publicationtitle === undefined || input.publicationtitle === "") {
@@ -74,6 +75,7 @@ function CreatePub() {
     }
   }
 
+  ////Buttons for add/remove author
   // handle click event of the Remove button
   const handleRemoveClick = (index) => {
     const authors = [...authArray];

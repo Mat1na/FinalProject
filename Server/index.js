@@ -102,7 +102,7 @@ const profileSchema = mongoose.Schema({
     orcid: String,
     twitter: String,
     email: String,
-    currentmember: String
+    currentmember:String
 })
 
 //lab member model
@@ -111,8 +111,8 @@ const Profile = mongoose.model('Profiles', profileSchema)
 //post request lab members
 app.post('/labmembers/create-member', (req, res) => {
     console.log(req.body)
-    const { membername, image, functionbasic, functionextra, interest1, interest2, interest3, interest4, interest5, googlescholar, researchgate, orcid, twitter, email, currentmember } = req.body
-    const profile = new Profile({ membername, image, functionbasic, functionextra, interests: [interest1, interest2, interest3, interest4, interest5], googlescholar, researchgate, orcid, twitter, email, currentmember })
+    const { membername, image, functionbasic, functionextra, interests, googlescholar, researchgate, orcid, twitter, email, currentmember } = req.body
+    const profile = new Profile({ membername, image, functionbasic, functionextra, interests, googlescholar, researchgate, orcid, twitter, email, currentmember })
     profile.save()
         .then(res => {
             console.log(res, req.body)

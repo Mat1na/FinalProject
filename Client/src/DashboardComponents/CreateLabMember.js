@@ -1,18 +1,19 @@
+
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {CgPlayListAdd} from 'react-icons/cg';
+import {MdDeleteSweep} from 'react-icons/md';
+
 
 function CreateLabMembers() {
+  // Handle chenge for Interests and rest inputs
+  const [intrstArray, setIntrstArray] = useState([{ interest: "" }]);
   const [input, setInput] = useState({
     membername: "",
     image: "",
     functionbasic: "",
     functionextra: "",
-    interest1: "",
-    interest2: "",
-    interest3: "",
-    interest4: "",
-    interest5: "",
     googlescholar: "",
     researchgate: "",
     orcid: "",
@@ -32,6 +33,14 @@ function CreateLabMembers() {
     });
   }
 
+  function handleChangeIntrst(event, index) {
+    const { name, value } = event.target;
+    const interests = [...intrstArray];
+    interests[index][name] = value;
+    setIntrstArray(interests);
+
+  }
+
   // Requierd field alert
   function btnClick() {
     if (input.membername === undefined || input.membername === "") {
@@ -45,8 +54,10 @@ function CreateLabMembers() {
     }
   }
 
+  // Handle Submit
   function handleSubmit(event) {
     event.preventDefault();
+    input.interests = intrstArray;
     console.log(input);
     fetch("http://localhost:3001/labmembers/create-member", {
       method: "POST",
@@ -58,7 +69,35 @@ function CreateLabMembers() {
     }).then(() => {
       alert("Lab member has been added to the system!");
     });
+
+    // Clear input fields after submit
+    setIntrstArray([{ interest: "" }]);
+    setInput({
+      membername: "",
+      image: "",
+      functionbasic: "",
+      functionextra: "",
+      googlescholar: "",
+      researchgate: "",
+      orcid: "",
+      twitter: "",
+      email: "",
+      currentmember: "",
+    });
   }
+
+    ////Buttons for add/remove interest
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const interests = [...intrstArray];
+    interests.splice(index, 1);
+    setIntrstArray(interests);
+  };
+
+  // handle click event of the Add button
+  const handleAddClick = (i) => {
+    setIntrstArray([...intrstArray, {interest:""}]);
+    };
 
   return (
     <>
@@ -104,19 +143,43 @@ function CreateLabMembers() {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3"></Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Interesses</Form.Label>
+          {intrstArray.map((x, i) => {
+            return (
+              <Row className="box ">
+                <Col md={10} className="">
+                  <Form.Group className="mb-3">
+                    <Form.Label>Interesses</Form.Label>
+                    <Form.Control
+                     placeholder={`Enter interest No.${i + 1} `}
+                      name="interest"
+                      onChange={e => handleChangeIntrst(e, i)}
+                      value={x.interest}
+                    />
+                  </Form.Group>
+                </Col>
 
-            <Form.Control
-              name="interest1"
-              onChange={handleChange}
-              value={input.interest1}
-              
-            />
+                <Col md={2} className="btn-box mb-3 ">
+                  <Form.Label className="hidden-label ">
+                    Buttonhghhhghhhhh
+                  </Form.Label>
+                  {intrstArray.length !== 1 && (
+                    <Button
+                      variant="danger"
+                      className="mx-2 mb-2"
+                      onClick={() => handleRemoveClick(i)}
+                    >  <MdDeleteSweep/></Button>
+                  )}
 
-            <Form.Control
+                  {intrstArray.length - 1 === i && (
+                    <Button className="mx-2 mb-2" onClick={handleAddClick}><CgPlayListAdd/></Button>
+                  )}
+                </Col>
+              </Row>
+            );
+          })}
+
+          {/* <Form.Control
               name="interest2"
               onChange={handleChange}
               value={input.interest2}
@@ -143,7 +206,7 @@ function CreateLabMembers() {
               value={input.interest5}
               className="mt-2"
             />
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group className="mb-3">
             <Form.Label>Link Google Scholar</Form.Label>
@@ -199,15 +262,16 @@ function CreateLabMembers() {
               name="currentmember"
               type="radio"
               label="Yes"
-              value="yes"
+              value={input.yes}
               onClick={handleChange}
+             
             />
             <Form.Check
               inline
               name="currentmember"
               type="radio"
               label="No"
-              value="no"
+              value={input.no}
               onClick={handleChange}
             />
           </Form.Group>
