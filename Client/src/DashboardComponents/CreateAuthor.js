@@ -33,6 +33,10 @@ function CreateAuthor() {
       .then(() => {
         alert('Author has been added to the system!');
       })
+
+       setInput({
+        authorname: ''
+      })
   }
 
     // Requierd field alert

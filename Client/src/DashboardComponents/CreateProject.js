@@ -41,6 +41,18 @@ function CreateProject() {
       .then(() => {
         alert('Project has been added to the system!');
       })
+
+      
+// Clear input fields after submit
+      setInput({
+        title: '',
+        image: '',
+        content: '',
+        summary: '',
+        researcher: '',
+        imagetext: '',
+        imagetextlink: ''
+      })
    
   }
     // Requierd field alert
