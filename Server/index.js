@@ -4,19 +4,27 @@ const app = express();
 const cors = require('cors')
 require('dotenv').config()
 app.use(cors());
-
 app.use(express.json());
 
-//db connection (Atlass)
-// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
-//     console.log('Connected to database')
-// })
 
-//db connection (Compass)
-mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+///////////////////////////////////// DATABASE CONNECTION ////////////////////////////////////////
+
+//db connection (Atlass)
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
     console.log('Connected to database')
 })
 
+//db connection (Compass)
+// mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+//     console.log('Connected to database')
+// })
+
+
+
+
+
+
+////////////////////////////////////// AUTHORS ////////////////////////////////////////
 
 //author scheme
 const authorSchema = mongoose.Schema({
@@ -44,6 +52,11 @@ app.get('/authors/fetch-authors', (req, res) => {
         })
 })
 
+
+
+
+////////////////////////////////////// PROJECTS ////////////////////////////////////////
+
 //project scheme
 const projectSchema = mongoose.Schema({
     title: String,
@@ -68,6 +81,14 @@ app.post('/projects/create-project', (req, res) => {
             console.log(res, req.body)
         })
 })
+
+
+
+
+
+
+////////////////////////////////////// LABMEMBERS ////////////////////////////////////////
+
 
 //lab member scheme
 const profileSchema = mongoose.Schema({
@@ -98,12 +119,19 @@ app.post('/labmembers/create-member', (req, res) => {
         })
 })
 
+
+
+
+
+////////////////////////////////////// PUBLICATIONS ////////////////////////////////////////
+
 //publication member scheme
 const publicationSchema = mongoose.Schema({
     publicationtitle: String,
     journal: String,
     year: String,
     issue: String,
+    abstract:String, // I added the abstract here and at the request bcause it was missing
     link: String,
     image: String,
     authors: Array,
@@ -115,12 +143,18 @@ const Publication = mongoose.model('Publications', publicationSchema)
 //post request publications
 app.post('/publications/create-pub', (req, res) => {
     console.log(req.body)
-    const { publicationtitle, journal, year, issue, authors, link, image } = req.body
-    const publication = new Publication({ publicationtitle, journal, year, issue, authors, link, image })
+    const { publicationtitle, journal, year, issue,abstract, authors, link, image } = req.body
+    const publication = new Publication({ publicationtitle, journal, year, issue,abstract, authors, link, image })
     publication.save()
         .then(res => {
             console.log(res, req.body)
         })
 })
+
+
+
+
+
+////////////////////////////////////// Server port ////////////////////////////////////////
 
 app.listen(3001, () => console.log('Server is listening on port 3001!'))

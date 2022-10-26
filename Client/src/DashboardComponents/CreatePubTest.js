@@ -110,37 +110,16 @@ function btnClick(){
           <Form.Control type="text" name="issue" placeholder="Issue & page No" onChange={handleChange} value={input.issue} />
         </Form.Group>
 
-          {/* <Form.Group className="mb-3" controlId="authors">
+          <Form.Group className="mb-3" controlId="authors">
           <Form.Label>Authors</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Author1 name"
             className=""
           />
-         </Form.Group> */}
-        {inputList.map((x, i) => {
-        return (
-          <div className="box">
-             <Form.Group className="mb-3" controlId="authors">
-          <Form.Label>Authors</Form.Label>
-           <Form.Control
-            type="text"
-            placeholder="Enter Author1 name"
-            className=""
-            value={x.author}
-            onChange={e=>handleChange(e,i)}
-          />
-           </Form.Group>
-            <div className="btn-box">
-              {inputList.length !== 1 && <Button className="m-2"onClick={() => handleRemoveClick(i)}>Remove</Button>}
-              {inputList.length - 1 === i && <Button onClick={handleAddClick}>Add</Button>}
-            </div>
-          </div>
-        );
-      })}
-      {/* <div>{JSON.stringify(inputList)}</div> */}
+      
 
-          {/* <Form.Control
+          <Form.Control
             type="text"
             placeholder="Enter Author2 name"
             className="mt-2"
@@ -169,8 +148,8 @@ function btnClick(){
             type="text"
             placeholder="Enter Author7 name"
             className="mt-2"
-          /> */}
-        {/* </Form.Group> */}
+          />
+        </Form.Group>
 
         <Form.Group className="mb-3" >
           <Form.Label>Abstract</Form.Label>

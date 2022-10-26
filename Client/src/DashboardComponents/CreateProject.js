@@ -79,12 +79,12 @@ function CreateProject() {
   
       <Form.Group className="mb-3">
         <Form.Label>Inhoud</Form.Label>
-        <Form.Control required name="content" onChange={handleChange} value={input.content}/>
+        <Form.Control as="textarea" rows={10}  required name="content" onChange={handleChange} value={input.content}/>
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Samenvatting</Form.Label>
-        <Form.Control required name="summary" onChange={handleChange} value={input.summary}/>
+        <Form.Control as="textarea" rows={3}  required name="summary" onChange={handleChange} value={input.summary}/>
       </Form.Group>
 
       <Form.Group className="mb-3">

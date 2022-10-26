@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {AiOutlineUserAdd} from 'react-icons/ai';
+import {AiOutlineUserDelete} from 'react-icons/ai';
 
 function CreatePub() {
+  // Handle chenge for Authors and rest inputs
   const [authArray, setAuthArray] = useState([{ author: ""}]);
   const [input, setInput] = useState({
     publicationtitle: "",
@@ -32,6 +35,7 @@ function CreatePub() {
     
   }
 
+  // Handle Submit
   function handleSubmit(event) {
     event.preventDefault();
     input.authors = authArray;
@@ -46,6 +50,18 @@ function CreatePub() {
     }).then(() => {
       alert("Project has been added to the system!");
     });
+
+    // Clear input fields after submit
+    setAuthArray([{ author: ""}])
+    setInput({
+      publicationtitle: "",
+      journal: "",
+      year: "",
+      issue: "",
+      abstract: "",
+      link: "",
+      image: "",
+    })
   }
 
   // Requierd field alert
@@ -137,17 +153,14 @@ function CreatePub() {
                 </Form.Label>
                 {authArray.length !== 1 && (
                   <Button
+                  variant="danger"
                     className="mx-2 mb-2"
                     onClick={() => handleRemoveClick(i)}
-                  >
-                    Remove
-                  </Button>
+                  >  <AiOutlineUserDelete/></Button>
                 )}
 
                 {authArray.length - 1 === i && (
-                  <Button className="mx-2 mb-2" onClick={handleAddClick}>
-                    Add
-                  </Button>
+                  <Button className="mx-2 mb-2" onClick={handleAddClick}><AiOutlineUserAdd/></Button>
                 )}
               </Col>
             </Row>
@@ -257,6 +270,7 @@ function CreatePub() {
         <Form.Group className="mb-3">
           <Form.Label>Abstract</Form.Label>
           <Form.Control
+          as="textarea" rows={10} 
             name="abstract"
             onChange={handleChange}
             value={input.abstract}
