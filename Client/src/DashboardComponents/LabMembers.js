@@ -89,7 +89,7 @@ function LabMembers() {
                 <td>{labmemberList[index].membername}</td>
                 <td>{labmemberList[index].functionbasic}</td>
                 <td>
-                <Link to={"/labmembers/editlabmember/:memberid"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
+                <Link to={"/labmembers/edit-labmember/:memberid"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
               <Button variant="danger" className='mx-1' onClick={() => handleDeleteBtn(labmember._id)}><RiDeleteBin6Fill/></Button>
                 </td>
               </tr>

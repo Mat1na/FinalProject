@@ -86,7 +86,7 @@ function Authors() {
                     <td id={author._id}>{authorList[index].authorname}</td>
                     <td>
                       <Link
-                        to={"/authors/author/:authorid"}
+                        to={`/authors/edit-author/${author._id}`}
                         className="btn btn-primary mx-2"
                       >
                         <AiFillEdit />

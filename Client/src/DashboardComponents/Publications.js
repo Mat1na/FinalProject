@@ -52,7 +52,7 @@ function Publications() {
                 <td>{publicationList[index].journal}</td>
                 <td>
                   <Link
-                    to={"/publications/editpub/:pubid"}
+                    to={"/publications/edit-pub/:pubid"}
                     className="btn btn-primary mx-2"
                   >
                     <AiFillEdit />
