@@ -1,128 +1,157 @@
-import React, { useState } from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-
+import React, { useState } from "react";
+import { Button, Container, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function CreateProject() {
-
-
-
   const [input, setInput] = useState({
-    title: '',
-    image: '',
-    content: '',
-    summary: '',
-    researcher: '',
-    imagetext: '',
-    imagetextlink: ''
-  })
+    title: "",
+    image: "",
+    content: "",
+    summary: "",
+    researcher: "",
+    imagetext: "",
+    imagetextlink: "",
+  });
 
   function handleChange(event) {
-    const { name, value } = event.target
-    setInput(prevInput => {
+    const { name, value } = event.target;
+    setInput((prevInput) => {
       return {
         ...prevInput,
-        [name]: value
-      }
-    })
+        [name]: value,
+      };
+    });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     console.log(input);
-    fetch('http://localhost:3001/projects/create-project', {
-      method: 'POST',
+    fetch("http://localhost:3001/projects/create-project", {
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(input)
-    })
-      .then(() => {
-        alert('Project has been added to the system!');
-      })
+      body: JSON.stringify(input),
+    }).then(() => {
+      alert("Project has been added to the system!");
+    });
 
-      
-// Clear input fields after submit
-      setInput({
-        title: '',
-        image: '',
-        content: '',
-        summary: '',
-        researcher: '',
-        imagetext: '',
-        imagetextlink: ''
-      })
-   
+    // Clear input fields after submit
+    setInput({
+      title: "",
+      image: "",
+      content: "",
+      summary: "",
+      researcher: "",
+      imagetext: "",
+      imagetextlink: "",
+    });
   }
-    // Requierd field alert
-    function btnClick(){
-      if (input.title===undefined || input.title==="" ){
-      alert("Title is required")
-      }
-      if(input.image===undefined || input.image==="") {
-        alert("Image link is required") 
-      }
-      if(input.content===undefined || input.content==="") {
-        alert("Content is required") 
-      }
-      if(input.researcher===undefined || input.researcher==="") {
-        alert("Researcher is required") 
-      }
-    
-      if(input.summary===undefined || input.summary==="") {
-        alert("Summary is required") 
-      }
-      
-      }
+  // Requierd field alert
+  function btnClick() {
+    if (input.title === undefined || input.title === "") {
+      alert("Title is required");
+    }
+    if (input.image === undefined || input.image === "") {
+      alert("Image link is required");
+    }
+    if (input.content === undefined || input.content === "") {
+      alert("Content is required");
+    }
+    if (input.researcher === undefined || input.researcher === "") {
+      alert("Researcher is required");
+    }
+
+    if (input.summary === undefined || input.summary === "") {
+      alert("Summary is required");
+    }
+  }
   return (
     <Container>
-    <h1>Create new project</h1>
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" >
-        <Form.Label>Titel</Form.Label>
-        <Form.Control required name="title" onChange={handleChange} value={input.title}  />
-      </Form.Group>
+      <h1>Create new project</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Titel</Form.Label>
+          <Form.Control
+            required
+            name="title"
+            onChange={handleChange}
+            value={input.title}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" >
-        <Form.Label>Link image</Form.Label>
-        <Form.Control required name="image" onChange={handleChange} value={input.image}  />
-      </Form.Group>
-  
-      <Form.Group className="mb-3">
-        <Form.Label>Inhoud</Form.Label>
-        <Form.Control as="textarea" rows={10}  required name="content" onChange={handleChange} value={input.content}/>
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Link image</Form.Label>
+          <Form.Control
+            required
+            name="image"
+            onChange={handleChange}
+            value={input.image}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Samenvatting</Form.Label>
-        <Form.Control as="textarea" rows={3}  required name="summary" onChange={handleChange} value={input.summary}/>
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Inhoud</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={10}
+            required
+            name="content"
+            onChange={handleChange}
+            value={input.content}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Onderzoeker</Form.Label>
-        <Form.Control required name="researcher" onChange={handleChange} value={input.researcher}/>
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Samenvatting</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            required
+            name="summary"
+            onChange={handleChange}
+            value={input.summary}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Image text</Form.Label>
-        <Form.Control name="imagetext" onChange={handleChange} value={input.imagetext} />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Onderzoeker</Form.Label>
+          <Form.Control
+            required
+            name="researcher"
+            onChange={handleChange}
+            value={input.researcher}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Image text link</Form.Label>
-        <Form.Control name="imagetextlink" onChange={handleChange} value={input.imagetextlink} />
-      </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Image text</Form.Label>
+          <Form.Control
+            name="imagetext"
+            onChange={handleChange}
+            value={input.imagetext}
+          />
+        </Form.Group>
 
-      <Button variant="primary" type="submit" onClick={btnClick}>
-        Submit
-      </Button>
-      <Link to={"/projects"} className="btn btn-danger mx-2">
-        Cancel
-      </Link>
-    </Form>
-  </Container>
-  )
+        <Form.Group className="mb-3">
+          <Form.Label>Image text link</Form.Label>
+          <Form.Control
+            name="imagetextlink"
+            onChange={handleChange}
+            value={input.imagetextlink}
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit" onClick={btnClick}>
+          Submit
+        </Button>
+        <Link to={"/projects"} className="btn btn-danger mx-2">
+          Cancel
+        </Link>
+      </Form>
+    </Container>
+  );
 }
 
-export default CreateProject
+export default CreateProject;

@@ -10,24 +10,26 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 function Publications() {
   const [publicationList, setPublicationList] = useState([]);
   const fetchPublications = async () => {
-    let res = await fetch('http://localhost:3001/publications/fetch-publications')
+    let res = await fetch(
+      "http://localhost:3001/publications/fetch-publications"
+    );
     let data = await res.json();
     if (res.ok) {
-      console.log(data)
-      data.sort(function(a,b){
-        var textA = a.publicationtitle.toUpperCase()
-        var textB = b.publicationtitle.toUpperCase()
-        return (textA < textB) ? -1:(textA>textB)?1:0
-      })
+      console.log(data);
+      data.sort(function (a, b) {
+        var textA = a.publicationtitle.toUpperCase();
+        var textB = b.publicationtitle.toUpperCase();
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+      });
       setPublicationList(data);
     }
   };
   useEffect(() => {
-    fetchPublications()
+    fetchPublications();
   }, []);
 
-   // Delete button
-   const Delete = (_id) => {
+  // Delete button
+  const Delete = (_id) => {
     console.log("deleted:", _id);
     fetch(`http://localhost:3001/publications/${_id}`, {
       method: "DELETE",
@@ -41,7 +43,7 @@ function Publications() {
       })
       .then(() => {
         alert(`Publication has been deleted!`);
-        fetchPublications()
+        fetchPublications();
       });
   };
   const handleDeleteBtn = (_id) => {
@@ -60,7 +62,6 @@ function Publications() {
       ],
     });
   };
-
 
   return (
     <>
@@ -84,26 +85,31 @@ function Publications() {
             </tr>
           </thead>
           <tbody>
-            {publicationList.length > 0 && publicationList.map((publication, index) => {
-              return (
-              <tr key={publication._id} id={publication._id}>
-                <td>{index + 1}</td>
-                <td>{publicationList[index].publicationtitle}</td>
-                <td>{publicationList[index].journal}</td>
-                <td>
-                  <Link
-                    to={"/publications/edit-pub/:pubid"}
-                    className="btn btn-primary mx-2"
-                  >
-                    <AiFillEdit />
-                  </Link>
-                  <Button variant="danger" className="mx-1" onClick={() => handleDeleteBtn(publication._id)}>
-                    <RiDeleteBin6Fill />
-                  </Button>
-                </td>
-              </tr>
-              )
-            })}
+            {publicationList.length > 0 &&
+              publicationList.map((publication, index) => {
+                return (
+                  <tr key={publication._id} id={publication._id}>
+                    <td>{index + 1}</td>
+                    <td>{publicationList[index].publicationtitle}</td>
+                    <td>{publicationList[index].journal}</td>
+                    <td>
+                      <Link
+                        to={"/publications/edit-pub/:pubid"}
+                        className="btn btn-primary mx-2"
+                      >
+                        <AiFillEdit />
+                      </Link>
+                      <Button
+                        variant="danger"
+                        className="mx-1"
+                        onClick={() => handleDeleteBtn(publication._id)}
+                      >
+                        <RiDeleteBin6Fill />
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </Table>
       </Container>

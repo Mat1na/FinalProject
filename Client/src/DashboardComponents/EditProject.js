@@ -17,12 +17,10 @@ function EditProject() {
         <Form.Control type="text" placeholder="Enter content" />
       </Form.Group>
 
-
       <Form.Group className="mb-3" controlId="summary">
         <Form.Label>Sort summary</Form.Label>
         <Form.Control type="text" placeholder="Enter summary" />
       </Form.Group>
-
       
       <Form.Group className="mb-3" controlId="image">
         <Form.Label>Image</Form.Label>

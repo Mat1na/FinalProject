@@ -84,7 +84,7 @@ function CreatePub() {
   // handle click event of the Add button
   const handleAddClick = (i) => {
     setAuthArray([...authArray, { author: "" }]);
-    console.log("autharray",authArray);
+    console.log("authArray:",authArray);
   };
 
   return (
