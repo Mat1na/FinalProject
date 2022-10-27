@@ -1,10 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Authors from './DashboardComponents/Authors'
-import LabMembers from './DashboardComponents/LabMembers'
-import Projects from './DashboardComponents/Projects'
-import Publications from './DashboardComponents/Publications'
+
 
 function Dashboard() {
   return (

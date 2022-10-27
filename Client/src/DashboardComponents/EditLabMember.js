@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Form, Row, Col, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function EditLabMember() {

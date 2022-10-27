@@ -9,7 +9,9 @@ function EditAuthor() {
     authorname: `${authorid}`
   })
 
-  const fetchAuthor = async () => {
+
+  useEffect(() => {
+      const fetchAuthor = async () => {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
@@ -17,9 +19,8 @@ function EditAuthor() {
       setAuthor(filtereddata);
     }
   };
-  useEffect(() => {
     fetchAuthor();
-  }, []);
+  }, [authorid]); //I put fetchAuthor in the use useffect with a depandancy of authorid because without it causes a warning
 
   function handleChange(event) {
     const { name, value } = event.target

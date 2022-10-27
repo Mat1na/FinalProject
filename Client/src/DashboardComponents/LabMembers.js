@@ -87,7 +87,7 @@ function LabMembers() {
             {labmemberList.length > 0 &&
               labmemberList.map((labmember, index) => {
                 return (
-                  <tr key={labmember._id} id={labmember._id}>
+                  <tr key={labmemberList._id} id={labmemberList._id}>
                     <td>{index + 1}</td>
                     <td>{labmemberList[index].membername}</td>
                     <td>{labmemberList[index].functionbasic}</td>
