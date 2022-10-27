@@ -28,16 +28,16 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/labmembers" element={<LabMembers />} />
                 <Route path="/labmembers/create-member" element={<CreateLabMembers />} />
-                <Route path="/labmembers/editlabmember/:memberid" element={<EditLabMembers />} />
+                <Route path="/labmembers/edit-labmember/:memberid" element={<EditLabMembers />} />
                 <Route path="/publications" element={<Publications />} />
                 <Route path="/publications/create-pub" element={<CreatePub/>} />
-                <Route path="/publications/editpub/:pubid" element={<EditPub/>} />
+                <Route path="/publications/edit-pub/:pubid" element={<EditPub/>} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/projects/create-project" element={<CreateProject />} />
-                <Route path="/projects/editproject/:projectid" element={<EditProject/>} />
+                <Route path="/projects/edit-project/:projectid" element={<EditProject/>} />
                 <Route path="/authors" element={<Authors />} />
                 <Route path="/authors/create-author" element={<CreateAuthor />} />
-                <Route path="/authors/author/:authorid" element={<EditAuthor />} />
+                <Route path="/authors/edit-author/:authorid" element={<EditAuthor />} />
             </Routes>
             <Footer />
         </BrowserRouter>
