@@ -4,6 +4,8 @@ import { Button, Container, Table } from "react-bootstrap";
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { BsFillPersonPlusFill } from "react-icons/bs";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 function Publications() {
   const [publicationList, setPublicationList] = useState([]);
@@ -23,6 +25,43 @@ function Publications() {
   useEffect(() => {
     fetchPublications()
   }, []);
+
+   // Delete button
+   const Delete = (_id) => {
+    console.log("deleted:", _id);
+    fetch(`http://localhost:3001/publications/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .catch((error) => {
+        window.alert(error);
+        return;
+      })
+      .then(() => {
+        alert(`Publication has been deleted!`);
+        fetchPublications()
+      });
+  };
+  const handleDeleteBtn = (_id) => {
+    confirmAlert({
+      title: "Confirm to delete",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => Delete(_id),
+        },
+        {
+          label: "No",
+          // onClick: () => alert('Click No')
+        },
+      ],
+    });
+  };
+
+
   return (
     <>
       <Container>
@@ -46,7 +85,8 @@ function Publications() {
           </thead>
           <tbody>
             {publicationList.length > 0 && publicationList.map((publication, index) => {
-              return <tr>
+              return (
+              <tr key={publication._id} id={publication._id}>
                 <td>{index + 1}</td>
                 <td>{publicationList[index].publicationtitle}</td>
                 <td>{publicationList[index].journal}</td>
@@ -57,11 +97,12 @@ function Publications() {
                   >
                     <AiFillEdit />
                   </Link>
-                  <Button variant="danger" className="mx-1">
+                  <Button variant="danger" className="mx-1" onClick={() => handleDeleteBtn(publication._id)}>
                     <RiDeleteBin6Fill />
                   </Button>
                 </td>
               </tr>
+              )
             })}
           </tbody>
         </Table>

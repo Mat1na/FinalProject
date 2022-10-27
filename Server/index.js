@@ -102,17 +102,17 @@ app.get('/projects/fetch-projects', (req, res) => {
         })
 })
 
-// // //delete project
-// app.delete("/projects/:_id", (req, res)=> {
-//     const {_id } = req.params //get id
-//     Project.findByIdAndDelete(_id)
-//         .then(result => {
-//             res.json({
-//                 message: 'deleted',
-//                 data: result
-//             })
-//         })
-// })
+// //delete project
+app.delete("/projects/:_id", (req, res)=> {
+    const {_id } = req.params //get id
+    Project.findByIdAndDelete(_id)
+        .then(result => {
+            res.json({
+                message: 'deleted',
+                data: result
+            })
+        })
+})
 
 
 
