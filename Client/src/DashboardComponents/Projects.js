@@ -3,6 +3,8 @@ import { Button, Container, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AiFillEdit } from 'react-icons/ai';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 
 function Projects() {
@@ -23,6 +25,41 @@ function Projects() {
   useEffect(() => {
     fetchProjects()
   }, []);
+
+  // Delete button
+  const Delete = (_id) => {
+    console.log("deleted:", _id);
+    fetch(`http://localhost:3001/projects/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .catch((error) => {
+        window.alert(error);
+        return;
+      })
+      .then(() => {
+        alert(`Publication has been deleted!`);
+        fetchProjects()
+      });
+  };
+  const handleDeleteBtn = (_id) => {
+    confirmAlert({
+      title: "Confirm to delete",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => Delete(_id),
+        },
+        {
+          label: "No",
+          // onClick: () => alert('Click No')
+        },
+      ],
+    });
+  };
   return (
     <>
       <Container>
@@ -43,14 +80,14 @@ function Projects() {
           </thead>
           <tbody>
             {projectList.length > 0 && projectList.map((project, index) => {
-              return <tr>
+              return <tr key={project._id} id={project._id}>
                 <td>{index + 1}</td>
                 <td>
                   {projectList[index].title}</td>
                   <td>
                   {projectList[index].summary}</td>
                 <td>
-                  <Link to={"/projects/edit-project/:projectid"} className="btn btn-primary mx-2"><AiFillEdit /></Link>
+                  <Link to={"/projects/editproject/:projectid"} className="btn btn-primary mx-2"><AiFillEdit /></Link>
                   <Button variant="danger" className='mx-1'><RiDeleteBin6Fill /></Button>
                 </td>
               </tr>

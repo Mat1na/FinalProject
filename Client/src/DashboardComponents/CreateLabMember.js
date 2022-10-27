@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CgPlayListAdd } from 'react-icons/cg';
-import { MdDeleteSweep } from 'react-icons/md';
+import { RiDeleteBin6Fill } from "react-icons/ri";
 
 
 function CreateLabMembers() {
@@ -189,7 +189,7 @@ function CreateLabMembers() {
                       variant="danger"
                       className="mx-2 mb-2"
                       onClick={() => handleRemoveClick(i)}
-                    >  <MdDeleteSweep /></Button>
+                    >  <RiDeleteBin6Fill/></Button>
                   )}
 
                   {intrstArray.length - 1 === i && (

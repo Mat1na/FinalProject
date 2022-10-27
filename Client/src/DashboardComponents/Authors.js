@@ -46,7 +46,7 @@ function Authors() {
   
   const handleDeleteBtn = (_id) => {
     confirmAlert({
-      title: "Confirm to submit",
+      title: "Confirm to delete",
       message: "Are you sure to do this.",
       buttons: [
         {

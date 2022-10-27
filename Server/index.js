@@ -102,6 +102,19 @@ app.get('/projects/fetch-projects', (req, res) => {
         })
 })
 
+// //delete project
+app.delete("/projects/:_id", (req, res)=> {
+    const {_id } = req.params //get id
+    Project.findByIdAndDelete(_id)
+        .then(result => {
+            res.json({
+                message: 'deleted',
+                data: result
+            })
+        })
+})
+
+
 
 
 
@@ -194,6 +207,17 @@ app.get('/publications/fetch-publications', (req, res) => {
         })
 })
 
+// //delete publication
+app.delete("/publications/:_id", (req, res)=> {
+    const {_id } = req.params //get id
+    Publication.findByIdAndDelete(_id)
+        .then(result => {
+            res.json({
+                message: 'deleted',
+                data: result
+            })
+        })
+})
 
 
 ////////////////////////////////////// Server port ////////////////////////////////////////
