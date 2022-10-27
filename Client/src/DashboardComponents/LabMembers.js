@@ -41,7 +41,7 @@ function LabMembers() {
           return;
         })
         .then(() => {
-          alert(`labmember has been deleted!`);
+          alert(`Lab member has been deleted!`);
           fetchLabmembers();
         });
     };

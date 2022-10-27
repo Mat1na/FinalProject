@@ -52,9 +52,9 @@ app.get('/authors/fetch-authors', (req, res) => {
         })
 })
 
-// //delete author
-app.delete("/authors/:_id", (req, res)=> {
-    const {_id } = req.params //get id
+// delete author
+app.delete("/authors/:_id", (req, res) => {
+    const { _id } = req.params //get id
     Author.findByIdAndDelete(_id)
         .then(result => {
             res.json({
@@ -64,7 +64,24 @@ app.delete("/authors/:_id", (req, res)=> {
         })
 })
 
-
+//update author
+app.post('/authors/edit-author/:_id', (req, res) => {
+    const {_id}=req.params
+    console.log(req.body.authorname)
+    Author.findByIdAndUpdate(_id, {authorname:req.body.authorname}, function(err,docs){
+        if (err){
+            console.log(err)
+        }else{
+            console.log('Updated user')
+        }
+    })
+    // .then(result => {
+    //     res.json({
+    //         message: 'updated',
+    //         data: result
+    //     })
+    // })
+})
 
 
 ////////////////////////////////////// PROJECTS ////////////////////////////////////////
@@ -102,9 +119,9 @@ app.get('/projects/fetch-projects', (req, res) => {
         })
 })
 
-// //delete project
-app.delete("/projects/:_id", (req, res)=> {
-    const {_id } = req.params //get id
+// delete project
+app.delete("/projects/:_id", (req, res) => {
+    const { _id } = req.params //get id
     Project.findByIdAndDelete(_id)
         .then(result => {
             res.json({
@@ -158,9 +175,9 @@ app.get('/labmembers/fetch-labmembers', (req, res) => {
         })
 })
 
-// //delete labmember
-app.delete("/labmembers/:_id", (req, res)=> {
-    const {_id } = req.params //get id
+// delete labmember
+app.delete("/labmembers/:_id", (req, res) => {
+    const { _id } = req.params //get id
     Profile.findByIdAndDelete(_id)
         .then(result => {
             res.json({
@@ -207,9 +224,9 @@ app.get('/publications/fetch-publications', (req, res) => {
         })
 })
 
-// //delete publication
-app.delete("/publications/:_id", (req, res)=> {
-    const {_id } = req.params //get id
+// delete publication
+app.delete("/publications/:_id", (req, res) => {
+    const { _id } = req.params //get id
     Publication.findByIdAndDelete(_id)
         .then(result => {
             res.json({

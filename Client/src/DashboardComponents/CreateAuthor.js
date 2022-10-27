@@ -39,12 +39,11 @@ function CreateAuthor() {
       })
   }
 
-    // Requierd field alert
+    // Required field alert
 function btnClick(){
   if (input.authorname===undefined || input.authorname==="" ){
   alert("Name is required")
   }
-  // How to validate according name input format?? => (Lastname, F.)
 
   }
 
