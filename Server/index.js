@@ -13,7 +13,7 @@ mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
     console.log('Connected to database')
 })
 
-//db connection (Compass)
+// db connection (Compass)
 // mongoose.connect(
 //   "mongodb://localhost:27017/sglobe",
 //   { useNewUrlParser: true },

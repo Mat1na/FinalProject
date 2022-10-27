@@ -83,11 +83,12 @@ function LabMembers() {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
+          
             {labmemberList.length > 0 &&
               labmemberList.map((labmember, index) => {
                 return (
-                  <tr key={labmemberList._id} id={labmemberList._id}>
+                  <tbody key={labmemberList.index} id={labmemberList._id}>
+                  <tr>
                     <td>{index + 1}</td>
                     <td>{labmemberList[index].membername}</td>
                     <td>{labmemberList[index].functionbasic}</td>
@@ -107,9 +108,10 @@ function LabMembers() {
                       </Button>
                     </td>
                   </tr>
+                  </tbody>
                 );
               })}
-          </tbody>
+         
         </Table>
       </Container>
     </>

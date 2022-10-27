@@ -48,6 +48,7 @@ function EditAuthor() {
         alert('Author has been updated in the system!');
       })
   }
+
   // Required field alert
   function btnClick() {
     if (input.authorname === undefined || input.authorname === "") {
