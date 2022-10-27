@@ -7,13 +7,13 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 function Authors() {
-  const [authorList, setAuthorlist] = useState([]);
+  const [authorList, setAuthorList] = useState([]);
   const fetchAuthors = async () => {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
-      console.log(data);
-      setAuthorlist(data);
+      console.log(data)
+      setAuthorList(data);
     }
   };
   useEffect(() => {

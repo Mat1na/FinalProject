@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Container, Table } from "react-bootstrap";
 import { AiFillEdit } from "react-icons/ai";
@@ -6,6 +6,18 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { BsFillPersonPlusFill } from "react-icons/bs";
 
 function Publications() {
+  const [publicationList, setPublicationList] = useState([]);
+  const fetchPublications = async () => {
+    let res = await fetch('http://localhost:3001/publications/fetch-publications')
+    let data = await res.json();
+    if (res.ok) {
+      console.log(data)
+      setPublicationList(data);
+    }
+  };
+  useEffect(() => {
+    fetchPublications()
+  }, []);
   return (
     <>
       <Container>
@@ -24,39 +36,28 @@ function Publications() {
               <th>#</th>
               <th>Title</th>
               <th>Journal name</th>
-              <th>Issue & page No</th>
-              <th>Year</th>
-              <th>Abstract</th>
-              <th>Authors</th>
-              <th>Link</th>
-              <th>Image</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-
-              <td>
-                <Link
-                  to={"/publications/editpub/:pubid"}
-                  className="btn btn-primary mx-2"
-                >
-                  <AiFillEdit />
-                </Link>
-                <Button variant="danger" className="mx-1">
-                  <RiDeleteBin6Fill />
-                </Button>
-              </td>
-            </tr>
+            {publicationList.length > 0 && publicationList.map((publication, index) => {
+              return <tr>
+                <td>{index + 1}</td>
+                <td>{publicationList[index].publicationtitle}</td>
+                <td>{publicationList[index].journal}</td>
+                <td>
+                  <Link
+                    to={"/publications/editpub/:pubid"}
+                    className="btn btn-primary mx-2"
+                  >
+                    <AiFillEdit />
+                  </Link>
+                  <Button variant="danger" className="mx-1">
+                    <RiDeleteBin6Fill />
+                  </Button>
+                </td>
+              </tr>
+            })}
           </tbody>
         </Table>
       </Container>

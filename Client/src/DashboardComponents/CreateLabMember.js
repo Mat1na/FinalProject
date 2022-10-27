@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {CgPlayListAdd} from 'react-icons/cg';
-import {MdDeleteSweep} from 'react-icons/md';
+import { CgPlayListAdd } from 'react-icons/cg';
+import { MdDeleteSweep } from 'react-icons/md';
 
 
 function CreateLabMembers() {
-  // Handle chenge for Interests and rest inputs
+  // Handle change for interests and rest inputs
   const [intrstArray, setIntrstArray] = useState([{ interest: "" }]);
   const [input, setInput] = useState({
     membername: "",
@@ -41,16 +41,18 @@ function CreateLabMembers() {
 
   }
 
-  // Requierd field alert
+  //function to see whether the radio buttons are checked
+
+  // Required field alert
   function btnClick() {
     if (input.membername === undefined || input.membername === "") {
-      alert("Name isrequired");
+      alert("Name is required");
     }
     if (input.image === undefined || input.image === "") {
       alert("Image is required");
     }
     if (input.functionbasic === undefined || input.functionbasic === "") {
-      alert("function is required");
+      alert("Function is required");
     }
   }
 
@@ -86,7 +88,7 @@ function CreateLabMembers() {
     });
   }
 
-    ////Buttons for add/remove interest
+  ////Buttons for add/remove interest
   // handle click event of the Remove button
   const handleRemoveClick = (index) => {
     const interests = [...intrstArray];
@@ -96,8 +98,8 @@ function CreateLabMembers() {
 
   // handle click event of the Add button
   const handleAddClick = (i) => {
-    setIntrstArray([...intrstArray, {interest:""}]);
-    };
+    setIntrstArray([...intrstArray, { interest: "" }]);
+  };
 
   return (
     <>
@@ -105,7 +107,7 @@ function CreateLabMembers() {
         <h1>Create new lab member</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label>Naam</Form.Label>
+            <Form.Label>Name</Form.Label>
             <Form.Control
               required
               name="membername"
@@ -125,7 +127,7 @@ function CreateLabMembers() {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Functie</Form.Label>
+            <Form.Label>Function</Form.Label>
             <Form.Control
               required
               name="functionbasic"
@@ -135,7 +137,7 @@ function CreateLabMembers() {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Functie (extra lijn)</Form.Label>
+            <Form.Label>Function (extra line)</Form.Label>
             <Form.Control
               onChange={handleChange}
               name="functionextra"
@@ -149,10 +151,9 @@ function CreateLabMembers() {
               <Row className="box ">
                 <Col md={10} className="">
                   <Form.Group className="mb-3">
-                    <Form.Label>Interesses</Form.Label>
+                    <Form.Label>Interests</Form.Label>
                     <Form.Control
-                    key={x.i}
-                     placeholder={`Enter interest No.${i + 1} `}
+                      placeholder={`Enter interest No.${i + 1} `}
                       name="interest"
                       onChange={e => handleChangeIntrst(e, i)}
                       value={x.interest}
@@ -162,18 +163,19 @@ function CreateLabMembers() {
 
                 <Col md={2} className="btn-box mb-3 ">
                   <Form.Label className="hidden-label ">
-                    Buttonhghhhghhhhh
+                  Button
+
                   </Form.Label>
                   {intrstArray.length !== 1 && (
                     <Button
                       variant="danger"
                       className="mx-2 mb-2"
                       onClick={() => handleRemoveClick(i)}
-                    >  <MdDeleteSweep/></Button>
+                    >  <MdDeleteSweep /></Button>
                   )}
 
                   {intrstArray.length - 1 === i && (
-                    <Button className="mx-2 mb-2" onClick={handleAddClick}><CgPlayListAdd/></Button>
+                    <Button className="mx-2 mb-2" onClick={handleAddClick}><CgPlayListAdd /></Button>
                   )}
                 </Col>
               </Row>
@@ -246,7 +248,7 @@ function CreateLabMembers() {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>E-mailadres</Form.Label>
+            <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
               name="email"
@@ -255,24 +257,23 @@ function CreateLabMembers() {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label className="me-2">Huidig lid?</Form.Label>
+          <Form.Group className="mb-3" >
+            <Form.Label className="me-2">Current member?</Form.Label>
             <Form.Check
               required
               inline
               name="currentmember"
               type="radio"
               label="Yes"
-              value={input.yes}
+              value="Yes"
               onClick={handleChange}
-             
             />
             <Form.Check
               inline
               name="currentmember"
               type="radio"
               label="No"
-              value={input.no}
+              value="No"
               onClick={handleChange}
             />
           </Form.Group>
