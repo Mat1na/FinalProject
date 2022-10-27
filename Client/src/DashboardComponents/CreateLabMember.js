@@ -148,7 +148,7 @@ function CreateLabMembers() {
 
           {intrstArray.map((x, i) => {
             return (
-              <Row className="box ">
+              <Row className="box " >
                 <Col md={10} className="">
                   <Form.Group className="mb-3">
                     <Form.Label>Interests</Form.Label>

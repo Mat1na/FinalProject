@@ -12,7 +12,7 @@ function Authors() {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
-      console.log(data)
+      console.log(data);
       setAuthorList(data);
     }
   };
@@ -75,11 +75,9 @@ function Authors() {
             {authorList.length > 0 &&
               authorList.map((author, index) => {
                 return (
-                  <tr>
+                  <tr key={author._id}>
                     <td>{index + 1}</td>
-                    <td key={author._id} id={author._id}>
-                      {authorList[index].authorname}
-                    </td>
+                    <td id={author._id}>{authorList[index].authorname}</td>
                     <td>
                       <Link
                         to={"/authors/author/:authorid"}
