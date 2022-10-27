@@ -43,6 +43,7 @@ function Authors() {
         fetchAuthors();
       });
   };
+  
   const handleDeleteBtn = (_id) => {
     confirmAlert({
       title: "Confirm to submit",
