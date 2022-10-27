@@ -145,6 +145,17 @@ app.get('/labmembers/fetch-labmembers', (req, res) => {
         })
 })
 
+// //delete labmember
+app.delete("/labmembers/:_id", (req, res)=> {
+    const {_id } = req.params //get id
+    Profile.findByIdAndDelete(_id)
+        .then(result => {
+            res.json({
+                message: 'deleted',
+                data: result
+            })
+        })
+})
 
 
 ////////////////////////////////////// PUBLICATIONS ////////////////////////////////////////

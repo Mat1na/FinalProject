@@ -4,6 +4,8 @@ import { Button, Container, Table } from 'react-bootstrap';
 import { AiFillEdit} from 'react-icons/ai';
 import { RiDeleteBin6Fill} from 'react-icons/ri';
 import {BsFillPersonPlusFill} from 'react-icons/bs';
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 
 function LabMembers() {
@@ -25,6 +27,42 @@ function LabMembers() {
     fetchLabmembers()
   }, []);
 
+    // Delete button
+    const Delete = (_id) => {
+      console.log("deleted:", _id);
+      fetch(`http://localhost:3001/labmembers/${_id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+        .catch((error) => {
+          window.alert(error);
+          return;
+        })
+        .then(() => {
+          alert(`labmember has been deleted!`);
+          fetchLabmembers();
+        });
+    };
+    const handleDeleteBtn = (_id) => {
+      confirmAlert({
+        title: "Confirm to submit",
+        message: "Are you sure to do this.",
+        buttons: [
+          {
+            label: "Yes",
+            onClick: () => Delete(_id),
+          },
+          {
+            label: "No",
+            // onClick: () => alert('Click No')
+          },
+        ],
+      });
+    };
+  
+
   return (
     <>
     <Container>
@@ -44,16 +82,18 @@ function LabMembers() {
           </tr>
         </thead>
         <tbody>
-        {labmemberList.length > 0 && labmemberList.map((author, index) => {
-              return <tr>
+        {labmemberList.length > 0 && labmemberList.map((labmember, index) => {
+              return (
+              <tr key={labmember._id} id={labmember._id}>
                 <td>{index + 1}</td>
                 <td>{labmemberList[index].membername}</td>
                 <td>{labmemberList[index].functionbasic}</td>
                 <td>
                 <Link to={"/labmembers/editlabmember/:memberid"} className="btn btn-primary mx-2"><AiFillEdit/></Link>
-              <Button variant="danger" className='mx-1'><RiDeleteBin6Fill/></Button>
+              <Button variant="danger" className='mx-1' onClick={() => handleDeleteBtn(labmember._id)}><RiDeleteBin6Fill/></Button>
                 </td>
               </tr>
+              )
             })}
            </tbody>
       </Table>

@@ -81,11 +81,9 @@ function Authors() {
             {authorList.length > 0 &&
               authorList.map((author, index) => {
                 return (
-                  <tr>
+                  <tr key={author._id}>
                     <td>{index + 1}</td>
-                    <td key={author._id} id={author._id}>
-                      {authorList[index].authorname}
-                    </td>
+                    <td id={author._id}>{authorList[index].authorname}</td>
                     <td>
                       <Link
                         to={"/authors/author/:authorid"}
