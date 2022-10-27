@@ -59,13 +59,13 @@ function EditAuthor() {
   return (
     <Container>
       <h1>Edit Author</h1>
-      {Object.keys(author).length > 0 && <Form>
+      {Object.keys(author).length > 0 && <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="authorname">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" defaultValue={author.authorname} />
+          <Form.Control type="text" defaultValue={author.authorname} required name="authorname" onChange={handleChange}  />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={btnClick}>
           Update
         </Button>
         <Link to={"/authors"} className="btn btn-danger mx-2">
