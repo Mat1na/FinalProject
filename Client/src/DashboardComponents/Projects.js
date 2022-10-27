@@ -87,8 +87,8 @@ function Projects() {
                   <td>
                   {projectList[index].summary}</td>
                 <td>
-                  <Link to={"/projects/editproject/:projectid"} className="btn btn-primary mx-2"><AiFillEdit /></Link>
-                  <Button variant="danger" className='mx-1'><RiDeleteBin6Fill /></Button>
+                  <Link to={"/projects/edit-project/:projectid"} className="btn btn-primary mx-2"><AiFillEdit /></Link>
+                  <Button variant="danger" className='mx-1' onClick={() => handleDeleteBtn(project._id)}><RiDeleteBin6Fill /></Button>
                 </td>
               </tr>
             })}
