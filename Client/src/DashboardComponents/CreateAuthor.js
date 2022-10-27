@@ -55,7 +55,6 @@ function btnClick(){
         <Form.Label>Name</Form.Label>
         <Form.Control required placeholder="Van Meerbeek, K." name="authorname" onChange={handleChange}  value={input.authorname}/>
       </Form.Group>
-
       <Button variant="primary" type="submit" onClick={btnClick}>
         Submit
       </Button>

@@ -1,15 +1,13 @@
-
 import React, { useState } from "react";
 import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CgPlayListAdd } from 'react-icons/cg';
+import { CgPlayListAdd } from "react-icons/cg";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-
 
 function CreateLabMembers() {
   // Handle change for interests and rest inputs
   const [intrstArray, setIntrstArray] = useState([{ interest: "" }]);
-  const [radiocheck,setRadiocheck]=useState(false)
+  const [radiocheck, setRadiocheck] = useState(false);
   const [input, setInput] = useState({
     membername: "",
     image: "",
@@ -43,7 +41,7 @@ function CreateLabMembers() {
         [name]: value,
       };
     });
-    const radioState=true;
+    const radioState = true;
     setRadiocheck(radioState);
   }
 
@@ -52,7 +50,6 @@ function CreateLabMembers() {
     const interests = [...intrstArray];
     interests[index][name] = value;
     setIntrstArray(interests);
-
   }
 
   //function to see whether the radio buttons are checked
@@ -68,8 +65,10 @@ function CreateLabMembers() {
     if (input.functionbasic === undefined || input.functionbasic === "") {
       alert("Function is required");
     }
-    if (radiocheck===false) {
-      alert("Please select whether the lab member currently belongs to the lab");
+    if (radiocheck === false) {
+      alert(
+        "Please select whether the lab member currently belongs to the lab"
+      );
     }
   }
 
@@ -77,7 +76,7 @@ function CreateLabMembers() {
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    console.log(input);
+    console.log("input", input);
     fetch("http://localhost:3001/labmembers/create-member", {
       method: "POST",
       headers: {
@@ -103,7 +102,7 @@ function CreateLabMembers() {
       email: "",
       currentmember: "",
     });
-    event.target.reset()
+    event.target.reset();
   }
 
   ////Buttons for add/remove interest
@@ -163,37 +162,36 @@ function CreateLabMembers() {
             />
           </Form.Group>
 
-
           {intrstArray.map((x, i) => {
             return (
-              <Row className="box " >
+              <Row className="box ">
                 <Col md={10} className="">
                   <Form.Group className="mb-3">
                     <Form.Label>Interests</Form.Label>
                     <Form.Control
                       placeholder={`Enter interest No.${i + 1} `}
                       name="interest"
-                      onChange={e => handleChangeIntrst(e, i)}
+                      onChange={(e) => handleChangeIntrst(e, i)}
                       value={x.interest}
+                      key={x.i}
                     />
                   </Form.Group>
                 </Col>
-
                 <Col md={2} className="btn-box mb-3 ">
-                  <Form.Label className="hidden-label ">
-                  Button
-
-                  </Form.Label>
+                  <Form.Label className="hidden-label ">Button</Form.Label>
                   {intrstArray.length !== 1 && (
                     <Button
                       variant="danger"
                       className="mx-2 mb-2"
                       onClick={() => handleRemoveClick(i)}
-                    >  <RiDeleteBin6Fill/></Button>
+                    >
+                      <RiDeleteBin6Fill />
+                    </Button>
                   )}
-
                   {intrstArray.length - 1 === i && (
-                    <Button className="mx-2 mb-2" onClick={handleAddClick}><CgPlayListAdd /></Button>
+                    <Button className="mx-2 mb-2" onClick={handleAddClick}>
+                      <CgPlayListAdd />
+                    </Button>
                   )}
                 </Col>
               </Row>
@@ -275,7 +273,7 @@ function CreateLabMembers() {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" >
+          <Form.Group className="mb-3">
             <Form.Label className="me-2">Current member?</Form.Label>
             <Form.Check
               required

@@ -65,9 +65,7 @@ function Projects() {
       <Container>
         <h1>Projects</h1>
         <div>
-
           <Link to={"/projects/create-project"} className="btn btn-secondary mb-2" > Add new project</Link>
-
         </div>
         <Table striped bordered hover>
           <thead>
