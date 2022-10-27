@@ -13,6 +13,11 @@ function Authors() {
     let data = await res.json();
     if (res.ok) {
       console.log(data)
+      data.sort(function(a,b){
+        var textA = a.authorname.toUpperCase()
+        var textB = b.authorname.toUpperCase()
+        return (textA < textB) ? -1:(textA>textB)?1:0
+      })
       setAuthorList(data);
     }
   };
