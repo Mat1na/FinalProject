@@ -9,15 +9,15 @@ app.use(express.json());
 
 ///////////////////////////////////// DATABASE CONNECTION ////////////////////////////////////////
 
-//db connection (Atlass)
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
-    console.log('Connected to database')
-})
-
-//db connection (Compass)
-// mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+//db connection (Atlas)
+// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
 //     console.log('Connected to database')
 // })
+
+//db connection (Compass)
+mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+    console.log('Connected to database')
+})
 
 
 
@@ -94,7 +94,13 @@ app.post('/projects/create-project', (req, res) => {
         })
 })
 
-
+//sending projects to rest api
+app.get('/projects/fetch-projects', (req, res) => {
+    Project.find({})
+        .then(items => {
+            res.json(items)
+        })
+})
 
 
 
@@ -114,7 +120,7 @@ const profileSchema = mongoose.Schema({
     orcid: String,
     twitter: String,
     email: String,
-    currentmember:String
+    currentmember: String
 })
 
 //lab member model
@@ -131,7 +137,13 @@ app.post('/labmembers/create-member', (req, res) => {
         })
 })
 
-
+//sending lab members to rest api
+app.get('/labmembers/fetch-labmembers', (req, res) => {
+    Profile.find({})
+        .then(items => {
+            res.json(items)
+        })
+})
 
 
 
@@ -143,7 +155,7 @@ const publicationSchema = mongoose.Schema({
     journal: String,
     year: String,
     issue: String,
-    abstract:String, // I added the abstract here and at the request bcause it was missing
+    abstract: String, // I added the abstract here and at the request bcause it was missing
     link: String,
     image: String,
     authors: Array,
@@ -155,15 +167,21 @@ const Publication = mongoose.model('Publications', publicationSchema)
 //post request publications
 app.post('/publications/create-pub', (req, res) => {
     console.log(req.body)
-    const { publicationtitle, journal, year, issue,abstract, authors, link, image } = req.body
-    const publication = new Publication({ publicationtitle, journal, year, issue,abstract, authors, link, image })
+    const { publicationtitle, journal, year, issue, abstract, authors, link, image } = req.body
+    const publication = new Publication({ publicationtitle, journal, year, issue, abstract, authors, link, image })
     publication.save()
         .then(res => {
             console.log(res, req.body)
         })
 })
 
-
+//sending publications to rest api
+app.get('/publications/fetch-publications', (req, res) => {
+    Publication.find({})
+        .then(items => {
+            res.json(items)
+        })
+})
 
 
 

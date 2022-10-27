@@ -28,7 +28,7 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/labmembers" element={<LabMembers />} />
                 <Route path="/labmembers/create-member" element={<CreateLabMembers />} />
-                <Route path="/labmembers/editlabmembers/:memberid" element={<EditLabMembers />} />
+                <Route path="/labmembers/editlabmember/:memberid" element={<EditLabMembers />} />
                 <Route path="/publications" element={<Publications />} />
                 <Route path="/publications/create-pub" element={<CreatePub/>} />
                 <Route path="/publications/editpub/:pubid" element={<EditPub/>} />

@@ -5,13 +5,13 @@ import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
 function Authors() {
-  const [authorList, setAuthorlist] = useState([]);
+  const [authorList, setAuthorList] = useState([]);
   const fetchAuthors = async () => {
     let res = await fetch('http://localhost:3001/authors/fetch-authors')
     let data = await res.json();
     if (res.ok) {
       console.log(data)
-      setAuthorlist(data);
+      setAuthorList(data);
     }
   };
   useEffect(() => {

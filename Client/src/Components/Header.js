@@ -14,7 +14,7 @@ function Header() {
               <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/labmembers">
-                Labmembers
+                Lab Members
               </NavDropdown.Item>
               <NavDropdown.Item href="/publications">Publications</NavDropdown.Item>
               <NavDropdown.Item href="/projects">

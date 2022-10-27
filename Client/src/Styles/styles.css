@@ -1,3 +1,4 @@
 .hidden-label{
    visibility: hidden;
+   display: block;
 }
