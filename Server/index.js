@@ -10,14 +10,14 @@ app.use(express.json());
 ///////////////////////////////////// DATABASE CONNECTION ////////////////////////////////////////
 
 //db connection (Atlass)
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
-    console.log('Connected to database')
-})
-
-//db connection (Compass)
-// mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
 //     console.log('Connected to database')
 // })
+
+//db connection (Compass)
+mongoose.connect('mongodb://localhost:27017/sglobe', { useNewUrlParser: true }, (err) => {
+    console.log('Connected to database')
+})
 
 
 
@@ -53,16 +53,16 @@ app.get('/authors/fetch-authors', (req, res) => {
 })
 
 // //delete author
-// app.delete("/authors/author/:_id", (req, res)=> {
-//     const {_id } = req.params //get id
-//     Author.findByIdAndDelete(_id)
-//         .then(result => {
-//             res.json({
-//                 message: 'deleted',
-//                 data: result
-//             })
-//         })
-// })
+app.delete("/authors/:_id", (req, res)=> {
+    const {_id } = req.params //get id
+    Author.findByIdAndDelete(_id)
+        .then(result => {
+            res.json({
+                message: 'deleted',
+                data: result
+            })
+        })
+})
 
 
 

@@ -151,6 +151,7 @@ function CreateLabMembers() {
                   <Form.Group className="mb-3">
                     <Form.Label>Interesses</Form.Label>
                     <Form.Control
+                    key={x.i}
                      placeholder={`Enter interest No.${i + 1} `}
                       name="interest"
                       onChange={e => handleChangeIntrst(e, i)}
