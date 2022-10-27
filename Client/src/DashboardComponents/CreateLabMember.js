@@ -77,7 +77,7 @@ function CreateLabMembers() {
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    console.log(input);
+    console.log("input",input);
     fetch("http://localhost:3001/labmembers/create-member", {
       method: "POST",
       headers: {
@@ -175,6 +175,7 @@ function CreateLabMembers() {
                       name="interest"
                       onChange={e => handleChangeIntrst(e, i)}
                       value={x.interest}
+                      key={x.i}
                     />
                   </Form.Group>
                 </Col>
@@ -182,7 +183,6 @@ function CreateLabMembers() {
                 <Col md={2} className="btn-box mb-3 ">
                   <Form.Label className="hidden-label ">
                   Button
-
                   </Form.Label>
                   {intrstArray.length !== 1 && (
                     <Button

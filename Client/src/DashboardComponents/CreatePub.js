@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {AiOutlineUserAdd} from 'react-icons/ai';
-import {AiOutlineUserDelete} from 'react-icons/ai';
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { AiOutlineUserDelete } from "react-icons/ai";
 
 function CreatePub() {
   // Handle chenge for Authors and rest inputs
-  const [authArray, setAuthArray] = useState([{ author: ""}]);
+  const [authArray, setAuthArray] = useState([{ author: "" }]);
   const [input, setInput] = useState({
     publicationtitle: "",
     journal: "",
@@ -32,7 +32,6 @@ function CreatePub() {
     const authors = [...authArray];
     authors[index][name] = value;
     setAuthArray(authors);
-    
   }
 
   // Handle Submit
@@ -40,8 +39,8 @@ function CreatePub() {
     event.preventDefault();
     input.authors = authArray;
     console.log(input);
-    fetch('http://localhost:3001/publications/create-pub', {
-      method: 'POST',
+    fetch("http://localhost:3001/publications/create-pub", {
+      method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -52,7 +51,7 @@ function CreatePub() {
     });
 
     // Clear input fields after submit
-    setAuthArray([{ author: ""}])
+    setAuthArray([{ author: "" }]);
     setInput({
       publicationtitle: "",
       journal: "",
@@ -61,10 +60,9 @@ function CreatePub() {
       abstract: "",
       link: "",
       image: "",
-    })
+    });
   }
 
-  
   // Requierd field alert
   function btnClick() {
     if (input.publicationtitle === undefined || input.publicationtitle === "") {
@@ -85,9 +83,8 @@ function CreatePub() {
 
   // handle click event of the Add button
   const handleAddClick = (i) => {
-    setAuthArray([...authArray, {author:""}]);
-    console.log(authArray);
-   ;
+    setAuthArray([...authArray, { author: "" }]);
+    console.log("autharray",authArray);
   };
 
   return (
@@ -135,34 +132,36 @@ function CreatePub() {
 
         {authArray.map((x, i) => {
           return (
-            <Row className="box ">
+            <Row className="box">
               <Col md={10} className="">
-                <Form.Group className="mb-3" >
+                <Form.Group className="mb-3">
                   <Form.Label>{`Author No.${i + 1}`}</Form.Label>
                   <Form.Control
                     placeholder={`Enter Author No.${i + 1} `}
                     required
-                    onChange={e=>handleChangeAuth(e,i)}
+                    onChange={(e) => handleChangeAuth(e, i)}
                     name="author"
                     value={x.author}
+                    
                   />
                 </Form.Group>
               </Col>
 
               <Col md={2} className="btn-box mb-3 ">
-                <Form.Label className="hidden-label ">
-                  Buttonhghhhghhhhh
-                </Form.Label>
+                <Form.Label className="hidden-label ">Button</Form.Label>
                 {authArray.length !== 1 && (
                   <Button
-                  variant="danger"
+                    variant="danger"
                     className="mx-2 mb-2"
                     onClick={() => handleRemoveClick(i)}
-                  >  <AiOutlineUserDelete/></Button>
+                  >
+                  <AiOutlineUserDelete />
+                  </Button>
                 )}
-
                 {authArray.length - 1 === i && (
-                  <Button className="mx-2 mb-2" onClick={handleAddClick}><AiOutlineUserAdd/></Button>
+                  <Button className="mx-2 mb-2" onClick={handleAddClick}>
+                    <AiOutlineUserAdd />
+                  </Button>
                 )}
               </Col>
             </Row>
@@ -272,7 +271,8 @@ function CreatePub() {
         <Form.Group className="mb-3">
           <Form.Label>Abstract</Form.Label>
           <Form.Control
-          as="textarea" rows={10} 
+            as="textarea"
+            rows={10}
             name="abstract"
             onChange={handleChange}
             value={input.abstract}
