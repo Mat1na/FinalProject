@@ -12,6 +12,11 @@ function Publications() {
     let data = await res.json();
     if (res.ok) {
       console.log(data)
+      data.sort(function(a,b){
+        var textA = a.publicationtitle.toUpperCase()
+        var textB = b.publicationtitle.toUpperCase()
+        return (textA < textB) ? -1:(textA>textB)?1:0
+      })
       setPublicationList(data);
     }
   };

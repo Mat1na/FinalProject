@@ -12,7 +12,12 @@ function Authors() {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
-      console.log(data);
+      console.log(data)
+      data.sort(function(a,b){
+        var textA = a.authorname.toUpperCase()
+        var textB = b.authorname.toUpperCase()
+        return (textA < textB) ? -1:(textA>textB)?1:0
+      })
       setAuthorList(data);
     }
   };

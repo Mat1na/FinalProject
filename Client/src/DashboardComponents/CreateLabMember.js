@@ -9,6 +9,7 @@ import { MdDeleteSweep } from 'react-icons/md';
 function CreateLabMembers() {
   // Handle change for interests and rest inputs
   const [intrstArray, setIntrstArray] = useState([{ interest: "" }]);
+  const [radiocheck,setRadiocheck]=useState(false)
   const [input, setInput] = useState({
     membername: "",
     image: "",
@@ -33,6 +34,19 @@ function CreateLabMembers() {
     });
   }
 
+  function handleChangeRadio(event) {
+    const { name, value } = event.target;
+
+    setInput((prevInput) => {
+      return {
+        ...prevInput,
+        [name]: value,
+      };
+    });
+    const radioState=true;
+    setRadiocheck(radioState);
+  }
+
   function handleChangeIntrst(event, index) {
     const { name, value } = event.target;
     const interests = [...intrstArray];
@@ -53,6 +67,9 @@ function CreateLabMembers() {
     }
     if (input.functionbasic === undefined || input.functionbasic === "") {
       alert("Function is required");
+    }
+    if (radiocheck===false) {
+      alert("Please select whether the lab member currently belongs to the lab");
     }
   }
 
@@ -86,6 +103,7 @@ function CreateLabMembers() {
       email: "",
       currentmember: "",
     });
+    event.target.reset()
   }
 
   ////Buttons for add/remove interest
@@ -266,7 +284,7 @@ function CreateLabMembers() {
               type="radio"
               label="Yes"
               value="Yes"
-              onClick={handleChange}
+              onClick={handleChangeRadio}
             />
             <Form.Check
               inline
@@ -274,7 +292,7 @@ function CreateLabMembers() {
               type="radio"
               label="No"
               value="No"
-              onClick={handleChange}
+              onClick={handleChangeRadio}
             />
           </Form.Group>
 

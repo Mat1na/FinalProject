@@ -15,6 +15,11 @@ function LabMembers() {
     let data = await res.json();
     if (res.ok) {
       console.log(data)
+      data.sort(function(a,b){
+        var textA = a.membername.toUpperCase()
+        var textB = b.membername.toUpperCase()
+        return (textA < textB) ? -1:(textA>textB)?1:0
+      })
       setLabmemberList(data);
     }
   };
