@@ -6,21 +6,21 @@ function EditAuthor() {
   const { authorid } = useParams();
   const [author, setAuthor] = useState({});
   const [input, setInput] = useState({
-    authorname: `${authorid}`
+    authorname: ""
   })
 
-
-  useEffect(() => {
-      const fetchAuthor = async () => {
+  const fetchAuthor = async () => {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
-      var filtereddata = data.find(item=>item._id===authorid)
+      var filtereddata = data.find(item=>item._id===authorid);
       setAuthor(filtereddata);
+      setInput({authorname:filtereddata.authorname})
     }
   };
+  useEffect(() => {
     fetchAuthor();
-  }, [authorid]); //I put fetchAuthor in the use useffect with a depandancy of authorid because without it causes a warning
+  }, [authorid]);
 
   function handleChange(event) {
     const { name, value } = event.target
@@ -48,6 +48,7 @@ function EditAuthor() {
         alert('Author has been updated in the system!');
       })
   }
+  
 
   // Required field alert
   function btnClick() {

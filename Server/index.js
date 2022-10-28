@@ -9,18 +9,18 @@ app.use(express.json());
 ///////////////////////////////////// DATABASE CONNECTION ////////////////////////////////////////
 
 //db connection (Atlas)
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
-    console.log('Connected to database')
-})
+// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true }, (err) => {
+//     console.log('Connected to database')
+// })
 
 // db connection (Compass)
-// mongoose.connect(
-//   "mongodb://localhost:27017/sglobe",
-//   { useNewUrlParser: true },
-//   (err) => {
-//     console.log("Connected to database");
-//   }
-// );
+mongoose.connect(
+  "mongodb://localhost:27017/sglobe",
+  { useNewUrlParser: true },
+  (err) => {
+    console.log("Connected to database");
+  }
+);
 
 ////////////////////////////////////// AUTHORS ////////////////////////////////////////
 
@@ -71,12 +71,6 @@ app.post('/authors/edit-author/:_id', (req, res) => {
             console.log('Updated user')
         }
     })
-    // .then(result => {
-    //     res.json({
-    //         message: 'updated',
-    //         data: result
-    //     })
-    // })
 })
 
 
@@ -141,7 +135,18 @@ app.delete("/projects/:_id", (req, res)=> {
         })
 })
 
-
+//update project
+app.post('/projects/edit-project/:_id', (req, res) => {
+  const {_id}=req.params
+  console.log(req.body.title)
+  Project.findByIdAndUpdate(_id, {title:req.body.title, image:req.body.image, content:req.body.content, summary:req.body.summary, researcher:req.body.researcher, imagetext:req.body.imagetext, imagetextlink:req.body.imagetextlink}, function(err,docs){
+      if (err){
+          console.log(err)
+      }else{
+          console.log('Updated project')
+      }
+  })
+})
 
 
 

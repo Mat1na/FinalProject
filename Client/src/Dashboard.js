@@ -8,7 +8,7 @@ function Dashboard() {
     <Container>
      <h1> Dashboard</h1>
      <section className='members-section'>
-     <Link to={"/labmembers"} className="btn btn-secondary mb-2" >Go to Labmebers List</Link>
+     <Link to={"/labmembers"} className="btn btn-secondary mb-2" >Go to Lab Members List</Link>
      </section>
      <section className='publications-section'>
      <Link to={"/publications"} className="btn btn-secondary mb-2" >Go to Publications List</Link>

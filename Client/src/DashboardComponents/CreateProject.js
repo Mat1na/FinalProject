@@ -48,7 +48,7 @@ function CreateProject() {
       imagetextlink: "",
     });
   }
-  // Requierd field alert
+  // Required field alert
   function btnClick() {
     if (input.title === undefined || input.title === "") {
       alert("Title is required");
@@ -72,7 +72,7 @@ function CreateProject() {
       <h1>Create new project</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label>Titel</Form.Label>
+          <Form.Label>Title</Form.Label>
           <Form.Control
             required
             name="title"
@@ -92,7 +92,7 @@ function CreateProject() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Inhoud</Form.Label>
+          <Form.Label>Content</Form.Label>
           <Form.Control
             as="textarea"
             rows={10}
@@ -104,7 +104,7 @@ function CreateProject() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Samenvatting</Form.Label>
+          <Form.Label>Summary</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
@@ -116,7 +116,7 @@ function CreateProject() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Onderzoeker</Form.Label>
+          <Form.Label>Researcher</Form.Label>
           <Form.Control
             required
             name="researcher"
