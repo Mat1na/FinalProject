@@ -21,7 +21,7 @@ function EditProject() {
     if (res.ok) {
       var filtereddata = data.find(item => item._id === projectid)
       setProject(filtereddata);
-      setInput({title:filtereddata.title, image:filtereddata.image, content:filtereddata.content, summary:filtereddata.summary, researcher:filtereddata.researcher, imagetext:filtereddata.imagetext, imagetextlink: filtereddata.imagetextlink})
+      setInput({ title: filtereddata.title, image: filtereddata.image, content: filtereddata.content, summary: filtereddata.summary, researcher: filtereddata.researcher, imagetext: filtereddata.imagetext, imagetextlink: filtereddata.imagetextlink })
     }
   };
   useEffect(() => {
@@ -50,9 +50,7 @@ function EditProject() {
       },
       body: JSON.stringify(input)
     })
-      .then(() => {
-        alert('Project has been updated in the system!');
-      })
+    alert('Project has been updated in the system!')
   }
 
   // Required field alert

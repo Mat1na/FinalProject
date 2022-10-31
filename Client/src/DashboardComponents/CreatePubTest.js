@@ -66,9 +66,8 @@ function CreatePub() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(input),
-    }).then(() => {
-      alert("Project has been added to the system!");
-    });
+    })
+    alert("Project has been added to the system!");
   }
 
   // Requierd field alert

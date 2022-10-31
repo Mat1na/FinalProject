@@ -49,7 +49,7 @@ function Publications() {
   const handleDeleteBtn = (_id) => {
     confirmAlert({
       title: "Confirm to delete",
-      message: "Are you sure to do this.",
+      message: "Are you sure you want to delete this?",
       buttons: [
         {
           label: "Yes",

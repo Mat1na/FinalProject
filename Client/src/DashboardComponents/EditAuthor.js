@@ -13,9 +13,9 @@ function EditAuthor() {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
-      var filtereddata = data.find(item=>item._id===authorid);
+      var filtereddata = data.find(item => item._id === authorid);
       setAuthor(filtereddata);
-      setInput({authorname:filtereddata.authorname})
+      setInput({ authorname: filtereddata.authorname })
     }
   };
   useEffect(() => {
@@ -44,11 +44,9 @@ function EditAuthor() {
       },
       body: JSON.stringify(input)
     })
-      .then(() => {
-        alert('Author has been updated in the system!');
-      })
+    alert('Author has been updated in the system!')
   }
-  
+
 
   // Required field alert
   function btnClick() {
@@ -65,7 +63,7 @@ function EditAuthor() {
       {Object.keys(author).length > 0 && <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="authorname">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" defaultValue={author.authorname} required name="authorname" onChange={handleChange}  />
+          <Form.Control type="text" defaultValue={author.authorname} required name="authorname" onChange={handleChange} />
         </Form.Group>
 
         <Button variant="primary" type="submit" onClick={btnClick}>

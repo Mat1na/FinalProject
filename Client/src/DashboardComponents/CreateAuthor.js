@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
@@ -29,40 +29,39 @@ function CreateAuthor() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(input)
+    });
+    
+    alert('Author has been added to the system!')
+
+    setInput({
+      authorname: ''
     })
-      .then(() => {
-        alert('Author has been added to the system!');
-      })
-
-     setInput({
-        authorname: ''
-      })
   }
 
-    // Required field alert
-function btnClick(){
-  if (input.authorname===undefined || input.authorname==="" ){
-  alert("Name is required")
-  }
+  // Required field alert
+  function btnClick() {
+    if (input.authorname === undefined || input.authorname === "") {
+      alert("Name is required")
+    }
 
   }
 
   return (
     <Container>
-    <h1>Create new author</h1>
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" >
-        <Form.Label>Name</Form.Label>
-        <Form.Control required placeholder="Van Meerbeek, K." name="authorname" onChange={handleChange}  value={input.authorname}/>
-      </Form.Group>
-      <Button variant="primary" type="submit" onClick={btnClick}>
-        Submit
-      </Button>
-      <Link to={"/authors"} className="btn btn-danger mx-2">
-        Cancel
-      </Link>
-    </Form>
-  </Container>
+      <h1>Create new author</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" >
+          <Form.Label>Name</Form.Label>
+          <Form.Control required placeholder="Van Meerbeek, K." name="authorname" onChange={handleChange} value={input.authorname} />
+        </Form.Group>
+        <Button variant="primary" type="submit" onClick={btnClick}>
+          Submit
+        </Button>
+        <Link to={"/authors"} className="btn btn-danger mx-2">
+          Cancel
+        </Link>
+      </Form>
+    </Container>
   )
 }
 

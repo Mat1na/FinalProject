@@ -84,9 +84,9 @@ function CreateLabMembers() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(input),
-    }).then(() => {
-      alert("Lab member has been added to the system!");
-    });
+    })
+    alert("Lab member has been added to the system!");
+    ;
 
     // Clear input fields after submit
     setIntrstArray([{ interest: "" }]);
@@ -197,36 +197,6 @@ function CreateLabMembers() {
               </Row>
             );
           })}
-
-          {/* <Form.Control
-              name="interest2"
-              onChange={handleChange}
-              value={input.interest2}
-              className="mt-2"
-            />
-
-            <Form.Control
-              name="interest3"
-              onChange={handleChange}
-              value={input.interest3}
-              className="mt-2"
-            />
-
-            <Form.Control
-              name="interest4"
-              onChange={handleChange}
-              value={input.interest4}
-              className="mt-2"
-            />
-
-            <Form.Control
-              name="interest5"
-              onChange={handleChange}
-              value={input.interest5}
-              className="mt-2"
-            />
-          </Form.Group> */}
-
           <Form.Group className="mb-3">
             <Form.Label>Link Google Scholar</Form.Label>
             <Form.Control

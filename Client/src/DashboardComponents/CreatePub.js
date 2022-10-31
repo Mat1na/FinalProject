@@ -46,9 +46,8 @@ function CreatePub() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(input),
-    }).then(() => {
-      alert("Project has been added to the system!");
-    });
+    })
+    alert("Project has been added to the system!");
 
     // Clear input fields after submit
     setAuthArray([{ author: "" }]);
@@ -84,7 +83,7 @@ function CreatePub() {
   // handle click event of the Add button
   const handleAddClick = (i) => {
     setAuthArray([...authArray, { author: "" }]);
-    console.log("authArray:",authArray);
+    console.log("authArray:", authArray);
   };
 
   return (
@@ -142,7 +141,7 @@ function CreatePub() {
                     onChange={(e) => handleChangeAuth(e, i)}
                     name="author"
                     value={x.author}
-                    
+
                   />
                 </Form.Group>
               </Col>
@@ -155,7 +154,7 @@ function CreatePub() {
                     className="mx-2 mb-2"
                     onClick={() => handleRemoveClick(i)}
                   >
-                  <AiOutlineUserDelete />
+                    <AiOutlineUserDelete />
                   </Button>
                 )}
                 {authArray.length - 1 === i && (

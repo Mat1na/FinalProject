@@ -49,28 +49,28 @@ app.get("/authors/fetch-authors", (req, res) => {
 });
 
 //delete author
-app.delete("/authors/:_id", (req, res)=> {
-    const {_id } = req.params //get id
-    Author.findByIdAndDelete(_id)
-        .then(result => {
-            res.json({
-                message: 'deleted',
-                data: result
-            })
-        })
+app.delete("/authors/:_id", (req, res) => {
+  const { _id } = req.params //get id
+  Author.findByIdAndDelete(_id)
+    .then(result => {
+      res.json({
+        message: 'deleted',
+        data: result
+      })
+    })
 })
 
 //update author
 app.post('/authors/edit-author/:_id', (req, res) => {
-    const {_id}=req.params
-    console.log(req.body.authorname)
-    Author.findByIdAndUpdate(_id, {authorname:req.body.authorname}, function(err,docs){
-        if (err){
-            console.log(err)
-        }else{
-            console.log('Updated user')
-        }
-    })
+  const { _id } = req.params
+  console.log(req.body.authorname)
+  Author.findByIdAndUpdate(_id, { authorname: req.body.authorname }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('Updated user')
+    }
+  })
 })
 
 
@@ -124,27 +124,27 @@ app.get("/projects/fetch-projects", (req, res) => {
 });
 
 //delete project
-app.delete("/projects/:_id", (req, res)=> {
-    const {_id } = req.params //get id
-    Project.findByIdAndDelete(_id)
-        .then(result => {
-            res.json({
-                message: 'deleted',
-                data: result
-            })
-        })
+app.delete("/projects/:_id", (req, res) => {
+  const { _id } = req.params //get id
+  Project.findByIdAndDelete(_id)
+    .then(result => {
+      res.json({
+        message: 'deleted',
+        data: result
+      })
+    })
 })
 
 //update project
 app.post('/projects/edit-project/:_id', (req, res) => {
-  const {_id}=req.params
+  const { _id } = req.params
   console.log(req.body.title)
-  Project.findByIdAndUpdate(_id, {title:req.body.title, image:req.body.image, content:req.body.content, summary:req.body.summary, researcher:req.body.researcher, imagetext:req.body.imagetext, imagetextlink:req.body.imagetextlink}, function(err,docs){
-      if (err){
-          console.log(err)
-      }else{
-          console.log('Updated project')
-      }
+  Project.findByIdAndUpdate(_id, { title: req.body.title, image: req.body.image, content: req.body.content, summary: req.body.summary, researcher: req.body.researcher, imagetext: req.body.imagetext, imagetextlink: req.body.imagetextlink }, function (err, docs) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('Updated project')
+    }
   })
 })
 
@@ -212,15 +212,15 @@ app.get("/labmembers/fetch-labmembers", (req, res) => {
 });
 
 //delete lab member
-app.delete("/labmembers/:_id", (req, res)=> {
-    const {_id } = req.params //get id
-    Profile.findByIdAndDelete(_id)
-        .then(result => {
-            res.json({
-                message: 'deleted',
-                data: result
-            })
-        })
+app.delete("/labmembers/:_id", (req, res) => {
+  const { _id } = req.params //get id
+  Profile.findByIdAndDelete(_id)
+    .then(result => {
+      res.json({
+        message: 'deleted',
+        data: result
+      })
+    })
 })
 
 
@@ -277,15 +277,15 @@ app.get("/publications/fetch-publications", (req, res) => {
 });
 
 //delete publication
-app.delete("/publications/:_id", (req, res)=> {
-    const {_id } = req.params //get id
-    Publication.findByIdAndDelete(_id)
-        .then(result => {
-            res.json({
-                message: 'deleted',
-                data: result
-            })
-        })
+app.delete("/publications/:_id", (req, res) => {
+  const { _id } = req.params //get id
+  Publication.findByIdAndDelete(_id)
+    .then(result => {
+      res.json({
+        message: 'deleted',
+        data: result
+      })
+    })
 })
 
 
