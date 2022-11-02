@@ -69,10 +69,13 @@ function LabMembers() {
         <div>
           <Link
             to={"/labmembers/create-member"}
-            className="btn btn-secondary mb-2"
+            className="btn btn-secondary m-2"
           >
-            <BsFillPersonPlusFill></BsFillPersonPlusFill> Add new member
+           <BsFillPersonPlusFill/> Add new member
           </Link>
+          <Link to={"/dashboard"} className="btn btn-danger m-2">
+          Go to Dashboard
+        </Link>
         </div>
         <Table striped bordered hover>
           <thead>
@@ -85,16 +88,16 @@ function LabMembers() {
           </thead>
           
             {labmemberList.length > 0 &&
-              labmemberList.map((labmember, index) => {
+              labmemberList.map((member, index) => {
                 return (
-                  <tbody key={labmemberList.index} id={labmemberList._id}>
+                  <tbody key={member._id} id={member._id}>
                   <tr>
                     <td>{index + 1}</td>
                     <td>{labmemberList[index].membername}</td>
                     <td>{labmemberList[index].functionbasic}</td>
                     <td>
                       <Link
-                        to={"/labmembers/edit-labmember/:memberid"}
+                        to={`/labmembers/edit-labmember/${member._id}`}
                         className="btn btn-primary mx-2"
                       >
                         <AiFillEdit />
@@ -102,7 +105,7 @@ function LabMembers() {
                       <Button
                         variant="danger"
                         className="mx-1"
-                        onClick={() => handleDeleteBtn(labmember._id)}
+                        onClick={() => handleDeleteBtn(member._id)}
                       >
                         <RiDeleteBin6Fill />
                       </Button>

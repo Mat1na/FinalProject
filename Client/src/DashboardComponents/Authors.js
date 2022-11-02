@@ -3,6 +3,7 @@ import { Button, Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { BsFillPersonPlusFill } from "react-icons/bs";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
@@ -64,10 +65,11 @@ function Authors() {
   return (
     <Container>
       <h1>Authors</h1>
-      <Link to={"/authors/create-author"} className="btn btn-secondary mb-2">
-        {" "}
-        Add new Author
-      </Link>
+      <Link to={"/authors/create-author"} className="btn btn-secondary m-2">
+      <BsFillPersonPlusFill/> Add new Author</Link>
+      <Link to={"/dashboard"} className="btn btn-danger m-2">
+          Go to Dashboard
+        </Link>
       <div>
         <Table striped bordered hover>
           <thead>

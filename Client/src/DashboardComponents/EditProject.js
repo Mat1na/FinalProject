@@ -76,6 +76,9 @@ function EditProject() {
   return (
     <Container>
       <h1>Edit Project</h1>
+      <Link to={"/projects"} className="btn btn-danger mx-2">
+          Go back
+        </Link>
       {Object.keys(project).length > 0 && <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="title">
           <Form.Label>Title</Form.Label>
@@ -116,7 +119,7 @@ function EditProject() {
           Update
         </Button>
         <Link to={"/projects"} className="btn btn-danger mx-2">
-          Cancel
+          Go back
         </Link>
       </Form>}
     </Container>

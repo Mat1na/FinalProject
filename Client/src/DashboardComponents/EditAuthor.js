@@ -60,6 +60,9 @@ function EditAuthor() {
   return (
     <Container>
       <h1>Edit Author</h1>
+      <Link to={"/authors"} className="btn btn-danger mx-2">
+          Go back
+        </Link>
       {Object.keys(author).length > 0 && <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="authorname">
           <Form.Label>Name</Form.Label>
@@ -70,7 +73,7 @@ function EditAuthor() {
           Update
         </Button>
         <Link to={"/authors"} className="btn btn-danger mx-2">
-          Cancel
+          Go back
         </Link>
       </Form>}
     </Container>

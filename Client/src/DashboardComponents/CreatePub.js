@@ -89,6 +89,9 @@ function CreatePub() {
   return (
     <Container>
       <h1>Create new publication</h1>
+      <Link to={"/publications"} className="btn btn-danger mx-2">
+          Go back
+        </Link>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
@@ -301,7 +304,7 @@ function CreatePub() {
           Submit
         </Button>
         <Link to={"/publications"} className="btn btn-danger mx-2">
-          Cancel
+          Go back
         </Link>
       </Form>
     </Container>

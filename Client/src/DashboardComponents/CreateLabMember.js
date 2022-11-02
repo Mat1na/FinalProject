@@ -122,6 +122,9 @@ function CreateLabMembers() {
     <>
       <Container>
         <h1>Create new lab member</h1>
+        <Link to={"/labmembers"} className="btn btn-danger mx-2">
+            Go back
+          </Link>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
@@ -268,7 +271,7 @@ function CreateLabMembers() {
             Submit
           </Button>
           <Link to={"/labmembers"} className="btn btn-danger mx-2">
-            Cancel
+            Go back
           </Link>
         </Form>
       </Container>

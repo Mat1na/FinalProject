@@ -223,6 +223,34 @@ app.delete("/labmembers/:_id", (req, res) => {
     })
 })
 
+//update profile
+app.put("/labmembers/edit-labmember/:_id", (req, res) => {
+  const { _id } = req.params;
+  console.log(req.body.membername);
+  Profile.findByIdAndUpdate(
+    _id, {
+      membername: req.body.membername,
+      image: req.body.image,
+      functionbasic: req.body.functionbasic,
+      functionextra: req.body.functionextra,
+      interests: req.body.interests,
+      googlescholar: req.body.googlescholar,
+      researchgate: req.body.researchgate,
+      orcid: req.body.orcid,
+      twitter: req.body.twitter,
+      email: req.body.email,
+      currentmember: req.body.currentmember,
+    },
+    function (err, docs) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Updated profile");
+      }
+    }
+  );
+});
+
 
 ////////////////////////////////////// PUBLICATIONS ////////////////////////////////////////
 
@@ -288,6 +316,32 @@ app.delete("/publications/:_id", (req, res) => {
     })
 })
 
+//update pub
+
+app.put("/projects/edit-pub/:_id", (req, res) => {
+  const { _id } = req.params;
+  console.log(req.body.title);
+  Publication.findByIdAndUpdate(
+    _id,
+    {
+      publicationtitle: req.body.publicationtitle,
+      journal: req.body.journal,
+      year: req.body.year,
+      issue: req.body.issue,
+      abstract: req.body.abstract,
+      authors: req.body.authors,
+      link: req.body.link,
+      image: req.body.image,
+    },
+    function (err, docs) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Updated project");
+      }
+    }
+  );
+});
 
 ////////////////////////////////////// Server port ////////////////////////////////////////
 

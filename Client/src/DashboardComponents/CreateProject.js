@@ -69,6 +69,9 @@ function CreateProject() {
   return (
     <Container>
       <h1>Create new project</h1>
+      <Link to={"/projects"} className="btn btn-danger mx-2">
+          Go back
+        </Link>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
@@ -146,7 +149,7 @@ function CreateProject() {
           Submit
         </Button>
         <Link to={"/projects"} className="btn btn-danger mx-2">
-          Cancel
+          Go back
         </Link>
       </Form>
     </Container>

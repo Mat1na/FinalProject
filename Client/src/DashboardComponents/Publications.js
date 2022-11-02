@@ -70,10 +70,13 @@ function Publications() {
         <div>
           <Link
             to={"/publications/create-pub"}
-            className="btn btn-secondary mb-2"
+            className="btn btn-secondary m-2"
           >
-            <BsFillPersonPlusFill></BsFillPersonPlusFill> Add new publication
+           <BsFillPersonPlusFill/> Add new publication
           </Link>
+          <Link to={"/dashboard"} className="btn btn-danger m-2">
+          Go to Dashboard
+        </Link>
         </div>
         <Table striped bordered hover>
           <thead>
@@ -94,7 +97,7 @@ function Publications() {
                     <td>{publicationList[index].journal}</td>
                     <td>
                       <Link
-                        to={"/publications/edit-pub/:pubid"}
+                        to={`/publications/edit-pub/${publication._id}`}
                         className="btn btn-primary mx-2"
                       >
                         <AiFillEdit />
