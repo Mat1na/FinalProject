@@ -78,7 +78,7 @@ function Publications() {
           Go to Dashboard
         </Link>
         </div>
-        <Table striped bordered hover>
+        <Table striped bordered hover className="m-2">
           <thead>
             <tr>
               <th>#</th>
@@ -98,13 +98,13 @@ function Publications() {
                     <td>
                       <Link
                         to={`/publications/edit-pub/${publication._id}`}
-                        className="btn btn-primary mx-2"
+                        className="btn btn-primary m-2"
                       >
                         <AiFillEdit />
                       </Link>
                       <Button
                         variant="danger"
-                        className="mx-1"
+                        className="m-2"
                         onClick={() => handleDeleteBtn(publication._id)}
                       >
                         <RiDeleteBin6Fill />

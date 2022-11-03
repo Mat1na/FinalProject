@@ -66,7 +66,7 @@ function LabMembers() {
     <>
       <Container>
         <h1>Lab Members List </h1>
-        <div>
+      
           <Link
             to={"/labmembers/create-member"}
             className="btn btn-secondary m-2"
@@ -76,8 +76,8 @@ function LabMembers() {
           <Link to={"/dashboard"} className="btn btn-danger m-2">
           Go to Dashboard
         </Link>
-        </div>
-        <Table striped bordered hover>
+       
+        <Table striped bordered hover className="m-2 table">
           <thead>
             <tr>
               <th>#</th>
@@ -90,7 +90,7 @@ function LabMembers() {
             {labmemberList.length > 0 &&
               labmemberList.map((member, index) => {
                 return (
-                  <tbody key={member._id} id={member._id}>
+                  <tbody key={member._id} id={member._id} >
                   <tr>
                     <td>{index + 1}</td>
                     <td>{labmemberList[index].membername}</td>
@@ -98,13 +98,13 @@ function LabMembers() {
                     <td>
                       <Link
                         to={`/labmembers/edit-labmember/${member._id}`}
-                        className="btn btn-primary mx-2"
+                        className="btn btn-primary m-2"
                       >
                         <AiFillEdit />
                       </Link>
                       <Button
                         variant="danger"
-                        className="mx-1"
+                        className="m-2"
                         onClick={() => handleDeleteBtn(member._id)}
                       >
                         <RiDeleteBin6Fill />

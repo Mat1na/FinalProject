@@ -1,4 +1,12 @@
 .hidden-label{
    visibility: hidden;
    display: block;
+
 }
+
+td {
+   text-align: left;
+   vertical-align: middle;
+ }
+
+ 
