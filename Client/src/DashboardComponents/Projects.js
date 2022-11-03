@@ -64,14 +64,14 @@ function Projects() {
     <>
       <Container>
         <h1>Projects</h1>
-        <div>
+       
           <Link to={"/projects/create-project"} className="btn btn-secondary m-2" > Add new project</Link>
           <Link to={"/dashboard"} className="btn btn-danger m-2">
           Go to Dashboard
         </Link>
-        </div>
+      
      
-        <Table striped bordered hover>
+        <Table striped bordered hover className="m-2">
           <thead>
             <tr>
               <th>#</th>
@@ -89,8 +89,8 @@ function Projects() {
                   <td>
                   {projectList[index].summary}</td>
                 <td>
-                  <Link to={`/projects/edit-project/${project._id}`} className="btn btn-primary mx-2"><AiFillEdit /></Link>
-                  <Button variant="danger" className='mx-1' onClick={() => handleDeleteBtn(project._id)}><RiDeleteBin6Fill /></Button>
+                  <Link to={`/projects/edit-project/${project._id}`} className="btn btn-primary m-2"><AiFillEdit /></Link>
+                  <Button variant="danger" className='m-2' onClick={() => handleDeleteBtn(project._id)}><RiDeleteBin6Fill /></Button>
                 </td>
               </tr>
             })}

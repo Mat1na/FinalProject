@@ -6,9 +6,9 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 
 function EditLabMember() {
   // Handle change for interests and rest inputs
-  const [radiocheck, setRadiocheck] = useState(false);
+  // const [radiocheck, setRadiocheck] = useState(false);
   const { memberid } = useParams();
-  const myRefs=useRef([]);
+  const myRefs = useRef([]);
   const [labmember, setLabmember] = useState({});
   const [intrstArray, setIntrstArray] = useState([{ interest: "" }]);
   const [input, setInput] = useState({
@@ -25,28 +25,39 @@ function EditLabMember() {
     currentmember: "",
   });
 
-
   useEffect(() => {
     const fetchLabmembers = async () => {
-      let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
+      let res = await fetch(
+        "http://localhost:3001/labmembers/fetch-labmembers"
+      );
       let data = await res.json();
       console.log(data);
       if (res.ok) {
-        var filtereddata = data.find(item => item._id === memberid)
-        console.log('filteredData', filtereddata)
+        var filtereddata = data.find((item) => item._id === memberid);
+        console.log("filteredData", filtereddata);
         setLabmember(filtereddata);
-       
-        setInput({ membername: filtereddata.membername,image:filtereddata.image, functionbasic:filtereddata.functionbasic, functionextra: filtereddata.functionextra, interests: filtereddata.interests, googlescholar: filtereddata.googlescholar, researchgate: filtereddata.researchgate, orcid: filtereddata.orcid, twitter: filtereddata.twitter,email: filtereddata.email,currentmember: filtereddata.currentmember})
-  
-        let Display = filtereddata.interests
-        setIntrstArray(Display)
-    
-  
+
+        setInput({
+          membername: filtereddata.membername,
+          image: filtereddata.image,
+          functionbasic: filtereddata.functionbasic,
+          functionextra: filtereddata.functionextra,
+          interests: filtereddata.interests,
+          googlescholar: filtereddata.googlescholar,
+          researchgate: filtereddata.researchgate,
+          orcid: filtereddata.orcid,
+          twitter: filtereddata.twitter,
+          email: filtereddata.email,
+          currentmember: filtereddata.currentmember,
+        });
+
+        let Display = filtereddata.interests;
+        setIntrstArray(Display);
+        console.log("currentmember", input.currentmember);
       }
     };
-  
 
-    fetchLabmembers()
+    fetchLabmembers();
   }, [memberid]);
 
   function handleChange(event) {
@@ -70,7 +81,14 @@ function EditLabMember() {
       };
     });
     const radioState = true;
-    setRadiocheck(radioState);
+    // setRadiocheck(radioState);
+  }
+
+  if (labmember.currentmember === "Yes") {
+    document.getElementById("radioYes").defaultChecked = true;
+  }
+  if (labmember.currentmember === "No") {
+    document.getElementById("radioNo").defaultChecked = true;
   }
 
   function handleChangeIntrst(event, index) {
@@ -79,8 +97,6 @@ function EditLabMember() {
     interests[index][name] = value;
     setIntrstArray(interests);
   }
-
-  //function to see whether the radio buttons are checked
 
   // Required field alert
   function btnClick() {
@@ -93,11 +109,11 @@ function EditLabMember() {
     if (input.functionbasic === undefined || input.functionbasic === "") {
       alert("Function is required");
     }
-    if (radiocheck === false) {
-      alert(
-        "Please select whether the lab member currently belongs to the lab"
-      );
-    }
+    // if (radiocheck === false) {
+    //   alert(
+    //     "Please select whether the lab member currently belongs to the lab"
+    //   );
+    // }
   }
 
   // Handle Submit
@@ -112,11 +128,8 @@ function EditLabMember() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(input),
-    })
-      alert("Lab member has been updated to the system!");
-    ;
-
-
+    });
+    alert("Lab member has been updated to the system!");
   }
 
   ////Buttons for add/remove interest
@@ -135,10 +148,10 @@ function EditLabMember() {
   return (
     <>
       <Container>
-        <h1>Create new lab member</h1>
-        <Link to={"/labmembers"} className="btn btn-danger mx-2">
-            Go back
-          </Link>
+        <h1>Edit lab member</h1>
+        <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
+          Go back
+        </Link>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
@@ -179,42 +192,46 @@ function EditLabMember() {
             />
           </Form.Group>
 
-          {intrstArray.map((x, i) => {
-            return (
-              <Row className="box " key={x._id}>
-                <Col md={10} className="">
-                  <Form.Group className="mb-3">
-                    <Form.Label>Interests</Form.Label>
-                    <Form.Control
-                      placeholder={`Enter interest No.${i + 1} `}
-                      name="interest"
-                      onChange={(e) => handleChangeIntrst(e, i)}
-                      defaultValue={x.interest}
-                      ref={el => (myRefs.current[i] = el)}
-                      required
-                    />
-                  </Form.Group>
-                </Col>
-                <Col md={2} className="btn-box mb-3 ">
-                  <Form.Label className="hidden-label ">Button</Form.Label>
-                  {intrstArray.length !== 1 && (
-                    <Button
-                      variant="danger"
-                      className="mx-2 mb-2"
-                      onClick={() => handleRemoveClick(i)}
-                    >
-                      <RiDeleteBin6Fill />
-                    </Button>
-                  )}
-                  {intrstArray.length - 1 === i && (
-                    <Button className="mx-2 mb-2" onClick={handleAddClick}>
-                      <CgPlayListAdd />
-                    </Button>
-                  )}
-                </Col>
-              </Row>
-            );
-          })}
+ 
+         
+          
+            {intrstArray.map((x, i) => {
+              return (
+                <Row className="box" key={x._id}>
+                  <Col md={10} className="">
+                    <Form.Group className="mb-3">
+                    <Form.Label>{`Interest No.${i + 1} `}</Form.Label>
+                      <Form.Control
+                        placeholder={`Enter interest No.${i + 1} `}
+                        name="interest"
+                        onChange={(e) => handleChangeIntrst(e, i)}
+                        defaultValue={x.interest}
+                        ref={(el) => (myRefs.current[i] = el)}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={2} className="btn-box">
+                    <Form.Label className="hidden-label ">Button</Form.Label>
+                    {intrstArray.length !== 1 && (
+                      <Button
+                        variant="danger"
+                        className="mx-2 mb-2"
+                        onClick={() => handleRemoveClick(i)}
+                      >
+                        <RiDeleteBin6Fill />
+                      </Button>
+                    )}
+                    {intrstArray.length - 1 === i && (
+                      <Button className="mx-2 mb-2" onClick={handleAddClick}>
+                        <CgPlayListAdd />
+                      </Button>
+                    )}
+                  </Col>
+                </Row>
+              );
+            })}
+        
 
           <Form.Group className="mb-3">
             <Form.Label>Link Google Scholar</Form.Label>
@@ -262,15 +279,15 @@ function EditLabMember() {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
+          <Form.Group className="mb-3 radios">
             <Form.Label className="me-2">Current member?</Form.Label>
             <Form.Check
-              required
               inline
               name="currentmember"
               type="radio"
               label="Yes"
               value="Yes"
+              id="radioYes"
               onClick={handleChangeRadio}
             />
             <Form.Check
@@ -279,6 +296,7 @@ function EditLabMember() {
               type="radio"
               label="No"
               value="No"
+              id="radioNo"
               onClick={handleChangeRadio}
             />
           </Form.Group>

@@ -60,7 +60,7 @@ function EditAuthor() {
   return (
     <Container>
       <h1>Edit Author</h1>
-      <Link to={"/authors"} className="btn btn-danger mx-2">
+      <Link to={"/authors"} className="btn btn-danger mr-2 mb-2">
           Go back
         </Link>
       {Object.keys(author).length > 0 && <Form onSubmit={handleSubmit}>

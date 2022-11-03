@@ -76,7 +76,7 @@ function EditProject() {
   return (
     <Container>
       <h1>Edit Project</h1>
-      <Link to={"/projects"} className="btn btn-danger mx-2">
+      <Link to={"/projects"} className="btn btn-danger mr-2 mb-2">
           Go back
         </Link>
       {Object.keys(project).length > 0 && <Form onSubmit={handleSubmit}>

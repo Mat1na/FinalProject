@@ -140,9 +140,10 @@ function EditPubList() {
   return (
 
     <Container>
-      <h1>Edit publication<Link to={"/publications"} className="btn btn-danger mx-2">
+      <h1>Edit publication</h1>
+      <Link to={"/publications"} className="btn btn-danger mr-2 mb-2">
          Go back
-        </Link></h1>
+        </Link>
      { console.log("display",authArray)}  
      {Object.keys(pub).length > 0 && <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
