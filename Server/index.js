@@ -379,6 +379,15 @@ app.post('/login', (req, res) => {
                       expiresIn: '600s'
                   }, (err, token) => {
                     console.log(token)
+                  //   res.json({
+                  //     msg: 'ok',
+                  //     token: token
+                  // })
+
+                  // app.get('/login', (req,res)=>res.send(token))
+
+                  // return { 'x-access-token': token }
+
                     //here, we should be able to send the token to the frontend, so that we can use it in a validation. You can't store it in the localstorage from the backend
                   })
               } else {

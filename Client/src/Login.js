@@ -58,7 +58,9 @@ export const Login = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(input),
-        })
+        }).then(
+            response => {console.log(response)}
+        )
     }
 
     function btnClick() {
