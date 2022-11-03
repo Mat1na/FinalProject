@@ -24,6 +24,11 @@ function Header() {
                 Authors
               </NavDropdown.Item>
             </NavDropdown>
+            {
+              sessionStorage.getItem("user") === null && (
+                <Nav.Link href="/login">Login</Nav.Link>
+              )
+            }
         </Nav>
       </Navbar.Collapse>
     </Container>

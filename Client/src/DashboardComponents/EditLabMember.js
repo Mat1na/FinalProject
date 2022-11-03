@@ -113,7 +113,7 @@ function EditLabMember() {
       },
       body: JSON.stringify(input),
     })
-      alert("Lab member has been updated to the system!");
+      alert("Lab member has been updated in the system!");
     ;
 
 

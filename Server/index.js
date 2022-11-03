@@ -2,9 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+const jwt = require('jsonwebtoken')
 require("dotenv").config();
 app.use(cors());
 app.use(express.json());
+const bcrypt = require('bcryptjs')
 
 ///////////////////////////////////// DATABASE CONNECTION ////////////////////////////////////////
 
@@ -150,7 +152,7 @@ app.post('/projects/edit-project/:_id', (req, res) => {
 
 
 
-////////////////////////////////////// LABMEMBERS ////////////////////////////////////////
+////////////////////////////////////// LAB MEMBERS ////////////////////////////////////////
 
 //lab member scheme
 const profileSchema = mongoose.Schema({
@@ -316,7 +318,7 @@ app.delete("/publications/:_id", (req, res) => {
     })
 })
 
-//update pub
+//update publication
 
 app.put("/projects/edit-pub/:_id", (req, res) => {
   const { _id } = req.params;
@@ -342,6 +344,53 @@ app.put("/projects/edit-pub/:_id", (req, res) => {
     }
   );
 });
+
+////////////////////////////////////// USERS - LOGIN ////////////////////////////////////////
+
+//user scheme
+const userSchema = mongoose.Schema({
+  username: String,
+  password: String
+});
+
+//user model
+const User = mongoose.model("Users", userSchema);
+
+//post request users
+app.post("/users/create-user", (req, res) => {
+  console.log(req.body);
+  const password = bcrypt.hashSync(req.body.password,10)
+  const user = new User({ username: req.body.username, password: password });
+  user.save().then((res) => {
+    console.log(res, req.body);
+  });
+});
+
+app.post('/login', (req, res) => {
+  const { user, password } = req.body
+  console.log(req.body)
+  User.find({ username: user })
+      .then(result => {
+          console.log(result)
+          if (result.length > 0) {
+              if (bcrypt.compareSync(password,result[0].password)) { //vergelijken of het paswoord uit de database (gehasht) gelijk is met wat de user ingeeft
+                  jwt.sign({ user }, process.env.KEY, {
+                      algorithm: 'HS256',
+                      expiresIn: '600s'
+                  }, (err, token) => {
+                    console.log(token)
+                    localStorage.setItem('key', token)
+                  })
+              } else {
+                alert('Wrong username and/or password') //we geven niet mee wat er precies fout is, want anders kunnen ze weten of een bepaalde username bestaat en dan bruteforcen
+              }
+          } else {
+            alert('Wrong username and/or password')
+          }
+      })
+
+})
+
 
 ////////////////////////////////////// Server port ////////////////////////////////////////
 

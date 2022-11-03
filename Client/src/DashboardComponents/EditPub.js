@@ -83,7 +83,7 @@ function EditPubList() {
       },
       body: JSON.stringify(input)
     })
-      alert("Pub has been updated to the system!");
+      alert("Publication has been updated in the system!");
     
  
   }
@@ -120,7 +120,7 @@ function EditPubList() {
     setAuthArray([...authArray, { author: "" }]);
     console.log("authArray:",authArray);
         console.log("authArray:", authArray);
-    console.log("I Added a field");
+    console.log("I added a field");
 
   };
 

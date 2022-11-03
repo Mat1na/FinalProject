@@ -1,12 +1,22 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useAuth } from './Components/auth'
 
 
 function Dashboard() {
+  const auth=useAuth()
+  const userString=sessionStorage.getItem('user')
+
+  const handleLogout = () => {
+    auth.logout()
+    
+  }
   return (
     <Container>
-     <h1> Dashboard</h1>
+     <h1>Dashboard</h1>
+     <h3>Welcome, {userString}</h3>
+     <Button variant='danger' onClick={handleLogout} className="mb-2">Logout</Button>
      <section className='members-section'>
      <Link to={"/labmembers"} className="btn btn-secondary mb-2" >Go to Lab Members List</Link>
      </section>

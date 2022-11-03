@@ -5,7 +5,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { AiOutlineUserDelete } from "react-icons/ai";
 
 function CreatePub() {
-  // Handle chenge for Authors and rest inputs
+  // Handle change for Authors and rest inputs
   const [authArray, setAuthArray] = useState([{ author: "" }]);
   const [input, setInput] = useState({
     publicationtitle: "",
