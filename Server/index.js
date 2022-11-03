@@ -373,19 +373,19 @@ app.post('/login', (req, res) => {
       .then(result => {
           console.log(result)
           if (result.length > 0) {
-              if (bcrypt.compareSync(password,result[0].password)) { //vergelijken of het paswoord uit de database (gehasht) gelijk is met wat de user ingeeft
+              if (bcrypt.compareSync(password,result[0].password)) {
                   jwt.sign({ user }, process.env.KEY, {
                       algorithm: 'HS256',
                       expiresIn: '600s'
                   }, (err, token) => {
                     console.log(token)
-                    localStorage.setItem('key', token)
+                    //here, we should be able to send the token to the frontend, so that we can use it in a validation. You can't store it in the localstorage from the backend
                   })
               } else {
-                alert('Wrong username and/or password') //we geven niet mee wat er precies fout is, want anders kunnen ze weten of een bepaalde username bestaat en dan bruteforcen
+                console.log('Wrong username and/or password') //this should send something to the frontend instead, preferably a notification. I tried alert, but again, this is the backend
               }
           } else {
-            alert('Wrong username and/or password')
+            console.log('Wrong username and/or password') //this should send something to the frontend instead
           }
       })
 
