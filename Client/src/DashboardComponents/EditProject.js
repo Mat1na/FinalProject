@@ -26,6 +26,7 @@ function EditProject() {
   };
   useEffect(() => {
     fetchProject();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectid]);
 
   function handleChange(event) {

@@ -58,6 +58,7 @@ function EditLabMember() {
     };
 
     fetchLabmembers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [memberid]);
 
   function handleChange(event) {
@@ -80,7 +81,7 @@ function EditLabMember() {
         [name]: value,
       };
     });
-    const radioState = true;
+    // const radioState = true;
     // setRadiocheck(radioState);
   }
 

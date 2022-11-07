@@ -3,9 +3,9 @@ import {Navigate, useLocation} from 'react-router-dom'
 
 export const RequireAuth = ({children}) => {
     const location = useLocation()
-    const userString=sessionStorage.getItem('user')
+    const userToken=sessionStorage.getItem('token')
 
-    if (!userString){
+    if (!userToken){
         return <Navigate to='/login' state={{path:location.pathname}}/>
     }
 

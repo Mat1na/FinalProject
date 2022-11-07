@@ -20,6 +20,7 @@ function EditAuthor() {
   };
   useEffect(() => {
     fetchAuthor();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authorid]);
 
   function handleChange(event) {

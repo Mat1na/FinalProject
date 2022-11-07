@@ -378,11 +378,10 @@ app.post('/login', (req, res) => {
                       algorithm: 'HS256',
                       expiresIn: '600s'
                   }, (err, token) => {
-                    console.log(token)
-                  //   res.json({
-                  //     msg: 'ok',
-                  //     token: token
-                  // })
+                    // console.log(token)
+                    res.status(200).json({
+                      token: token
+                  })
 
                   // app.get('/login', (req,res)=>res.send(token))
 
@@ -391,10 +390,14 @@ app.post('/login', (req, res) => {
                     //here, we should be able to send the token to the frontend, so that we can use it in a validation. You can't store it in the localstorage from the backend
                   })
               } else {
-                console.log('Wrong username and/or password') //this should send something to the frontend instead, preferably a notification. I tried alert, but again, this is the backend
+                res.status(403).json({
+                  msg: "wrong"
+                }) //this should send something to the frontend instead, preferably a notification. I tried alert, but again, this is the backend
               }
           } else {
-            console.log('Wrong username and/or password') //this should send something to the frontend instead
+            res.status(403).json({
+              msg: "wrong"
+            }) //this should send something to the frontend instead
           }
       })
 

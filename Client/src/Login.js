@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Button, Form, Container } from "react-bootstrap";
-import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from './Components/auth';
 
 
@@ -10,10 +9,6 @@ export const Login = () => {
         password: ""
     })
     const auth = useAuth()
-    const navigate = useNavigate()
-    const location = useLocation()
-
-    const redirectPath = location.state?.path || '/dashboard'
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -24,27 +19,6 @@ export const Login = () => {
             };
         });
     }
-
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-    //         let res = await fetch("http://localhost:3001/users/fetch-users");
-    //         let data = await res.json();
-    //         if (res.ok) {
-    //             var filtereddata = data.find(item => item.username === user)
-    //             console.log('filteredData', filtereddata)         
-    //           }
-    //     };
-    //     fetchUsers()
-    // }, []);
-
-    // const handleLogin = () => {
-    //     if (user === "Test" && password === "Test123") {
-    //         auth.login(user, password);
-    //         navigate(redirectPath, { replace: true });
-    //         window.location.reload(false);
-    //     }
-    //     else { alert('Wrong username and/or password') }
-    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -58,9 +32,48 @@ export const Login = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(input),
-        }).then(
-            response => {console.log(response)}
+        }).then((response) => response.body)
+        .then((rb) => {
+          const reader = rb.getReader();
+      
+          return new ReadableStream({
+            start(controller) {
+              // The following function handles each data chunk
+              function push() {
+                // "done" is a Boolean and value a "Uint8Array"
+                reader.read().then(({ done, value }) => {
+                  // If there is no more data to read
+                  if (done) {
+                    console.log('done', done);
+                    controller.close();
+                    return;
+                  }
+                  // Get the data and send it to the browser via the controller
+                  controller.enqueue(value);
+                  // Check chunks by logging to the console
+                  console.log(done, value);
+                  push();
+                });
+              }
+      
+              push();
+            },
+          });
+        })
+        .then((stream) =>
+          // Respond with our stream
+          new Response(stream, { headers: { 'Content-Type': 'text/html' } }).text()
         )
+        .then((result) => {
+          // Do things with result
+          console.log(result)
+          if (result.split("\"")[3] !== "wrong"){
+          sessionStorage.setItem("token", result.split("\"")[3]);
+          window.location.replace("/dashboard")
+        } else {
+            alert('Wrong username and/or password')
+          };
+        });
     }
 
     function btnClick() {

@@ -44,7 +44,7 @@ function EditPubList() {
       }
     };
   
-    fetchPub()
+    fetchPub();
   }, [pubid]);
 
 
