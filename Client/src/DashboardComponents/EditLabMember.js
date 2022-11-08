@@ -152,7 +152,7 @@ function EditLabMember() {
   return (
     <>
       <Container>
-        <h1>Edit lab member</h1>
+        <h1 className="mt-3">Edit lab member</h1>
         <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
           Go back
         </Link>

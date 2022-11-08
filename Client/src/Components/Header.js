@@ -10,20 +10,20 @@ function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Link className="nav-link" to="/">Home</Link>
+        <Nav.Link href="/">Home</Nav.Link>
           <NavDropdown  title="Dashboard" id="basic-nav-dropdown">
-              <Link className="nav-link" to="/dashboard">Dashboard</Link>
+              <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
               <NavDropdown.Divider />
-              <Link className="nav-link" to="/labmembers">
+              <NavDropdown.Item href="/labmembers">
                 Lab Members
-              </Link>
-              <Link className="nav-link" to="/publications">Publications</Link>
-              <Link className="nav-link" to="/projects">
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/publications">Publications</NavDropdown.Item>
+              <NavDropdown.Item href="/projects">
                 Projects
-              </Link>
-              <Link className="nav-link" to="/authors">
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/authors">
                 Authors
-              </Link>
+              </NavDropdown.Item>
             </NavDropdown>
             {/* {
               sessionStorage.getItem("token") === null && (

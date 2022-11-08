@@ -121,8 +121,8 @@ function CreateLabMembers() {
   return (
     <>
       <Container>
-        <h1>Create new lab member</h1>
-        <Link to={"/labmembers"} className="btn btn-danger mx-2">
+        <h1 className="mt-3">Create new lab member</h1>
+        <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
             Go back
           </Link>
         <Form onSubmit={handleSubmit}>

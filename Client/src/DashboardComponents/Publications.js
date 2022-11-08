@@ -66,7 +66,7 @@ function Publications() {
   return (
     <>
       <Container>
-        <h1>Publications List </h1>
+        <h1 className="mt-3">Publications List </h1>
         <div>
           <Link
             to={"/publications/create-pub"}
