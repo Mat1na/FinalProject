@@ -25,7 +25,7 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
             {
-              sessionStorage.getItem("user") === null && (
+              sessionStorage.getItem("token") === null && (
                 <Nav.Link href="/login">Login</Nav.Link>
               )
             }
