@@ -1,5 +1,6 @@
 import React from 'react'
 import {Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -9,26 +10,26 @@ function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
+          <Link className="nav-link" to="/">Home</Link>
           <NavDropdown  title="Dashboard" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
+              <Link className="nav-link" to="/dashboard">Dashboard</Link>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/labmembers">
+              <Link className="nav-link" to="/labmembers">
                 Lab Members
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/publications">Publications</NavDropdown.Item>
-              <NavDropdown.Item href="/projects">
+              </Link>
+              <Link className="nav-link" to="/publications">Publications</Link>
+              <Link className="nav-link" to="/projects">
                 Projects
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/authors">
+              </Link>
+              <Link className="nav-link" to="/authors">
                 Authors
-              </NavDropdown.Item>
+              </Link>
             </NavDropdown>
-            {
+            {/* {
               sessionStorage.getItem("token") === null && (
-                <Nav.Link href="/login">Login</Nav.Link>
+                <Link className="nav-link" to="/login">Login</Link>
               )
-            }
+            } */}
         </Nav>
       </Navbar.Collapse>
     </Container>

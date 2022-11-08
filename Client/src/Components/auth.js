@@ -13,7 +13,8 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setUser(null);
         sessionStorage.removeItem('user');
-        sessionStorage.removeItem('token')
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('isLoggedIn')
         window.location.reload(false);
     }
 

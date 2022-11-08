@@ -1,13 +1,25 @@
-import React from 'react'
-import {Navigate, useLocation} from 'react-router-dom'
+import {useEffect} from 'react'
 
 export const RequireAuth = ({children}) => {
-    const location = useLocation()
     const userToken=sessionStorage.getItem('token')
 
-    if (!userToken){
-        return <Navigate to='/login' state={{path:location.pathname}}/>
-    }
+    useEffect(()=> {
+      const tokenObj={token:userToken}
+      fetch('http://localhost:3001/login/verify-token', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(tokenObj)
+      }).then(response => response.json())
+      .then(data =>{
+        console.log(data.verify)
+        if(!data.verify){
+          window.location.replace("/login")
+        }
+      })
+    },[children,userToken])
 
   return children
 }

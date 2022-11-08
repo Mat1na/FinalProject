@@ -368,41 +368,42 @@ app.post("/users/create-user", (req, res) => {
 
 app.post('/login', (req, res) => {
   const { user, password } = req.body
-  console.log(req.body)
   User.find({ username: user })
       .then(result => {
-          console.log(result)
           if (result.length > 0) {
               if (bcrypt.compareSync(password,result[0].password)) {
                   jwt.sign({ user }, process.env.KEY, {
                       algorithm: 'HS256',
                       expiresIn: '600s'
                   }, (err, token) => {
-                    // console.log(token)
                     res.status(200).json({
                       token: token
                   })
-
-                  // app.get('/login', (req,res)=>res.send(token))
-
-                  // return { 'x-access-token': token }
-
-                    //here, we should be able to send the token to the frontend, so that we can use it in a validation. You can't store it in the localstorage from the backend
                   })
               } else {
                 res.status(403).json({
                   msg: "wrong"
-                }) //this should send something to the frontend instead, preferably a notification. I tried alert, but again, this is the backend
+                })
               }
           } else {
             res.status(403).json({
               msg: "wrong"
-            }) //this should send something to the frontend instead
+            })
           }
       })
 
 })
 
+app.post('/login/verify-token', (req,res) => {
+  console.log(req.body);
+  jwt.verify(req.body.token, process.env.KEY, (err, decoded) => {
+    if (decoded) {
+      res.json({verify:true})
+    } else {
+      res.json({verify:false})
+    }
+  })
+})
 
 ////////////////////////////////////// Server port ////////////////////////////////////////
 
