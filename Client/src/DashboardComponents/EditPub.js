@@ -57,12 +57,7 @@ function EditPubList() {
       };
     });
   }
-  // function handleChangeAuth(event, index) {
-  //   const { name, value } = event.target;
-  //   const authors = [...authsDisplay];
-  //   authors[index][name] = value;
-  //   setAuthArray(authors);
-  // }
+
   function handleChangeAuth(event, index) {
     const { name, value } = event.target;
     const authors = [...authArray];
@@ -90,14 +85,7 @@ function EditPubList() {
 
 
   // handle click event of the Remove button
-  // const handleRemoveClick = (index) => {
-  //   const authors = [...authsDisplay];
-  //   authors.splice(index, 1);
-  //   setAuthArray(authors);
-  //   console.log("dltauthArray:", authors);
-  //   console.log("I deleted a field");
-  //   window.location.reload()
-  //   };
+
   const handleRemoveClick = (index) => {
     const authors = [...authArray];
     authors.splice(index, 1);
@@ -108,14 +96,7 @@ function EditPubList() {
   };
 
   // handle click event of the Add button
-  // const handleAddClick = () => {
-  //   const newAuth = [...authsDisplay, { author: "" }]
-  //   setAuthArray(newAuth);
-  //   console.log("authArray:", authArray);
-  //   console.log("I Added a field");
-  //   window.location.reload()
-    
-  // };
+
   const handleAddClick = (i) => {
     setAuthArray([...authArray, { author: "" }]);
     console.log("authArray:",authArray);

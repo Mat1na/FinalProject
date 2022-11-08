@@ -84,7 +84,7 @@ const projectSchema = mongoose.Schema({
   image: String,
   content: String,
   summary: String,
-  researcher: String,
+  researchers: Array,
   imagetext: String,
   imagetextlink: String,
 });
@@ -100,7 +100,7 @@ app.post("/projects/create-project", (req, res) => {
     image,
     content,
     summary,
-    researcher,
+    researchers,
     imagetext,
     imagetextlink,
   } = req.body;
@@ -109,7 +109,7 @@ app.post("/projects/create-project", (req, res) => {
     image,
     content,
     summary,
-    researcher,
+    researchers,
     imagetext,
     imagetextlink,
   });
@@ -141,7 +141,7 @@ app.delete("/projects/:_id", (req, res) => {
 app.post('/projects/edit-project/:_id', (req, res) => {
   const { _id } = req.params
   console.log(req.body.title)
-  Project.findByIdAndUpdate(_id, { title: req.body.title, image: req.body.image, content: req.body.content, summary: req.body.summary, researcher: req.body.researcher, imagetext: req.body.imagetext, imagetextlink: req.body.imagetextlink }, function (err, docs) {
+  Project.findByIdAndUpdate(_id, { title: req.body.title, image: req.body.image, content: req.body.content, summary: req.body.summary, researchers: req.body.researchers, imagetext: req.body.imagetext, imagetextlink: req.body.imagetextlink }, function (err, docs) {
     if (err) {
       console.log(err)
     } else {
@@ -262,7 +262,7 @@ const publicationSchema = mongoose.Schema({
   journal: String,
   year: String,
   issue: String,
-  abstract: String, // I added the abstract here and at the request bcause it was missing
+  abstract: String, 
   link: String,
   image: String,
   authors: Array,
