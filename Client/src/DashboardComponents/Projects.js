@@ -63,7 +63,7 @@ function Projects() {
   return (
     <>
       <Container>
-        <h1>Projects</h1>
+        <h1 className="mt-3">Projects</h1>
        
           <Link to={"/projects/create-project"} className="btn btn-secondary m-2" > Add new project</Link>
           <Link to={"/dashboard"} className="btn btn-danger m-2">
@@ -94,18 +94,6 @@ function Projects() {
                 </td>
               </tr>
             })}
-            {/* <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>
-                <Link to={"/projects/editproject/:projectid"} className="btn btn-primary mx-2"><AiFillEdit /></Link>
-                <Button variant="danger" className='mx-1'><RiDeleteBin6Fill /></Button>
-              </td>
-            </tr> */}
           </tbody>
         </Table>
       </Container>
