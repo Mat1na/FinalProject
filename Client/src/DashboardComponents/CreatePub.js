@@ -75,9 +75,6 @@ function CreatePub() {
     if (input.order === undefined || input.order === "") {
       alert("Order is required");
     }
-    if (input.authors=== undefined || input.authors=== "") {
-      alert("Author is required");
-    }
     if (input.year=== undefined || input.year=== "") {
       alert("Year is required");
     }

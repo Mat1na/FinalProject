@@ -115,9 +115,6 @@ function EditPubList() {
     if (input.journal === undefined || input.journal === "") {
       alert("Journal is required");
     }
-    if (input.authors=== undefined || input.authors=== "") {
-      alert("Author is required");
-    }
     if (input.order=== undefined || input.order=== "") {
       alert("Order is required");
     }
