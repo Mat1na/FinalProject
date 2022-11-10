@@ -17,9 +17,7 @@ function Publications() {
     if (res.ok) {
       console.log(data);
       data.sort(function (a, b) {
-        var textA = a.publicationtitle.toUpperCase();
-        var textB = b.publicationtitle.toUpperCase();
-        return textA < textB ? -1 : textA > textB ? 1 : 0;
+        return parseFloat(a.order) - parseFloat(b.order)
       });
       setPublicationList(data);
     }
@@ -92,7 +90,7 @@ function Publications() {
               publicationList.map((publication, index) => {
                 return (
                   <tr key={publication._id} id={publication._id}>
-                    <td>{index + 1}</td>
+                    <td>{publicationList[index].order}</td>
                     <td>{publicationList[index].publicationtitle}</td>
                     <td>{publicationList[index].journal}</td>
                     <td>

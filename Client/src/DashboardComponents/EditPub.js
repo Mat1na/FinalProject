@@ -12,6 +12,7 @@ function EditPubList() {
   const [pub, setPub] = useState({});
   const [authArray, setAuthArray] = useState([{ author: "" }]);
   const [input, setInput] = useState({
+    order: "",
     publicationtitle: "",
     authors: "",
     journal: "",
@@ -35,7 +36,7 @@ function EditPubList() {
         console.log('filteredData', filtereddata)
         setPub(filtereddata);
        
-        setInput({ publicationtitle: filtereddata.publicationtitle, journal: filtereddata.journal, year: filtereddata.year, issue: filtereddata.issue, abstract: filtereddata.abstract, authors: filtereddata.authors, link: filtereddata.link, image: filtereddata.image })
+        setInput({ order: filtereddata.order, publicationtitle: filtereddata.publicationtitle, journal: filtereddata.journal, year: filtereddata.year, issue: filtereddata.issue, abstract: filtereddata.abstract, authors: filtereddata.authors, link: filtereddata.link, image: filtereddata.image })
   
         let Display = filtereddata.authors
         setAuthArray(Display)
@@ -115,7 +116,13 @@ function EditPubList() {
       alert("Journal is required");
     }
     if (input.authors=== undefined || input.authors=== "") {
-      alert("Journal is required");
+      alert("Author is required");
+    }
+    if (input.order=== undefined || input.order=== "") {
+      alert("Order is required");
+    }
+    if (input.year=== undefined || input.year=== "") {
+      alert("Year is required");
     }
   }
   return (
@@ -127,6 +134,16 @@ function EditPubList() {
         </Link>
      { console.log("display",authArray)}  
      {Object.keys(pub).length > 0 && <Form onSubmit={handleSubmit}>
+     <Form.Group className="mb-3">
+          <Form.Label>Order</Form.Label>
+          <Form.Control
+            required
+            name="order"
+            onChange={handleChange}
+            defaultValue={pub.order}
+          />
+        </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
           <Form.Control
