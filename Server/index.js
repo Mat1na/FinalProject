@@ -86,7 +86,7 @@ const projectSchema = mongoose.Schema({
   summary: String,
   researchers: Array,
   imagetext: String,
-  imagetextlink: String,
+  imagetextlink: String
 });
 
 //project model
@@ -102,7 +102,7 @@ app.post("/projects/create-project", (req, res) => {
     summary,
     researchers,
     imagetext,
-    imagetextlink,
+    imagetextlink
   } = req.body;
   const project = new Project({
     title,
@@ -111,7 +111,7 @@ app.post("/projects/create-project", (req, res) => {
     summary,
     researchers,
     imagetext,
-    imagetextlink,
+    imagetextlink
   });
   project.save().then((res) => {
     console.log(res, req.body);
@@ -166,7 +166,7 @@ const profileSchema = mongoose.Schema({
   orcid: String,
   twitter: String,
   email: String,
-  currentmember: String,
+  currentmember: String
 });
 
 //lab member model
@@ -186,7 +186,7 @@ app.post("/labmembers/create-member", (req, res) => {
     orcid,
     twitter,
     email,
-    currentmember,
+    currentmember
   } = req.body;
   const profile = new Profile({
     membername,
@@ -199,7 +199,7 @@ app.post("/labmembers/create-member", (req, res) => {
     orcid,
     twitter,
     email,
-    currentmember,
+    currentmember
   });
   profile.save().then((res) => {
     console.log(res, req.body);
@@ -241,7 +241,7 @@ app.put("/labmembers/edit-labmember/:_id", (req, res) => {
       orcid: req.body.orcid,
       twitter: req.body.twitter,
       email: req.body.email,
-      currentmember: req.body.currentmember,
+      currentmember: req.body.currentmember
     },
     function (err, docs) {
       if (err) {
@@ -258,6 +258,7 @@ app.put("/labmembers/edit-labmember/:_id", (req, res) => {
 
 //publication member scheme
 const publicationSchema = mongoose.Schema({
+  order: String,
   publicationtitle: String,
   journal: String,
   year: String,
@@ -265,7 +266,7 @@ const publicationSchema = mongoose.Schema({
   abstract: String, 
   link: String,
   image: String,
-  authors: Array,
+  authors: Array
 });
 
 //publication member model
@@ -275,6 +276,7 @@ const Publication = mongoose.model("Publications", publicationSchema);
 app.post("/publications/create-pub", (req, res) => {
   console.log(req.body);
   const {
+    order,
     publicationtitle,
     journal,
     year,
@@ -282,9 +284,10 @@ app.post("/publications/create-pub", (req, res) => {
     abstract,
     authors,
     link,
-    image,
+    image
   } = req.body;
   const publication = new Publication({
+    order,
     publicationtitle,
     journal,
     year,
@@ -292,7 +295,7 @@ app.post("/publications/create-pub", (req, res) => {
     abstract,
     authors,
     link,
-    image,
+    image
   });
   publication.save().then((res) => {
     console.log(res, req.body);
@@ -326,6 +329,7 @@ app.put("/projects/edit-pub/:_id", (req, res) => {
   Publication.findByIdAndUpdate(
     _id,
     {
+      order: req.body.order,
       publicationtitle: req.body.publicationtitle,
       journal: req.body.journal,
       year: req.body.year,
@@ -333,7 +337,7 @@ app.put("/projects/edit-pub/:_id", (req, res) => {
       abstract: req.body.abstract,
       authors: req.body.authors,
       link: req.body.link,
-      image: req.body.image,
+      image: req.body.image
     },
     function (err, docs) {
       if (err) {
@@ -374,7 +378,7 @@ app.post('/login', (req, res) => {
               if (bcrypt.compareSync(password,result[0].password)) {
                   jwt.sign({ user }, process.env.KEY, {
                       algorithm: 'HS256',
-                      expiresIn: '600s'
+                      expiresIn: '1800s'
                   }, (err, token) => {
                     res.status(200).json({
                       token: token

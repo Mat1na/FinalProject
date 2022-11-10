@@ -8,6 +8,7 @@ function CreatePub() {
   // Handle change for Authors and rest inputs
   const [authArray, setAuthArray] = useState([{ author: "" }]);
   const [input, setInput] = useState({
+    order:"",
     publicationtitle: "",
     journal: "",
     year: "",
@@ -52,6 +53,7 @@ function CreatePub() {
     // Clear input fields after submit
     setAuthArray([{ author: "" }]);
     setInput({
+      order:"",
       publicationtitle: "",
       journal: "",
       year: "",
@@ -69,6 +71,9 @@ function CreatePub() {
     }
     if (input.journal === undefined || input.journal === "") {
       alert("Journal is required");
+    }
+    if (input.order === undefined || input.order === "") {
+      alert("Order is required");
     }
   }
 
@@ -93,6 +98,16 @@ function CreatePub() {
           Go back
         </Link>
       <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3">
+          <Form.Label>Order</Form.Label>
+          <Form.Control
+            required
+            name="order"
+            placeholder="E.g. 1"
+            onChange={handleChange}
+            value={input.order}
+          />
+        </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
           <Form.Control
