@@ -14,3 +14,11 @@ td {
    vertical-align: middle;
  }
 
+ .member-photo{
+   width: 80%;
+   max-width: 150px;
+   height: auto;
+   object-fit: cover;
+   /* border-radius: 50%; */
+ }
+

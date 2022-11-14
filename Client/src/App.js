@@ -17,6 +17,9 @@ import CreateAuthor from "./DashboardComponents/CreateAuthor"
 import EditAuthor from "./DashboardComponents/EditAuthor"
 import Header from './Components/Header';
 import Footer from "./Components/Footer";
+import LabmemberDetails from './Pages/LabmemberDetails';
+import ProjectDetails from './Pages/ProjectDetails';
+import PublicationDetails from './Pages/PublicationDetails';
 import { Login } from './Login';
 import { RequireAuth } from './Components/RequireAuth';
 import CreateUser from './DashboardComponents/CreateUser';
@@ -30,6 +33,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path='/' element={<Home />} />
+
                     <Route path='/users/create-user' element={<CreateUser />} />
                     <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                     <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
