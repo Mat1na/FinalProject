@@ -1,9 +1,9 @@
 html {
-    overflow-y: scroll;
+   overflow-y: scroll;
 }
 
 
-.hidden-label{
+.hidden-label {
    visibility: hidden;
    display: block;
 
@@ -12,13 +12,19 @@ html {
 td {
    text-align: left;
    vertical-align: middle;
- }
+}
 
- .member-photo{
-   width: 80%;
-   max-width: 150px;
-   height: auto;
-   object-fit: cover;
-   /* border-radius: 50%; */
- }
+.members {
+   width: 150px;
+   height: 150px;
+   overflow: hidden;
+   border-radius: 50%;
+}
+.p{
+   
+}
 
+.member-photo {
+  width:180px;
+   object-fit:cover;
+}
