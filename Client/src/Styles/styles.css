@@ -22,3 +22,34 @@ td {
    /* border-radius: 50%; */
  }
 
+ .journalcover{
+  max-width: 150px;
+  height:auto;
+  object-fit: cover;
+  display:block;
+ }
+
+ .journalcontainer{
+  display: flex;
+  margin-bottom: 2rem;
+ }
+
+ .journallink {
+  color: #000;
+  text-decoration: none;
+ }
+
+ .authorslist {
+  color: rgba(0,0,0,.54);
+  font-size: 14px;
+  letter-spacing: .03em;
+ }
+
+ .publicationtitle {
+  color: #151515;
+  font-weight: 700;
+ }
+
+ .journaltitle {
+  color:#000
+ }
