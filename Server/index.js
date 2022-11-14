@@ -210,8 +210,13 @@ app.post("/labmembers/create-member", (req, res) => {
 app.get("/labmembers/fetch-labmembers", (req, res) => {
   Profile.find({}).then((items) => {
     res.json(items);
+    
+   
   });
+  
 });
+
+
 
 //delete lab member
 app.delete("/labmembers/:_id", (req, res) => {

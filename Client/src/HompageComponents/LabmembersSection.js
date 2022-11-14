@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
 function LabmembersSection(index) {
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
@@ -48,16 +49,17 @@ function LabmembersSection(index) {
                   <Col
                     md={12}
                     className="p-3 d-flex justify-content-center align-items-center"
-                  >
-                    <Link>
-                      <div className="text-center" key={index}>
-                        <div className=" members d-flex justify-content-center align-items-center">
+                    >
+                    <Link to={`/labmember/${member.membername.toLowerCase()}`} >
+                      <div className="text-center">
+                        <div className=" members d-flex justify-content-center align-items-center"
+                        >
                           <img
+                            alt='Avatar'
+                            effect="blur"
                             src={`${member.image}`}
-                            className="member-photo "
-                          ></img>
+                            className="member-photo" />
                         </div>
-
                         <h6 className="pt-3">
                           {member.membername}
                         </h6>
@@ -85,14 +87,14 @@ function LabmembersSection(index) {
                     lg={4}
                     xl={3}
                     className="p-3 d-flex justify-content-center align-items-center"
-                  >
-                    <Link>
-                      <div className="text-center" key={index}>
+                    >
+                    <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}>
+                      <div className="text-center">
                         <div className=" members d-flex justify-content-center align-items-center">
                           <img
                             src={`${member.image}`}
                             className="member-photo "
-                          ></img>
+                          />
 
                         </div>
 

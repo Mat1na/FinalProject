@@ -36,6 +36,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/publicationlist' element={<PublicationList />} />
                     <Route path='/publication/:pub' element={<PublicationDetails />} />
+                    <Route path='/labmember/:lab' element={<LabmemberDetails />} />
                     <Route path='/users/create-user' element={<CreateUser />} />
                     <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                     <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
