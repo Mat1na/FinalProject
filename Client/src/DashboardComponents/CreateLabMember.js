@@ -170,7 +170,7 @@ function CreateLabMembers() {
               <Row className="box ">
                 <Col md={10} className="">
                   <Form.Group className="mb-3">
-                    <Form.Label>Interests</Form.Label>
+                    <Form.Label>{`Interest No.${i + 1}`}</Form.Label>
                     <Form.Control
                       placeholder={`Enter interest No.${i + 1} `}
                       name="interest"
