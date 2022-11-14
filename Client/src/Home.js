@@ -6,7 +6,7 @@ import PublicationSection from "./HompageComponents/PublicationSection";
 function Home() {
   return (
     <div>
-      <LabmembersSection />
+      <LabmembersSection/>
       <ProjectsSction />
       <PublicationSection />
     </div>

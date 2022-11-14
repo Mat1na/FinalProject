@@ -23,7 +23,8 @@ function PublicationSection() {
         <Col className="col-lg-8">
           <div><Link to={"/publicationlist"}>Check out all publications</Link></div>
           {lastPublications.length > 0 && lastPublications.map((publication, index) => {
-            return <><Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g,'-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><div className="journalcontainer">
+            return <><Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g,'-').toLowerCase()}-${publication.order}`} className="stretched-link journallink">
+              <div className="journalcontainer">
               
               <div>
               <h3 className="publicationtitle">{publication.publicationtitle}</h3>
