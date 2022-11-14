@@ -23,6 +23,7 @@ import PublicationDetails from './Pages/PublicationDetails';
 import { Login } from './Login';
 import { RequireAuth } from './Components/RequireAuth';
 import CreateUser from './DashboardComponents/CreateUser';
+import PublicationList from './Pages/PublicationList';
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path='/' element={<Home />} />
-
+                    <Route path='/publicationlist' element={<PublicationList />} />
+                    <Route path='/publication/:pub' element={<PublicationDetails />} />
                     <Route path='/users/create-user' element={<CreateUser />} />
                     <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                     <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
