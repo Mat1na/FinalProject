@@ -21,7 +21,20 @@ td {
    border-radius: 50%;
 }
 
+.member-details {
+   width: 50vw;
+   overflow: hidden;
+   border-radius:10%;
+
+}
+.member-details {
+   margin: auto;
+   width: 50vw;
+   object-fit: cover;
+}
+
 .member-photo {
+   margin: auto;
    width: 180px;
    object-fit: cover;
 }
