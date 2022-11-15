@@ -68,3 +68,7 @@ td {
    border: 1px solid #209cee;
    display:block;
 }
+.publicationyear {
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
