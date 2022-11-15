@@ -22,38 +22,49 @@ td {
 }
 
 .member-photo {
-  width:180px;
-   object-fit:cover;
+   width: 180px;
+   object-fit: cover;
 }
- .journalcover{
-  max-width: 150px;
-  height:auto;
-  object-fit: cover;
-  display:block;
- }
 
- .journalcontainer{
-  display: flex;
-  margin-bottom: 2rem;
- }
+.journalcover {
+   max-width: 150px;
+   height: auto;
+   object-fit: cover;
+   display: block;
+}
 
- .journallink {
-  color: #000;
-  text-decoration: none;
-  position: relative;
- }
+.journalcontainer {
+   display: flex;
+   margin-bottom: 2rem;
+}
 
- .authorslist {
-  color: rgba(0,0,0,.54);
-  font-size: 14px;
-  letter-spacing: .03em;
- }
+.journallink {
+   color: #000;
+   text-decoration: none;
+   position: relative;
+   /* position: relative is necessary to fix the bug of the stretched-link */
+}
 
- .publicationtitle {
-  color: #151515;
-  font-weight: 700;
- }
+.authorslist {
+   color: rgba(0, 0, 0, .54);
+   font-size: 14px;
+   letter-spacing: .03em;
+}
 
- .journaltitle {
-  color:#000
- }
+.publicationtitle {
+   color: #151515;
+   font-weight: 700;
+}
+
+.journaltitle {
+   color: #000
+}
+
+.allpublications {
+   padding: 0.75rem 1.25rem;
+   background-color: #f6fbfe;
+   border-radius: 0.25rem;
+   margin-bottom: 1rem;
+   border: 1px solid #209cee;
+   display:block;
+}

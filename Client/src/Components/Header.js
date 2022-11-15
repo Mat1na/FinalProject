@@ -10,7 +10,7 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/">Labmembers</Nav.Link>
+            <Nav.Link href="/">Lab members</Nav.Link>
             <Nav.Link href="/">Projects</Nav.Link>
             <Nav.Link href="/">Publications</Nav.Link>
             <NavDropdown title="Dashboard" id="basic-nav-dropdown">
