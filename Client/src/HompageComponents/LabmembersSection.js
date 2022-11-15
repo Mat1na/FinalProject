@@ -50,7 +50,7 @@ function LabmembersSection(index) {
                     md={12}
                     className="p-3 d-flex justify-content-center align-items-center"
                     >
-                    <Link to={`/labmember/${member.membername.toLowerCase()}`} >
+                    <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`} >
                       <div className="text-center">
                         <div className=" members d-flex justify-content-center align-items-center"
                         >
