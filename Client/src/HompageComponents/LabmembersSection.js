@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { GoMail } from 'react-icons/go';
+import { FaTwitter } from 'react-icons/fa';
+import { FaOrcid } from 'react-icons/fa';
+import { SiResearchgate } from 'react-icons/si';
+import { SiGooglescholar } from 'react-icons/si';
 
 
 function LabmembersSection(index) {
@@ -46,67 +51,95 @@ function LabmembersSection(index) {
               <>
                 {member.currentmember === "Yes" && member.functionbasic === 'Assistant Professor' ? (
                   // Grid system with shifting number of elements
-                  <Col
-                    md={12}
-                    className="p-3 d-flex justify-content-center align-items-center"
+                  <>
+                    <Col
+                      md={12}
+                      className="p-3 d-flex justify-content-center align-items-center"
                     >
-                    <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`} >
-                      <div className="text-center">
-                        <div className=" members d-flex justify-content-center align-items-center"
-                        >
-                          <img
-                            alt='Avatar'
-                            effect="blur"
-                            src={`${member.image}`}
-                            className="member-photo" />
+                      <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`} >
+                        <div className="text-center">
+                          <div className=" members d-flex justify-content-center align-items-center"
+                          >
+                            <img
+                              alt='Avatar'
+                              effect="blur"
+                              src={`${member.image}`}
+                              className="member-photo" />
+                          </div>
+                          <h6 className="pt-3">
+                            {member.membername}
+                          </h6>
+                          <p className="">
+                            {member.functionbasic}
+                          </p>
                         </div>
-                        <h6 className="pt-3">
-                          {member.membername}
-                        </h6>
-                        <p className="">
-                          {member.functionbasic}
-                        </p>
-                      </div>
-                    </Link>
-                  </Col>
+                      </Link>
+
+                    </Col>
+                    <Col>
+                      <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>
+                      <a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>
+                      <a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>
+                      <a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer" ><FaTwitter /></a>
+                      <a href={member.email} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>
+                    </Col>
+                  </>
+
                 ) : (
                   ""
                 )}
               </>
             );
           })}
+
           <h2 className="p-5">Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
                 {member.currentmember === "Yes" && member.functionbasic !== 'Assistant Professor' ? (
                   // Grid system with shifting number of elements
+                  <>
                   <Col
                     sm={6}
                     md={5}
                     lg={4}
                     xl={3}
                     className="p-3 d-flex justify-content-center align-items-center"
-                    >
-                    <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}>
+                  >
                       <div className="text-center">
+                      <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}>
                         <div className=" members d-flex justify-content-center align-items-center">
                           <img
                             src={`${member.image}`}
                             className="member-photo "
                           />
-
                         </div>
-
-                        <h6 className="pt-3">
+                      <h6 className="pt-3">
                           {member.membername}
                         </h6>
                         <p className="">
                           {member.functionbasic}
                         </p>
-                      </div>
-                    </Link>
+                        </Link>
+                      {member.googlescholar ===!undefined && member.googlescholar ===!""? 
+                      ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
+                       
+                       {member.researchgate ===!undefined && member.researchgate ===!""?
+                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>):(" ")}
+
+                       {member.orcid ===!undefined && member.orcid ===!""?
+                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>):(" ")}
+
+                       {member.twitter ===!undefined && member.twitter ===!""?
+                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
+
+                       {member.email===!undefined && member.email===!""?
+                       (<a href={member.email} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")}
+                       </div>
+
                   </Col>
+      
+                     </>
                 ) : (
                   ""
                 )}
@@ -123,11 +156,31 @@ function LabmembersSection(index) {
                     className="p-3 d-flex justify-content-center text-center"
 
                   >
+                   
                     <div className="" key={index}>
-                      <h5>{member.membername}</h5>
+                    <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}>
+                  <div>
+                  <h5>{member.membername}</h5>
                       <p className="">
                         {member.functionbasic}
+                        {member.googlescholar}
                       </p>
+                  </div>
+                      </Link>
+                      {member.googlescholar===!undefined || member.googlescholar===!""? 
+                      ( <a href={member.googlescholar} target="_blank" className="d-inline p-2" rel="noreferrer"> <SiGooglescholar/> </a>):(" ")}
+                       {console.log(member.googlescholar)}
+                       {member.researchgate ===!undefined || member.researchgate ===!""?
+                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate/></a>):(" ")}
+
+                       {member.orcid ===!undefined || member.orcid===!""?
+                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid/></a>):(" ")}
+
+                       {member.twitter===!undefined || member.twitter===!""?
+                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter/></a>):(" ")}
+
+                       {member.email===!undefined || member.email===!""?
+                       (<a href={member.email} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail/></a>):(" ")}
                     </div>
                   </Col>
                 ) : (
@@ -136,6 +189,7 @@ function LabmembersSection(index) {
               </>
             );
           })}
+          
         </Row>
       </Container>
     </>
