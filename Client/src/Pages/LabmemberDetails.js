@@ -17,9 +17,9 @@ function LabmemberDetails() {
       var filtereddata = data.find(item => item.membername.toLowerCase().split(" ").toString() === labmeberParam);
       setMember(filtereddata);
       setInterestList(filtereddata.interests)
-      console.log(labmeberParam);
+      console.log("paraml:",labmeberParam);
       console.log(filtereddata)
-      console.log(filtereddata.interests)
+      // item => item.membername.toLowerCase().split(" ").toString() === labmeberParam
         ;
     }
 
