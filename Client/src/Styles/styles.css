@@ -45,7 +45,6 @@ td {
 
 .journalcontainer {
    display: flex;
-   margin-bottom: 2rem;
 }
 
 .journallink {
@@ -77,6 +76,8 @@ td {
    margin-bottom: 1rem;
    border: 1px solid #209cee;
    display:block;
+   color: #12537E;
+   font-size: 21px;
 }
 .publicationyear {
    padding-top: 1rem;
@@ -84,4 +85,11 @@ td {
 }
 .authorsforpublicationlist{
    display:inline
+}
+.publicationhover:hover{
+   box-shadow: 0 .5rem 1rem #00000026;
+   padding: 1rem 1rem 1rem 1rem;
+}
+.bi-info-circle-fill {
+   color:#219CEE !important
 }
