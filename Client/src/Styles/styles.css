@@ -22,7 +22,7 @@ td {
 }
 
 .member-details {
-   width: 50vw;
+   width: 40vw;
    overflow: hidden;
    border-radius:10%;
    margin: auto;
@@ -32,7 +32,7 @@ td {
 
 .member-photo {
    margin: 150px;
-   width: 180px;
+   width: 190px;
    object-fit: cover;
 }
 
@@ -94,6 +94,29 @@ a{
    width: 18rem;
   height:28rem ;
 }
+.project-card:hover {
+   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+     transform: scale(1.10, 1.10);
+ }
+ 
+
+ .card-img-top:hover{
+   height: 100%;
+   opacity: 0.3;
+}
+
+
+.card-body:hover {
+   background-color: transparent;
+   position: relative;
+   opacity: 1;
+}
+
+
+.icons:hover{
+   size: 3rem!important
+ }
+
 .publicationhover:hover{
    box-shadow: 0 .5rem 1rem #00000026;
    padding: 1rem 1rem 1rem 1rem;

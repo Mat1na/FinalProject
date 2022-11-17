@@ -31,94 +31,90 @@ function Alumni() {
     fetchLabmembers();
   }, []);
   return (
-    <Row className="p-5 text-center">
-        <h1 className="p-5">Alumni</h1>
+    <Row className="p-5 text-center ">
+      <h1 className="p-5">Alumni</h1>
       {labmemberList.map((member, index) => {
         return (
           <>
             {member.currentmember === "No" ? (
-              <Col md={2} className="">
-                <div className="" key={index}>
-                  <Link
-                    to={`/labmember/${member.membername
-                      .replace(/\s/g, "-")
-                      .toLowerCase()}`}
+              <Col md={2} className="m-2">
+                <Link
+                  to={`/labmember/${member.membername
+                    .replace(/\s/g, "-")
+                    .toLowerCase()}`}
+                >
+                  <h5>{member.membername}</h5>
+                  <p className="">
+                    {member.functionbasic}
+                    {member.functionextra}
+                  </p>
+                </Link>
+                {member.googlescholar !== undefined &&
+                member.googlescholar !== "" ? (
+                  <a
+                    href={member.googlescholar}
+                    className="d-inline p-2"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    <div>
-                      <h5>{member.membername}</h5>
-                      <p className="">
-                        {member.functionbasic}
-                        {member.googlescholar}
-                      </p>
-                    </div>
-                  </Link>
-                  {member.googlescholar !== undefined &&
-                  member.googlescholar !== "" ? (
-                    <a
-                      href={member.googlescholar}
-                      className="d-inline p-2"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <SiGooglescholar />
-                    </a>
-                  ) : (
-                    " "
-                  )}
+                    <SiGooglescholar />
+                  </a>
+                ) : (
+                  " "
+                )}
 
-                  {member.researchgate !== undefined &&
-                  member.researchgate !== "" ? (
-                    <a
-                      href={member.researchgate}
-                      className="d-inline p-2"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <SiResearchgate />
-                    </a>
-                  ) : (
-                    " "
-                  )}
+                {member.researchgate !== undefined &&
+                member.researchgate !== "" ? (
+                  <a
+                    href={member.researchgate}
+                    className="d-inline p-2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SiResearchgate />
+                  </a>
+                ) : (
+                  " "
+                )}
 
-                  {member.orcid !== undefined && member.orcid !== "" ? (
-                    <a
-                      href={member.orcid}
-                      className="d-inline p-2"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaOrcid />
-                    </a>
-                  ) : (
-                    " "
-                  )}
+                {member.orcid !== undefined && member.orcid !== "" ? (
+                  <a
+                    href={member.orcid}
+                    className="d-inline p-2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaOrcid />
+                  </a>
+                ) : (
+                  " "
+                )}
 
-                  {member.twitter !== undefined && member.twitter !== "" ? (
-                    <a
-                      href={member.twitter}
-                      className="d-inline p-2"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaTwitter />
-                    </a>
-                  ) : (
-                    " "
-                  )}
+                {member.twitter !== undefined && member.twitter !== "" ? (
+                  <a
+                    href={member.twitter}
+                    className="d-inline p-2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaTwitter />
+                  </a>
+                ) : (
+                  " "
+                )}
 
-                  {member.email !== undefined && member.email !== "" ? (
-                    <a
-                      href={`mailto:${member.membername}`}
-                      className="d-inline p-2"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <GoMail />
-                    </a>
-                  ) : (
-                    " "
-                  )}
-                </div>
+                {member.email !== undefined && member.email !== "" ? (
+                  <a
+                    href={`mailto:${member.membername}`}
+                    className="d-inline p-2"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <GoMail />
+                  </a>
+                ) : (
+                  " "
+                )}
               </Col>
             ) : (
               ""

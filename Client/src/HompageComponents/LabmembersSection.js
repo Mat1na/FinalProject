@@ -19,7 +19,7 @@ function LabmembersSection() {
     var sorted = data.sort((a, b) => sortOrder.indexOf(a.functionbasic
     ) - sortOrder.indexOf(b.functionbasic
     ));
-    // console.log(sorted);
+    console.log(sorted);
   };
   useEffect(() => {
     fetchLabmembers();
@@ -107,7 +107,7 @@ function LabmembersSection() {
                           {member.functionbasic}
                         </p>
                         </Link>
-                      {member.googlescholar !== undefined && member.googlescholar !== ""? 
+                      {/* {member.googlescholar !== undefined && member.googlescholar !== ""? 
                       ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
                        
                        {member.researchgate !==undefined && member.researchgate !==""?
@@ -120,7 +120,7 @@ function LabmembersSection() {
                        (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
 
                        {member.email!==undefined && member.email!==""?
-                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")}
+                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")} */}
                        </div>
 
                   </Col>

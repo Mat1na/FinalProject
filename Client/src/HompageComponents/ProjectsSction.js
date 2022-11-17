@@ -20,16 +20,17 @@ function ProjectsSction() {
      <h1 className="text-center p-5">Research projects</h1>
       <div className="d-flex flex-wrap justify-content-center">
         {projects.map((project) => (
-          <div className="m-2">
+          <div className="m-3">
             <Card  className="project-card">
               <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`}>
-              <Card.Img variant="top" src={project.image} />
+              <Card.Img variant="top" className="" src={project.image} />
+              </Link>
               <Card.Body>
                 <Card.Title>{project.title}</Card.Title>
                 <Card.Text>{project.summary}</Card.Text>
                 <Card.Link href={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} >Read more</Card.Link>
               </Card.Body>
-              </Link>
+           
             </Card>
           </div>
         ))}

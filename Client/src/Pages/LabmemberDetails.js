@@ -69,7 +69,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <SiGooglescholar size={"3rem"} />
+                <SiGooglescholar size={"2rem"}  className="icons"/>
               </a>
             ) : (
               " "
@@ -82,7 +82,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <SiResearchgate size={"3rem"} />
+                <SiResearchgate size={"2rem"}  className="icons"/>
               </a>
             ) : (
               " "
@@ -95,7 +95,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaOrcid size={"3rem"} />
+                <FaOrcid size={"2rem"} className="icons" />
               </a>
             ) : (
               " "
@@ -108,7 +108,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaTwitter size={"3rem"} />
+                <FaTwitter size={"2rem"}  className="icons"/>
               </a>
             ) : (
               " "
@@ -121,7 +121,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <GoMail size={"3rem"} />
+                <GoMail size={"2rem"}  className="icons"/>
               </a>
             ) : (
               " "
