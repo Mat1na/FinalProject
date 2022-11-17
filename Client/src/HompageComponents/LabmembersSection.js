@@ -6,7 +6,7 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaOrcid } from 'react-icons/fa';
 import { SiResearchgate } from 'react-icons/si';
 import { SiGooglescholar } from 'react-icons/si';
-
+import {BsFillArrowRightSquareFill} from 'react-icons/bs';
 
 function LabmembersSection() {
   const [labmemberList, setLabmemberList] = useState([]);
@@ -133,52 +133,8 @@ function LabmembersSection() {
             );
           })}
 {/* Alumni Section*/}
-          <h2 className="p-5">Alumni</h2>
-          {labmemberList.map((member, index) => {
-            return (
-              <>
-                {member.currentmember === "No" ? (
-                  <Col
-                    md={3}
-                    className="p-3 d-flex justify-content-center text-center"
-
-                  >
-                   
-                    <div className="" key={index}>
-                    <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
-                  <div>
-                  <h5>{member.membername}</h5>
-                      <p className="">
-                        {member.functionbasic}
-                        {member.googlescholar}
-                      </p>
-                  </div>
-                      </Link>
-                      {member.googlescholar !== undefined && member.googlescholar !== ""? 
-                      ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
-                       
-                       {member.researchgate !==undefined && member.researchgate !==""?
-                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>):(" ")}
-
-                       {member.orcid !==undefined && member.orcid !==""?
-                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>):(" ")}
-
-                       {member.twitter !==undefined && member.twitter !==""?
-                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
-
-                       {member.email!==undefined && member.email!==""?
-                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")}
-
-                    </div>
-                  </Col>
-                ) : (
-                  ""
-                )}
-              </>
-            );
-          })}
-          
-        </Row>
+          <Link to={"/alumni"} className="p-5"><h3>Discover the Alumni members  <BsFillArrowRightSquareFill/></h3></Link>
+         </Row>
       </Container>
     </>
   );

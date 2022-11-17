@@ -20,6 +20,7 @@ import Footer from "./Components/Footer";
 import LabmemberDetails from './Pages/LabmemberDetails';
 import ProjectDetails from './Pages/ProjectDetails';
 import PublicationDetails from './Pages/PublicationDetails';
+import Alumni from './Pages/Alumni';
 import { Login } from './Login';
 import { RequireAuth } from './Components/RequireAuth';
 import CreateUser from './DashboardComponents/CreateUser';
@@ -38,7 +39,9 @@ function App() {
                     <Route path='/publication/:pub' element={<PublicationDetails />} />
                     <Route path='/labmember/:lab' element={<LabmemberDetails />} />
                     <Route path='/project/:proj' element={<ProjectDetails />} />
-                    <Route path='/users/create-user' element={<CreateUser />} />
+                    <Route path='/project/:proj' element={<ProjectDetails />} />
+                    <Route path='/alumni' element={<Alumni/>} />
+                    {/* Dashboard */}
                     <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                     <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
                     <Route path="/labmembers/create-member" element={<RequireAuth><CreateLabMembers /></RequireAuth>} />
