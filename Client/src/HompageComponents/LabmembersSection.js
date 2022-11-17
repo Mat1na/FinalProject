@@ -61,8 +61,7 @@ function LabmembersSection(index) {
                           <div className=" members d-flex justify-content-center align-items-center"
                           >
                             <img
-                              alt='Avatar'
-                              effect="blur"
+                              alt={member.membername}
                               src={`${member.image}`}
                               className="member-photo" />
                           </div>
@@ -81,7 +80,7 @@ function LabmembersSection(index) {
                       <a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>
                       <a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>
                       <a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer" ><FaTwitter /></a>
-                      <a href={member.email} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>
+                      <a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>
                     </Col>
                   </>
 
@@ -111,7 +110,7 @@ function LabmembersSection(index) {
                         <div className=" members d-flex justify-content-center align-items-center">
                           <img
                             src={`${member.image}`}
-                            className="member-photo "
+                            className="member-photo " alt={member.membername}
                           />
                         </div>
                       <h6 className="pt-3">
@@ -121,20 +120,20 @@ function LabmembersSection(index) {
                           {member.functionbasic}
                         </p>
                         </Link>
-                      {member.googlescholar ===!undefined && member.googlescholar ===!""? 
+                      {member.googlescholar !== undefined && member.googlescholar !== ""? 
                       ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
                        
-                       {member.researchgate ===!undefined && member.researchgate ===!""?
+                       {member.researchgate !==undefined && member.researchgate !==""?
                        (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>):(" ")}
 
-                       {member.orcid ===!undefined && member.orcid ===!""?
+                       {member.orcid !==undefined && member.orcid !==""?
                        (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>):(" ")}
 
-                       {member.twitter ===!undefined && member.twitter ===!""?
+                       {member.twitter !==undefined && member.twitter !==""?
                        (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
 
-                       {member.email===!undefined && member.email===!""?
-                       (<a href={member.email} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")}
+                       {member.email!==undefined && member.email!==""?
+                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")}
                        </div>
 
                   </Col>
@@ -167,20 +166,21 @@ function LabmembersSection(index) {
                       </p>
                   </div>
                       </Link>
-                      {member.googlescholar===!undefined || member.googlescholar===!""? 
-                      ( <a href={member.googlescholar} target="_blank" className="d-inline p-2" rel="noreferrer"> <SiGooglescholar/> </a>):(" ")}
-                       {console.log(member.googlescholar)}
-                       {member.researchgate ===!undefined || member.researchgate ===!""?
-                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate/></a>):(" ")}
+                      {member.googlescholar !== undefined && member.googlescholar !== ""? 
+                      ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
+                       
+                       {member.researchgate !==undefined && member.researchgate !==""?
+                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>):(" ")}
 
-                       {member.orcid ===!undefined || member.orcid===!""?
-                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid/></a>):(" ")}
+                       {member.orcid !==undefined && member.orcid !==""?
+                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>):(" ")}
 
-                       {member.twitter===!undefined || member.twitter===!""?
-                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter/></a>):(" ")}
+                       {member.twitter !==undefined && member.twitter !==""?
+                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
 
-                       {member.email===!undefined || member.email===!""?
-                       (<a href={member.email} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail/></a>):(" ")}
+                       {member.email!==undefined && member.email!==""?
+                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")}
+
                     </div>
                   </Col>
                 ) : (

@@ -30,7 +30,7 @@ function PublicationDetails() {
         <p className="authorslist">{authorsList.length>0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
         <h3 className="publicationtitle">Abstract</h3>
         <p>{publication.abstract}</p>
-        <p><strong>Link: </strong><a href={publication.link} target="_blank">{`${publication.link}`}</a></p>
+        <p><strong>Link: </strong><a href={publication.link} target="_blank" rel="noreferrer">{`${publication.link}`}</a></p>
       </Container>
     </>
   )

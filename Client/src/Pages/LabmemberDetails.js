@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 
 function LabmemberDetails() {
@@ -28,16 +26,18 @@ function LabmemberDetails() {
   };
   useEffect(() => {
     fetchLabmember();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lab]);
 
   return (
     <>
       <Container>
         <div className="member-details pt-5">
-          <img
-            src={`${member.image}`}
-            className="member-details"
-          />
+{member.image!==undefined && member.image!==" "?
+(          <img
+  src={`${member.image}`}
+  className="member-details" alt={member.membername}
+/>):(" ")}
         </div>
         <div className="text-center ">
           <h2 className="pt-3">

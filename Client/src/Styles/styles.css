@@ -25,16 +25,13 @@ td {
    width: 50vw;
    overflow: hidden;
    border-radius:10%;
-
-}
-.member-details {
    margin: auto;
-   width: 50vw;
    object-fit: cover;
+
 }
 
 .member-photo {
-   margin: auto;
+   margin: 150px;
    width: 180px;
    object-fit: cover;
 }
