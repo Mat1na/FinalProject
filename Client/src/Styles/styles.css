@@ -82,3 +82,11 @@ td {
    padding-top: 1rem;
    padding-bottom: 1rem;
 }
+a{
+   text-decoration: none;
+   color: inherit;
+}
+.project-card{
+   width: 18rem;
+  height:28rem ;
+}

@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'
-
+import React, { useEffect, useState } from "react";
+import { Badge, Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { GoMail } from "react-icons/go";
+import { FaTwitter } from "react-icons/fa";
+import { FaOrcid } from "react-icons/fa";
+import { SiResearchgate } from "react-icons/si";
+import { SiGooglescholar } from "react-icons/si";
 
 function LabmemberDetails() {
-  const { lab } = useParams()
+  const { lab } = useParams();
   const [member, setMember] = useState([]);
   const [interestsList, setInterestList] = useState([]);
 
   const fetchLabmember = async () => {
-
     let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
     let data = await res.json();
-    let labmeberParam = lab.split("-").toString()
+    let labmeberParam = lab.split("-").toString();
     if (res.ok) {
-      var filtereddata = data.find(item => item.membername.toLowerCase().split(" ").toString() === labmeberParam);
+      var filtereddata = data.find(
+        (item) =>
+          item.membername.toLowerCase().split(" ").toString() === labmeberParam
+      );
       setMember(filtereddata);
-      setInterestList(filtereddata.interests)
+      setInterestList(filtereddata.interests);
       console.log(labmeberParam);
-      console.log(filtereddata)
-      console.log(filtereddata.interests)
-        ;
+      console.log(filtereddata);
+      console.log(filtereddata.interests);
     }
-
   };
   useEffect(() => {
     fetchLabmember();
@@ -33,36 +37,99 @@ function LabmemberDetails() {
     <>
       <Container>
         <div className="member-details pt-5">
-{member.image!==undefined && member.image!==" "?
-(          <img
-  src={`${member.image}`}
-  className="member-details" alt={member.membername}
-/>):(" ")}
+          {member.image !== undefined && member.image !== " " ? (
+            <img
+              src={`${member.image}`}
+              className="member-details"
+              alt={member.membername}
+            />
+          ) : (
+            " "
+          )}
         </div>
-        <div className="text-center ">
-          <h2 className="pt-3">
-            {member.membername}
-          </h2>
-          <p className="">
-            {member.functionbasic}
-          </p>
-          <p className="">
-            {member.functionextra}
-          </p>
-        </div>
-        <div className="w">
-  {interestsList.map(item => (
-    <li>
-      {item.interest}
-    </li>
-  ))}
-        </div>
+        <div className="d-block text-center">
+          <h2 className="pt-3">{member.membername}</h2>
+          <p className="">{member.functionbasic}</p>
+          <p className="">{member.functionextra}</p>
 
+          <div className="">
+            <hr></hr>
+            <h3>Interests</h3>
+            {interestsList.map((item) => (
+             <p><Badge bg="secondary" className="">{item.interest}</Badge></p>
+            ))}
+          </div>
+          <div>
+            {member.googlescholar !== undefined &&
+            member.googlescholar !== "" ? (
+              <a
+                href={member.googlescholar}
+                className="d-inline p-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <SiGooglescholar size={"3rem"} />
+              </a>
+            ) : (
+              " "
+            )}
+
+            {member.researchgate !== undefined && member.researchgate !== "" ? (
+              <a
+                href={member.researchgate}
+                className="d-inline p-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <SiResearchgate size={"3rem"} />
+              </a>
+            ) : (
+              " "
+            )}
+
+            {member.orcid !== undefined && member.orcid !== "" ? (
+              <a
+                href={member.orcid}
+                className="d-inline p-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaOrcid size={"3rem"} />
+              </a>
+            ) : (
+              " "
+            )}
+
+            {member.twitter !== undefined && member.twitter !== "" ? (
+              <a
+                href={member.twitter}
+                className="d-inline p-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTwitter size={"3rem"} />
+              </a>
+            ) : (
+              " "
+            )}
+
+            {member.email !== undefined && member.email !== "" ? (
+              <a
+                href={`mailto:${member.membername}`}
+                className="d-inline p-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GoMail size={"3rem"} />
+              </a>
+            ) : (
+              " "
+            )}
+          </div>
+        </div>
       </Container>
-
     </>
-
-  )
+  );
 }
 
-export default LabmemberDetails
+export default LabmemberDetails;
