@@ -86,6 +86,14 @@ td {
 .authorsforpublicationlist{
    display:inline
 }
+a{
+   text-decoration: none;
+   color: inherit;
+}
+.project-card{
+   width: 18rem;
+  height:28rem ;
+}
 .publicationhover:hover{
    box-shadow: 0 .5rem 1rem #00000026;
    padding: 1rem 1rem 1rem 1rem;

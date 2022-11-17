@@ -8,7 +8,7 @@ import { SiResearchgate } from 'react-icons/si';
 import { SiGooglescholar } from 'react-icons/si';
 
 
-function LabmembersSection(index) {
+function LabmembersSection() {
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
     var sortOrder = ["Assistant Professor", "Postdoc", "PhD student", "visiting PhD student", "Master student"];
@@ -19,25 +19,11 @@ function LabmembersSection(index) {
     var sorted = data.sort((a, b) => sortOrder.indexOf(a.functionbasic
     ) - sortOrder.indexOf(b.functionbasic
     ));
-
-    console.log(sorted);
+    // console.log(sorted);
   };
   useEffect(() => {
     fetchLabmembers();
   }, []);
-
-
-  // let basicFunctions=labmemberList.map((item)=>item.functionbasic)
-  // console.log(basicFunctions)
-
-  //     // console.log(labmemberList[index].functionbasic); 
-  //  if(labmemberList.functionbasic==="Postdoc"){
-  //   console.log("Postdoc:",labmemberList.membername);
-
-  //   }
-  //   else if(labmemberList.functionbasic==="PhD student"){
-  //     console.log("PhD student:",labmemberList.membername)}
-
 
 
   return (
@@ -45,6 +31,7 @@ function LabmembersSection(index) {
       <Container>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           <h1 className="pb-5">Lab members</h1>
+{/* Principal Investigator Section*/}
           <h2 className="p-3">Principal Investigator</h2>
           {labmemberList.map((member, index) => {
             return (
@@ -90,7 +77,7 @@ function LabmembersSection(index) {
               </>
             );
           })}
-
+{/* Current members Section*/}
           <h2 className="p-5">Current members</h2>
           {labmemberList.map((member, index) => {
             return (
@@ -145,6 +132,7 @@ function LabmembersSection(index) {
               </>
             );
           })}
+{/* Alumni Section*/}
           <h2 className="p-5">Alumni</h2>
           {labmemberList.map((member, index) => {
             return (
