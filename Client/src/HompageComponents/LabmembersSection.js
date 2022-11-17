@@ -43,7 +43,7 @@ function LabmembersSection() {
                       md={12}
                       className="p-3 d-flex justify-content-center align-items-center"
                     >
-                      <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`} >
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} >
                         <div className="text-center">
                           <div className=" members d-flex justify-content-center align-items-center"
                           >
@@ -93,7 +93,7 @@ function LabmembersSection() {
                     className="p-3 d-flex justify-content-center align-items-center"
                   >
                       <div className="text-center">
-                      <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}>
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
                         <div className=" members d-flex justify-content-center align-items-center">
                           <img
                             src={`${member.image}`}
@@ -145,7 +145,7 @@ function LabmembersSection() {
                   >
                    
                     <div className="" key={index}>
-                    <Link to={`/labmember/${member.membername.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}>
+                    <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
                   <div>
                   <h5>{member.membername}</h5>
                       <p className="">

@@ -22,10 +22,11 @@ function LabmemberDetails() {
           item.membername.toLowerCase().split(" ").toString() === labmeberParam
       );
       setMember(filtereddata);
-      setInterestList(filtereddata.interests);
-      console.log(labmeberParam);
-      console.log(filtereddata);
-      console.log(filtereddata.interests);
+      setInterestList(filtereddata.interests)
+      console.log("paraml:",labmeberParam);
+      console.log(filtereddata)
+      // item => item.membername.toLowerCase().split(" ").toString() === labmeberParam
+        ;
     }
   };
   useEffect(() => {

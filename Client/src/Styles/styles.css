@@ -82,6 +82,9 @@ td {
    padding-top: 1rem;
    padding-bottom: 1rem;
 }
+.authorsforpublicationlist{
+   display:inline
+}
 a{
    text-decoration: none;
    color: inherit;
