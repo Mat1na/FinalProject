@@ -2,7 +2,6 @@ html {
    overflow-y: scroll;
 }
 
-
 .hidden-label {
    visibility: hidden;
    display: block;
@@ -24,7 +23,7 @@ td {
 .member-details {
    width: 50vw;
    overflow: hidden;
-   border-radius:10%;
+   border-radius: 10%;
    margin: auto;
    object-fit: cover;
 
@@ -75,29 +74,43 @@ td {
    border-radius: 0.25rem;
    margin-bottom: 1rem;
    border: 1px solid #209cee;
-   display:block;
+   display: block;
    color: #12537E;
    font-size: 21px;
 }
+
 .publicationyear {
    padding-top: 1rem;
    padding-bottom: 1rem;
 }
-.authorsforpublicationlist{
-   display:inline
+
+.authorsforpublicationlist {
+   display: inline
 }
-a{
+
+a {
    text-decoration: none;
    color: inherit;
 }
-.project-card{
+
+.project-card {
    width: 18rem;
-  height:28rem ;
+   height: 28rem;
 }
-.publicationhover:hover{
+
+.publicationhover:hover {
    box-shadow: 0 .5rem 1rem #00000026;
    padding: 1rem 1rem 1rem 1rem;
 }
+
 .bi-info-circle-fill {
-   color:#219CEE !important
+   color: #219CEE !important
+}
+
+.svg-research {
+   vertical-align: middle;
+   display: inline-flex;
+   align-self: center;
+   margin-bottom: 1em;
+   max-width: 50%
 }
