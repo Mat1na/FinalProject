@@ -1,8 +1,9 @@
 html {
    overflow-y: scroll;
-   margin: 0;
-   padding: 0;
+   margin:0;
+   padding:0;
 }
+
 
 .hidden-label {
    visibility: hidden;
@@ -213,6 +214,10 @@ a {
    .responsive-video {
       display: none;
    }
+   .video-container {
+      display: none;
+   }
+
 
    .photo-video {
       display: block;
@@ -232,10 +237,20 @@ a {
       width: 100%;
       height: 100%;
       margin: 0;
-      padding: 100px;
+      padding-top: 80px;
       line-height: 1.5;
       text-align: center;
       color: white;
+   }
+   .photo-container {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height:250px;
+      overflow: hidden;
+      margin-bottom: 5rem;
+   
    }
 }
 

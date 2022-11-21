@@ -7,7 +7,7 @@ function VideoSection() {
     
     return (
 
-
+<>
         <div className='video-container'>
             <video src={Video} className="responsive-video" autoPlay loop muted></video>
             <img src={photo} alt="photo" className="photo-video" />
@@ -19,10 +19,20 @@ function VideoSection() {
                 <h1>Something</h1>
                 <p>Something else</p>
             </div>
-           
-      
+            
+                </div>
+
+                
+        <div className='photo-container'>
+         <img src={photo} alt="photo" className="photo-video" />
+        <div className='overlay-photo'>
+            <h1>Something</h1>
+            <p>Something else</p>
         </div>
 
+        
+            </div>
+            </>
 
     )
 }
