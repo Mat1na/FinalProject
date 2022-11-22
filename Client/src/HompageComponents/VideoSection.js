@@ -18,7 +18,7 @@ function VideoSection() {
                 <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
             </div>
             
-                </div>
+        </div>
 
                 
         <div className='photo-container'>

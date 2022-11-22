@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GoMail } from 'react-icons/go';
 import { FaTwitter } from 'react-icons/fa';
 import { FaOrcid } from 'react-icons/fa';
 import { SiResearchgate } from 'react-icons/si';
 import { SiGooglescholar } from 'react-icons/si';
-import {BsFillArrowRightSquareFill} from 'react-icons/bs';
+import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 function LabmembersSection() {
   const [labmemberList, setLabmemberList] = useState([]);
@@ -29,6 +29,7 @@ function LabmembersSection() {
   return (
     <>
       <Container>
+        <h1 className="pb-5 lab-title">Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           <h1 className="pb-5 montserrat">Lab members</h1>
 {/* Principal Investigator Section*/}
@@ -41,34 +42,30 @@ function LabmembersSection() {
                   <>
                     <Col
                       md={12}
-                      className="p-3 d-flex justify-content-center align-items-center"
+                      className="d-flex justify-content-center align-items-center"
                     >
-                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} >
-                        <div className="text-center">
-                          <div className=" members d-flex justify-content-center align-items-center"
-                          >
-                            <img
-                              alt={member.membername}
-                              src={`${member.image}`}
-                              className="member-photo" />
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
+
+                        <div className=" members d-flex justify-content-center align-items-center"
+                        >
+                          <img
+                            alt={member.membername}
+                            src={`${member.image}`}
+                            className="member-photo" />
+                          
+                            <div className="member-photo-overlay">
+                            <h6 className="montserrat">
+                              {member.membername}
+                            </h6>
+                            <p className="roboto">
+                              {member.functionbasic}
+                            </p>
                           </div>
-                          <h6 className="pt-3 montserrat">
-                            {member.membername}
-                          </h6>
-                          <p className="roboto">
-                            {member.functionbasic}
-                          </p>
-                        </div>
+                          </div>
                       </Link>
 
                     </Col>
-                    <Col>
-                      <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>
-                      <a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>
-                      <a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>
-                      <a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer" ><FaTwitter /></a>
-                      <a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>
-                    </Col>
+
                   </>
 
                 ) : (
@@ -85,56 +82,45 @@ function LabmembersSection() {
                 {member.currentmember === "Yes" && member.functionbasic !== 'Assistant Professor' ? (
                   // Grid system with shifting number of elements
                   <>
-                  <Col
-                    sm={6}
-                    md={5}
-                    lg={4}
-                    xl={3}
-                    className="p-3 d-flex justify-content-center align-items-center"
-                  >
+                    <Col
+                      sm={6}
+                      md={5}
+                      lg={4}
+                      xl={3}
+                      className="p-3 d-flex justify-content-center align-items-center"
+                    >
                       <div className="text-center">
-                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
-                        <div className=" members d-flex justify-content-center align-items-center">
-                          <img
-                            src={`${member.image}`}
-                            className="member-photo " alt={member.membername}
-                          />
-                        </div>
-                      <h6 className="pt-3 montserrat">
-                          {member.membername}
-                        </h6>
-                        <p className="roboto">
-                          {member.functionbasic}
-                        </p>
+                        <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
+                          <div className=" members d-flex justify-content-center align-items-center">
+                            <img
+                              src={`${member.image}`}
+                              className="member-photo " alt={member.membername}
+                            />
+                     <div className="member-photo-overlay">
+                            <h6 className="montserrat">
+                              {member.membername}
+                            </h6>
+                            <p className="roboto">
+                              {member.functionbasic}
+                            </p>
+                          </div>
+                          </div>
+                   
                         </Link>
-                      {/* {member.googlescholar !== undefined && member.googlescholar !== ""? 
-                      ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
-                       
-                       {member.researchgate !==undefined && member.researchgate !==""?
-                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>):(" ")}
+                    </div>
 
-                       {member.orcid !==undefined && member.orcid !==""?
-                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>):(" ")}
+                    </Col>
 
-                       {member.twitter !==undefined && member.twitter !==""?
-                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
-
-                       {member.email!==undefined && member.email!==""?
-                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")} */}
-                       </div>
-
-                  </Col>
-      
-                     </>
+                  </>
                 ) : (
                   ""
                 )}
               </>
             );
           })}
-{/* Alumni Section*/}
-          <Link to={"/alumni"} className="p-5"><h3>Discover the Alumni members  <BsFillArrowRightSquareFill/></h3></Link>
-         </Row>
+          {/* Alumni Section*/}
+          <Link to={"/alumni"} className="p-5"><h3><Badge bg="var(--light)">New</Badge><BsFillArrowRightSquareFill /></h3></Link>
+        </Row>
       </Container>
     </>
   );
