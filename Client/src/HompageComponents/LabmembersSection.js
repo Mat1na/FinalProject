@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { GoMail } from 'react-icons/go';
-import { FaTwitter } from 'react-icons/fa';
-import { FaOrcid } from 'react-icons/fa';
-import { SiResearchgate } from 'react-icons/si';
-import { SiGooglescholar } from 'react-icons/si';
-import { BsFillArrowRightSquareFill } from 'react-icons/bs';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 function LabmembersSection() {
   const [labmemberList, setLabmemberList] = useState([]);
@@ -44,7 +39,7 @@ function LabmembersSection() {
                       md={12}
                       className="d-flex justify-content-center align-items-center"
                     >
-                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
 
                         <div className=" members d-flex justify-content-center align-items-center"
                         >
@@ -90,7 +85,7 @@ function LabmembersSection() {
                       className="p-3 d-flex justify-content-center align-items-center"
                     >
                       <div className="text-center">
-                        <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`}>
+                        <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
                           <div className=" members d-flex justify-content-center align-items-center">
                             <img
                               src={`${member.image}`}
@@ -119,7 +114,7 @@ function LabmembersSection() {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="p-5"><h3><Badge bg="var(--light)">New</Badge><BsFillArrowRightSquareFill /></h3></Link>
+          <Link to={"/alumni"} className="p-5"><h3><Badge  className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill  className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>

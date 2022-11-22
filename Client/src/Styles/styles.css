@@ -195,7 +195,7 @@ td {
 /* members section */
 .lab-title {
    overflow: hidden;
-   text-align: center;
+   text-align:left;
  }
  
 
@@ -205,7 +205,7 @@ td {
    display: inline-block;
    height: 2px;
    position: relative;
-   vertical-align: middle;
+   vertical-align: baseline;
    width: 100%;
    left: 0.5em;
    margin-right: -50%;
@@ -242,11 +242,15 @@ td {
    border-radius:5%;
    margin: 10px;
 }
+
 .member-photo {
- 
    width: 180px;
    object-fit: cover;
    filter: grayscale(1);
+   transition: transform .2s; /* Animation */
+}
+.photo-link:hover .member-photo {
+   transform: scale(1.1);
 }
 
    /* For detail page */
@@ -256,6 +260,15 @@ td {
    border-radius: 10%;
    margin: auto;
    object-fit: cover;
+
+}
+
+/* Alumni */
+.badge-icon{
+   background-color: var(--Light)!important;
+   color: var(--Dark2);
+}
+.arrow-icon{
 
 }
 
