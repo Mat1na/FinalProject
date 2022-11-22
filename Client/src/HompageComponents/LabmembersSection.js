@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GoMail } from 'react-icons/go';
 import { FaTwitter } from 'react-icons/fa';
@@ -99,7 +99,7 @@ function LabmembersSection() {
                               src={`${member.image}`}
                               className="member-photo " alt={member.membername}
                             />
-                                     <div className="member-photo-overlay">
+                     <div className="member-photo-overlay">
                             <h6 className="">
                               {member.membername}
                             </h6>
@@ -110,21 +110,7 @@ function LabmembersSection() {
                           </div>
                    
                         </Link>
-                        {/* {member.googlescholar !== undefined && member.googlescholar !== ""? 
-                      ( <a href={member.googlescholar} className="d-inline p-2" target="_blank" rel="noreferrer"><SiGooglescholar /></a>):(" ")}
-                       
-                       {member.researchgate !==undefined && member.researchgate !==""?
-                       (<a href={member.researchgate} className="d-inline p-2" target="_blank" rel="noreferrer"><SiResearchgate /></a>):(" ")}
-
-                       {member.orcid !==undefined && member.orcid !==""?
-                       (<a href={member.orcid} className="d-inline p-2" target="_blank" rel="noreferrer"><FaOrcid /></a>):(" ")}
-
-                       {member.twitter !==undefined && member.twitter !==""?
-                       (<a href={member.twitter} className="d-inline p-2" target="_blank" rel="noreferrer"><FaTwitter /></a>):(" ")}
-
-                       {member.email!==undefined && member.email!==""?
-                       (<a href={`mailto:${member.membername}`} className="d-inline p-2" target="_blank" rel="noreferrer"><GoMail /></a>):(" ")} */}
-                      </div>
+                    </div>
 
                     </Col>
 
@@ -136,7 +122,7 @@ function LabmembersSection() {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="p-5"><h3>Discover the Alumni members  <BsFillArrowRightSquareFill /></h3></Link>
+          <Link to={"/alumni"} className="p-5"><h3><Badge bg="var(--light)">New</Badge><BsFillArrowRightSquareFill /></h3></Link>
         </Row>
       </Container>
     </>

@@ -233,8 +233,8 @@ td {
    margin: 10px;
 }
 .member-photo {
-   margin:40px;
-   width: 170px;
+ 
+   width: 180px;
    object-fit: cover;
    filter: grayscale(1);
 }
