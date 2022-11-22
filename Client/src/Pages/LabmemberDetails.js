@@ -49,13 +49,13 @@ function LabmemberDetails() {
           )}
         </div>
         <div className="d-block text-center">
-          <h2 className="pt-3">{member.membername}</h2>
-          <p className="">{member.functionbasic}</p>
-          <p className="">{member.functionextra}</p>
+          <h2 className="pt-3 montserrat">{member.membername}</h2>
+          <p className="roboto">{member.functionbasic}</p>
+          <p className="roboto">{member.functionextra}</p>
 
           <div className="">
             <hr></hr>
-            <h3>Interests</h3>
+            <h3 className='montserrat'>Interests</h3>
             {interestsList.map((item) => (
              <p><Badge bg="secondary" className="">{item.interest}</Badge></p>
             ))}

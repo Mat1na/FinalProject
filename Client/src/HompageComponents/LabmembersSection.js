@@ -30,9 +30,9 @@ function LabmembersSection() {
     <>
       <Container>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
-          <h1 className="pb-5">Lab members</h1>
+          <h1 className="pb-5 montserrat">Lab members</h1>
 {/* Principal Investigator Section*/}
-          <h2 className="p-3">Principal Investigator</h2>
+          <h2 className="p-3 montserrat">Principal Investigator</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -52,10 +52,10 @@ function LabmembersSection() {
                               src={`${member.image}`}
                               className="member-photo" />
                           </div>
-                          <h6 className="pt-3">
+                          <h6 className="pt-3 montserrat">
                             {member.membername}
                           </h6>
-                          <p className="">
+                          <p className="roboto">
                             {member.functionbasic}
                           </p>
                         </div>
@@ -78,7 +78,7 @@ function LabmembersSection() {
             );
           })}
 {/* Current members Section*/}
-          <h2 className="p-5">Current members</h2>
+          <h2 className="p-5 montserrat">Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -100,10 +100,10 @@ function LabmembersSection() {
                             className="member-photo " alt={member.membername}
                           />
                         </div>
-                      <h6 className="pt-3">
+                      <h6 className="pt-3 montserrat">
                           {member.membername}
                         </h6>
-                        <p className="">
+                        <p className="roboto">
                           {member.functionbasic}
                         </p>
                         </Link>

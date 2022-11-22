@@ -12,12 +12,10 @@ function VideoSection() {
             <video src={Video} className="responsive-video" autoPlay loop muted></video>
             <img src={photo} alt="photo" className="photo-video" />
             <div className='overlay-photo'>
-                <h1>Something</h1>
-                <p>Something else</p>
+                <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
             </div>
             <div className='overlay'>
-                <h1>Something</h1>
-                <p>Something else</p>
+                <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
             </div>
             
                 </div>
@@ -26,8 +24,7 @@ function VideoSection() {
         <div className='photo-container'>
          <img src={photo} alt="photo" className="photo-video" />
         <div className='overlay-photo'>
-            <h1>Something</h1>
-            <p>Something else</p>
+            <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
         </div>
 
         

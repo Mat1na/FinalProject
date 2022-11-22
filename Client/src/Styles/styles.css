@@ -298,3 +298,11 @@ a {
    color: white;
    transition: transform 2ms ease-in-out;
 }
+
+.montserrat {
+   font-family: 'Montserrat', sans-serif !important;
+}
+
+.roboto {
+   font-family: 'Roboto', sans-serif;
+}

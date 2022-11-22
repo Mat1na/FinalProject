@@ -32,19 +32,19 @@ function Alumni() {
   }, []);
   return (
     <Row className="p-5 text-center ">
-      <h1 className="p-5">Alumni</h1>
+      <h1 className="p-5 montserrat">Alumni</h1>
       {labmemberList.map((member, index) => {
         return (
           <>
             {member.currentmember === "No" ? (
               <Col md={2} className="m-2">
-                <Link
+                <Link className='montserrat'
                   to={`/labmember/${member.membername
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
                 >
                   <h5>{member.membername}</h5>
-                  <p className="">
+                  <p className="roboto">
                     {member.functionbasic}
                     {member.functionextra}
                   </p>
