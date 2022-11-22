@@ -20,7 +20,7 @@ function VideoSection() {
                 <p>Something else</p>
             </div>
             
-                </div>
+        </div>
 
                 
         <div className='photo-container'>
