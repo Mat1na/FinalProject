@@ -25,7 +25,7 @@ function Alumni() {
       (a, b) =>
         sortOrder.indexOf(a.functionbasic) - sortOrder.indexOf(b.functionbasic)
     );
-    // console.log(sorted);
+    console.log(sorted);
   };
   useEffect(() => {
     fetchLabmembers();

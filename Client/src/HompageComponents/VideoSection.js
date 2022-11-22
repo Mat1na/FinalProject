@@ -1,6 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
-import Video from "../assets/Video/DJI_0010.mp4"
+import Video from "../assets/Video/DJI_0011.mp4"
 import photo from "../assets/photo/matthew-smith-Rfflri94rs8-unsplash.jpg"
 
 function VideoSection() {
@@ -10,19 +9,19 @@ function VideoSection() {
 <>
         <div className='video-container'>
             <video src={Video} className="responsive-video" autoPlay loop muted></video>
-            <img src={photo} alt="photo" className="photo-video" />
+            <img src={photo} alt="alternative for biodiversity video" className="photo-video" />
             <div className='overlay-photo'>
-                <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
+                <div className='videoheader'><h1 className='montserrat'>Protecting <span className='biodiversity'>biodiversity</span></h1> <h1 className='montserrat'>in a changing world</h1></div>
             </div>
             <div className='overlay'>
-                <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
+            <div className='videoheader'><h1 className='montserrat'>Protecting <span className='biodiversity'>biodiversity</span></h1> <h1 className='montserrat'>in a changing world</h1></div>
             </div>
             
         </div>
 
                 
         <div className='photo-container'>
-         <img src={photo} alt="photo" className="photo-video" />
+         <img src={photo} alt="alternative for biodiversity video" className="photo-video" />
         <div className='overlay-photo'>
             <h1 className='montserrat'>Protecting biodiversity in a changing world</h1>
         </div>

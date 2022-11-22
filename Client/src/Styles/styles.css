@@ -1,21 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-   --Dark: rgb(25,46,47);
-   --Dark2: rgb(58,89,92);
-   --Light: rgb(123,169,169);
-   --Light2: rgb(188,217,215);
+   --Dark: rgb(25, 46, 47);
+   --Dark2: rgb(58, 89, 92);
+   --Dark3: rgb(77, 116, 120);
+   --Light: rgb(123, 169, 169);
+   --Light2: rgb(188, 217, 215);
    --my-font: ;
    font-weight: 700;
    padding: 0px;
    margin: 0px;
- 
- }
+
+}
 
 html {
    overflow-y: scroll;
-   margin:0;
-   padding:0;
+   margin: 0;
+   padding: 0;
+}
+
+.container-fluid {
+   padding-left:80px;
+   padding-right:80px;
 }
 
 /* Dashboard */
@@ -73,11 +79,21 @@ td {
 
 }
 
+.videoheader {
+   position: absolute;
+   bottom: 80px;
+   left: 80px;
+   color: white;
+}
+
+.biodiversity{
+   color: #7ba9a9
+}
 .overlay {
-  filter: contrast(2);
-   filter: saturate(2); 
-   background: radial-gradient(circle, rgba(238, 234, 174, 0.1) 0%, rgba(30, 52, 20, 0) 54%); 
-   background-color: rgba(25,46,47, 0.7); 
+   filter: contrast(2);
+   filter: saturate(2);
+   background: radial-gradient(circle, rgba(238, 234, 174, 0.1) 0%, rgba(30, 52, 20, 0) 54%);
+   background-color: rgba(25, 46, 47, 0.7);
 
    position: absolute;
    left: 0;
@@ -87,8 +103,7 @@ td {
    margin: 0;
    padding: 100px;
    line-height: 1.5;
-   text-align: center;
-
+   text-align: left;
 }
 
 .overlay>h1 {
@@ -103,6 +118,7 @@ td {
    .responsive-video {
       display: none;
    }
+
    .video-container {
       display: none;
    }
@@ -131,15 +147,16 @@ td {
       text-align: center;
       color: white;
    }
+
    .photo-container {
       position: relative;
       top: 0;
       bottom: 0;
       width: 100%;
-      height:250px;
+      height: 250px;
       overflow: hidden;
       margin-bottom: 5rem;
-   
+
    }
 }
 
@@ -195,31 +212,32 @@ td {
 /* members section */
 .lab-title {
    overflow: hidden;
-   text-align:left;
- }
- 
+   text-align: left;
+}
 
- .lab-title:after {
-   background-color:var(--Dark2);
+
+.lab-title:after {
+   background-color: var(--Dark3);
    content: "";
    display: inline-block;
-   height: 2px;
+   height: 3px;
    position: relative;
    vertical-align: baseline;
    width: 100%;
    left: 0.5em;
    margin-right: -50%;
- }
- 
- .member-photo-overlay {
-    position: absolute;
-   padding: 70px 0px 0px 10px;
-    font-size: 15px;
-    text-align: left;
-    color: white;
- 
- }
- .members .member-photo-overlay{
+}
+
+.member-photo-overlay {
+   position: absolute;
+   padding: 190px 0px 0px 10px;
+   font-size: 15px;
+   text-align: left;
+   color: white;
+
+}
+
+.members .member-photo-overlay {
    position: absolute;
    top: 0;
    left: 0;
@@ -227,33 +245,35 @@ td {
    height: 100%;
    display: none;
    color: white;
-   background: linear-gradient(0deg, rgba(25,46,47,0.8) 0%, rgba(123,169,169,0.5) 100%);
+   background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
    /* background: rgba(58,89,92, 0.8); */
    filter: contrast(2);
-   filter: saturate(2); 
+   filter: saturate(2);
    display: block;
- }
+}
 
 .members {
    position: relative;
-   width: 150px;
-   height: 150px;
+   width: 250px;
+   height: 250px;
    overflow: hidden;
-   border-radius:5%;
+   border-radius: 5%;
    margin: 10px;
 }
 
 .member-photo {
-   width: 180px;
+   width: 250px;
    object-fit: cover;
    filter: grayscale(1);
-   transition: transform .2s; /* Animation */
+   transition: transform .2s;
+   /* Animation */
 }
+
 .photo-link:hover .member-photo {
    transform: scale(1.1);
 }
 
-   /* For detail page */
+/* For detail page */
 .member-details {
    width: 40vw;
    overflow: hidden;
@@ -264,26 +284,16 @@ td {
 }
 
 /* Alumni */
-.badge-icon{
-   background-color: var(--Light)!important;
+.badge-icon {
+   background-color: var(--Light) !important;
    color: var(--Dark2);
 }
-.arrow-icon{
-
-}
-
-
-
 
 .journalcover {
    max-width: 150px;
    height: auto;
    object-fit: cover;
    display: block;
-}
-
-.journalcontainer {
-   display: flex;
 }
 
 .journallink {
@@ -374,10 +384,11 @@ a {
    color: #219CEE !important
 }
 
-.svg-research {
+.jpg-research {
    vertical-align: middle;
    display: inline-flex;
    align-self: center;
    margin-bottom: 1em;
-   max-width: 50%
+   max-width: 50%;
+   filter: grayscale(1);
 }

@@ -26,7 +26,7 @@ function PublicationSection() {
 </svg>Check out all publications</Link></div>
           {lastPublications.length > 0 && lastPublications.map((publication, index) => {
             return <div key={publication.order} className="publicationhover mb-4"><Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink">
-              <div className="journalcontainer">
+              <div className="d-flex">
 
                 <div>
                   <h3 className="publicationtitle">{publication.publicationtitle}</h3>
