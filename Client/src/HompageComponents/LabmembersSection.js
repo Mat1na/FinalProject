@@ -113,7 +113,7 @@ function LabmembersSection() {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="p-5"><h3><Badge  className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill  className="arrow-icon" /></Badge></h3></Link>
+          <Link to={"/alumni"} className="p-5"><h3 className="d-flex"><Badge  className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill  className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>
