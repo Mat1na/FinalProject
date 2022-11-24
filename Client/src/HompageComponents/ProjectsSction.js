@@ -24,11 +24,11 @@ function ProjectsSction() {
 
   return (
     <>
-      <Container>
+      <Container fluid className='mb-5'>
         <h1 className="text-left lab-title">Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row>
-             {projects.map((project, e) => (
+            {projects.map((project, e) => (
               <>
                 {/* <div className="m-3">
              <Card  className="project-card">
@@ -43,25 +43,25 @@ function ProjectsSction() {
             </Card> 
             </div> */}
                 <Col md={4} className='row-elem' ref={selectedProject} onClick={() => console.log(selectedProject.current)}>
-                <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
-                  <div className=" projects d-flex justify-content-center" >
-                    <img
-                      src={project.image}
-                      className="project-photo" alt={project.title}
-                    />
-                    <div className="project-photo-overlay"></div>
-                    <div className="project-text-overlay">
-                      <p className="roboto">
-                        {project.title}
-                      </p>
+                  <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
+                    <div className=" projects d-flex justify-content-center" >
+                      <img
+                        src={project.image}
+                        className="project-photo" alt={project.title}
+                      />
+                      <div className="project-photo-overlay"></div>
+                      <div className="project-text-overlay">
+                        <h3 className="montserrat projecttitle">
+                          {project.title}
+                        </h3>
+                      </div>
+                      <div className="project-summary-container" >
+                        <p className="roboto project-summary">
+                          {project.summary}.<br /> Read more ...
+                        </p>
+                      </div>
                     </div>
-                    <div className="project-summary-container" >
-                    <p className="roboto project-summary">
-                        {project.summary}.<br/> Read more ...
-                    </p>
-                    </div>
-                  </div>
-   </Link>
+                  </Link>
                 </Col>
               </>
             ))}

@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 function ResearchSection() {
   return (
-    <Container fluid>
+    <Container fluid className='mb-5'>
       <h1 className="pb-5 montserrat lab-title">Research</h1>
 
       <Row className="d-flex-box align-items-center justify-content-center">

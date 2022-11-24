@@ -36,7 +36,7 @@ function LabmemberDetails() {
 
   return (
     <>
-      <Container>
+      <Container fluid className='mb-5'>
         <div className="member-details pt-5">
           {member.image !== undefined && member.image !== " " ? (
             <img

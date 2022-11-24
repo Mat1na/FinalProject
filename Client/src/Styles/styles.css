@@ -44,7 +44,13 @@ td {
 
 /* collapse */
 
+.navbar-brand {
+   padding-left: 80px;
+}
 
+.navbar-nav {
+   padding-right: 80px;
+}
 
 .navbar-collapse.collapsing {
    height: 91vh;
@@ -81,7 +87,6 @@ td {
 .color-nav {
    background-color: var(--Dark);
 }
-
 
 .photo-video {
    display: none;
@@ -205,13 +210,17 @@ td {
 
 
 
-/* Research seaction */
+/* Research section */
 .research-title {
    font-size: 1.5rem;
+   font-weight: 600;
+   margin-bottom: 4px;
 }
 
 .research-text {
    font-size: 0.9rem;
+   font-weight: 300;
+   line-height: 1.6;
 }
 
 .jpg-research {
@@ -252,8 +261,29 @@ td {
 .lab-title {
    overflow: hidden;
    text-align: left;
+   font-weight: 600;
 }
 
+.professorname {
+   font-weight: 600;
+   margin-bottom: 0px;
+   font-size: 1.5rem;
+}
+
+.professorfunction {
+   font-weight: 300;
+   margin-bottom: 0px;
+}
+
+.membername {
+   font-weight: 600;
+   margin-bottom: 0px;
+}
+
+.memberfunction {
+   font-weight: 300;
+   margin-bottom: 0px;
+}
 
 .lab-title:after {
    background-color: var(--Dark3);
@@ -270,11 +300,12 @@ td {
 .member-photo-overlay {
    position: absolute;
 }
+
 .member-text-overlay {
    position: absolute;
    font-size: 0.9rem;
-   left:10px;
-   bottom: 0;
+   left: 25px;
+   bottom: 25px;
    text-align: left;
    color: white;
 
@@ -305,7 +336,8 @@ td {
 }
 
 .member-photo {
-   width: 100%;
+   width: 18vw;
+   height: 18vw;
    object-fit: cover;
    filter: grayscale(1);
    transition: transform .2s;
@@ -316,8 +348,9 @@ td {
    transform: scale(1.1);
    filter: grayscale(0);
 }
+
 .photo-link:hover .member-photo-overlay {
-   background:none
+   background: none
 }
 
 /* For detail page */
@@ -330,6 +363,28 @@ td {
 
 }
 
+.project-details {
+   width: 20vw;
+   height: 20vw;
+   overflow: hidden;
+   border-radius: 10%;
+   margin: auto;
+   object-fit: cover;
+
+}
+
+.project-photo-container-overlay {
+   position: absolute;
+   bottom: 0px;
+   width: 20vw;
+   height: 20vw;
+   border-radius: 10%;
+   background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
+   /* background: rgba(58,89,92, 0.8); */
+   filter: contrast(2);
+   filter: saturate(2);
+}
+
 /* Alumni */
 .badge-icon {
    background-color: var(--Light) !important;
@@ -339,12 +394,13 @@ td {
 }
 
 /* Project section */
-.project-bg{
-   background-color:grey;
+.project-bg {
+   background-color: grey;
    border-radius: 5%;
    height: 80%;
    justify-content: center;
 }
+
 .project-photo {
    width: 100%;
    object-fit: cover;
@@ -352,30 +408,34 @@ td {
    filter: grayscale(1);
    transition: transform .2s;
 }
-.project-summary-container{
-   opacity:0;
+
+.project-summary-container {
+   opacity: 0;
    width: 100%;
 
    padding: 15px;
    font-size: 0.9rem;
-   left:0;
-   bottom:-20px;
+   left: 0;
+   bottom: -20px;
    color: white;
    z-index: 100;
    position: absolute;
    transition: all 0.5s;
    background: var(--Dark);
 }
+
 .project-link:hover .project-summary-container {
    opacity: 1;
-   bottom:0;
+   bottom: 0;
 }
+
 .project-link:hover .project-photo {
    transform: scale(1.5);
+   filter: grayscale(0);
 }
 
 .project-link:hover .project-photo-overlay {
-   background:none
+   background: none
 }
 
 .projects {
@@ -389,11 +449,12 @@ td {
 .project-photo-overlay {
    position: absolute;
 }
+
 .project-text-overlay {
    position: absolute;
    font-size: 0.9rem;
-   left:10px;
-   bottom: 0;
+   left: 25px;
+   bottom: 25px;
    color: white;
 
 }
@@ -408,6 +469,13 @@ td {
    filter: saturate(2);
    transition: transform .2s;
 }
+
+.projecttitle {
+   font-weight: 600;
+   font-size: 1.5rem;
+}
+
+/* Journal section */
 
 .journalcover {
    max-width: 150px;

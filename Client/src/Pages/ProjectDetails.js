@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Card, Container } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 function ProjectDetails() {
@@ -30,8 +30,19 @@ function ProjectDetails() {
   }, [proj]);
 
   return (
-    <Container>
+    <Container fluid className='mb-5'>
       <div className="m-5">
+        <Row>
+          <Col sm={4}><div className="research-photo-container">
+            <img src={project.image} alt={project.title} className='project-details' />
+            <div className="project-photo-container-overlay"></div>
+          </div>
+          </Col>
+          <Col>
+          <h3 className='montserrat research-title'>{project.title}</h3>
+          <p className='roboto research-text'>{project.content}</p>
+          </Col>
+        </Row>
         <Card className="">
           <Card.Title>
             <h1 className="text-center m-5">{project.title}</h1>
@@ -48,15 +59,26 @@ function ProjectDetails() {
           </a>
           <Card.Body>
             <Card.Text className="px-5">{project.content}</Card.Text>
-            <h6 className="px-5">Researchers: {researchersList.map((researcher) => (
-                <Link
+            <h6 className="px-5">Researchers: {researchersList.map((researcher, index, array) => {
+              if (index + 1 === array.length) {
+                return <Link
                   to={`/labmember/${researcher.researcher
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
                 >
-                  <p className="d-inline">{researcher.researcher},</p>
+                  <p className="d-inline">{researcher.researcher}</p>
                 </Link>
-              ))}
+              }
+              else {
+                return <Link
+                  to={`/labmember/${researcher.researcher
+                    .replace(/\s/g, "-")
+                    .toLowerCase()}`}
+                >
+                  <p className="d-inline">{researcher.researcher}, </p>
+                </Link>
+              }
+            })}
             </h6>
           </Card.Body>
         </Card>

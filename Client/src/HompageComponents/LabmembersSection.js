@@ -39,7 +39,7 @@ function LabmembersSection() {
                       className="d-flex justify-content-center align-items-center"
                     >
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
-                        <div className=" members d-flex justify-content-center align-items-center"
+                        <div className="members d-flex justify-content-center align-items-center"
                         >
                           <img
                             alt={member.membername}
@@ -49,12 +49,12 @@ function LabmembersSection() {
 
                           </div>
                           <div className="member-text-overlay">
-                            <h6 className="montserrat">
+                            <h3 className="montserrat professorname">
                               {member.membername}
-                            </h6>
-                            <p className="roboto">
+                            </h3>
+                            <h5 className="roboto professorfunction">
                               {member.functionbasic}
-                            </p>
+                            </h5>
                           </div>
                         </div>
                       </Link>
@@ -85,8 +85,8 @@ function LabmembersSection() {
                       className="p-3 d-flex justify-content-center align-items-center"
                     >
 
-                        <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
-                        <div className=" members d-flex justify-content-center align-items-center"
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
+                        <div className="members d-flex justify-content-center align-items-center"
                         >
                           <img
                             alt={member.membername}
@@ -96,15 +96,15 @@ function LabmembersSection() {
 
                           </div>
                           <div className="member-text-overlay">
-                            <h6 className="montserrat">
+                            <h3 className="montserrat membername h5">
                               {member.membername}
-                            </h6>
-                            <p className="roboto">
+                            </h3>
+                            <h5 className="roboto memberfunction h6">
                               {member.functionbasic}
-                            </p>
+                            </h5>
                           </div>
                         </div>
-                        </Link>
+                      </Link>
 
 
                     </Col>
@@ -117,7 +117,7 @@ function LabmembersSection() {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="p-5"><h3 className="d-flex"><Badge className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
+          <Link to={"/alumni"} className="pb-5 pt-5"><h3 className="d-flex"><Badge className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>
