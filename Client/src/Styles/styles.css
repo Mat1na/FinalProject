@@ -253,8 +253,8 @@ td {
 }
 
 .container-fluid {
-   padding-left: 80px;
-   padding-right: 80px;
+   padding-left:2rem;
+   padding-right:2rem;
 }
 
 /* members section */
@@ -304,7 +304,7 @@ td {
 .member-text-overlay {
    position: absolute;
    font-size: 0.9rem;
-   left: 25px;
+   left: 10px;
    bottom: 25px;
    text-align: left;
    color: white;
@@ -478,7 +478,7 @@ td {
 .project-text-overlay {
    position: absolute;
    font-size: 0.9rem;
-   left: 25px;
+   left: 10px;
    bottom: 25px;
    color: white;
 
@@ -500,7 +500,7 @@ td {
    font-size: 1.5rem;
 }
 
-/* Journal section */
+/* Publication section */
 
 .journalcover {
    max-width: 150px;
@@ -558,7 +558,7 @@ a {
 
 
 
-
+/* 
 .project-card {
    width: 18rem;
    height: 28rem;
@@ -580,7 +580,7 @@ a {
    background-color: transparent;
    position: relative;
    opacity: 1;
-}
+} */
 
 
 .icons:hover {
@@ -596,6 +596,32 @@ a {
 .bi-info-circle-fill {
    color: #219CEE !important
 }
+
+/* test */
+.research-carousel{
+margin: 1rem;
+width: calc(100%/2);
+
+
+
+}
+.carousel{
+   justify-content: center;
+}
+/* 
+.cards-wrapper{
+   background-color: var(--Light2);
+} */
+.img-wrapper{
+height: 22vw;
+margin: 0 auto;
+}
+.img-wrapper >img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
 
 figcaption {
    position: absolute;
