@@ -27,6 +27,8 @@ import CreateUser from './DashboardComponents/CreateUser';
 import PublicationList from './Pages/PublicationList';
 
 
+
+
 function App() {
 
     return (
@@ -34,14 +36,16 @@ function App() {
             <BrowserRouter>
                 <Header />
                 <Routes>
-                    <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home />} />
                     <Route path='/publicationlist' element={<PublicationList />} />
                     <Route path='/publication/:pub' element={<PublicationDetails />} />
                     <Route path='/labmember/:lab' element={<LabmemberDetails />} />
                     <Route path='/project/:proj' element={<ProjectDetails />} />
                     <Route path='/project/:proj' element={<ProjectDetails />} />
                     <Route path='/alumni' element={<Alumni/>} />
+        
                     {/* Dashboard */}
+          
                     <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                     <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
                     <Route path="/labmembers/create-member" element={<RequireAuth><CreateLabMembers /></RequireAuth>} />
@@ -56,11 +60,13 @@ function App() {
                     <Route path="/authors/create-author" element={<RequireAuth><CreateAuthor /></RequireAuth>} />
                     <Route path="/authors/edit-author/:authorid" element={<RequireAuth><EditAuthor /></RequireAuth>} />
                     <Route path="/login" element={<Login />} />
+               
                 </Routes>
                 <Footer />
             </BrowserRouter>
         </AuthProvider>
     )
 }
-
 export default App
+
+

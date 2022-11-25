@@ -4,17 +4,18 @@ import ProjectsSction from "./HompageComponents/ProjectsSction";
 import PublicationSection from "./HompageComponents/PublicationSection";
 import ResearchSection from "./HompageComponents/ResearchSection";
 import VideoSection from "./HompageComponents/VideoSection";
+import JoinSection from "./HompageComponents/JoinSection";
 
 function Home() {
   return (
     <>
-      <VideoSection/>
-   
-      <ResearchSection/>
-      <LabmembersSection/>
+      <VideoSection />
+      <ResearchSection />
+      <LabmembersSection />
       <ProjectsSction />
       <PublicationSection />
-    
+      <JoinSection />
+
     </>
   );
 }

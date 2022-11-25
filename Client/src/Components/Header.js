@@ -18,7 +18,7 @@ function Header() {
     }
   });
   return (
-    <Navbar fixed="top" expand="md" variant="dark" className="navbar p-2" >
+    <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2" >
 
       <Navbar.Brand href="/">LabLogo</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav">

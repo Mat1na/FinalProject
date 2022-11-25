@@ -7,7 +7,8 @@ function PublicationSection() {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);}
+    setIndex(selectedIndex);
+  }
   const fetchLastPublications = async () => {
     let res = await fetch("http://localhost:3001/publications/fetch-publications");
     let data = await res.json();
@@ -21,7 +22,7 @@ function PublicationSection() {
     fetchLastPublications();
   }, []);
 
-  
+
 
   return (
     //     <Container>
@@ -50,7 +51,7 @@ function PublicationSection() {
 
 
 
-    <Container>
+    <Container fluid>
 
       <h1 className="lab-title">Recent Publications</h1>
 
@@ -60,61 +61,60 @@ function PublicationSection() {
         </svg>Check out all publications</Link>
       </div>
 
-      <Carousel activeIndex={index} onSelect={handleSelect} variant="dark" >
-      <Carousel.Item>
-      <div className="cards-wrapper d-flex">
-      {lastPublications.filter(publication=>publication.order<"49").map((publication, index) => {
-        return<Card className="research-carousel">
-       <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><Card.Img variant="top" src={publication.image} className="img-wrapper" />
-      <Card.Body>
-        <Card.Title>{publication.publicationtitle}</Card.Title>
-        <Card.Text>
-        {publication.journal}, {publication.year}
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-      </Link>
-    </Card>
-    
-          })}
-         </div>
-         </Carousel.Item>
-         <Carousel.Item>
-      <div className="cards-wrapper d-flex">
-      {lastPublications.filter(publication=>publication.order>"48"&&publication.order<"51").map((publication, index) => {
-        return <Card className="research-carousel">
-      <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><Card.Img variant="top" src={publication.image}  className="img-wrapper"/>
-      <Card.Body>
-        <Card.Title>{publication.publicationtitle}</Card.Title>
-        <Card.Text>
-        {publication.journal}, {publication.year}
-        </Card.Text>
-        <Button variant="primary">Read more</Button>
-      </Card.Body></Link>
-    </Card>
-  
-          })}
-         </div>
-         </Carousel.Item>
-        
-         <Carousel.Item>
-      <div className="cards-wrapper d-flex">
-      {lastPublications.filter(publication=>publication.order>"50").map((publication, index) => {
-        return <Card className="research-carousel">
-      <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><Card.Img variant="top" src={publication.image}  className="img-wrapper"/>
-      <Card.Body>
-        <Card.Title>{publication.publicationtitle}</Card.Title>
-        <Card.Text>
-        {publication.journal}, {publication.year}
-        </Card.Text>
-        <Button variant="primary">Read more</Button>
-      </Card.Body></Link>
-    </Card>
-  
-          })}
-         </div>
-         </Carousel.Item>
-        </Carousel>
+      <Carousel activeIndex={index} onSelect={handleSelect} variant="Light" >
+        <Carousel.Item>
+          <Row >
+            <div className="cards-wrapper d-flex">
+              {lastPublications.filter((publication, index) => index < 2).map((publication, index) => {
+                return <>
+                  <Col xl={3}  className='d-flex justify-content-end align-items-center'>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><img src={publication.image} alt={publication.title} className="journalcover ms-3 h-100" key={index} /></Link>
+
+                  </Col>
+                  <Col xl={3} className='d-flex justify-content-end align-items-center pub-title'>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more</p></Link>
+                  </Col>
+                </>
+              })}
+            </div>
+          </Row>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Row >
+            <div className="cards-wrapper d-flex">
+              {lastPublications.filter((publication, index) => index > 1 && index < 4).map((publication, index) => {
+                return <>
+              <Col xl={3} className='d-flex justify-content-end align-items-center'>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><img src={publication.image} alt={publication.title} className="journalcover ms-3 h-100" key={index} /></Link>
+
+                  </Col>
+                  <Col xl={3} className='d-flex justify-content-center align-items-center pub-title'>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more</p></Link>
+                  </Col>
+                </>
+              })}
+            </div>
+          </Row>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Row >
+            <div className="cards-wrapper d-flex">
+              {lastPublications.filter((publication, index) => index > 3).map((publication, index) => {
+                return <>
+                <Col xl={3} className='d-flex justify-content-center align-items-center'>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><img src={publication.image} alt={publication.title} className="journalcover ms-3 h-100" key={index} /></Link>
+
+                  </Col>
+                  <Col xl={3} className='d-flex justify-content-center align-items-center pub-title'>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more</p></Link>
+                  </Col>
+                </>
+              })}
+            </div>
+          </Row>
+        </Carousel.Item>
+
+      </Carousel>
 
     </Container>
 

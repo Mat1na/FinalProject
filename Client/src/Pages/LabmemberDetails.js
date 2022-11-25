@@ -36,7 +36,8 @@ function LabmemberDetails() {
 
   return (
     <>
-      <Container fluid className='mb-5'>
+      <Container fluid >
+ 
         <div className="member-details pt-5">
           {member.image !== undefined && member.image !== " " ? (
             <img
@@ -69,7 +70,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <SiGooglescholar size={"2rem"}  className="icons"/>
+                <SiGooglescholar size={"2rem"} fill='var(--Dark)' className="icons"/>
               </a>
             ) : (
               " "
@@ -82,7 +83,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <SiResearchgate size={"2rem"}  className="icons"/>
+                <SiResearchgate size={"2rem"} fill='var(--Dark)' className="icons"/>
               </a>
             ) : (
               " "
@@ -95,7 +96,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaOrcid size={"2rem"} className="icons" />
+                <FaOrcid size={"2rem"} fill='var(--Dark)' className="icons" />
               </a>
             ) : (
               " "
@@ -108,7 +109,7 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaTwitter size={"2rem"}  className="icons"/>
+                <FaTwitter size={"2rem"} fill='var(--Dark)' className="icons"/>
               </a>
             ) : (
               " "
@@ -121,13 +122,14 @@ function LabmemberDetails() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <GoMail size={"2rem"}  className="icons"/>
+                <GoMail size={"2rem"} fill='var(--Dark)' className="icons"/>
               </a>
             ) : (
               " "
             )}
           </div>
         </div>
+     
       </Container>
     </>
   );
