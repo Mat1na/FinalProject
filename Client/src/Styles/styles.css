@@ -4,6 +4,7 @@
    --Dark: rgb(25, 46, 47);
    --Dark2: rgb(58, 89, 92);
    --Dark3: rgb(77, 116, 120);
+   --Dark4: rgb(75,136,136);
    --Light: rgb(123, 169, 169);
    --Light2: rgb(188, 217, 215);
    font-weight: 700;
@@ -268,7 +269,6 @@ td {
 .professorname {
    font-weight: 600;
    margin-bottom: 0px;
-   font-size: 1.5rem;
 }
 
 .professorfunction {
@@ -310,6 +310,16 @@ td {
    text-align: left;
    color: white;
 
+}
+
+.memberpicturepadding{
+   padding-left: 0px;
+   padding-right: 0px;
+}
+
+.buttonpadding {
+   padding-left: 0px;
+   padding-right: 0px;
 }
 
 .members .member-photo-overlay {
@@ -408,15 +418,23 @@ td {
 }
 
 .project-labmember {
-   color: #8eaeaf
+   color: var(--Light);
+}
+
+.project-labmember:hover{
+   color: var(--Dark3);
 }
 
 /* Alumni */
 .badge-icon {
-   background-color: var(--Light) !important;
-   color: var(--Dark2);
+   background-color: var(--Light2) !important;
+   color: var(--Dark4);
    width: 100%;
-
+}
+.badge-icon:hover {
+   background-color: var(--Dark4) !important;
+   color: var(--Light2);
+   width: 100%;
 }
 
 /* Project section */
@@ -456,7 +474,7 @@ td {
 }
 
 .project-link:hover .project-photo {
-   transform: scale(1.5);
+   transform: scale(1.1);
    filter: grayscale(0);
 }
 
@@ -505,7 +523,7 @@ td {
 
 .journalcover {
 
-   max-height:200px;
+   max-height: 200px;
    object-fit: cover;
    display: block;
 }
@@ -532,7 +550,7 @@ td {
    color: #000
 }
 
-.allpublications {
+/* .allpublications {
    padding: 0.75rem 1.25rem;
    background-color: #f6fbfe;
    border-radius: 0.25rem;
@@ -541,7 +559,7 @@ td {
    display: block;
    color: var(--Dark);
    font-size: 21px;
-}
+} */
 
 .publicationyear {
    padding-top: 1rem;
@@ -648,17 +666,19 @@ figcaption {
 
 .join-bg {
    background-color: #edeef0;
-   margin: 15px;
-   padding: 15px;
-   border-radius: 0px 25px 25px 0px;
-}
-.join-link{
-color: var(--Light)!important;
+   margin: 15px 15px 15px 0px;
+   padding: 25px;
+   border-radius: 25px;
 }
 
-.join-link:hover{
-   color: var(--Dark3)!important;
-   }
+.join-link {
+   color: var(--Light) !important;
+   font-weight:500;
+}
+
+.join-link:hover {
+   color: var(--Dark3) !important;
+}
 
 
 

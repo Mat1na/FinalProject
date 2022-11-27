@@ -24,10 +24,10 @@ function LabmembersSection() {
   return (
     <>
       <Container fluid>
-        <h1 className="pb-5 montserrat lab-title">Lab members</h1>
+        <h1 className="pb-2 montserrat lab-title">Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
-          <h2 className="p-3 montserrat">Principal Investigator</h2>
+          <h2 className="p-3 montserrat">Principal investigator</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -49,10 +49,10 @@ function LabmembersSection() {
 
                           </div>
                           <div className="member-text-overlay">
-                            <h3 className="montserrat professorname">
+                            <h3 className="montserrat professorname h5">
                               {member.membername}
                             </h3>
-                            <h5 className="roboto professorfunction">
+                            <h5 className="roboto professorfunction h6">
                               {member.functionbasic}
                             </h5>
                           </div>
@@ -70,7 +70,7 @@ function LabmembersSection() {
             );
           })}
           {/* Current members Section*/}
-          <h2 className="p-5 montserrat">Current members</h2>
+          <h2 className="px-3 pt-5 pb-3 montserrat">Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -82,11 +82,11 @@ function LabmembersSection() {
                       md={4}
                       lg={3}
                       xl={2}
-                      className=" d-flex justify-content-center align-items-center"
+                      className="d-flex justify-content-center align-items-center memberpicturepadding"
                     >
 
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
-                        <div className="members d-flex justify-content-center align-items-center"
+                        <div className="members d-flex justify-content-center align-items-center memberpicturepadding"
                         >
                           <img
                             alt={member.membername}
@@ -117,7 +117,7 @@ function LabmembersSection() {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="pb-5 pt-5"><h3 className="d-flex"><Badge className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
+          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className="d-flex"><Badge className="badge-icon">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>

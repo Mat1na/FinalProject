@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
+import { Badge, Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function PublicationSection() {
@@ -53,12 +54,10 @@ function PublicationSection() {
 
     <Container fluid>
 
-      <h1 className="lab-title">Recent Publications</h1>
+      <h1 className="pb-3 lab-title montserrat">Recent publications</h1>
 
       <div>
-        <Link to={"/publicationlist"} className='allpublications'><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-info-circle-fill me-2" viewBox="0 0 16 16">
-          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-        </svg>Check out all publications</Link>
+        <Link to={"/publicationlist"} className="buttonpadding"><h3 className="d-flex"><Badge className="badge-icon mb-5">SEE ALL PUBLICATIONS <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
       </div>
 
       <Carousel activeIndex={index} onSelect={handleSelect} variant="Light" >
@@ -72,7 +71,7 @@ function PublicationSection() {
 
                   </Col>
                   <Col xl={3} className='d-flex justify-content-end align-items-center pub-title'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more</p></Link>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more ...</p></Link>
                   </Col>
                 </>
               })}
@@ -89,7 +88,7 @@ function PublicationSection() {
 
                   </Col>
                   <Col xl={3} className='d-flex justify-content-center align-items-center pub-title'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more</p></Link>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more ...</p></Link>
                   </Col>
                 </>
               })}
@@ -106,7 +105,7 @@ function PublicationSection() {
 
                   </Col>
                   <Col xl={3} className='d-flex justify-content-center align-items-center pub-title'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more</p></Link>
+                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more ...</p></Link>
                   </Col>
                 </>
               })}
