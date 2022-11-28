@@ -4,7 +4,7 @@
    --Dark: rgb(25, 46, 47);
    --Dark2: rgb(58, 89, 92);
    --Dark3: rgb(77, 116, 120);
-   --Dark4: rgb(75,136,136);
+   --Dark4: rgb(75, 136, 136);
    --Light: rgb(123, 169, 169);
    --Light2: rgb(188, 217, 215);
    font-weight: 700;
@@ -312,7 +312,7 @@ td {
 
 }
 
-.memberpicturepadding{
+.memberpicturepadding {
    padding-left: 0px;
    padding-right: 0px;
 }
@@ -421,7 +421,7 @@ td {
    color: var(--Light);
 }
 
-.project-labmember:hover{
+.project-labmember:hover {
    color: var(--Dark3);
 }
 
@@ -431,6 +431,7 @@ td {
    color: var(--Dark4);
    width: 100%;
 }
+
 .badge-icon:hover {
    background-color: var(--Dark4) !important;
    color: var(--Light2);
@@ -521,86 +522,6 @@ td {
 
 /* Publication section */
 
-.journalcover {
-
-   max-height: 200px;
-   object-fit: cover;
-   display: block;
-}
-
-.journallink {
-   color: #000;
-   text-decoration: none;
-   position: relative;
-   /* position: relative is necessary to fix the bug of the stretched-link */
-}
-
-.authorslist {
-   color: rgba(0, 0, 0, .54);
-   font-size: 14px;
-   letter-spacing: .03em;
-}
-
-/* .publicationtitle {
-   color: #151515;
-   font-weight: 700;
-} */
-
-.journaltitle {
-   color: #000
-}
-
-/* .allpublications {
-   padding: 0.75rem 1.25rem;
-   background-color: #f6fbfe;
-   border-radius: 0.25rem;
-   margin-bottom: 1rem;
-   border: 1px solid var(--Dark3);
-   display: block;
-   color: var(--Dark);
-   font-size: 21px;
-} */
-
-.publicationyear {
-   padding-top: 1rem;
-   padding-bottom: 1rem;
-}
-
-.authorsforpublicationlist {
-   display: inline
-}
-
-a {
-   text-decoration: none;
-   color: inherit;
-}
-
-
-
-/* 
-.project-card {
-   width: 18rem;
-   height: 28rem;
-}
-
-.project-card:hover {
-   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
-   transform: scale(1.10, 1.10);
-}
-
-
-.card-img-top:hover {
-   height: 100%;
-   opacity: 0.3;
-}
-
-
-.card-body:hover {
-   background-color: transparent;
-   position: relative;
-   opacity: 1;
-} */
-
 
 .icons:hover {
    size: 3rem !important
@@ -616,46 +537,41 @@ a {
    color: var(--Dark3) !important
 }
 
-/* test Research*/
-.cards-wrapper {
-   margin: 1rem;
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.carousel-fragment {
+   overflow: hidden;
+}
+
+.carousel-bg {
+   background-image: url('../../src/assets/photo/PublicationBackground.JPG');
+   background-position: 50% 50%;
+   background-size: 2560px 1302px;
+   height: 500px;
+   display: flex;
+   background-repeat: no-repeat;
    justify-content: center;
-}
-@media screen and  (max-width: 425px) and (min-width: 375px) {
- 
-   .cards-wrapper {
-      margin: 1rem;
-      width: calc(100%/2);
-      justify-content: center;
-   }
- }
+   align-items: center;
+   padding: 20px;
 
- @media screen and (max-width: 320px) {
- 
-   .cards-wrapper {
-      margin: 1rem;
-      width: 30%;
-      justify-content: center;
-   }
- }
-
-.carousel {
-   justify-content: center;
 }
 
-
-.img-wrapper {
-
-   margin: 0 auto;
+.pub-icon {
+   color: white;
+   border: 1px solid var(--Dark);
+   padding: 1rem;
+   background: var(--Dark);
 }
 
-
-.journalcover {
-   width: 150px;
-      max-width: 200px;
-      object-fit: cover;
-      display: block;
-   }
+.pub-icon:hover {
+   color: white;
+   border: 1px solid var(--Dark3);
+   padding: 1rem;
+   background: var(--Dark3);
+}
 
 
 
@@ -673,16 +589,29 @@ figcaption {
 }
 
 .pub-title {
-   background-color: var(--Dark2);
-   margin: 15px;
-   padding: 15px;
-   outline: 10px solid var(--Dark2);
-   border:2px solid white;
+   background-color: var(--Dark);
+   margin: 20px;
+   padding: 10px;
+   outline: 10px solid var(--Dark);
+   border: 2px solid white;
    border-radius: 10px;
-   max-height: 300px;
-   max-width: 300px;
+   max-height: 500px;
+   width: 35vw;
    height: 300px;
 }
+
+.pub-title:hover {
+   background-color: var(--Dark2);
+   outline: 10px solid var(--Dark2);
+}
+
+@media screen and (max-width:600px) {
+
+   .pub-title {
+      width: 55vw;
+   }
+}
+
 
 /* join Section */
 
@@ -695,7 +624,7 @@ figcaption {
 
 .join-link {
    color: var(--Light) !important;
-   font-weight:500;
+   font-weight: 500;
 }
 
 .join-link:hover {
