@@ -21,6 +21,7 @@ function LabmembersSection() {
   }, []);
 
 
+
   return (
     <>
       <Container fluid className='mt-0'>
@@ -38,7 +39,7 @@ function LabmembersSection() {
                       md={5}
                       className="d-flex justify-content-center align-items-center"
                     >
-                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className="members d-flex justify-content-center align-items-center"
                         >
                           <img
@@ -85,7 +86,7 @@ function LabmembersSection() {
                       className="d-flex justify-content-center align-items-center memberpicturepadding"
                     >
 
-                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link">
+                      <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className="members d-flex justify-content-center align-items-center memberpicturepadding"
                         >
                           <img

@@ -38,7 +38,7 @@ function LabmemberDetails() {
     <>
       <Container fluid >
  
-        <div className="member-details pt-5">
+        <div className="member-details pt-5">{ console.log(window.location.pathname, "page")}
           {member.image !== undefined && member.image !== " " ? (
             <img
               src={`${member.image}`}

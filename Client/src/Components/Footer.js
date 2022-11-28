@@ -6,6 +6,15 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsTelephoneFill } from "react-icons/bs";
 
 function Footer() {
+
+  window.addEventListener('scroll', function () {
+    if ( window.location.pathname !=='/' ) {
+      document
+        .querySelector('.footer-bg')
+        .classList.add('footer-bg2');
+      
+    } 
+  });
   return (
   
       <div className="footer-bg mt-5">

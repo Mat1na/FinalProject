@@ -668,4 +668,8 @@ figcaption {
    background-color: var(--Dark);
    padding: 15px;
    color: var(--Light2);
+
+}
+.footer-bg2 {
+display: none;
 }

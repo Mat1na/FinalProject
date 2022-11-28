@@ -1,25 +1,40 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { MdOutlineSegment } from 'react-icons/md'
+import { useLocation } from "react-router-dom";
 import { HashLink as Link } from 'react-router-hash-link';
 
 function Header() {
-  console.log(document.querySelector('.navbar'))
+
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 300 && window.location.pathname ==='/' ) {
       document
         .querySelector('.navbar')
         .classList.add('color-nav');
       
-    } else {
+    } else if ( window.location.pathname !=='/' ) {
+      document
+        .querySelector('.navbar')
+        .classList.add('color-nav');
+    }else {
       document
         .querySelector('.navbar')
         .classList.remove('color-nav');
         
     }
   });
+  // const [navBg, setNavBg] = React.useState();
+  // const location = useLocation();
+  // React.useEffect(() => {
+  //   if (window.location.pathname === "/labmember/koenraad-van-meerbeek") {
+  //     setNavBg("ligt");
+  //   } else {
+  //     setNavBg('none')
+  //   }
+  // }, [location]);
+  
   return (
-    <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2" >
+    <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2" >{  console.log(window.scrollY)}
       <Navbar.Brand href="/"><img src='/Logo_final_rgba.png' className='logoheader' alt="logo sGlobe Lab"/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav">
         <MdOutlineSegment size={'2em'} fill='white' className="nav-icon" />

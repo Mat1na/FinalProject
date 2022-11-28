@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { HashLink as Link } from 'react-router-hash-link';
 
 function JoinSection() {
     return (<>
@@ -10,7 +11,7 @@ function JoinSection() {
             <h1 className="lab-title pb-3 montserrat">Join the lab</h1>
             <div className='join-bg'>
                 <p className='roboto'>
-                    There are no vacancies at the moment, but I am always interested in hearing from motivated students or researchers to collaborate on topics of mutual interest. Have a look at <a href='' className='join-link'>Research</a> and our <a href='' className='join-link'>Research projects</a> to see what we are doing. So if you are interested in applying for a PhD or postdoc fellowship, you are always welcome to contact me. The different opportunities are listed below.
+                    There are no vacancies at the moment, but I am always interested in hearing from motivated students or researchers to collaborate on topics of mutual interest. Have a look at <Link to="/#research"className='join-link'>Research</Link> and our <Link to="/#projects" className='join-link'>Research projects</Link> to see what we are doing. So if you are interested in applying for a PhD or postdoc fellowship, you are always welcome to contact me. The different opportunities are listed below.
                 </p>
                 <h4 className="montserrat">Funding opportunities for PhD students</h4>
                 <ul className='roboto'>
