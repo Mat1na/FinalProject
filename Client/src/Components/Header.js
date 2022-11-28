@@ -7,7 +7,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 function Header() {
 
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 300 && window.location.pathname ==='/' ) {
+    if (window.scrollY > 200 && window.location.pathname ==='/' ) {
       document
         .querySelector('.navbar')
         .classList.add('color-nav');
