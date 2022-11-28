@@ -13,7 +13,7 @@ function PublicationSection() {
   const fetchLastPublications = async () => {
     let res = await fetch("http://localhost:3001/publications/fetch-publications");
     let data = await res.json();
-    let filtereddata = data.slice(-6)
+    let filtereddata = data.slice(-12)
 
     // let filtereddata = data
     console.log(filtereddata, 'pubs');
@@ -59,60 +59,51 @@ function PublicationSection() {
       <div>
         <Link to={"/publicationlist"} className="buttonpadding"><h3 className="d-flex"><Badge className="badge-icon mb-5">SEE ALL PUBLICATIONS <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
       </div>
-
-      <Carousel activeIndex={index} onSelect={handleSelect} variant="Light" >
+      <Carousel activeIndex={index} onSelect={handleSelect} variant="dark" >
         <Carousel.Item>
-          <Row >
-            <div className="cards-wrapper d-flex">
-              {lastPublications.filter((publication, index) => index < 2).map((publication, index) => {
-                return <>
-                  <Col xl={3}  className='d-flex justify-content-end align-items-center'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><img src={publication.image} alt={publication.title} className="journalcover ms-3 h-100" key={index} /></Link>
-
-                  </Col>
-                  <Col xl={3} className='d-flex justify-content-end align-items-center pub-title'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more ...</p></Link>
-                  </Col>
-                </>
-              })}
-            </div>
-          </Row>
+          <div className="cards-wrapper d-flex">
+            {lastPublications.filter((publication, index) => index < 3).map((publication, index) => {
+              return <>
+               <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+                </Link>
+              </>
+            })}
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <Row >
-            <div className="cards-wrapper d-flex">
-              {lastPublications.filter((publication, index) => index > 1 && index < 4).map((publication, index) => {
-                return <>
-              <Col xl={3} className='d-flex justify-content-end align-items-center'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><img src={publication.image} alt={publication.title} className="journalcover ms-3 h-100" key={index} /></Link>
-
-                  </Col>
-                  <Col xl={3} className='d-flex justify-content-center align-items-center pub-title'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more ...</p></Link>
-                  </Col>
-                </>
-              })}
-            </div>
-          </Row>
+          <div className="cards-wrapper d-flex">
+            {lastPublications.filter((publication, index) => index > 2 && index < 6).map((publication, index) => {
+              return <>
+                <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+                </Link>
+              </>
+            })}
+          </div>
         </Carousel.Item>
         <Carousel.Item>
-          <Row >
-            <div className="cards-wrapper d-flex">
-              {lastPublications.filter((publication, index) => index > 3).map((publication, index) => {
-                return <>
-                <Col xl={3} className='d-flex justify-content-center align-items-center'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><img src={publication.image} alt={publication.title} className="journalcover ms-3 h-100" key={index} /></Link>
+          <div className="cards-wrapper d-flex">
+            {lastPublications.filter((publication, index) => index > 5 && index < 9).map((publication, index) => {
+              return <>
 
-                  </Col>
-                  <Col xl={3} className='d-flex justify-content-center align-items-center pub-title'>
-                  <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><p className="publicationtitle">{publication.publicationtitle}</p><p className="publicationtitle">Read more ...</p></Link>
-                  </Col>
-                </>
-              })}
-            </div>
-          </Row>
+                <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+                </Link>
+
+              </>
+            })}
+          </div>
         </Carousel.Item>
+        <Carousel.Item>
+          <div className="cards-wrapper d-flex">
+            {lastPublications.filter((publication, index) => index > 8).map((publication, index) => {
+              return <>
 
+                <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="stretched-link journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+                </Link>
+
+              </>
+            })}
+          </div>
+        </Carousel.Item>
       </Carousel>
 
     </Container>
