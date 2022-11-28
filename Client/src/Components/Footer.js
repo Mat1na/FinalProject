@@ -8,7 +8,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 function Footer() {
   return (
   
-      <div className="footer-bg">
+      <div className="footer-bg mt-5">
       <Row >
       
         <Col md={4}> Logo</Col>

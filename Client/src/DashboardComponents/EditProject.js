@@ -102,7 +102,7 @@ function EditProject() {
 
   return (
     <Container>
-      <h1 className="mt-3">Edit Project</h1>
+      <h1 className="dashboardmargin">Edit Project</h1>
       <Link to={"/projects"} className="btn btn-danger mr-2 mb-2">
           Go back
         </Link>

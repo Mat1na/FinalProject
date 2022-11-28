@@ -17,6 +17,7 @@ html {
    overflow-y: scroll;
    margin: 0;
    padding: 0;
+   scroll-behavior: smooth;
 }
 
 .montserrat {
@@ -28,7 +29,9 @@ html {
 }
 
 
-
+.containerpaddings {
+   padding-top: 5rem;
+}
 
 /* Dashboard */
 .hidden-label {
@@ -36,12 +39,16 @@ html {
    display: block;
 }
 
+.dashboardmargin {
+   margin-top: 70px;
+}
+
 td {
    text-align: left;
    vertical-align: middle;
 }
 
-/* Home Navigation */
+/* Home Navigation - header & footer */
 
 /* collapse */
 
@@ -83,6 +90,13 @@ td {
    transition: transform 2ms ease-in-out;
 }
 
+.logoheader {
+   width: 150px;
+   height: 25px;
+   vertical-align: middle;
+   display: inline-flex;
+   align-self: center;
+}
 
 /* Video Section */
 .color-nav {
@@ -104,7 +118,7 @@ td {
    width: 100%;
    height: 500px;
    overflow: hidden;
-   margin-bottom: 5rem;
+   margin-bottom: 0;
 
 }
 
@@ -624,7 +638,7 @@ figcaption {
 
 .join-link {
    color: var(--Light) !important;
-   font-weight: 500;
+   font-weight:  500;
 }
 
 .join-link:hover {

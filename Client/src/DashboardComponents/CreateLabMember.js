@@ -121,7 +121,7 @@ function CreateLabMembers() {
   return (
     <>
       <Container>
-        <h1 className="mt-3">Create new lab member</h1>
+      <h1 className="dashboardmargin">Create new lab member</h1>
         <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
             Go back
           </Link>

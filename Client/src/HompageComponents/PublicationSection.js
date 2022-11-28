@@ -102,7 +102,7 @@ function PublicationSection() {
 
 
   return (
-    <Container fluid>
+    <Container fluid className='mt-0 mb-0'>
       <h1 className="pb-3 lab-title montserrat">Recent publications</h1>
 
       <div className="carousel-bg">

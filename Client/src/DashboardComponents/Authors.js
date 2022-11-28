@@ -64,7 +64,7 @@ function Authors() {
 
   return (
     <Container>
-      <h1 className="mt-3">Authors</h1>
+      <h1 className="dashboardmargin">Authors</h1>
       <Link to={"/authors/create-author"} className="btn btn-secondary m-2">
       <BsFillPersonPlusFill/> Add new Author</Link>
       <Link to={"/dashboard"} className="btn btn-danger m-2">

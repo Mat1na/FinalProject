@@ -96,7 +96,7 @@ function CreatePub() {
 
   return (
     <Container>
-      <h1 className="mt-3">Create new publication</h1>
+      <h1 className="dashboardmargin">Create new publication</h1>
       <Link to={"/publications"} className="btn btn-danger mr-2 mb-2">
           Go back
         </Link>
