@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet } from "react-router-dom";
+import Footer from './Footer';
 import Headermodified from './Headermodified';
 
 function Layoutmodified() {
@@ -7,6 +8,7 @@ function Layoutmodified() {
     <>
     <Headermodified />
     <Outlet/>
+    <Footer/>
 </>
   )
 }

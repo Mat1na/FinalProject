@@ -4,7 +4,7 @@
    --Dark: rgb(25, 46, 47);
    --Dark2: rgb(58, 89, 92);
    --Dark3: rgb(77, 116, 120);
-   --Dark4: rgb(75,136,136);
+   --Dark4: rgb(75, 136, 136);
    --Light: rgb(123, 169, 169);
    --Light2: rgb(188, 217, 215);
    font-weight: 700;
@@ -17,7 +17,7 @@ html {
    overflow-y: scroll;
    margin: 0;
    padding: 0;
-   scroll-behavior:smooth;
+   scroll-behavior: smooth;
 }
 
 .montserrat {
@@ -29,7 +29,7 @@ html {
 }
 
 
-.containerpaddings{
+.containerpaddings {
    padding-top: 5rem;
 }
 
@@ -39,7 +39,7 @@ html {
    display: block;
 }
 
-.dashboardmargin{
+.dashboardmargin {
    margin-top: 70px;
 }
 
@@ -48,7 +48,7 @@ td {
    vertical-align: middle;
 }
 
-/* Home Navigation */
+/* Home Navigation - header & footer */
 
 /* collapse */
 
@@ -326,7 +326,7 @@ td {
 
 }
 
-.memberpicturepadding{
+.memberpicturepadding {
    padding-left: 0px;
    padding-right: 0px;
 }
@@ -435,7 +435,7 @@ td {
    color: var(--Light);
 }
 
-.project-labmember:hover{
+.project-labmember:hover {
    color: var(--Dark3);
 }
 
@@ -445,6 +445,7 @@ td {
    color: var(--Dark4);
    width: 100%;
 }
+
 .badge-icon:hover {
    background-color: var(--Dark4) !important;
    color: var(--Light2);
@@ -635,23 +636,24 @@ a {
    margin: 1rem;
    justify-content: center;
 }
-@media screen and  (max-width: 425px) and (min-width: 375px) {
- 
+
+@media screen and (max-width: 425px) and (min-width: 375px) {
+
    .cards-wrapper {
       margin: 1rem;
       width: calc(100%/2);
       justify-content: center;
    }
- }
+}
 
- @media screen and (max-width: 320px) {
- 
+@media screen and (max-width: 320px) {
+
    .cards-wrapper {
       margin: 1rem;
       width: 30%;
       justify-content: center;
    }
- }
+}
 
 .carousel {
    justify-content: center;
@@ -666,10 +668,10 @@ a {
 
 .journalcover {
    width: 150px;
-      max-width: 200px;
-      object-fit: cover;
-      display: block;
-   }
+   max-width: 200px;
+   object-fit: cover;
+   display: block;
+}
 
 
 
@@ -691,7 +693,7 @@ figcaption {
    margin: 15px;
    padding: 15px;
    outline: 10px solid var(--Dark2);
-   border:2px solid white;
+   border: 2px solid white;
    border-radius: 10px;
    max-height: 300px;
    max-width: 300px;
@@ -709,7 +711,7 @@ figcaption {
 
 .join-link {
    color: var(--Light) !important;
-   font-weight:500;
+   font-weight: 500;
 }
 
 .join-link:hover {

@@ -40,15 +40,15 @@ function App() {
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path='/' element={<Home />} />
+                        </Route>
+                        <Route element={<Layoutmodified />}>
                         <Route path='/publicationlist' element={<PublicationList />} />
                         <Route path='/publication/:pub' element={<PublicationDetails />} />
                         <Route path='/labmember/:lab' element={<LabmemberDetails />} />
                         <Route path='/project/:proj' element={<ProjectDetails />} />
                         {/* <Route path='/project/:proj' element={<ProjectDetails />} /> */}
                         <Route path='/alumni' element={<Alumni />} />
-                    </Route>
                     {/* Dashboard */}
-                    <Route element={<Layoutmodified />}>
                         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                         <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
                         <Route path="/labmembers/create-member" element={<RequireAuth><CreateLabMembers /></RequireAuth>} />
