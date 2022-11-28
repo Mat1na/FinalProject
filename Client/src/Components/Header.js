@@ -20,7 +20,7 @@ function Header() {
   return (
     <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2" >
 
-      <Navbar.Brand href="/">LabLogo</Navbar.Brand>
+      <Navbar.Brand href="/"><img src='/Logo_finaal_bijgewerkt_zonder_slagzin.svg' className='logoheader' alt="logo sGlobe Lab"/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav">
         <MdOutlineSegment size={'2em'} fill='white' className="nav-icon" />
         {/* <MdOutlineClose size={'2em'} fill='var(--Dark)'  className="social-icon" /> */}

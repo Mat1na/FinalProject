@@ -83,6 +83,13 @@ td {
    transition: transform 2ms ease-in-out;
 }
 
+.logoheader {
+   width: 150px;
+   height: 25px;
+   vertical-align: middle;
+   display: inline-flex;
+   align-self: center;
+}
 
 /* Video Section */
 .color-nav {
