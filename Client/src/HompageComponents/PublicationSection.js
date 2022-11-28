@@ -28,7 +28,7 @@ function PublicationSection() {
 
   const { carouselFragment, slideToPrevItem, slideToNextItem } = useSpringCarousel({
     itemsPerSlide: 3,
-
+    withLoop: true,
     items: [
       {
         id: 'item-1',
@@ -106,6 +106,7 @@ function PublicationSection() {
       <h1 className="pb-3 lab-title montserrat">Recent publications</h1>
 
       <div className="carousel-bg">
+        <div className="carousel-bg-overlay"></div>
         <div className="carousel-fragment">
           {carouselFragment}
           <div className="d-flex justify-content-between">
