@@ -7,13 +7,24 @@ import { BsTelephoneFill } from "react-icons/bs";
 
 function Footer() {
 
-  window.addEventListener('scroll', function () {
-    if ( window.location.pathname !=='/' ) {
+  window.addEventListener('click', function () {
+    if ( window.location.pathname ==='/login'|| window.location.pathname ==='/dashboard') {
       document
         .querySelector('.footer-bg')
         .classList.add('footer-bg2');
       
     } 
+
+  });
+  
+  window.addEventListener('load', function () {
+    if ( window.location.pathname ==='/login'|| window.location.pathname ==='/dashboard') {
+      document
+        .querySelector('.footer-bg')
+        .classList.add('footer-bg2');
+      
+    } 
+
   });
   return (
   

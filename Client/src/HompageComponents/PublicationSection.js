@@ -15,7 +15,7 @@ function PublicationSection() {
   const fetchLastPublications = async () => {
     let res = await fetch("http://localhost:3001/publications/fetch-publications");
     let data = await res.json();
-    let filtereddata = data.slice(-6)
+    let filtereddata = data.slice(-7)
 
     // let filtereddata = data
     console.log(filtereddata, 'pubs');
@@ -34,7 +34,7 @@ function PublicationSection() {
         id: 'item-1',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 0).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -43,7 +43,7 @@ function PublicationSection() {
         id: 'item-2',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 1).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -52,7 +52,7 @@ function PublicationSection() {
         id: 'item-3',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 2).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -61,7 +61,7 @@ function PublicationSection() {
         id: 'item-4',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 3).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -70,7 +70,7 @@ function PublicationSection() {
         id: 'item-5',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 4).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -79,7 +79,7 @@ function PublicationSection() {
         id: 'item-6',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 5).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -88,7 +88,7 @@ function PublicationSection() {
         id: 'item-7',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 6).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className=' justify-content-center align-items-center pub-title' key={index}><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
             </Link>
           </>
         })}</div>,
@@ -113,7 +113,7 @@ function PublicationSection() {
             <span onClick={slideToPrevItem}><GrPrevious size={"2rem"} className="car-icons" /></span>
             <span onClick={slideToNextItem}><GrNext size={"2rem"} className="car-icons" /></span></div>
           <div className="p-2 d-flex justify-content-center">
-            <Link to={"/publicationlist"} className="buttonpadding"><Button className="pub-icon">ALL PUBLICATIONS </Button>
+            <Link to={"/publicationlist"} className="buttonpadding"><Button className="pub-icon">View All </Button>
             </Link>
           </div>
         </div>

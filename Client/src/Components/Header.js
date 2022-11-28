@@ -23,15 +23,8 @@ function Header() {
         
     }
   });
-  // const [navBg, setNavBg] = React.useState();
-  // const location = useLocation();
-  // React.useEffect(() => {
-  //   if (window.location.pathname === "/labmember/koenraad-van-meerbeek") {
-  //     setNavBg("ligt");
-  //   } else {
-  //     setNavBg('none')
-  //   }
-  // }, [location]);
+  
+
   
   return (
     <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2" >{  console.log(window.scrollY)}

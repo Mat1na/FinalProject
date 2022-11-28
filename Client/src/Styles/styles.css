@@ -13,6 +13,7 @@
 
 }
 
+
 html {
    overflow-y: scroll;
    margin: 0;
@@ -227,6 +228,7 @@ td {
    padding-left: 2rem;
    padding-right: 2rem;
    margin-top: 5rem;
+
 }
 
 
@@ -628,6 +630,9 @@ figcaption {
    max-height: 500px;
    width: 35vw;
    height: 300px;
+   justify-content: center;
+   align-items: center;
+display:flex ;
 }
 
 .pub-title:hover {
@@ -653,12 +658,12 @@ figcaption {
 }
 
 .join-link {
-   color: var(--Light) !important;
+   color: var(--Dark3) !important;
    font-weight:  500;
 }
 
 .join-link:hover {
-   color: var(--Dark3) !important;
+   color: var(--Light2) !important;
 }
 
 
