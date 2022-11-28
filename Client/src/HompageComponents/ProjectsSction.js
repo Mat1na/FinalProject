@@ -24,7 +24,7 @@ function ProjectsSction() {
 
   return (
     <>
-      <Container fluid className='mb-5 mt-5'>
+      <Container fluid className='mt-0 mb-0'>
         <h1 className="text-left lab-title montserrat pb-5">Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row>

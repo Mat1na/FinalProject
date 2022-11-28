@@ -23,8 +23,10 @@ import PublicationDetails from './Pages/PublicationDetails';
 import Alumni from './Pages/Alumni';
 import { Login } from './Login';
 import { RequireAuth } from './Components/RequireAuth';
-import CreateUser from './DashboardComponents/CreateUser';
+// import CreateUser from './DashboardComponents/CreateUser';
 import PublicationList from './Pages/PublicationList';
+import Layout from './Components/Layout';
+import Layoutmodified from './Components/Layoutmodified';
 
 
 
@@ -34,35 +36,37 @@ function App() {
     return (
         <AuthProvider>
             <BrowserRouter>
-                <Header />
+                {/* <Header /> */}
                 <Routes>
-            <Route path='/' element={<Home />} />
-                    <Route path='/publicationlist' element={<PublicationList />} />
-                    <Route path='/publication/:pub' element={<PublicationDetails />} />
-                    <Route path='/labmember/:lab' element={<LabmemberDetails />} />
-                    <Route path='/project/:proj' element={<ProjectDetails />} />
-                    <Route path='/project/:proj' element={<ProjectDetails />} />
-                    <Route path='/alumni' element={<Alumni/>} />
-        
+                    <Route element={<Layout />}>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/publicationlist' element={<PublicationList />} />
+                        <Route path='/publication/:pub' element={<PublicationDetails />} />
+                        <Route path='/labmember/:lab' element={<LabmemberDetails />} />
+                        <Route path='/project/:proj' element={<ProjectDetails />} />
+                        {/* <Route path='/project/:proj' element={<ProjectDetails />} /> */}
+                        <Route path='/alumni' element={<Alumni />} />
+                    </Route>
                     {/* Dashboard */}
-          
-                    <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
-                    <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
-                    <Route path="/labmembers/create-member" element={<RequireAuth><CreateLabMembers /></RequireAuth>} />
-                    <Route path="/labmembers/edit-labmember/:memberid" element={<RequireAuth><EditLabMembers /></RequireAuth>} />
-                    <Route path="/publications" element={<RequireAuth><Publications /></RequireAuth>} />
-                    <Route path="/publications/create-pub" element={<RequireAuth><CreatePub /></RequireAuth>} />
-                    <Route path="/publications/edit-pub/:pubid" element={<RequireAuth><EditPub /></RequireAuth>} />
-                    <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
-                    <Route path="/projects/create-project" element={<RequireAuth><CreateProject /></RequireAuth>} />
-                    <Route path="/projects/edit-project/:projectid" element={<RequireAuth><EditProject /></RequireAuth>} />
-                    <Route path="/authors" element={<RequireAuth><Authors /></RequireAuth>} />
-                    <Route path="/authors/create-author" element={<RequireAuth><CreateAuthor /></RequireAuth>} />
-                    <Route path="/authors/edit-author/:authorid" element={<RequireAuth><EditAuthor /></RequireAuth>} />
-                    <Route path="/login" element={<Login />} />
-               
+                    <Route element={<Layoutmodified />}>
+                        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+                        <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
+                        <Route path="/labmembers/create-member" element={<RequireAuth><CreateLabMembers /></RequireAuth>} />
+                        <Route path="/labmembers/edit-labmember/:memberid" element={<RequireAuth><EditLabMembers /></RequireAuth>} />
+                        <Route path="/publications" element={<RequireAuth><Publications /></RequireAuth>} />
+                        <Route path="/publications/create-pub" element={<RequireAuth><CreatePub /></RequireAuth>} />
+                        <Route path="/publications/edit-pub/:pubid" element={<RequireAuth><EditPub /></RequireAuth>} />
+                        <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
+                        <Route path="/projects/create-project" element={<RequireAuth><CreateProject /></RequireAuth>} />
+                        <Route path="/projects/edit-project/:projectid" element={<RequireAuth><EditProject /></RequireAuth>} />
+                        <Route path="/authors" element={<RequireAuth><Authors /></RequireAuth>} />
+                        <Route path="/authors/create-author" element={<RequireAuth><CreateAuthor /></RequireAuth>} />
+                        <Route path="/authors/edit-author/:authorid" element={<RequireAuth><EditAuthor /></RequireAuth>} />
+                        <Route path="/login" element={<Login />} />
+                    </Route>
+
                 </Routes>
-                <Footer />
+                {/* <Footer /> */}
             </BrowserRouter>
         </AuthProvider>
     )

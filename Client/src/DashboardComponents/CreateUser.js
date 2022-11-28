@@ -50,7 +50,7 @@ function CreateUser() {
 
     return (
         <Container>
-        <h1 className="mt-3">Create new user</h1>
+        <h1 className="dashboardmargin">Create new user</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" >
             <Form.Label>Username</Form.Label>

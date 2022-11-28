@@ -88,7 +88,7 @@ export const Login = () => {
   return (
     <div>
       <Container>
-        <h1>Login</h1>
+      <h1 className="dashboardmargin">Login</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className='mb-3'>
             <Form.Label>Username</Form.Label>

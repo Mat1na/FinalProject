@@ -65,7 +65,7 @@ function LabMembers() {
   return (
     <>
       <Container>
-        <h1 className="mt-3">Lab Members List </h1>
+      <h1 className="dashboardmargin">Lab Members List </h1>
         <div>
         <Link
           to={"/labmembers/create-member"}

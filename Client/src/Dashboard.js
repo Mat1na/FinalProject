@@ -14,7 +14,7 @@ function Dashboard() {
   }
   return (
     <Container>
-     <h1 className="mt-3">Dashboard</h1>
+     <h1 className="dashboardmargin">Dashboard</h1>
      <h3>Welcome, {userString}</h3>
      <Button variant='danger' onClick={handleLogout} className="mb-2">Logout</Button>
      <section className='members-section'>

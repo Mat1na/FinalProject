@@ -23,7 +23,7 @@ function LabmembersSection() {
 
   return (
     <>
-      <Container fluid>
+      <Container fluid className='mt-0'>
         <h1 className="pb-2 montserrat lab-title">Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}

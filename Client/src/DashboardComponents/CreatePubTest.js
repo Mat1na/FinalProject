@@ -82,7 +82,7 @@ function CreatePub() {
 
   return (
     <Container>
-      <h1>Create new publication</h1>
+      <h1 className="dashboardmargin">Create new publication</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Titel</Form.Label>
