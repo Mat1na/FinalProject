@@ -6,7 +6,7 @@ function JoinSection() {
     return (<>
 
 
-        <Container fluid className='mt-0 mb-0'>
+        <Container fluid className='mt-0 join'>
 
             <h1 className="lab-title pb-3 montserrat">Join the lab</h1>
             <div className='join-bg'>

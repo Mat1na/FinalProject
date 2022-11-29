@@ -10,15 +10,21 @@
    font-weight: 700;
    padding: 0px;
    margin: 0px;
+  
 
 }
 
+body{
+  min-height: 95vh;
+  margin-bottom: 0;
+}
 
 html {
    overflow-y: scroll;
    margin: 0;
    padding: 0;
    scroll-behavior: smooth;
+   position: relative;
 }
 
 .montserrat {
@@ -393,7 +399,7 @@ td {
 .project-container {
    width: 100%;
    overflow: hidden;
-   min-height:80vh;
+   min-height:50vh;
  display:flex;
  align-items: center;
 }
@@ -663,7 +669,7 @@ display:flex ;
 
 .join-bg {
    background-color: #edeef0;
-   margin: 15px 15px 15px 0px;
+
    padding: 25px;
    border-radius: 25px;
 }
@@ -677,13 +683,18 @@ display:flex ;
    color: var(--Light2) !important;
 }
 
-
+.join{
+   margin-bottom:300px;
+}
 
 /* Footer */
 .footer-bg {
    background-color: var(--Dark);
    padding: 15px;
    color: var(--Light2);
+   position: absolute;
+   width: 100%;
+   bottom: 0;
 
 }
 .footer-bg2 {
