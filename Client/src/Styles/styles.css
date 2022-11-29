@@ -60,11 +60,11 @@ td {
 /* collapse */
 
 .navbar-brand {
-   padding-left: 80px;
+   padding-left: 2rem;
 }
 
 .navbar-nav {
-   padding-right: 80px;
+   padding-right: 2rem;
 }
 
 .navbar-collapse.collapsing {
@@ -149,8 +149,8 @@ td {
 
 .videoheader {
    position: absolute;
-   bottom: 80px;
-   left: 80px;
+   bottom: 2rem;
+   left: 2rem;
    color: white;
 }
 
@@ -241,13 +241,13 @@ td {
 
 /* Research section */
 .research-title {
-   font-size: 1.1rem;
+   font-size: 1.3rem;
    font-weight: 600;
    margin-bottom: 4px;
 }
 
 .research-text {
-   font-size: 0.7rem;
+   font-size: 1rem;
    font-weight: 300;
    line-height: 1.5;
 }
@@ -265,7 +265,7 @@ td {
 .research-photo-container {
    position: relative;
    /* For the animations */
-   opacity: 0; 
+   opacity: 0;
 
 }
 
@@ -455,6 +455,10 @@ td {
    color: var(--Dark3);
 }
 
+.publicationdetailtitle{
+font-weight:600;
+}
+
 @media screen and (max-width:766) {
    .project-details-text {
       background-color: black !important;
@@ -495,10 +499,13 @@ td {
    transition: transform .2s;
 }
 
+.project-summary {
+   font-weight: 300;
+}
+
 .project-summary-container {
    opacity: 0;
    width: 100%;
-
    padding: 15px;
    font-size: 0.9rem;
    left: 0;
@@ -545,6 +552,8 @@ td {
 
 }
 
+
+
 .projects .project-photo-overlay {
    position: absolute;
    width: 100%;
@@ -559,6 +568,10 @@ td {
 .projecttitle {
    font-weight: 600;
    font-size: 1.5rem;
+}
+
+.readmore {
+   font-weight: 500;
 }
 
 /* Publication section */
@@ -588,6 +601,21 @@ a {
    position: relative;
 }
 
+.carouselbutton {
+   font-weight:600;
+}
+
+.carouselbutton:active {
+   background-color: var(--Dark2) !important;
+   border-color: var(--Dark2) !important;
+}
+
+.carouselbutton:focus-visible {
+   background-color: var(--Dark2) !important;
+   border-color: var(--Dark2) !important;
+   box-shadow: none;
+}
+
 .carousel-bg {
    position: relative;
    background-image: linear-gradient(black, black), url('../../src/assets/photo/PublicationBackground.JPG');
@@ -601,8 +629,6 @@ a {
    justify-content: center;
    align-items: center;
    padding: 20px;
-
-
 }
 
 .carousel-bg-overlay {
@@ -611,10 +637,16 @@ a {
    bottom: 0px;
    width: 100%;
    height: 100%;
-
    filter: contrast(2);
    filter: saturate(2);
+}
 
+polyline {
+   stroke: var(--Dark);
+}
+
+.car-icons{
+   cursor:pointer;
 }
 
 .pub-icon {
@@ -644,6 +676,10 @@ figcaption {
 .publicationtitle {
    color: white;
 
+}
+
+.publicationtext {
+   font-weight: 300;
 }
 
 .pub-title {
@@ -693,18 +729,35 @@ figcaption {
 }
 
 .join {
-   margin-bottom: 15rem;
+   margin-bottom: 12rem;
+}
+
+.paragraphtext{
+   font-weight:300;
 }
 
 /* Footer */
 .footer-bg {
    background-color: var(--Dark);
-   padding: 15px;
+   padding-left: 2rem;
+   padding-right: 2rem;
    color: var(--Light2);
    position: absolute;
    width: 100%;
    bottom: 0;
+   overflow:hidden;
+}
 
+.footerlink:hover{
+   color: var(--Light);
+}
+
+.logofooter {
+   width: 170px;
+   height: 40px;
+   vertical-align: middle;
+   display: inline-flex;
+   align-self: center;
 }
 
 .footer-bg2 {
@@ -715,14 +768,13 @@ figcaption {
 .divMove {
    animation-duration: 1s;
    animation-name: div-move;
-   animation-fill-mode: forwards; 
+   animation-fill-mode: forwards;
 }
 
 @keyframes div-move {
    from {
       opacity: 0;
       transform: translateX(-10vw)
-      
    }
 
    10% {
@@ -743,16 +795,17 @@ figcaption {
    }
 
 }
+
 .divMove1 {
    animation-duration: 1s;
    animation-name: div-move1;
-   animation-fill-mode: forwards; 
+   animation-fill-mode: forwards;
 }
+
 @keyframes div-move1 {
    from {
       opacity: 0;
       transform: translateX(10vw)
-      
    }
 
    10% {

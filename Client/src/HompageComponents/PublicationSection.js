@@ -34,7 +34,7 @@ function PublicationSection() {
         id: 'item-1',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 0).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -43,7 +43,7 @@ function PublicationSection() {
         id: 'item-2',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 1).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -52,7 +52,7 @@ function PublicationSection() {
         id: 'item-3',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 2).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -61,7 +61,7 @@ function PublicationSection() {
         id: 'item-4',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 3).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -70,7 +70,7 @@ function PublicationSection() {
         id: 'item-5',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 4).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -79,7 +79,7 @@ function PublicationSection() {
         id: 'item-6',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 5).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -88,7 +88,7 @@ function PublicationSection() {
         id: 'item-7',
         renderItem: <div>{lastPublications.filter((publication, index) => index === 6).map((publication, index) => {
           return <>
-            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='  pub-title text-center' key={index}><div><h5 className="publicationtitle">{publication.journal}</h5><p className="publicationtitle">{publication.publicationtitle} <br />Read more ... </p></div></div>
+            <Link to={`/publication/${publication.journal.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${publication.order}`} className="journallink"><div className='pub-title text-center' key={index}><div><h5 className="publicationtitle montserrat">{publication.journal}</h5><p className="publicationtitle roboto publicationtext">{publication.publicationtitle} <br /><span className="readmore">Read more ...</span></p></div></div>
             </Link>
           </>
         })}</div>,
@@ -103,7 +103,7 @@ function PublicationSection() {
 
   return (
     <Container fluid className='mt-0 mb-0'>
-      <h1 className="pb-3 lab-title montserrat">Recent publications</h1>
+      <h1 className="pb-5 lab-title montserrat">Recent publications</h1>
 
       <div className="carousel-bg">
         <div className="carousel-bg-overlay"></div>
@@ -113,7 +113,7 @@ function PublicationSection() {
             <span onClick={slideToPrevItem}><GrPrevious size={"2rem"} className="car-icons" /></span>
             <span onClick={slideToNextItem}><GrNext size={"2rem"} className="car-icons" /></span></div>
           <div className="p-2 d-flex justify-content-center">
-            <Link to={"/publicationlist"} className="buttonpadding"><Button className="pub-icon">View All </Button>
+            <Link to={"/publicationlist"} className="buttonpadding"><Button className="pub-icon montserrat carouselbutton">VIEW ALL PUBLICATIONS</Button>
             </Link>
           </div>
         </div>

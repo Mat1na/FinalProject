@@ -44,8 +44,8 @@ function ProjectsSction() {
                         </h3>
                       </div>
                       <div className="project-summary-container" >
-                        <p className="roboto project-summary">
-                          {project.summary}.<br /> Read more ...
+                        <p className="roboto project-summary mb-1">
+                          {project.summary}.</p><p className='roboto project-summary readmore'> Read more ...
                         </p>
                       </div>
                     </div>
