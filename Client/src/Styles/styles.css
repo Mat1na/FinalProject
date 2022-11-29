@@ -10,13 +10,13 @@
    font-weight: 700;
    padding: 0px;
    margin: 0px;
-  
+
 
 }
 
-body{
-  min-height: 95vh;
-  margin-bottom: 0;
+body {
+   min-height: 95vh;
+   margin-bottom: 0;
 }
 
 html {
@@ -235,6 +235,7 @@ td {
    padding-right: 2rem;
    margin-top: 5rem;
 
+
 }
 
 
@@ -263,7 +264,9 @@ td {
 
 .research-photo-container {
    position: relative;
- 
+   /* For the animations */
+   opacity: 0; 
+
 }
 
 .research-photo-container-overlay {
@@ -399,9 +402,9 @@ td {
 .project-container {
    width: 100%;
    overflow: hidden;
-   min-height:50vh;
- display:flex;
- align-items: center;
+   min-height: 50vh;
+   display: flex;
+   align-items: center;
 }
 
 .project-details {
@@ -451,11 +454,16 @@ td {
 .project-labmember:hover {
    color: var(--Dark3);
 }
-@media screen and (max-width:766){
+
+@media screen and (max-width:766) {
    .project-details-text {
-      background-color: black!important;
-   
+      background-color: black !important;
+
    }
+}
+
+.pub-container-div {
+   margin-bottom: 15rem;
 }
 
 /* Alumni */
@@ -582,7 +590,7 @@ a {
 
 .carousel-bg {
    position: relative;
-   background-image:  linear-gradient(black, black), url('../../src/assets/photo/PublicationBackground.JPG');
+   background-image: linear-gradient(black, black), url('../../src/assets/photo/PublicationBackground.JPG');
    background-size: cover;
    background-blend-mode: saturation;
    background-position: 50% 50%;
@@ -596,7 +604,8 @@ a {
 
 
 }
-.carousel-bg-overlay{
+
+.carousel-bg-overlay {
    background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
    position: absolute;
    bottom: 0px;
@@ -605,7 +614,7 @@ a {
 
    filter: contrast(2);
    filter: saturate(2);
-   
+
 }
 
 .pub-icon {
@@ -649,7 +658,7 @@ figcaption {
    height: 300px;
    justify-content: center;
    align-items: center;
-display:flex ;
+   display: flex;
 }
 
 .pub-title:hover {
@@ -676,15 +685,15 @@ display:flex ;
 
 .join-link {
    color: var(--Dark3) !important;
-   font-weight:  500;
+   font-weight: 500;
 }
 
 .join-link:hover {
    color: var(--Light2) !important;
 }
 
-.join{
-   margin-bottom:300px;
+.join {
+   margin-bottom: 15rem;
 }
 
 /* Footer */
@@ -697,6 +706,70 @@ display:flex ;
    bottom: 0;
 
 }
+
 .footer-bg2 {
-display: none;
+   display: none;
+}
+
+/* Animations */
+.divMove {
+   animation-duration: 1s;
+   animation-name: div-move;
+   animation-fill-mode: forwards; 
+}
+
+@keyframes div-move {
+   from {
+      opacity: 0;
+      transform: translateX(-10vw)
+      
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0)
+   }
+
+}
+.divMove1 {
+   animation-duration: 1s;
+   animation-name: div-move1;
+   animation-fill-mode: forwards; 
+}
+@keyframes div-move1 {
+   from {
+      opacity: 0;
+      transform: translateX(10vw)
+      
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0)
+   }
+
 }
