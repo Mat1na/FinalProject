@@ -24,7 +24,7 @@ function PublicationDetails() {
   }, [pub]);
   return (
     <>
-<Container className='pt-3'>
+<Container fluid className='pt-5'>
         <h1>{publication.publicationtitle}</h1>
         <p className="journaltitle">{publication.journal}, {publication.year}</p>
         <p className="authorslist">{authorsList.length>0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>

@@ -79,11 +79,12 @@ function LabmembersSection() {
                   // Grid system with shifting number of elements
                   <>
                     <Col
-                     xs={8}
+                     xs={6}
                       md={4}
                       lg={3}
                       xl={2}
-                      className="d-flex justify-content-center align-items-center memberpicturepadding"
+                    
+                      className="d-flex justify-content-center align-items-center memberpicturepadding m-2"
                     >
 
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >

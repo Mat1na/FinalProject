@@ -30,19 +30,7 @@ function ProjectsSction() {
           <Row>
             {projects.map((project, e) => (
               <>
-                {/* <div className="m-3">
-             <Card  className="project-card">
-              <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`}>
-              <Card.Img variant="top" className="" src={project.image} />
-             </Link>
-              <Card.Body>
-             <Card.Title>{project.title}</Card.Title>
-                <Card.Text>{project.summary}</Card.Text>
-                <Card.Link href={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} >Read more</Card.Link>
-              </Card.Body>
-            </Card> 
-            </div> */}
-                <Col md={4} className='row-elem' ref={selectedProject} onClick={() => console.log(selectedProject.current)}>
+                    <Col md={4} className='row-elem' ref={selectedProject} onClick={() => console.log(selectedProject.current)}>
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <div className=" projects d-flex justify-content-center" >
                       <img
