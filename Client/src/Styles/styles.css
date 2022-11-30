@@ -261,17 +261,15 @@ align-items: center!important;
    vertical-align: middle;
    display: inline-flex;
    align-self: center;
-   margin-bottom: 1em;
-   max-width: 100%;
-
-   filter: grayscale(1);
+  max-width: 100%;
+ filter: grayscale(1);
 }
 
 .research-photo-container {
    position: relative;
    /* For the animations */
    opacity: 0;
-   height: 100%;
+  
 }
 
 .research-photo-container-overlay {
