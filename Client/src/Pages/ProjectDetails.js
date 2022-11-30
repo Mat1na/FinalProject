@@ -30,19 +30,19 @@ function ProjectDetails() {
   }, [proj]);
 
   return (
-    <Container fluid className='project-container'>
-      <div className="">
+    <Container fluid className=''>
+      <div className="project-container-details">
         <Row className="d-flex align-items-center">
-          <Col md={4}><div className="research-photo-container ">
+          <Col md={4}><div className="research-photo-container-details ">
             <img src={project.image} alt={project.title} className='project-details' />
             <div className="project-photo-container-overlay"></div>
             { project.imagetext!==''&&<figcaption className='roboto'>{project.imagetext}</figcaption>}
           </div>
           </Col>
           <Col md={8} className="project-details-text">
-            <h3 className='montserrat project-title pt-4 ps-4 pe-5'>{project.title}</h3>
-            <p className='roboto project-text ps-4 pe-5'>{project.content}</p>
-            <h6 className="ps-4 pb-4 pe-5 roboto">Researchers: {researchersList.map((researcher, index, array) => {
+            <h3 className='montserrat project-title pt-2 ps-2 pe-2'>{project.title}</h3>
+            <p className='roboto project-text ps-2 pe-2'>{project.content}</p>
+            <h6 className="ps-2 pb-2 pe-2 roboto">Researchers: {researchersList.map((researcher, index, array) => {
               if (index + 1 === array.length) {
                 return <Link
                   to={`/labmember/${researcher.researcher

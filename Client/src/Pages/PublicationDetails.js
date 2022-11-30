@@ -24,14 +24,14 @@ function PublicationDetails() {
   }, [pub]);
   return (
     <>
-<Container fluid className='pt-5'>
+<Container fluid className=''>
 <div className='pub-container-div'>
 <h1 className='montserrat publicationdetailtitle'>{publication.publicationtitle}</h1>
         <p className="journaltitle roboto project-summary">{publication.journal}, {publication.year}</p>
         <p className="authorslist roboto project-summary">{authorsList.length>0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
         <h4 className="montserrat roboto">Abstract</h4>
         <p className='roboto project-summary'>{publication.abstract}</p>
-        <h6 className='roboto'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto project-labmember'>{`${publication.link}`}</a></h6>
+        <p className='roboto publicationdetailtitle'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto pub-link'>{`${publication.link}`}</a></p>
 </div>
       </Container>
     </>

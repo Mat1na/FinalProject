@@ -15,7 +15,7 @@
 }
 
 body {
-   min-height: 95vh;
+   min-height: 90vh;
    margin-bottom: 0;
 }
 
@@ -233,13 +233,20 @@ td {
 .container-fluid {
    padding-left: 2rem;
    padding-right: 2rem;
-   margin-top: 5rem;
+   margin: 5rem 0 5rem 0;
+   display:block;
+   align-items: center;
 
 
 }
 
 
+
 /* Research section */
+.row-research{
+   min-height: 250px;
+
+}
 .research-title {
    font-size: 1.3rem;
    font-weight: 600;
@@ -247,7 +254,7 @@ td {
 }
 
 .research-text {
-   font-size: 1rem;
+   font-size: 1.1rem;
    font-weight: 300;
    line-height: 1.5;
 }
@@ -391,6 +398,9 @@ td {
 }
 
 /* For detail page */
+.member-container{
+   margin-bottom: 15rem!important; 
+}
 .member-details {
    width: 40vw;
    overflow: hidden;
@@ -399,10 +409,9 @@ td {
    object-fit: cover;
 }
 
-.project-container {
+.project-container-details {
    width: 100%;
-   overflow: hidden;
-   min-height: 50vh;
+   margin-bottom: 15rem;
    display: flex;
    align-items: center;
 }
@@ -416,6 +425,10 @@ td {
    object-fit: cover;
    filter: grayscale(1);
 }
+.research-photo-container-details{
+   position: relative;
+}
+
 
 .project-photo-container-overlay {
    position: absolute;
@@ -442,7 +455,7 @@ td {
 }
 
 .project-text {
-   font-size: 0.7rem;
+   font-size: 0.9rem;
    font-weight: 300;
    line-height: 1.6;
 }
@@ -455,21 +468,34 @@ td {
    color: var(--Dark3);
 }
 
+.pub-link {
+   color: var(--Light);
+   font-size: 1rem;
+   overflow-wrap: break-word; 
+}
+
+.pub-link:hover {
+   color: var(--Dark3);
+}
+
 .publicationdetailtitle{
 font-weight:600;
 }
 
-@media screen and (max-width:766) {
-   .project-details-text {
-      background-color: black !important;
 
-   }
-}
 
 .pub-container-div {
-   margin-bottom: 15rem;
+   margin-bottom: 20rem;
 }
 
+@media (max-width: 650px) {
+   .pub-container-div {
+margin-bottom: 22rem!important;
+   }
+   .member-container{
+      margin-bottom: 22rem!important; 
+   }
+ }
 /* Alumni */
 .badge-icon {
    background-color: var(--Light2) !important;
@@ -729,8 +755,13 @@ figcaption {
 }
 
 .join {
-   margin-bottom: 12rem;
+   margin-bottom: 15rem;
 }
+@media (max-width: 650px) {
+   .join {
+margin-bottom: 22rem!important;
+   }
+ }
 
 .paragraphtext{
    font-weight:300;

@@ -4,10 +4,11 @@ import { GoMail } from "react-icons/go";
 import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsTelephoneFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 function Footer() {
 
-  window.addEventListener('click', function () {
+  window.addEventListener('click',  (e)=> {
     if (window.location.pathname === '/login' || window.location.pathname === '/dashboard') {
       document
         .querySelector('.footer-bg')
@@ -17,7 +18,7 @@ function Footer() {
 
   });
 
-  window.addEventListener('load', function () {
+  window.addEventListener('load', (e)=>  {
     if (window.location.pathname === '/login' || window.location.pathname === '/dashboard') {
       document
         .querySelector('.footer-bg')
@@ -30,8 +31,8 @@ function Footer() {
     <div className="footer-bg">
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
         <div className="col-md-4 align-items-center">
-          <img src='/Logo_footer.png' className='logofooter mb-2' />
-          <span className="mb-3 mb-md-0 roboto d-block">&copy; 2022 Stamatia and Winand</span>
+        <Link to='/' className='nav-link'><img src='/Logo_footer.png' className='logofooter mb-2' /></Link>
+          <span className="mb-3 mb-md-0 roboto d-block">&copy; 2022 <a href='https://www.linkedin.com/in/matinabampa/' target="_blank" rel="noreferrer">Stamatia Bampa</a> and <a href='https://www.linkedin.com/in/winandvanmeerbeek/' target="_blank" rel="noreferrer">Winand Van Meerbeek</a></span>
         </div>
 <div className='col-md-8'>
         <ul className="nav justify-content-end list-unstyled d-flex">

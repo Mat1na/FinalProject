@@ -38,7 +38,8 @@ function LabmemberDetails() {
     <>
       <Container fluid >
  
-        <div className="member-details pt-5">{ console.log(window.location.pathname, "page")}
+<div className="member-container">
+<div className="member-details pt-5">{ console.log(window.location.pathname, "page")}
           {member.image !== undefined && member.image !== " " ? (
             <img
               src={`${member.image}`}
@@ -129,6 +130,7 @@ function LabmemberDetails() {
             )}
           </div>
         </div>
+</div>
      
       </Container>
     </>
