@@ -28,7 +28,7 @@ console.log(myRef1IsVisible1,myRef1IsVisible2,myRef1IsVisible3,myRef1IsVisible4,
     <Container fluid className='mb-0 mt-0'>
       <h1 className="pb-0 montserrat lab-title">Research</h1>
 
-      <Row className="d-flex align-items-center justify-content-center">
+      <Row className="d-flex align-items-center justify-content-center mx-4">
 
         <Col lg={6} >
 
