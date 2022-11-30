@@ -240,8 +240,10 @@ td {
 
 /* Research section */
 .row-research{
-   min-height: 250px;
-
+   min-height:300px;
+   display:flex;
+   justify-content: center!important;
+align-items: center!important;
 }
 .research-title {
    font-size: 1.3rem;
@@ -269,11 +271,12 @@ td {
    position: relative;
    /* For the animations */
    opacity: 0;
-
+   height: 100%;
 }
 
 .research-photo-container-overlay {
    position: absolute;
+  
 }
 
 .research-photo-container .research-photo-container-overlay {
