@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
+// import { useEffect } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 import {useInView} from "react-intersection-observer";
 
@@ -33,7 +34,7 @@ console.log(myRef1IsVisible1,myRef1IsVisible2,myRef1IsVisible3,myRef1IsVisible4,
         <Col lg={6} >
 
           <Row className='d-flex align-items-center justify-content-center'>
-            <h3 className='text-center m-5'>Topics</h3>
+            <h3 className='text-center mt-5 ms-5 me-5 mb-0'>Topics</h3>
             <Col sm={4} className='row-research'>
               <div className={`research-photo-container ${myRef1IsVisible1? "divMove":""}`} ref={myRef1}>
                 <img src="/MicroclimateEcology.jpg" className='jpg-research d-flex' alt='Microclimate ecology' />
@@ -65,7 +66,7 @@ console.log(myRef1IsVisible1,myRef1IsVisible2,myRef1IsVisible3,myRef1IsVisible4,
         <Col lg={6}>
 
           <Row className='d-flex align-items-center justify-content-center '>
-            <h3 className='text-center m-5'>Methods</h3>
+            <h3 className='text-center mt-5 ms-5 me-5 mb-0'>Methods</h3>
             <Col sm={4} className='row-research '>
               <div className={`research-photo-container ${myRef1IsVisible4? "divMove1":""}`} ref={myRef4}>
                 <img src="/Ecoinformatics.jpg" className='jpg-research d-flex' alt='Ecoinformatics' />

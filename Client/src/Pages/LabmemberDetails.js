@@ -23,9 +23,9 @@ function LabmemberDetails() {
       );
       setMember(filtereddata);
       setInterestList(filtereddata.interests)
-      console.log("param:",labmeberParam);
+      console.log("param:", labmeberParam);
       console.log(filtereddata)
-      // item => item.membername.toLowerCase().split(" ").toString() === labmeberParam
+        // item => item.membername.toLowerCase().split(" ").toString() === labmeberParam
         ;
     }
   };
@@ -36,102 +36,101 @@ function LabmemberDetails() {
 
   return (
     <>
-      <Container fluid >
- 
-<div className="member-container">
-<div className="member-details pt-5">{ console.log(window.location.pathname, "page")}
-          {member.image !== undefined && member.image !== " " ? (
-            <img
-              src={`${member.image}`}
-              className="member-details"
-              alt={member.membername}
-            />
-          ) : (
-            " "
-          )}
-        </div>
-        <div className="d-block text-center">
-          <h2 className="pt-3 montserrat">{member.membername}</h2>
-          <p className="roboto">{member.functionbasic}</p>
-          <p className="roboto">{member.functionextra}</p>
-
-          <div className="">
-            <hr></hr>
-            <h3 className='montserrat'>Interests</h3>
-            {interestsList.map((item) => (
-             <p><Badge bg="secondary" className="">{item.interest}</Badge></p>
-            ))}
-          </div>
-          <div>
-            {member.googlescholar !== undefined &&
-            member.googlescholar !== "" ? (
-              <a
-                href={member.googlescholar}
-                className="d-inline p-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <SiGooglescholar size={"2rem"} fill='var(--Dark)' className="icons"/>
-              </a>
-            ) : (
-              " "
-            )}
-
-            {member.researchgate !== undefined && member.researchgate !== "" ? (
-              <a
-                href={member.researchgate}
-                className="d-inline p-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <SiResearchgate size={"2rem"} fill='var(--Dark)' className="icons"/>
-              </a>
-            ) : (
-              " "
-            )}
-
-            {member.orcid !== undefined && member.orcid !== "" ? (
-              <a
-                href={member.orcid}
-                className="d-inline p-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaOrcid size={"2rem"} fill='var(--Dark)' className="icons" />
-              </a>
-            ) : (
-              " "
-            )}
-
-            {member.twitter !== undefined && member.twitter !== "" ? (
-              <a
-                href={member.twitter}
-                className="d-inline p-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaTwitter size={"2rem"} fill='var(--Dark)' className="icons"/>
-              </a>
-            ) : (
-              " "
-            )}
-
-            {member.email !== undefined && member.email !== "" ? (
-              <a
-                href={`mailto:${member.membername}`}
-                className="d-inline p-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GoMail size={"2rem"} fill='var(--Dark)' className="icons"/>
-              </a>
+      <Container fluid>
+        <div>
+          <div className="member-details pt-5">{console.log(window.location.pathname, "page")}
+            {member.image !== undefined && member.image !== " " ? (
+              <img
+                src={`${member.image}`}
+                className="member-details"
+                alt={member.membername}
+              />
             ) : (
               " "
             )}
           </div>
+          <div className="d-block text-center">
+            <h1 className="pt-3 montserrat">{member.membername}</h1>
+            <p className="roboto mb-0 function-details">{member.functionbasic}</p>
+            <p className="roboto function-details">{member.functionextra}</p>
+
+            <div className="mb-4">
+              <hr></hr>
+              <h3 className='montserrat intereststitle mb-3'>Interests</h3>
+              {interestsList.map((item) => (
+                <p><Badge bg="secondary" className="interests roboto">{item.interest}</Badge></p>
+              ))}
+            </div>
+            <div>
+              {member.googlescholar !== undefined &&
+                member.googlescholar !== "" ? (
+                <a
+                  href={member.googlescholar}
+                  className="d-inline p-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SiGooglescholar size={"2rem"} className="icons labmember-icons" />
+                </a>
+              ) : (
+                " "
+              )}
+
+              {member.researchgate !== undefined && member.researchgate !== "" ? (
+                <a
+                  href={member.researchgate}
+                  className="d-inline p-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SiResearchgate size={"2rem"} className="icons labmember-icons" />
+                </a>
+              ) : (
+                " "
+              )}
+
+              {member.orcid !== undefined && member.orcid !== "" ? (
+                <a
+                  href={member.orcid}
+                  className="d-inline p-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaOrcid size={"2rem"} className="icons labmember-icons" />
+                </a>
+              ) : (
+                " "
+              )}
+
+              {member.twitter !== undefined && member.twitter !== "" ? (
+                <a
+                  href={member.twitter}
+                  className="d-inline p-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaTwitter size={"2rem"} className="icons labmember-icons" />
+                </a>
+              ) : (
+                " "
+              )}
+
+              {member.email !== undefined && member.email !== "" ? (
+                <a
+                  href={`mailto:${member.membername}`}
+                  className="d-inline p-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <GoMail size={"2rem"} className="icons labmember-icons" />
+                </a>
+              ) : (
+                " "
+              )}
+            </div>
+          </div>
         </div>
-</div>
-     
+
       </Container>
     </>
   );

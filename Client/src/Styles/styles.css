@@ -5,17 +5,16 @@
    --Dark2: rgb(58, 89, 92);
    --Dark3: rgb(77, 116, 120);
    --Dark4: rgb(75, 136, 136);
+   --Dark5: rgb(50, 71, 72);
    --Light: rgb(123, 169, 169);
    --Light2: rgb(188, 217, 215);
    font-weight: 700;
    padding: 0px;
    margin: 0px;
-
-
 }
 
 body {
-   min-height: 90vh;
+   min-height: 100vh;
    margin-bottom: 0;
 }
 
@@ -80,7 +79,6 @@ td {
 
 
 .collapse.show {
-
    height: 91vh;
    background: rgb(23, 47, 49);
    padding-left: 20px;
@@ -239,12 +237,13 @@ td {
 
 
 /* Research section */
-.row-research{
-   min-height:300px;
-   display:flex;
-   justify-content: center!important;
-align-items: center!important;
+.row-research {
+   min-height: 300px;
+   display: flex;
+   justify-content: center !important;
+   align-items: center !important;
 }
+
 .research-title {
    font-size: 1.3rem;
    font-weight: 600;
@@ -261,20 +260,20 @@ align-items: center!important;
    vertical-align: middle;
    display: inline-flex;
    align-self: center;
-  max-width: 100%;
- filter: grayscale(1);
+   max-width: 100%;
+   filter: grayscale(1);
 }
 
 .research-photo-container {
    position: relative;
    /* For the animations */
    opacity: 0;
-  
+
 }
 
 .research-photo-container-overlay {
    position: absolute;
-  
+
 }
 
 .research-photo-container .research-photo-container-overlay {
@@ -309,6 +308,7 @@ align-items: center!important;
 .membername {
    font-weight: 600;
    margin-bottom: 0px;
+   padding-right: 12px;
 }
 
 .memberfunction {
@@ -395,11 +395,28 @@ align-items: center!important;
 }
 
 /* For detail page */
-.member-container{
-   margin-bottom: 15rem!important; 
+/* .member-container{
+   margin-bottom: 15rem !important; 
+} */
+
+.function-details {
+   font-weight: 300;
+   font-size: 1.2rem;
 }
+
+.interests {
+   font-weight: 400;
+   font-size: 1rem;
+   background-color: var(--Light2) !important;
+   color: var(--Dark4);
+}
+
+.intereststitle {
+   font-size: 2rem;
+}
+
 .member-details {
-   width: 40vw;
+   width: 15vw;
    overflow: hidden;
    border-radius: 10%;
    margin: auto;
@@ -422,7 +439,8 @@ align-items: center!important;
    object-fit: cover;
    filter: grayscale(1);
 }
-.research-photo-container-details{
+
+.research-photo-container-details {
    position: relative;
 }
 
@@ -441,8 +459,8 @@ align-items: center!important;
 
 .project-details-text {
    background-color: #edeef0;
-   border-radius: 25px 0px 0px 25px;
-
+   border-radius: 25px;
+   padding: 1rem;
 }
 
 .project-title {
@@ -468,18 +486,36 @@ align-items: center!important;
 .pub-link {
    color: var(--Light);
    font-size: 1rem;
-   overflow-wrap: break-word; 
+   overflow-wrap: break-word;
 }
 
 .pub-link:hover {
    color: var(--Dark3);
 }
 
-.publicationdetailtitle{
-font-weight:600;
+.publicationdetailtitle {
+   font-weight: 600;
 }
 
+.publicationlisttext{
+   font-weight:300;
+}
 
+.publication-link {
+   color: var(--Dark3) !important;
+   font-weight: 500;
+}
+
+.publication-link:hover {
+   color: var(--Light2) !important;
+}
+
+.authorsforpublicationlist{
+   display: inline;
+}
+.publicationlistarticle{
+   line-height: 1.8;
+}
 
 .pub-container-div {
    margin-bottom: 20rem;
@@ -487,12 +523,14 @@ font-weight:600;
 
 @media (max-width: 650px) {
    .pub-container-div {
-margin-bottom: 22rem!important;
+      margin-bottom: 22rem !important;
    }
-   .member-container{
-      margin-bottom: 22rem!important; 
+
+   .member-container {
+      margin-bottom: 22rem !important;
    }
- }
+}
+
 /* Alumni */
 .badge-icon {
    background-color: var(--Light2) !important;
@@ -600,8 +638,12 @@ margin-bottom: 22rem!important;
 /* Publication section */
 
 
-.icons:hover {
-   size: 3rem !important
+.labmember-icons {
+   fill: var(--Dark);
+}
+
+.labmember-icons:hover {
+   fill: var(--Dark5);
 }
 
 
@@ -625,7 +667,7 @@ a {
 }
 
 .carouselbutton {
-   font-weight:600;
+   font-weight: 600;
 }
 
 .carouselbutton:active {
@@ -668,8 +710,8 @@ polyline {
    stroke: var(--Dark);
 }
 
-.car-icons{
-   cursor:pointer;
+.car-icons {
+   cursor: pointer;
 }
 
 .pub-icon {
@@ -737,7 +779,6 @@ figcaption {
 
 .join-bg {
    background-color: #edeef0;
-
    padding: 25px;
    border-radius: 25px;
 }
@@ -754,14 +795,15 @@ figcaption {
 .join {
    margin-bottom: 15rem;
 }
+
 @media (max-width: 650px) {
    .join {
-margin-bottom: 22rem!important;
+      margin-bottom: 22rem !important;
    }
- }
+}
 
-.paragraphtext{
-   font-weight:300;
+.paragraphtext {
+   font-weight: 300;
 }
 
 /* Footer */
@@ -773,10 +815,10 @@ margin-bottom: 22rem!important;
    position: absolute;
    width: 100%;
    bottom: 0;
-   overflow:hidden;
+   overflow: hidden;
 }
 
-.footerlink:hover{
+.footerlink:hover {
    color: var(--Light);
 }
 

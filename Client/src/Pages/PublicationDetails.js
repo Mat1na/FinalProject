@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 function PublicationDetails() {
   const { pub } = useParams()
   const [publication, setPublication] = useState({})
-  const [authorsList,setAuthorsList]=useState([])
+  const [authorsList, setAuthorsList] = useState([])
 
   const fetchPublication = async () => {
     let res = await fetch("http://localhost:3001/publications/fetch-publications");
@@ -24,15 +24,15 @@ function PublicationDetails() {
   }, [pub]);
   return (
     <>
-<Container fluid className=''>
-<div className='pub-container-div'>
-<h1 className='montserrat publicationdetailtitle'>{publication.publicationtitle}</h1>
-        <p className="journaltitle roboto project-summary">{publication.journal}, {publication.year}</p>
-        <p className="authorslist roboto project-summary">{authorsList.length>0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
-        <h4 className="montserrat roboto">Abstract</h4>
-        <p className='roboto project-summary'>{publication.abstract}</p>
-        <p className='roboto publicationdetailtitle'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto pub-link'>{`${publication.link}`}</a></p>
-</div>
+      <Container fluid>
+        <div className='pub-container-div'>
+          <h1 className='montserrat publicationdetailtitle'>{publication.publicationtitle}</h1>
+          <p className="journaltitle roboto project-summary">{publication.journal}, {publication.year}</p>
+          <p className="authorslist roboto project-summary">{authorsList.length > 0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
+          <h4 className="montserrat roboto">Abstract</h4>
+          <p className='roboto project-summary'>{publication.abstract}</p>
+          <p className='roboto publicationdetailtitle'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto pub-link'>{`${publication.link}`}</a></p>
+        </div>
       </Container>
     </>
   )

@@ -27,16 +27,17 @@ function ProjectDetails() {
   };
   useEffect(() => {
     fetchProject();
+    // eslint-disable-next-line
   }, [proj]);
 
   return (
-    <Container fluid className=''>
+    <Container fluid>
       <div className="project-container-details">
         <Row className="d-flex align-items-center">
-          <Col md={4}><div className="research-photo-container-details ">
+          <Col md={4} className='pe-4'><div className="research-photo-container-details ">
             <img src={project.image} alt={project.title} className='project-details' />
             <div className="project-photo-container-overlay"></div>
-            { project.imagetext!==''&&<figcaption className='roboto'>{project.imagetext}</figcaption>}
+            {project.imagetext !== '' && <figcaption className='roboto'>{project.imagetext}</figcaption>}
           </div>
           </Col>
           <Col md={8} className="project-details-text">

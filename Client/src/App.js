@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./Components/auth";
 import Home from "./Home";
@@ -15,8 +15,8 @@ import EditProject from "./DashboardComponents/EditProject"
 import Authors from "./DashboardComponents/Authors";
 import CreateAuthor from "./DashboardComponents/CreateAuthor"
 import EditAuthor from "./DashboardComponents/EditAuthor"
-import Header from './Components/Header';
-import Footer from "./Components/Footer";
+// import Header from './Components/Header';
+// import Footer from "./Components/Footer";
 import LabmemberDetails from './Pages/LabmemberDetails';
 import ProjectDetails from './Pages/ProjectDetails';
 import PublicationDetails from './Pages/PublicationDetails';
@@ -27,12 +27,17 @@ import { RequireAuth } from './Components/RequireAuth';
 import PublicationList from './Pages/PublicationList';
 import Layout from './Components/Layout';
 import Layoutmodified from './Components/Layoutmodified';
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-250494226-1";
+ReactGA.initialize(TRACKING_ID);
 
 
 
 
 function App() {
-
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+      }, []);
     return (
         <AuthProvider>
             <BrowserRouter>

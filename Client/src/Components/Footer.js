@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+// import { Col, Container, Row } from 'react-bootstrap'
 import { GoMail } from "react-icons/go";
 import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -31,8 +31,8 @@ function Footer() {
     <div className="footer-bg">
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
         <div className="col-md-4 align-items-center">
-        <Link to='/' className='nav-link'><img src='/Logo_footer.png' className='logofooter mb-2' /></Link>
-          <span className="mb-3 mb-md-0 roboto d-block">&copy; 2022 <a href='https://www.linkedin.com/in/matinabampa/' target="_blank" rel="noreferrer">Stamatia Bampa</a> and <a href='https://www.linkedin.com/in/winandvanmeerbeek/' target="_blank" rel="noreferrer">Winand Van Meerbeek</a></span>
+        <Link to='/' className='nav-link'><img src='/Logo_footer.png' alt='logo sGlobelab with tagline' className='logofooter mb-2' /></Link>
+          <span className="mb-3 mb-md-0 roboto d-block">&copy; 2022 <a href='https://www.linkedin.com/in/matinabampa/' target="_blank" rel="noreferrer" className='footerlink'>Stamatia Bampa</a> and <a href='https://www.linkedin.com/in/winandvanmeerbeek/' target="_blank" rel="noreferrer" className='footerlink'>Winand Van Meerbeek</a></span>
         </div>
 <div className='col-md-8'>
         <ul className="nav justify-content-end list-unstyled d-flex">

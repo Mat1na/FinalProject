@@ -6,10 +6,10 @@ import Headermodified from './Headermodified';
 function Layoutmodified() {
   return (
     <>
-    <Headermodified />
-    <Outlet/>
-    <Footer/>
-</>
+      <Headermodified />
+      <Outlet />
+      <Footer />
+    </>
   )
 }
 
