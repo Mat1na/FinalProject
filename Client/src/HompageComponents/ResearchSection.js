@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 import {useInView} from "react-intersection-observer";
 
 function ResearchSection() {
-const {ref:myRef1, inView:myRef1IsVisible1}=useInView()
-const {ref:myRef2, inView:myRef1IsVisible2}=useInView()
-const {ref:myRef3, inView:myRef1IsVisible3}=useInView()
-const {ref:myRef4, inView:myRef1IsVisible4}=useInView()
-const {ref:myRef5, inView:myRef1IsVisible5}=useInView()
-const {ref:myRef6, inView:myRef1IsVisible6}=useInView()
+const {ref:myRef1, inView:myRef1IsVisible1}=useInView({ triggerOnce: true })
+const {ref:myRef2, inView:myRef1IsVisible2}=useInView({ triggerOnce: true })
+const {ref:myRef3, inView:myRef1IsVisible3}=useInView({ triggerOnce: true })
+const {ref:myRef4, inView:myRef1IsVisible4}=useInView({ triggerOnce: true })
+const {ref:myRef5, inView:myRef1IsVisible5}=useInView({ triggerOnce: true })
+const {ref:myRef6, inView:myRef1IsVisible6}=useInView({ triggerOnce: true })
+
 console.log(myRef1IsVisible1,myRef1IsVisible2,myRef1IsVisible3,myRef1IsVisible4,)
+
+// useEffect(()=>{
+//   const observer=new IntersectionObserver((entries)=>{
+//     const entry=entries[0]
+//     console.log("entry",entry)
+//       })
+    
+//        observer.observe(myRef1.current)
+// }, [])
 
 
 
