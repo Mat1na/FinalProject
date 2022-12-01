@@ -28,6 +28,7 @@ import PublicationList from './Pages/PublicationList';
 import Layout from './Components/Layout';
 import Layoutmodified from './Components/Layoutmodified';
 import ReactGA from 'react-ga';
+
 const TRACKING_ID = "UA-250494226-1";
 ReactGA.initialize(TRACKING_ID);
 
