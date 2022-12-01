@@ -1,9 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { useInView } from "react-intersection-observer";
 
 function LabmembersSection() {
+
+  const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myRow3, inView: myRow3IsVisible } = useInView({ triggerOnce: true })
+  // const ref = useRef(new Array());
+
+  console.log(myRow1IsVisible, myRow2IsVisible)
+
+
+
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
     var sortOrder = ["Assistant Professor", "Postdoc", "PhD student", "visiting PhD student", "Master student"];
@@ -18,6 +29,7 @@ function LabmembersSection() {
   };
   useEffect(() => {
     fetchLabmembers();
+    // console.log("ref",myRow2.current[0]);
   }, []);
 
 
@@ -28,7 +40,7 @@ function LabmembersSection() {
         <h1 className="pb-2 montserrat lab-title">Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
-          <h2 className="p-3 montserrat">Principal investigator</h2>
+          <h2 className={`p-3 montserrat divslide-before ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Principal investigator</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -37,10 +49,11 @@ function LabmembersSection() {
                   <>
                     <Col
                       md={5}
-                      className="d-flex justify-content-center align-items-center"
+                      className={`d-flex justify-content-center align-items-center divslide-before ${myRow1IsVisible ? "divslide" : ""}`}
+                      ref={myRow1}
                     >
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
-                        <div className="members d-flex justify-content-center align-items-center"
+                        <div className={`members d-flex justify-content-center align-items-center`}
                         >
                           <img
                             alt={member.membername}
@@ -71,7 +84,7 @@ function LabmembersSection() {
             );
           })}
           {/* Current members Section*/}
-          <h2 className="px-3 pt-5 pb-3 montserrat">Current members</h2>
+          <h2 className={`p-3 pt-5 pb-3 montserrat divslide-before ${myRow2IsVisible ? "divslide" : ""}`} ref={myRow2}>Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -79,21 +92,21 @@ function LabmembersSection() {
                   // Grid system with shifting number of elements
                   <>
                     <Col
-                     xs={6}
+                
+                      xs={6}
                       md={4}
                       lg={3}
                       xl={2}
-                    
-                      className="d-flex justify-content-center align-items-center memberpicturepadding m-2"
+                      className={`d-flex justify-content-center align-items-center memberpicturepadding m-2 divslide-before ${myRow2IsVisible ? "divslide" : ""} `} 
                     >
 
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
-                        <div className="members d-flex justify-content-center align-items-center memberpicturepadding"
+                        <div  className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
                         >
-                          <img
+                          <img 
                             alt={member.membername}
                             src={`${member.image}`}
-                            className="member-photo" />
+                            className={`member-photo `} />
                           <div className="member-photo-overlay">
 
                           </div>
@@ -119,7 +132,7 @@ function LabmembersSection() {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className="d-flex"><Badge className="badge-icon montserrat">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
+          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myRow3IsVisible ? "divslide" : ""} `} ref={myRow3}><Badge className="badge-icon montserrat">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>

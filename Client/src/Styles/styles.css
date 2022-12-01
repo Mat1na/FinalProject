@@ -242,6 +242,10 @@ td {
    display: flex;
    justify-content: center !important;
    align-items: center !important;
+   
+}
+.research-photo{
+   padding: 0;
 }
 
 .research-title {
@@ -374,6 +378,7 @@ td {
    overflow: hidden;
    border-radius: 5%;
    margin: 10px;
+
 }
 
 .member-photo {
@@ -892,7 +897,45 @@ figcaption {
 
    100% {
       opacity: 1;
-      transform: translateX(0)
+      transform: translateX(0vw)
+   }
+
+}
+
+
+
+.divslide-before{
+opacity: 0;
+}
+
+.divslide {
+   animation-duration: 1s;
+   animation-name: div-slide;
+   animation-fill-mode: forwards;
+}
+
+@keyframes div-slide {
+   from {
+      opacity: 0;
+      transform: translateY(10vw)
+   
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0vw)
    }
 
 }
