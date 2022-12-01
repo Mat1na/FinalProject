@@ -2,8 +2,12 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 function ProjectDetails() {
+  const { ref: myRef1, inView: myRef1IsVisible1 } = useInView({ triggerOnce: true })
+  const { ref: myRef2, inView: myRef1IsVisible2 } = useInView({ triggerOnce: true })
+
   const { proj } = useParams();
   const [project, setProject] = useState([]);
   const [researchersList, setResearchersList] = useState([]);
@@ -34,13 +38,13 @@ function ProjectDetails() {
     <Container fluid>
       <div className="project-container-details">
         <Row className="d-flex align-items-center">
-          <Col md={4} className='pe-4'><div className="research-photo-container-details ">
+          <Col md={4} className={`pe-4 ${myRef1IsVisible1 ? "divMove2" : ""}`} ref={myRef1}><div className="research-photo-container-details">
             <img src={project.image} alt={project.title} className='project-details' />
             <div className="project-photo-container-overlay"></div>
             {project.imagetext !== '' && <figcaption className='roboto'>{project.imagetext}</figcaption>}
           </div>
           </Col>
-          <Col md={8} className="project-details-text">
+          <Col md={8} className={`project-details-text ${myRef1IsVisible2 ? "divMove3" : ""}`} ref={myRef2}>
             <h3 className='montserrat project-title pt-2 ps-2 pe-2'>{project.title}</h3>
             <p className='roboto project-text ps-2 pe-2'>{project.content}</p>
             <h6 className="ps-2 pb-2 pe-2 roboto">Researchers: {researchersList.map((researcher, index, array) => {

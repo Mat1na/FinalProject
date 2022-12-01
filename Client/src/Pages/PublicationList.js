@@ -1,7 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import {useInView} from "react-intersection-observer";
 
 function PublicationList() {
+  const {ref:myRef1, inView:myRef1IsVisible1}=useInView({ triggerOnce: true })
+  const {ref:myRef2, inView:myRef1IsVisible2}=useInView({ triggerOnce: true })
+  const {ref:myRef3, inView:myRef1IsVisible3}=useInView({ triggerOnce: true })
+  const {ref:myRef4, inView:myRef1IsVisible4}=useInView({ triggerOnce: true })
+  const {ref:myRef5, inView:myRef1IsVisible5}=useInView({ triggerOnce: true })
+  const {ref:myRef6, inView:myRef1IsVisible6}=useInView({ triggerOnce: true })
+  const {ref:myRef7, inView:myRef1IsVisible7}=useInView({ triggerOnce: true })
+  const {ref:myRef8, inView:myRef1IsVisible8}=useInView({ triggerOnce: true })
+  const {ref:myRef9, inView:myRef1IsVisible9}=useInView({ triggerOnce: true })
+  const {ref:myRef10, inView:myRef1IsVisible10}=useInView({ triggerOnce: true })
+
   const [publication2022, setPublication2022] = useState([]);
   const [publication2021, setPublication2021] = useState([]);
   const [publication2020, setPublication2020] = useState([]);
@@ -92,7 +104,7 @@ function PublicationList() {
     <Container fluid>
       <h1 className='montserrat publicationdetailtitle'>Peer reviewed publications</h1>
       <p className='roboto publicationlisttext'>Researchers from the sGlobe lab are indicated in bold</p>
-      {publication2022.length > 0 && <div>
+      {publication2022.length > 0 && <div className={`${myRef1IsVisible1? "divMove4":""}`} ref={myRef1}>
         <b className='publicationyear montserrat'>2022</b>
         <ul className='publicationlisttext roboto'>
           {publication2022.map((item, index) => {
@@ -115,7 +127,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2021.length > 0 && <div>
+      {publication2021.length > 0 && <div className={`${myRef1IsVisible2? "divMove4":""}`} ref={myRef2}>
         <b className='publicationyear montserrat'>2021</b>
         <ul className='publicationlisttext roboto'>
           {publication2021.map((item, index) => {
@@ -138,7 +150,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2020.length > 0 && <div>
+      {publication2020.length > 0 && <div className={`${myRef1IsVisible3? "divMove4":""}`} ref={myRef3}>
         <b className='publicationyear montserrat'>2020</b>
         <ul className='publicationlisttext roboto'>
           {publication2020.map((item, index) => {
@@ -161,7 +173,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2019.length > 0 && <div>
+      {publication2019.length > 0 && <div className={`${myRef1IsVisible4? "divMove4":""}`} ref={myRef4}>
         <b className='publicationyear montserrat'>2019</b>
         <ul className='publicationlisttext roboto'>
           {publication2019.map((item, index) => {
@@ -184,7 +196,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2018.length > 0 && <div>
+      {publication2018.length > 0 && <div className={`${myRef1IsVisible5? "divMove4":""}`} ref={myRef5}>
         <b className='publicationyear montserrat'>2018</b>
         <ul className='publicationlisttext roboto'>
           {publication2018.map((item, index) => {
@@ -207,7 +219,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2017.length > 0 && <div>
+      {publication2017.length > 0 && <div className={`${myRef1IsVisible6? "divMove4":""}`} ref={myRef6}>
         <b className='publicationyear montserrat'>2017</b>
         <ul className='publicationlisttext roboto'>
           {publication2017.map((item, index) => {
@@ -230,7 +242,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2016.length > 0 && <div>
+      {publication2016.length > 0 && <div className={`${myRef1IsVisible7? "divMove4":""}`} ref={myRef7}>
         <b className='publicationyear montserrat'>2016</b>
         <ul className='publicationlisttext roboto'>
           {publication2016.map((item, index) => {
@@ -253,7 +265,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2015.length > 0 && <div>
+      {publication2015.length > 0 && <div className={`${myRef1IsVisible8? "divMove4":""}`} ref={myRef8}>
         <b className='publicationyear montserrat'>2015</b>
         <ul className='publicationlisttext roboto'>
           {publication2015.map((item, index) => {
@@ -276,7 +288,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2014.length > 0 && <div>
+      {publication2014.length > 0 && <div className={`${myRef1IsVisible9? "divMove4":""}`} ref={myRef9}>
         <b className='publicationyear montserrat'>2014</b>
         <ul className='publicationlisttext roboto'>
           {publication2014.map((item, index) => {
@@ -299,7 +311,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2011.length > 0 && <div>
+      {publication2011.length > 0 && <div className={`${myRef1IsVisible10? "divMove4":""}`} ref={myRef10}>
         <b className='publicationyear montserrat'>2011</b>
         <ul className='publicationlisttext roboto'>
           {publication2011.map((item, index) => {

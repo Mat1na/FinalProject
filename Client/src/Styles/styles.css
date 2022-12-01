@@ -501,6 +501,10 @@ td {
    font-weight:300;
 }
 
+.publicationyear {
+   font-size:1.5rem;
+}
+
 .publication-link {
    color: var(--Dark3) !important;
    font-weight: 500;
@@ -893,6 +897,99 @@ figcaption {
    100% {
       opacity: 1;
       transform: translateX(0)
+   }
+
+}
+
+.divMove2 {
+   animation-duration: 1s;
+   animation-name: div-move2;
+   animation-fill-mode: forwards;
+}
+
+@keyframes div-move2 {
+   from {
+      opacity: 0;
+      transform: translateX(-10vw)
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0)
+   }
+
+}
+
+.divMove3 {
+   animation-duration: 1s;
+   animation-name: div-move3;
+   animation-fill-mode: forwards;
+}
+
+@keyframes div-move3 {
+   from {
+      opacity: 0;
+      transform: translateX(10vw)
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0)
+   }
+
+}
+
+.divMove4 {
+   animation-duration: 1s;
+   animation-name: div-move4;
+   animation-fill-mode: forwards;
+}
+
+@keyframes div-move4 {
+   from {
+      opacity: 0;
+      transform: translateY(10vw)
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0)
    }
 
 }
