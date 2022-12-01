@@ -25,7 +25,7 @@ const {ref:myRef6, inView:myRef6IsVisible}=useInView({ triggerOnce: true })
         <Col lg={6} >
 
           <Row className='d-flex align-items-center justify-content-center'>
-            <h3 className='text-center mt-5 ms-5 me-5 mb-0'>Topics</h3>
+            <h3 className={`text-center mt-5 ms-5 me-5 mb-0 ${myRef1IsVisible? "divMove":""}`} ref={myRef1}>Topics</h3>
             <Col sm={5} className='row-research research-photo '>
               <div className={`research-photo-container ${myRef1IsVisible? "divMove":""}`} ref={myRef1}>
                 <img src="/MicroclimateEcology.jpg" className='jpg-research d-flex' alt='Microclimate ecology' />
@@ -57,7 +57,7 @@ const {ref:myRef6, inView:myRef6IsVisible}=useInView({ triggerOnce: true })
         <Col lg={6}>
 
           <Row className='d-flex align-items-center justify-content-center '>
-            <h3 className='text-center mt-5 ms-5 me-5 mb-0'>Methods</h3>
+            <h3 className={`text-center mt-5 ms-5 me-5 mb-0 ${myRef1IsVisible? "divMove1":""}`} ref={myRef1}>Methods</h3>
             <Col sm={5} className='row-research research-photo'>
               <div className={`research-photo-container ${myRef4IsVisible? "divMove1":""}`} ref={myRef4}>
                 <img src="/Ecoinformatics.jpg" className='jpg-research d-flex' alt='Ecoinformatics' />

@@ -84,7 +84,7 @@ function LabmembersSection() {
             );
           })}
           {/* Current members Section*/}
-          <h2 className={`p-3 pt-5 pb-3 montserrat divslide-before ${myRow2IsVisible ? "divslide" : ""}`} ref={myRow2}>Current members</h2>
+          <h2 className={`p-3 pt-5 pb-3 montserrat divslide-before ${myRow2IsVisible ? "divslide2" : ""}`} ref={myRow2}>Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -97,7 +97,7 @@ function LabmembersSection() {
                       md={4}
                       lg={3}
                       xl={2}
-                      className={`d-flex justify-content-center align-items-center memberpicturepadding m-2 divslide-before ${myRow2IsVisible ? "divslide" : ""} `} 
+                      className={`d-flex justify-content-center align-items-center memberpicturepadding m-2 divslide-before ${myRow2IsVisible ? "divslide2" : ""} `} 
                     >
 
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >

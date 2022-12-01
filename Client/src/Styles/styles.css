@@ -951,6 +951,37 @@ opacity: 0;
 
 }
 
+.divslide2 {
+   animation-duration: 2s;
+   animation-name: div-slide2;
+   animation-fill-mode: forwards;
+}
+
+@keyframes div-slide2 {
+   from {
+      opacity: 0;
+      transform: translateY(20vw)
+   
+   }
+
+   10% {
+      opacity: 0.4;
+   }
+
+   50% {
+      opacity: 0.6;
+   }
+
+   90% {
+      opacity: 0.8;
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0vw)
+   }
+
+}
 .divMove2 {
    animation-duration: 1s;
    animation-name: div-move2;
