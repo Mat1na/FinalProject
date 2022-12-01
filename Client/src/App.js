@@ -28,7 +28,7 @@ import PublicationList from './Pages/PublicationList';
 import Layout from './Components/Layout';
 import Layoutmodified from './Components/Layoutmodified';
 import ReactGA from 'react-ga';
-
+import ScrollToTop from './Components/scrollToTop';
 const TRACKING_ID = "UA-250494226-1";
 ReactGA.initialize(TRACKING_ID);
 
@@ -38,23 +38,24 @@ ReactGA.initialize(TRACKING_ID);
 function App() {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
-      }, []);
+    }, []);
     return (
         <AuthProvider>
             <BrowserRouter>
+                <ScrollToTop />
                 {/* <Header /> */}
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path='/' element={<Home />} />
-                        </Route>
-                        <Route element={<Layoutmodified />}>
+                    </Route>
+                    <Route element={<Layoutmodified />}>
                         <Route path='/publicationlist' element={<PublicationList />} />
                         <Route path='/publication/:pub' element={<PublicationDetails />} />
                         <Route path='/labmember/:lab' element={<LabmemberDetails />} />
                         <Route path='/project/:proj' element={<ProjectDetails />} />
                         {/* <Route path='/project/:proj' element={<ProjectDetails />} /> */}
                         <Route path='/alumni' element={<Alumni />} />
-                    {/* Dashboard */}
+                        {/* Dashboard */}
                         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                         <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
                         <Route path="/labmembers/create-member" element={<RequireAuth><CreateLabMembers /></RequireAuth>} />
