@@ -3,8 +3,9 @@ import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { useInView } from "react-intersection-observer";
+import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
 
-function LabmembersSection() {
+function LabmembersSection({ width, height, src, alt, ...rest }) {
 
   const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
   const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
@@ -12,6 +13,19 @@ function LabmembersSection() {
   // const ref = useRef(new Array());
 
   console.log(myRow1IsVisible, myRow2IsVisible)
+
+  const supportsLazyLoading = useNativeLazyLoading();
+  const { ref: myImgLab, inView: myImgLabIsVisible } = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+    skip: supportsLazyLoading !== false,
+  });
+  const { ref: myImgLab2, inView: myImgLab2IsVisible } = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+    skip: supportsLazyLoading !== false,
+  });
+
 
 
 
@@ -37,7 +51,7 @@ function LabmembersSection() {
   return (
     <>
       <Container fluid className='mt-0 mb-0'>
-        <h1 className="pb-2 montserrat lab-title">Lab members</h1>
+        <h1 className={`pb-2 montserrat lab-title ${myRow1IsVisible ? "divslide" : ""}`}>Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
           <h2 className={`p-3 montserrat divslide-before ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Principal investigator</h2>
@@ -55,11 +69,16 @@ function LabmembersSection() {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
                         >
-                          <img
-                            alt={member.membername}
-                            src={`${member.image}`}
-                            className="member-photo" />
-                          <div className="member-photo-overlay">
+                          {myImgLabIsVisible || supportsLazyLoading ? (
+                            <img
+                              alt={member.membername}
+                              src={`${member.image}`}
+                              className="member-photo"
+                              loading="lazy"
+                              {...rest} />
+                          ) : null}
+
+                          <div ref={myImgLab} data-inview={myImgLabIsVisible} className="member-photo-overlay">
 
                           </div>
                           <div className="member-text-overlay">
@@ -92,22 +111,27 @@ function LabmembersSection() {
                   // Grid system with shifting number of elements
                   <>
                     <Col
-                
+
                       xs={6}
                       md={4}
                       lg={3}
                       xl={2}
-                      className={`d-flex justify-content-center align-items-center memberpicturepadding m-2 divslide-before ${myRow2IsVisible ? "divslide2" : ""} `} 
+                      className={`d-flex justify-content-center align-items-center memberpicturepadding divslide-before ${myRow2IsVisible ? "divslide2" : ""} `}
                     >
 
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
-                        <div  className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
+                        <div className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
                         >
-                          <img 
-                            alt={member.membername}
-                            src={`${member.image}`}
-                            className={`member-photo `} />
-                          <div className="member-photo-overlay">
+                          {myImgLab2IsVisible || supportsLazyLoading ? (
+                            <img
+                              alt={member.membername}
+                              src={`${member.image}`}
+                              className={`member-photo `}
+                              loading="lazy"
+                              {...rest} />
+                          ) : null}
+
+                          <div ref={myImgLab2} data-inview={myImgLab2IsVisible} className="member-photo-overlay">
 
                           </div>
                           <div className="member-text-overlay">

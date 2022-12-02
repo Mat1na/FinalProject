@@ -1,15 +1,20 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { HashLink as Link } from 'react-router-hash-link';
+import { useInView } from "react-intersection-observer";
 
 function JoinSection() {
+
+    const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
+    const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
+
     return (<>
 
 
         <Container fluid className='mt-0 join'>
 
-            <h1 className="lab-title pb-5 montserrat">Join the lab</h1>
-            <div className='join-bg'>
+            <h1 className={`lab-title pb-5 montserrat ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Join the lab</h1>
+            <div className={`join-bg ${myRow2IsVisible ? "divslide2" : ""}`} ref={myRow2}>
                 <p className='roboto paragraphtext'>
                     There are no vacancies at the moment, but I am always interested in hearing from motivated students or researchers to collaborate on topics of mutual interest. Have a look at <Link to="/#research"className='join-link'>Research</Link> and our <Link to="/#projects" className='join-link'>Research projects</Link> to see what we are doing. So if you are interested in applying for a PhD or postdoc fellowship, you are always welcome to contact me. The different opportunities are listed below.
                 </p>

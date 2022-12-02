@@ -4,13 +4,15 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useSpringCarousel } from 'react-spring-carousel'
 import { GrPrevious, GrNext } from "react-icons/gr";
+import { useInView } from "react-intersection-observer";
 
 function PublicationSection() {
   const [lastPublications, setLastPublications] = useState([]);
-  const [index, setIndex] = useState(0);
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  }
+
+  const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
+
+
 
   const fetchLastPublications = async () => {
     let res = await fetch("http://localhost:3001/publications/fetch-publications");
@@ -103,10 +105,10 @@ function PublicationSection() {
 
   return (
     <Container fluid className='mt-0 mb-0'>
-      <h1 className="pb-5 lab-title montserrat">Recent publications</h1>
+      <h1 className={`pb-5 lab-title montserrat ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Recent publications</h1>
 
-      <div className="carousel-bg">
-        <div className="carousel-bg-overlay"></div>
+      <div className={`carousel-bg ${myRow1IsVisible ? "divslide2" : ""}`}>
+        <div className="carousel-bg-overlay" ref={myRow2}></div>
         <div className="carousel-fragment">
           {carouselFragment}
           <div className="d-flex justify-content-between">

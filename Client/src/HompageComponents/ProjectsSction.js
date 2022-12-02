@@ -1,11 +1,26 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
+import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
 
-function ProjectsSction() {
+function ProjectsSction({ width, height, src, alt, ...rest }) {
   const [projects, setProjects] = useState([]);
-  const selectedProject = useRef(null)
 
+
+  const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
+
+  // const ref = useRef(new Array());
+
+  console.log(myRow1IsVisible, myRow2IsVisible)
+
+  const supportsLazyLoading = useNativeLazyLoading();
+  const { ref: myImg, inView: myImgIsVisible } = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+    skip: supportsLazyLoading !== false,
+  });
 
 
 
@@ -19,25 +34,30 @@ function ProjectsSction() {
   };
   useEffect(() => {
     fetchProjectList();
-  }, [selectedProject]);
+  }, []);
 
 
   return (
     <>
       <Container fluid className='mt-0 mb-0'>
-        <h1 className="text-left lab-title montserrat pb-5">Research projects</h1>
+        <h1 className={`text-left lab-title montserrat pb-5 divslide-before ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row>
             {projects.map((project, e) => (
               <>
-                    <Col md={4} className='row-elem' ref={selectedProject} onClick={() => console.log(selectedProject.current)}>
+                <Col md={4} className={`row-elem divslide-before  ${myRow1IsVisible ? "divslide2" : ""}`} ref={myImg} data-inview={myImgIsVisible} >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <div className=" projects d-flex justify-content-center" >
-                      <img
-                        src={project.image}
-                        className="project-photo" alt={project.title}
-                      />
-                      <div className="project-photo-overlay"></div>
+                      {myImgIsVisible || supportsLazyLoading ? (
+                        <img
+                          src={project.image}
+                          className="project-photo" alt={project.title}
+                          loading="lazy"
+                          {...rest}
+                        />
+                      ) : null}
+
+                      <div className="project-photo-overlay" ></div>
                       <div className="project-text-overlay">
                         <h3 className="montserrat projecttitle">
                           {project.title}

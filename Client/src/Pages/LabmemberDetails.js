@@ -6,11 +6,19 @@ import { FaTwitter } from "react-icons/fa";
 import { FaOrcid } from "react-icons/fa";
 import { SiResearchgate } from "react-icons/si";
 import { SiGooglescholar } from "react-icons/si";
+import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+import { useInView } from "react-intersection-observer";
 
-function LabmemberDetails() {
+function LabmemberDetails({ width, height, src, alt, ...rest }) {
   const { lab } = useParams();
   const [member, setMember] = useState([]);
   const [interestsList, setInterestList] = useState([]);
+  const supportsLazyLoading = useNativeLazyLoading();
+  const { ref: myImg, inView: myImgIsVisible } = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+    skip: supportsLazyLoading !== false,
+  });
 
   const fetchLabmember = async () => {
     let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
@@ -37,17 +45,21 @@ function LabmemberDetails() {
   return (
     <>
       <Container fluid>
-        <div>
-          <div className="member-details pt-5">{console.log(window.location.pathname, "page")}
-            {member.image !== undefined && member.image !== " " ? (
-              <img
+        <div className="member-container">
+          <div ref={myImg} data-inview={myImgIsVisible} className="member-details pt-5">
+        
+              
+              {myImgIsVisible || supportsLazyLoading ? (
+                <img
                 src={`${member.image}`}
                 className="member-details"
                 alt={member.membername}
+                loading="lazy"
+                {...rest}
               />
-            ) : (
-              " "
-            )}
+              ) : null}
+
+        
           </div>
           <div className="d-block text-center">
             <h1 className="pt-3 montserrat">{member.membername}</h1>
