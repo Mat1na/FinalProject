@@ -11,14 +11,14 @@
    font-weight: 700;
    padding: 0px;
    margin: 0px;
- }
+}
 
 
 
 body {
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
 }
 
 html {
@@ -235,7 +235,7 @@ td {
    padding-left: 2rem;
    padding-right: 2rem;
    margin-top: 5rem;
-  
+
 }
 
 
@@ -849,13 +849,11 @@ figcaption {
 /* Footer */
 .footer-bg {
    background-color: var(--Dark);
-   padding-left: 2rem;
-   padding-right: 2rem;
+   padding: 2rem;
    color: var(--Light2);
-
    width: 100%;
-   height:20rem;
-   bottom:0;
+   height: auto;
+   bottom: 0;
 }
 
 .footerlink:hover {
@@ -863,15 +861,31 @@ figcaption {
 }
 
 .logofooter {
-   width: 170px;
-   height: 40px;
-   vertical-align: middle;
-   display: inline-flex;
-   align-self: center;
+   width: 204px;
+   height: 47px;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 2rem;
+}
+
+.footer-icon-list {
+   margin-bottom: 2.8rem;
+}
+
+.footer-copyright {
+   border-top: 1px solid var(--Light2);
+   padding-top: 0.8rem;
 }
 
 .footer-bg2 {
    display: none;
+}
+
+.footer-icons {
+   border-radius: 50%;
+   border: 2px solid var(--Light2);
+   padding: 0.5rem;
 }
 
 /* Animations */
