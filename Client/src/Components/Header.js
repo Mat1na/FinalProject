@@ -1,7 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { MdOutlineSegment } from 'react-icons/md'
-import { useLocation } from "react-router-dom";
+import { Nav, Navbar} from "react-bootstrap";
 import { HashLink as Link } from 'react-router-hash-link';
 
 function Header() {
@@ -44,6 +42,7 @@ function Header() {
           <Link to="/#projects" className='nav-link'>Projects</Link>
           <Link to="/#publications" className='nav-link'>Publications</Link>
           <Link to="/#jointhelab" className='nav-link'>Join the lab</Link>
+          <Link to="/#contact" className='nav-link'>Contact us</Link>
           <Link to='/dashboard' className='nav-link'>Dashboard</Link>
         </Nav>
       </Navbar.Collapse>

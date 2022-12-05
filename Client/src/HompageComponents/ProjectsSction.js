@@ -7,8 +7,8 @@ import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-componen
 
 function ProjectsSction({scrollPosition }) {
   const [projects, setProjects] = useState([]);
-  const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
-   console.log(myRow1IsVisible)
+  const { ref: myProj, inView: myProjIsVisible } = useInView({ triggerOnce: true })
+  
 
   const fetchProjectList = async () => {
     let res = await fetch("http://localhost:3001/projects/fetch-projects");
@@ -25,12 +25,12 @@ function ProjectsSction({scrollPosition }) {
   return (
     <>
       <Container fluid className='mt-0 mb-0'>
-        <h1 className={`text-left lab-title montserrat pb-5 divslide-before ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Research projects</h1>
+        <h1 className={`text-left lab-title montserrat pb-5 divslide-before ${myProjIsVisible ? "divslide" : ""}`} ref={myProj}>Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row>
             {projects.map((project, e) => (
               <>
-                <Col md={4} className={`row-elem divslide-before  ${myRow1IsVisible ? "divslide2" : ""}`}  >
+                <Col md={4} className={`row-elem divslide-before  ${myProjIsVisible ? "divslide2" : ""}`}  >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <div className=" projects d-flex justify-content-center" >
                           <LazyLoadImage
