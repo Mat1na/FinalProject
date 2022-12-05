@@ -6,10 +6,12 @@ import ResearchSection from "./HompageComponents/ResearchSection";
 import VideoSection from "./HompageComponents/VideoSection";
 import JoinSection from "./HompageComponents/JoinSection";
 import ContactSection from "./HompageComponents/ContactSection";
+import BackToTopButton from "./Components/BackToTopButton";
 
 function Home() {
   return (
     <>
+    <BackToTopButton />
       <section id="top"><VideoSection /></section>
       <section id="research" className='containerpaddings'><ResearchSection /></section>
       <section id="labmembers" className='containerpaddings'><LabmembersSection /></section>
