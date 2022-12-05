@@ -38,9 +38,9 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
   }, [proj]);
 
   return (
-    <Container fluid>
-      <div className="project-container-details">
-        <Row className="d-flex align-items-center">
+    <Container fluid className='details'>
+   
+        <Row className="d-flex align-items-center justify-content-center">
           <Col md={4} className={`pe-4 ${myRef1IsVisible1 ? "divMove2" : ""}`} ref={myRef1}><div className="research-photo-container-details">
                           
          
@@ -81,7 +81,7 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
             </h6>
           </Col>
         </Row>
-      </div>
+    
     </Container>
   );
 }

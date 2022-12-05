@@ -40,7 +40,7 @@ function LabmemberDetails() {
 
   return (
     <>
-      <Container fluid>
+      <Container fluid className='details'>
         <div className="member-container">
           <div className="member-details pt-5">
             <LazyLoadImage

@@ -101,7 +101,7 @@ function PublicationList() {
   }, []);
 
   return (
-    <Container fluid>
+    <Container fluid className='details'>
       <h1 className='montserrat publicationdetailtitle'>Peer reviewed publications</h1>
       <p className='roboto publicationlisttext'>Researchers from the sGlobe lab are indicated in bold</p>
       {publication2022.length > 0 && <div className={`${myRef1IsVisible1? "divMove4":""}`} ref={myRef1}>

@@ -23,7 +23,7 @@ function ContactSection() {
 
                 <div className='m-4'>
                     <a className="footerlink d-flex align-items-center justify-content-center m-3 " href="tel:+3216377444"><BsTelephoneFill size={"2.5rem"} className="footer-icons icons me-1" /></a>
-                    <a className="footerlink text-center d-flex align-items-center justify-content-center" href="tel:+3216377444"><p className=''>+32 16 377 444</p></a>
+                    <a className="footerlink text-center d-flex align-items-center justify-content-center " href="tel:+3216377444"><p className=''>+32 16 377 444</p></a>
                 </div>
 
 

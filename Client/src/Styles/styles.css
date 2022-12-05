@@ -714,6 +714,12 @@ td {
    border-radius: 25px;
    padding: 1rem;
 }
+@media screen and (max-width:750px) {
+
+   .project-details-text {
+    margin: 2rem !important;
+   }
+}
 
 .project-title {
    font-size: 1.1rem;
@@ -1118,6 +1124,12 @@ figcaption {
 
 .footer-icons:hover {
    border: 2px solid var(--Light);
+}
+
+.details{
+   min-height: 73vh;
+   justify-content: center !important;
+   align-items: center  !important;
 }
 
 /* Animations */

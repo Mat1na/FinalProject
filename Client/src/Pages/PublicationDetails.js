@@ -24,7 +24,7 @@ function PublicationDetails() {
   }, [pub]);
   return (
     <>
-      <Container fluid>
+      <Container fluid className='details'>
         <div className='pub-container-div'>
           <h1 className='montserrat publicationdetailtitle'>{publication.publicationtitle}</h1>
           <p className="journaltitle roboto project-summary">{publication.journal}, {publication.year}</p>
