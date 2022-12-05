@@ -5,7 +5,6 @@
    --Dark2: rgb(58, 89, 92);
    --Dark3: rgb(77, 116, 120);
    --Dark4: rgb(75, 136, 136);
-   --Dark5: rgb(50, 71, 72);
    --Light: rgb(123, 169, 169);
    --Light2: rgb(188, 217, 215);
    font-weight: 700;
@@ -108,9 +107,9 @@ td {
 }
 
 /* navbar icon */
-.navbar-toggler{
+.navbar-toggler {
    position: relative;
-   width:20px;
+   width: 20px;
    height: 20px;
    transition: .5s ease-in-out;
    right: 15px
@@ -120,7 +119,7 @@ td {
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
-   outline:none;
+   outline: none;
    box-shadow: none;
    border: 0;
 }
@@ -343,22 +342,150 @@ td {
 
 }
 
+
+/* styling for largest screens */
 @media only screen and (min-width:1600px) {
    .row-research {
       margin-bottom: 5rem;
    }
+}
 
-   .research-title {
-      font-size: 2rem !important;
-
-   }
+@media only screen and (min-width:2560px) {
 
    .research-text {
       font-size: 1.5rem !important;
+   }
 
+   .publicationtext {
+      font-size: 1.5rem !important;
+   }
+
+   .publicationtitle {
+      font-size: 2rem !important;
+   }
+
+   .paragraphtext {
+      font-size: 1.5rem !important;
+   }
+
+   .footer-copyright {
+      font-size: 1.5rem !important;
+   }
+
+   .nav-link {
+      font-size: 1.5rem !important;
+   }
+
+   .topics-methods {
+      font-size: 2.5rem !important;
+   }
+
+   .project-summary {
+      font-size: 1.5rem !important;
+   }
+
+   .lab-title {
+      font-size: 2rem !important;
+   }
+
+   .member-photo {
+      width: 300px !important;
+      height: 300px !important;
+   }
+
+   .memberfunction {
+      font-size: 1.5rem;
+   }
+
+   .professorfunction {
+      font-size: 1.5rem;
+   }
+
+   .pub-icon {
+      font-size: 1.5rem;
+   }
+
+   .footer-icons {
+      width: 3.5rem;
+      height: 3.5rem;
+   }
+
+   .logofooter {
+      width: 408px !important;
+      height: 94px !important;
+   }
+
+   .lab-title {
+      font-size: 3rem !important;
+   }
+
+   h1 {
+      font-size: 3.5rem !important;
+   }
+
+   h2 {
+      font-size: 3rem !important;
+   }
+
+   .badge {
+      font-size: 1.5rem !important;
+   }
+
+   h3 {
+      font-size: 2rem !important;
+   }
+
+   h4 {
+      font-size: 2rem !important;
+   }
+
+   h6 {
+      font-size: 1.5rem !important;
+   }
+
+   .member-text-overlay {
+      left: 25px !important;
+   }
+
+   .function-details {
+      font-size: 2rem !important;
+   }
+
+   .intereststitle {
+      font-size: 2.5rem !important;
+   }
+
+   .labmember-icons {
+      width: 3.5rem;
+      height: 3.5rem;
+   }
+
+   .project-text {
+      font-size: 1.5rem !important;
+   }
+
+   .publicationdetaillink {
+      font-size: 1.5rem !important;
+   }
+
+   .pub-link {
+      font-size: 1.5rem !important;
+   }
+
+   .publicationlisttext {
+      font-size: 1.5rem !important;
+   }
+
+   .publicationyear {
+      font-size: 2rem !important;
+   }
+
+   .video-container {
+      height: 800px !important;
    }
 }
 
+/* further parts of research section */
 .research-title {
    font-size: 1.3rem;
    font-weight: 600;
@@ -383,12 +510,14 @@ td {
    position: relative;
    /* For the animations */
    opacity: 0;
-
+   padding: 0px !important;
+   margin: 0px !important;
 }
 
 .research-photo-container-overlay {
    position: absolute;
-
+   padding: 0px !important;
+   margin: 0px !important;
 }
 
 .research-photo-container .research-photo-container-overlay {
@@ -400,6 +529,8 @@ td {
    /* background: rgba(58,89,92, 0.8); */
    filter: contrast(2);
    filter: saturate(2);
+   padding: 0px !important;
+   margin: 0px !important;
 }
 
 
@@ -572,6 +703,12 @@ td {
    filter: saturate(2);
 }
 
+.lazy-load-image-background {
+   min-width: 100% !important;
+   object-fit: cover !important;
+   display: block !important;
+}
+
 .project-details-text {
    background-color: #edeef0;
    border-radius: 25px;
@@ -728,10 +865,9 @@ td {
 .project-text-overlay {
    position: absolute;
    font-size: 0.9rem;
-   left: 10px;
+   left: 25px;
    bottom: 25px;
    color: white;
-
 }
 
 
@@ -764,7 +900,7 @@ td {
 }
 
 .labmember-icons:hover {
-   fill: var(--Dark5);
+   fill: var(--Dark2);
 }
 
 
@@ -861,11 +997,11 @@ figcaption {
 
 .publicationtitle {
    color: white;
-
 }
 
 .publicationtext {
    font-weight: 300;
+   color: white;
 }
 
 .pub-title {
@@ -967,6 +1103,10 @@ figcaption {
    border-radius: 50%;
    border: 2px solid var(--Light2);
    padding: 0.5rem;
+}
+
+.footer-icons:hover {
+   border: 2px solid var(--Light);
 }
 
 /* Animations */
