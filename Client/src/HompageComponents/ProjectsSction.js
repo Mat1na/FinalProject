@@ -30,7 +30,7 @@ function ProjectsSction({scrollPosition }) {
           <Row>
             {projects.map((project, e) => (
               <>
-                <Col md={6} lg={4} className={`row-elem divslide-before  ${myRow1IsVisible ? "divslide2" : ""}`}  >
+                <Col md={6} lg={4} className={`row-elem divslide-before  ${myProjIsVisible  ? "divslide2" : ""}`}  >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <div className=" projects d-flex justify-content-center" >
                           <LazyLoadImage
