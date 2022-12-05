@@ -1,29 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
-function ProjectsSction({ width, height, src, alt, ...rest }) {
+
+function ProjectsSction({scrollPosition }) {
   const [projects, setProjects] = useState([]);
-
-
   const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
-  const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
-
-  // const ref = useRef(new Array());
-
-  console.log(myRow1IsVisible, myRow2IsVisible)
-
-  const supportsLazyLoading = useNativeLazyLoading();
-  const { ref: myImg, inView: myImgIsVisible } = useInView({
-    triggerOnce: true,
-    rootMargin: '200px 0px',
-    skip: supportsLazyLoading !== false,
-  });
-
-
-
+   console.log(myRow1IsVisible)
 
   const fetchProjectList = async () => {
     let res = await fetch("http://localhost:3001/projects/fetch-projects");
@@ -45,19 +30,18 @@ function ProjectsSction({ width, height, src, alt, ...rest }) {
           <Row>
             {projects.map((project, e) => (
               <>
-                <Col md={4} className={`row-elem divslide-before  ${myRow1IsVisible ? "divslide2" : ""}`} ref={myImg} data-inview={myImgIsVisible} >
+                <Col md={4} className={`row-elem divslide-before  ${myRow1IsVisible ? "divslide2" : ""}`}  >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <div className=" projects d-flex justify-content-center" >
-                      {myImgIsVisible || supportsLazyLoading ? (
-                        <img
+                          <LazyLoadImage
                           src={project.image}
                           className="project-photo" alt={project.title}
                           loading="lazy"
-                          {...rest}
+                          effect="blur"
+                          scrollPosition={scrollPosition}
+                        
                         />
-                      ) : null}
-
-                      <div className="project-photo-overlay" ></div>
+                     <div className="project-photo-overlay" ></div>
                       <div className="project-text-overlay">
                         <h3 className="montserrat projecttitle">
                           {project.title}
@@ -81,4 +65,4 @@ function ProjectsSction({ width, height, src, alt, ...rest }) {
   );
 }
 
-export default ProjectsSction;
+export default trackWindowScroll (ProjectsSction);

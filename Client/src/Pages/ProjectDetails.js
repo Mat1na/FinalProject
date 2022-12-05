@@ -3,17 +3,13 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 function ProjectDetails({ width, height, src, alt, ...rest }) {
   const { ref: myRef1, inView: myRef1IsVisible1 } = useInView({ triggerOnce: true })
   const { ref: myRef2, inView: myRef1IsVisible2 } = useInView({ triggerOnce: true })
-  const supportsLazyLoading = useNativeLazyLoading();
-  const { ref: myImg, inView: myImgIsVisible } = useInView({
-    triggerOnce: true,
-    rootMargin: '200px 0px',
-    skip: supportsLazyLoading !== false,
-  });
+ 
 
   const { proj } = useParams();
   const [project, setProject] = useState([]);
@@ -47,15 +43,15 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
         <Row className="d-flex align-items-center">
           <Col md={4} className={`pe-4 ${myRef1IsVisible1 ? "divMove2" : ""}`} ref={myRef1}><div className="research-photo-container-details">
                           
-          {myImgIsVisible || supportsLazyLoading ? (
-                <img
+         
+                <LazyLoadImage
                 src={project.image} alt={project.title} className='project-details'
-                loading="lazy"
-                {...rest}
+                loading="lazy" effect="blur"
+               
               />
-              ) : null}
+             
             
-            <div className="project-photo-container-overlay" ref={myImg} data-inview={myImgIsVisible}></div>
+            <div className="project-photo-container-overlay" ></div>
             {project.imagetext !== '' && <figcaption className='roboto'>{project.imagetext}</figcaption>}
           </div>
           </Col>

@@ -3,9 +3,10 @@ import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { useInView } from "react-intersection-observer";
-import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
-function LabmembersSection({ width, height, src, alt, ...rest }) {
+
+function LabmembersSection({scrollPosition }) {
 
   const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
   const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
@@ -14,17 +15,7 @@ function LabmembersSection({ width, height, src, alt, ...rest }) {
 
   console.log(myRow1IsVisible, myRow2IsVisible)
 
-  const supportsLazyLoading = useNativeLazyLoading();
-  const { ref: myImgLab, inView: myImgLabIsVisible } = useInView({
-    triggerOnce: true,
-    rootMargin: '200px 0px',
-    skip: supportsLazyLoading !== false,
-  });
-  const { ref: myImgLab2, inView: myImgLab2IsVisible } = useInView({
-    triggerOnce: true,
-    rootMargin: '200px 0px',
-    skip: supportsLazyLoading !== false,
-  });
+
 
 
 
@@ -69,16 +60,18 @@ function LabmembersSection({ width, height, src, alt, ...rest }) {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
                         >
-                          {myImgLabIsVisible || supportsLazyLoading ? (
-                            <img
+                         
+                            <LazyLoadImage
                               alt={member.membername}
                               src={`${member.image}`}
                               className="member-photo"
                               loading="lazy"
-                              {...rest} />
-                          ) : null}
+                              effect="blur"
+                              scrollPosition={scrollPosition}
+                            />
+                          
 
-                          <div ref={myImgLab} data-inview={myImgLabIsVisible} className="member-photo-overlay">
+                          <div  className="member-photo-overlay">
 
                           </div>
                           <div className="member-text-overlay">
@@ -112,7 +105,7 @@ function LabmembersSection({ width, height, src, alt, ...rest }) {
                   <>
                     <Col
 
-                      xs={6}
+                      xs={8}
                       md={4}
                       lg={3}
                       xl={2}
@@ -122,16 +115,18 @@ function LabmembersSection({ width, height, src, alt, ...rest }) {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
                         >
-                          {myImgLab2IsVisible || supportsLazyLoading ? (
-                            <img
+                         
+                            <LazyLoadImage
                               alt={member.membername}
                               src={`${member.image}`}
                               className={`member-photo `}
                               loading="lazy"
-                              {...rest} />
-                          ) : null}
+                              effect="blur"
+                              scrollPosition={scrollPosition}
+                               />
+                          
 
-                          <div ref={myImgLab2} data-inview={myImgLab2IsVisible} className="member-photo-overlay">
+                          <div  className="member-photo-overlay">
 
                           </div>
                           <div className="member-text-overlay">
@@ -163,4 +158,4 @@ function LabmembersSection({ width, height, src, alt, ...rest }) {
   );
 }
 
-export default LabmembersSection;
+export default trackWindowScroll (LabmembersSection);

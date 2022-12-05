@@ -6,6 +6,5 @@
     "@mui/styled-engine-sc": "^5.10.14",
     "react-router-dom": "^6.4.2",
     "styled-components": "^5.3.6"
-
   }
 }
