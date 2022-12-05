@@ -1063,6 +1063,17 @@ figcaption {
    font-weight: 300;
 }
 
+/* Contact section */
+.contact{
+   /* border: 2px solid var(--Light); */
+   border-radius: 10px;
+   min-height: 20rem;
+   background-color: var(--Dark3);
+   padding: 10px;
+   /* color: var(--Light2); */
+}
+
+
 /* Footer */
 .footer-bg {
    background-color: var(--Dark);

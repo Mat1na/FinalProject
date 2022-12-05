@@ -8,12 +8,11 @@ import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-componen
 
 function LabmembersSection({scrollPosition }) {
 
-  const { ref: myRow1, inView: myRow1IsVisible } = useInView({ triggerOnce: true })
-  const { ref: myRow2, inView: myRow2IsVisible } = useInView({ triggerOnce: true })
-  const { ref: myRow3, inView: myRow3IsVisible } = useInView({ triggerOnce: true })
-  // const ref = useRef(new Array());
+  const { ref: myLab1, inView: myLab1IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myLab2, inView: myLab2IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myLab3, inView: myLab3IsVisible } = useInView({ triggerOnce: true })
+  const { ref: myLab4, inView: myLab4IsVisible } = useInView({ triggerOnce: true })
 
-  console.log(myRow1IsVisible, myRow2IsVisible)
 
 
 
@@ -42,10 +41,10 @@ function LabmembersSection({scrollPosition }) {
   return (
     <>
       <Container fluid className='mt-0 mb-0'>
-        <h1 className={`pb-2 montserrat lab-title ${myRow1IsVisible ? "divslide" : ""}`}>Lab members</h1>
+        <h1 className={`pb-2 montserrat lab-title ${myLab1IsVisible ? "divslide" : ""}`} ref={myLab1}>Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
-          <h2 className={`p-3 montserrat divslide-before ${myRow1IsVisible ? "divslide" : ""}`} ref={myRow1}>Principal investigator</h2>
+          <h2 className={`p-3 montserrat divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Principal investigator</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -54,8 +53,8 @@ function LabmembersSection({scrollPosition }) {
                   <>
                     <Col
                       md={5}
-                      className={`d-flex justify-content-center align-items-center divslide-before ${myRow1IsVisible ? "divslide" : ""}`}
-                      ref={myRow1}
+                      className={`d-flex justify-content-center align-items-center divslide-before ${myLab2IsVisible ? "divslide" : ""}`}
+                      ref={myLab2}
                     >
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
@@ -96,7 +95,7 @@ function LabmembersSection({scrollPosition }) {
             );
           })}
           {/* Current members Section*/}
-          <h2 className={`p-3 pt-5 pb-3 montserrat divslide-before ${myRow2IsVisible ? "divslide2" : ""}`} ref={myRow2}>Current members</h2>
+          <h2 className={`p-3 pt-5 pb-3 montserrat divslide-before ${myLab3IsVisible ? "divslide2" : ""}`} ref={myLab3}>Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -151,7 +150,7 @@ function LabmembersSection({scrollPosition }) {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myRow3IsVisible ? "divslide" : ""} `} ref={myRow3}><Badge className="badge-icon montserrat">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
+          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myLab4IsVisible ? "divslide" : ""} `} ref={myLab4}><Badge className="badge-icon montserrat">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>
