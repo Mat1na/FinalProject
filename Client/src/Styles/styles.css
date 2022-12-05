@@ -323,11 +323,9 @@ td {
 
 /* Research section */
 .row-research {
-   min-height: 20rem;
    display: flex;
    justify-content: center !important;
    align-items: center !important;
-
 }
 
 .research-photo {
@@ -335,12 +333,23 @@ td {
 
 }
 
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:850px) and (min-width: 576px) {
    .row-research {
-      min-height: 10rem;
+      min-height: 17rem;
 
    }
+}
 
+@media only screen and (max-width:700px) and (min-width: 576px) {
+   .row-research {
+      min-height: 15rem;
+   }
+}
+
+@media only screen and (min-width: 850px) {
+   .row-research {
+      min-height: 20rem;
+   }
 }
 
 
@@ -497,6 +506,7 @@ td {
    font-size: 1rem;
    font-weight: 300;
    line-height: 1.5;
+   margin-bottom: 0px;
 }
 
 .jpg-research {
