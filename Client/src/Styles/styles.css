@@ -225,6 +225,7 @@ td {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   filter: contrast(175%) brightness(103%);
    filter: grayscale(1);
 
 }
@@ -241,7 +242,7 @@ td {
 }
 
 .overlay {
-   filter: contrast(2);
+   
    filter: saturate(2);
    background: radial-gradient(circle, rgba(238, 234, 174, 0.1) 0%, rgba(30, 52, 20, 0) 54%);
    background-color: rgba(25, 46, 47, 0.7);
@@ -1079,6 +1080,15 @@ figcaption {
    /* color: var(--Light2); */
 }
 
+.contact-text{
+   font-size: 1rem;
+}
+@media screen and (max-width:600px) {
+
+   .contact-text{
+      font-size: 0.7rem;
+   }
+}
 
 /* Footer */
 .footer-bg {
