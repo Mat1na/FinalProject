@@ -39,8 +39,8 @@ function JoinSection() {
                 <p className='roboto paragraphtext'>
                     As a student or researcher at KU Leuven you are in the heart of Europe. Major international cities like London, Paris, Köln and Amsterdam are all less than 2 hours away by train. The nearby international airport (just 15 minutes by train from both our Brussels and Leuven Campus) connects you to the rest of the world. This means international students at KU Leuven have the luxury of not only being able to discover Belgium, but also a whole list of either neighbouring countries in the same amount of time. This is truly Europe at your doorstep.
                 </p>
-                <h6><a href='https://www.kuleuven.be/english/why-choose-kuleuven' target="_blank"
-                    rel="noreferrer" className='join-link'>More info</a></h6>
+                <p className='roboto paragraphtext'><a href='https://www.kuleuven.be/english/why-choose-kuleuven' target="_blank"
+                    rel="noreferrer" className='join-link'>More info</a></p>
             </div>
         </Container>
 

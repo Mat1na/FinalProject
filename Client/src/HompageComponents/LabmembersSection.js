@@ -107,8 +107,8 @@ function LabmembersSection({scrollPosition }) {
                       xs={8}
                       md={4}
                       lg={3}
-                      xl={2}
-                      className={`d-flex justify-content-center align-items-center memberpicturepadding divslide-before ${myLab3IsVisible ? "divslide2" : ""} `}
+                      xxl={2}
+                      className={`d-flex justify-content-center align-items-center memberpicturepadding divslide-before ${myRow2IsVisible ? "divslide2" : ""} `}
                     >
 
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
