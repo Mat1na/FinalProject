@@ -265,7 +265,6 @@ td {
       display: none;
    }
 
-
    .photo-video {
       display: block;
       position: absolute;
@@ -341,9 +340,9 @@ td {
 
 
 /* styling for largest screens */
-@media only screen and (min-width:1600px) {
-   .row-research {
-      margin-bottom: 5rem;
+@media only screen and (min-width:1900px) {
+   .research-photo{
+      margin-bottom: 2rem !important;
    }
 }
 
@@ -494,6 +493,10 @@ td {
 
    .contact-text{
       font-size: 1.5rem !important;
+   }
+
+   .research-photo{
+      margin-bottom: 4rem !important;
    }
 }
 

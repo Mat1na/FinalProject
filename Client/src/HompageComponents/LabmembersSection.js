@@ -36,7 +36,7 @@ function LabmembersSection({ scrollPosition }) {
         <h1 className={`pb-2 montserrat lab-title ${myLab1IsVisible ? "divslide" : ""}`} ref={myLab1}>Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
-          <h2 className={`p-3 montserrat divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Principal investigator</h2>
+          <h2 className={`p-3 montserrat divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -80,7 +80,7 @@ function LabmembersSection({ scrollPosition }) {
             );
           })}
           {/* Current members Section*/}
-          <h2 className={`p-3 pt-5 pb-3 montserrat divslide-before ${myLab3IsVisible ? "divslide2" : ""}`} ref={myLab3}>Current members</h2>
+          <h2 className={`montserrat divslide-before ${myLab3IsVisible ? "divslide2" : ""}`} ref={myLab3}></h2>
           {labmemberList.map((member, index) => {
             return (
               <>

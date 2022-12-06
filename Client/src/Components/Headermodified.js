@@ -5,7 +5,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 function Headermodified() {
 
   return (
-    <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2 color-nav" >
+    <Navbar collapseOnSelect fixed="top" expand="lg" variant="dark" className="navbar p-2 color-nav" >
       <Navbar.Brand href="/"><img src='/Logo_final_rgba.png' className='logoheader' alt="logo sGlobe Lab"/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className='d-flex d-lg-none flex-column justify-content-around'>
         <span className='toggler-icon top-bar'></span>
@@ -21,7 +21,6 @@ function Headermodified() {
           <Link to="/#publications" className='nav-link'>Publications</Link>
           <Link to="/#jointhelab" className='nav-link'>Join the lab</Link>
           <Link to="/#contact" className='nav-link'>Contact</Link>
-          <Link to='/dashboard' className='nav-link'>Dashboard</Link>
         </Nav>
       </Navbar.Collapse>
 

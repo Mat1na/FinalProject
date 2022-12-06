@@ -25,14 +25,14 @@ function Header() {
 
   
   return (
-    <Navbar fixed="top" expand="lg" variant="dark" className="navbar p-2" >
+    <Navbar collapseOnSelect fixed="top" expand="lg" variant="dark" className="navbar p-2" >
       <Navbar.Brand href="/"><img src='/Logo_final_rgba.png' className='logoheader' alt="logo sGlobe Lab"/></Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className='d-flex d-lg-none flex-column justify-content-around'>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className='d-flex d-lg-none flex-column justify-content-around'>
         <span className='toggler-icon top-bar'></span>
         <span className='toggler-icon middle-bar'></span>
         <span className='toggler-icon bottom-bar'></span>
       </Navbar.Toggle>
-      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
+      <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
         <Nav >
           <Link to='/#top' className='nav-link'>Home</Link>
           <Link to="/#research" className='nav-link'>Research</Link>
@@ -41,7 +41,6 @@ function Header() {
           <Link to="/#publications" className='nav-link'>Publications</Link>
           <Link to="/#jointhelab" className='nav-link'>Join the lab</Link>
           <Link to="/#contact" className='nav-link'>Contact</Link>
-          <Link to='/dashboard' className='nav-link'>Dashboard</Link>
         </Nav>
       </Navbar.Collapse>
 
