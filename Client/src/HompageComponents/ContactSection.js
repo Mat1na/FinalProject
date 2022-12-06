@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { GoMail } from "react-icons/go";
 import { FaTwitter } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";

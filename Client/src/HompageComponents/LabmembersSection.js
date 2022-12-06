@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
@@ -6,18 +6,12 @@ import { useInView } from "react-intersection-observer";
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
 
-function LabmembersSection({scrollPosition }) {
+function LabmembersSection({ scrollPosition }) {
 
   const { ref: myLab1, inView: myLab1IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab2, inView: myLab2IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab3, inView: myLab3IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab4, inView: myLab4IsVisible } = useInView({ triggerOnce: true })
-
-
-
-
-
-
 
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
@@ -59,19 +53,15 @@ function LabmembersSection({scrollPosition }) {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
                         >
-                         
-                            <LazyLoadImage
-                              alt={member.membername}
-                              src={`${member.image}`}
-                              className="member-photo"
-                              loading="lazy"
-                              effect="blur"
-                              scrollPosition={scrollPosition}
-                            />
-                          
-
-                          <div  className="member-photo-overlay">
-
+                          <LazyLoadImage
+                            alt={member.membername}
+                            src={`${member.image}`}
+                            className="member-photo"
+                            loading="lazy"
+                            effect="blur"
+                            scrollPosition={scrollPosition}
+                          />
+                          <div className="member-photo-overlay">
                           </div>
                           <div className="member-text-overlay">
                             <h3 className="montserrat professorname h5">
@@ -83,11 +73,8 @@ function LabmembersSection({scrollPosition }) {
                           </div>
                         </div>
                       </Link>
-
                     </Col>
-
                   </>
-
                 ) : (
                   ""
                 )}
@@ -103,31 +90,24 @@ function LabmembersSection({scrollPosition }) {
                   // Grid system with shifting number of elements
                   <>
                     <Col
-
                       xs={8}
                       md={4}
                       lg={3}
                       xxl={2}
                       className={`d-flex justify-content-center align-items-center memberpicturepadding divslide-before ${myLab3IsVisible ? "divslide2" : ""} `}
                     >
-
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
                         >
-                         
-                            <LazyLoadImage
-                              alt={member.membername}
-                              src={`${member.image}`}
-                              className={`member-photo `}
-                              loading="lazy"
-                              effect="blur"
-                              scrollPosition={scrollPosition}
-                               />
-                          
-
-                          <div  className="member-photo-overlay">
-
-                          </div>
+                          <LazyLoadImage
+                            alt={member.membername}
+                            src={`${member.image}`}
+                            className={`member-photo `}
+                            loading="lazy"
+                            effect="blur"
+                            scrollPosition={scrollPosition}
+                          />
+                          <div className="member-photo-overlay"></div>
                           <div className="member-text-overlay">
                             <h3 className="montserrat membername h5">
                               {member.membername}
@@ -138,10 +118,7 @@ function LabmembersSection({scrollPosition }) {
                           </div>
                         </div>
                       </Link>
-
-
                     </Col>
-
                   </>
                 ) : (
                   ""
@@ -157,4 +134,4 @@ function LabmembersSection({scrollPosition }) {
   );
 }
 
-export default trackWindowScroll (LabmembersSection);
+export default trackWindowScroll(LabmembersSection);

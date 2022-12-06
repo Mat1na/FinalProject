@@ -12,11 +12,9 @@ function JoinSection() {
 
 
         <Container fluid className='mt-0 join'>
-
             <h1 className={`lab-title pb-5 montserrat ${myJoin1IsVisible ? "divslide" : ""}`} ref={myJoin1}>Join the lab</h1>
             <div className={`join-bg ${myJoin2IsVisible ? "divslide2" : ""}`} ref={myJoin2}>
-                <p className='roboto paragraphtext'>
-                    There are no vacancies at the moment, but I am always interested in hearing from motivated students or researchers to collaborate on topics of mutual interest. Have a look at <Link to="/#research"className='join-link'>Research</Link> and our <Link to="/#projects" className='join-link'>Research projects</Link> to see what we are doing. So if you are interested in applying for a PhD or postdoc fellowship, you are always welcome to contact me. The different opportunities are listed below.
+                <p className='roboto paragraphtext'> There are no vacancies at the moment, but I am always interested in hearing from motivated students or researchers to collaborate on topics of mutual interest. Have a look at <Link to="/#research" className='join-link'>Research</Link> and our <Link to="/#projects" className='join-link'>Research projects</Link> to see what we are doing. So if you are interested in applying for a PhD or postdoc fellowship, you are always welcome to contact me. The different opportunities are listed below.
                 </p>
                 <h4 className="montserrat">Funding opportunities for PhD students</h4>
                 <ul className='roboto paragraphtext'>
@@ -39,8 +37,7 @@ function JoinSection() {
                 <p className='roboto paragraphtext'>
                     As a student or researcher at KU Leuven you are in the heart of Europe. Major international cities like London, Paris, Köln and Amsterdam are all less than 2 hours away by train. The nearby international airport (just 15 minutes by train from both our Brussels and Leuven Campus) connects you to the rest of the world. This means international students at KU Leuven have the luxury of not only being able to discover Belgium, but also a whole list of either neighbouring countries in the same amount of time. This is truly Europe at your doorstep.
                 </p>
-                <p className='roboto paragraphtext'><a href='https://www.kuleuven.be/english/why-choose-kuleuven' target="_blank"
-                    rel="noreferrer" className='join-link'>More info</a></p>
+                <p className='roboto paragraphtext'><a href='https://www.kuleuven.be/english/why-choose-kuleuven' target="_blank" rel="noreferrer" className='join-link'>More info</a></p>
             </div>
         </Container>
 
