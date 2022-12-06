@@ -1107,6 +1107,10 @@ figcaption {
    color: var(--Light);
 }
 
+.footerlink:hover .footer-icons {
+   border: 2px solid var(--Light);
+}
+
 .logofooter {
    width: 204px;
    height: 47px;
