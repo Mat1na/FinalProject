@@ -6,7 +6,6 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 
 function EditLabMember() {
   // Handle change for interests and rest inputs
-  // const [radiocheck, setRadiocheck] = useState(false);
   const { memberid } = useParams();
   const myRefs = useRef([]);
   const [labmember, setLabmember] = useState({});
@@ -31,10 +30,8 @@ function EditLabMember() {
         "http://localhost:3001/labmembers/fetch-labmembers"
       );
       let data = await res.json();
-      console.log(data);
       if (res.ok) {
         var filtereddata = data.find((item) => item._id === memberid);
-        console.log("filteredData", filtereddata);
         setLabmember(filtereddata);
 
         setInput({
@@ -53,7 +50,6 @@ function EditLabMember() {
 
         let Display = filtereddata.interests;
         setIntrstArray(Display);
-        console.log("currentmember", input.currentmember);
       }
     };
 
@@ -81,8 +77,6 @@ function EditLabMember() {
         [name]: value,
       };
     });
-    // const radioState = true;
-    // setRadiocheck(radioState);
   }
 
   if (labmember.currentmember === "Yes") {
@@ -110,18 +104,12 @@ function EditLabMember() {
     if (input.functionbasic === undefined || input.functionbasic === "") {
       alert("Function is required");
     }
-    // if (radiocheck === false) {
-    //   alert(
-    //     "Please select whether the lab member currently belongs to the lab"
-    //   );
-    // }
   }
 
   // Handle Submit
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    console.log("input", input);
     fetch(`http://localhost:3001/labmembers/edit-labmember/${memberid}`, {
       method: "PUT",
       headers: {

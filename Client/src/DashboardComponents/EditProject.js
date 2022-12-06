@@ -25,8 +25,7 @@ function EditProject() {
       let res = await fetch("http://localhost:3001/projects/fetch-projects");
       let data = await res.json();
       if (res.ok) {
-        var filtereddata = data.find(item => item._id === projectid)
-        console.log('filteredData', filtereddata)
+        var filtereddata = data.find(item => item._id === projectid);
         setProject(filtereddata);
         setInput({ title: filtereddata.title, image: filtereddata.image, content: filtereddata.content, summary: filtereddata.summary, researchers: filtereddata.researchers, imagetext: filtereddata.imagetext, imagetextlink: filtereddata.imagetextlink })
   
@@ -59,7 +58,6 @@ function EditProject() {
   function handleSubmit(event) {
     event.preventDefault();
     input.researchers= researchersArray;
-    console.log(input);
     fetch(`http://localhost:3001/projects/edit-project/${projectid}`, {
       method: 'POST',
       headers: {

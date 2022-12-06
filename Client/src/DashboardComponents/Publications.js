@@ -15,7 +15,6 @@ function Publications() {
     );
     let data = await res.json();
     if (res.ok) {
-      console.log(data);
       data.sort(function (a, b) {
         return parseFloat(a.order) - parseFloat(b.order)
       });
@@ -28,7 +27,6 @@ function Publications() {
 
   // Delete button
   const Delete = (_id) => {
-    console.log("deleted:", _id);
     fetch(`http://localhost:3001/publications/${_id}`, {
       method: "DELETE",
       headers: {
@@ -55,7 +53,6 @@ function Publications() {
         },
         {
           label: "No",
-          // onClick: () => alert('Click No')
         },
       ],
     });

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {  Button, Container} from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSpringCarousel } from 'react-spring-carousel'
 import { GrPrevious, GrNext } from "react-icons/gr";
@@ -17,9 +17,6 @@ function PublicationSection() {
     let res = await fetch("http://localhost:3001/publications/fetch-publications");
     let data = await res.json();
     let filtereddata = data.slice(-7)
-
-    // let filtereddata = data
-    console.log(filtereddata, 'pubs');
     setLastPublications(filtereddata)
   };
   useEffect(() => {

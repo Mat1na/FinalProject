@@ -20,7 +20,6 @@ function Alumni() {
     let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
     let data = await res.json();
     setLabmemberList(data);
-    console.log(data);
     var sorted = data.sort(
       (a, b) =>
         sortOrder.indexOf(a.functionbasic) - sortOrder.indexOf(b.functionbasic)
@@ -44,8 +43,8 @@ function Alumni() {
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
                 >
-                  <h5>{member.membername}</h5>
-                  <p className="roboto">
+                  <h5 className='alumni-name'>{member.membername}</h5>
+                  <p className="roboto alumni-function">
                     {member.functionbasic}
                     {member.functionextra}
                   </p>

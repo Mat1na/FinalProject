@@ -26,8 +26,6 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
             .split(/[\s-]+/)
             .toString() === projectParam
       );
-      console.log("param:", proj);
-      console.log(filtereddata.researchers);
       setProject(filtereddata);
       setResearchersList(filtereddata.researchers);
     }

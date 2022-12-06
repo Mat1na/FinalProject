@@ -14,8 +14,6 @@ function PublicationDetails() {
       var filtereddata = data.find(item => item.order === pub.split("-").slice(-1).toString());
       setPublication(filtereddata);
       setAuthorsList(filtereddata.authors)
-      console.log(pub.split("-").slice(-1).toString());
-      console.log(filtereddata)
     }
   };
   useEffect(() => {

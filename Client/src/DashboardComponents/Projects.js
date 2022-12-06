@@ -13,7 +13,6 @@ function Projects() {
     let res = await fetch('http://localhost:3001/projects/fetch-projects')
     let data = await res.json();
     if (res.ok) {
-      console.log(data)
       data.sort(function(a,b){
         var textA = a.title.toUpperCase()
         var textB = b.title.toUpperCase()
@@ -28,7 +27,6 @@ function Projects() {
 
   // Delete button
   const Delete = (_id) => {
-    console.log("deleted:", _id);
     fetch(`http://localhost:3001/projects/${_id}`, {
       method: "DELETE",
       headers: {
@@ -55,7 +53,6 @@ function Projects() {
         },
         {
           label: "No",
-          // onClick: () => alert('Click No')
         },
       ],
     });
@@ -64,7 +61,6 @@ function Projects() {
     <>
       <Container>
       <h1 className="dashboardmargin">Projects</h1>
-       
           <Link to={"/projects/create-project"} className="btn btn-secondary m-2" > Add new project</Link>
           <Link to={"/dashboard"} className="btn btn-danger m-2">
           Go to Dashboard

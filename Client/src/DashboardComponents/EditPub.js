@@ -32,8 +32,7 @@ function EditPubList() {
       let res = await fetch("http://localhost:3001/publications/fetch-publications");
       let data = await res.json();
       if (res.ok) {
-        var filtereddata = data.find(item => item._id === pubid)
-        console.log('filteredData', filtereddata)
+        var filtereddata = data.find(item => item._id === pubid);
         setPub(filtereddata);
        
         setInput({ order: filtereddata.order, publicationtitle: filtereddata.publicationtitle, journal: filtereddata.journal, year: filtereddata.year, issue: filtereddata.issue, abstract: filtereddata.abstract, authors: filtereddata.authors, link: filtereddata.link, image: filtereddata.image })
@@ -68,8 +67,6 @@ function EditPubList() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('input', input)
-    console.log('authArray', authArray)
     input.authors = authArray;
     fetch(`http://localhost:3001/projects/edit-pub/${pubid}`, {
       method: 'PUT',
@@ -90,20 +87,13 @@ function EditPubList() {
   const handleRemoveClick = (index) => {
     const authors = [...authArray];
     authors.splice(index, 1);
-    setAuthArray(authors);
-        console.log("dltauthArray:", authors);
-    console.log("I deleted a field");
- 
+    setAuthArray(authors); 
   };
 
   // handle click event of the Add button
 
   const handleAddClick = (i) => {
     setAuthArray([...authArray, { author: "" }]);
-    console.log("authArray:",authArray);
-        console.log("authArray:", authArray);
-    console.log("I added a field");
-
   };
 
 
@@ -129,7 +119,6 @@ function EditPubList() {
       <Link to={"/publications"} className="btn btn-danger mr-2 mb-2">
          Go back
         </Link>
-     { console.log("display",authArray)}  
      {Object.keys(pub).length > 0 && <Form onSubmit={handleSubmit}>
      <Form.Group className="mb-3">
           <Form.Label>Order</Form.Label>
@@ -221,14 +210,7 @@ function EditPubList() {
 
 
           );
-        })}
-        {/* {authsDisplay.length !== undefined && (
-          <Button className="mx-2 mb-2" onClick={(i) => handleAddClick(i)}>
-            <AiOutlineUserAdd />
-          </Button>
-        )} */}
-
-       
+        })}       
 
         <Form.Group className="mb-3">
           <Form.Label>Abstract</Form.Label>

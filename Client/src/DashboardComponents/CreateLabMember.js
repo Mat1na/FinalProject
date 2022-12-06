@@ -76,7 +76,6 @@ function CreateLabMembers() {
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    console.log("input", input);
     fetch("http://localhost:3001/labmembers/create-member", {
       method: "POST",
       headers: {

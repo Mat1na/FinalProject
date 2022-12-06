@@ -20,7 +20,6 @@ function CreateUser() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(input);
         fetch('http://localhost:3001/users/create-user', {
           method: 'POST',
           headers: {

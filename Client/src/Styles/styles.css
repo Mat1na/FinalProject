@@ -20,7 +20,6 @@ body {
 }
 
 html {
-
    overflow-y: scroll;
    margin: 0;
    padding: 0;
@@ -59,7 +58,6 @@ td {
 /* Home Navigation - header & footer */
 
 /* collapse */
-
 .navbar-brand {
    padding-left: 2rem;
 }
@@ -142,7 +140,6 @@ td {
 
 
 /* State when the navbar is collapsed */
-
 .navbar-toggler.collapsed .top-bar {
    position: absolute;
    top: 0px;
@@ -163,7 +160,6 @@ td {
 }
 
 /* when navigation is clicked */
-
 .navbar-toggler .top-bar {
    top: inherit;
    transform: rotate(135deg);
@@ -181,7 +177,6 @@ td {
 }
 
 /* Color of 3 lines */
-
 .navbar-toggler.collapsed .toggler-icon {
    background: rgba(255, 255, 255, 0.55);
 }
@@ -207,7 +202,6 @@ td {
    height: 500px;
    overflow: hidden;
    margin-bottom: 0;
-
 }
 
 .responsive-video {
@@ -226,7 +220,6 @@ td {
    transform: translate(-50%, -50%);
    filter: contrast(175%) brightness(103%);
    filter: grayscale(1);
-
 }
 
 .videoheader {
@@ -305,7 +298,6 @@ td {
       height: 250px;
       overflow: hidden;
       margin-bottom: 5rem;
-
    }
 }
 
@@ -314,7 +306,6 @@ td {
    padding-left: 2rem;
    padding-right: 2rem;
    margin-top: 5rem;
-
 }
 
 
@@ -328,13 +319,11 @@ td {
 
 .research-photo {
    padding: 0;
-
 }
 
 @media only screen and (max-width:850px) and (min-width: 576px) {
    .row-research {
       min-height: 17rem;
-
    }
 }
 
@@ -355,7 +344,6 @@ td {
 @media only screen and (min-width:1600px) {
    .row-research {
       margin-bottom: 5rem;
-
    }
 }
 
@@ -451,6 +439,14 @@ td {
       font-size: 2rem !important;
    }
 
+   .alumni-name{
+      font-size: 2rem !important;
+   }
+
+   .alumni-function {
+      font-size: 1.5rem !important;
+   }
+
    h6 {
       font-size: 1.5rem !important;
    }
@@ -494,6 +490,10 @@ td {
 
    .video-container {
       height: 800px !important;
+   }
+
+   .contact-text{
+      font-size: 1.5rem !important;
    }
 }
 
@@ -621,7 +621,6 @@ td {
    display: none;
    color: white;
    background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
-   /* background: rgba(58,89,92, 0.8); */
    filter: contrast(2);
    filter: saturate(2);
    display: block;
@@ -656,8 +655,6 @@ td {
 }
 
 /* For detail page */
-
-
 .function-details {
    font-weight: 300;
    font-size: 1.2rem;
@@ -711,7 +708,6 @@ td {
    height: 100%;
    border-radius: 25px;
    background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
-   /* background: rgba(58,89,92, 0.8); */
    filter: contrast(2);
    filter: saturate(2);
 }
@@ -729,7 +725,6 @@ td {
 }
 
 @media screen and (max-width:770px) {
-
    .project-details-text {
       margin: 2rem !important;
    }
@@ -794,7 +789,6 @@ td {
 .publicationlistarticle {
    line-height: 1.8;
 }
-
 
 
 /* Alumni */
@@ -880,13 +874,11 @@ td {
 }
 
 
-
 .projects .project-photo-overlay {
    position: absolute;
    width: 100%;
    height: 100%;
    background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
-   /* background: rgba(58,89,92, 0.8); */
    filter: contrast(2);
    filter: saturate(2);
    transition: transform .2s;
@@ -902,8 +894,6 @@ td {
 }
 
 /* Publication section */
-
-
 .labmember-icons {
    fill: var(--Dark);
 }
@@ -911,7 +901,6 @@ td {
 .labmember-icons:hover {
    fill: var(--Dark2);
 }
-
 
 .publicationhover:hover {
    box-shadow: 0 .5rem 1rem #00000026;
@@ -994,8 +983,6 @@ polyline {
    background: var(--Dark3);
 }
 
-
-
 figcaption {
    position: absolute;
    right: 20px;
@@ -1040,9 +1027,7 @@ figcaption {
    }
 }
 
-
 /* join Section */
-
 .join-bg {
    background-color: #edeef0;
    padding: 25px;
@@ -1058,19 +1043,16 @@ figcaption {
    color: var(--Light2) !important;
 }
 
-
 .paragraphtext {
    font-weight: 300;
 }
 
 /* Contact section */
 .contact {
-   /* border: 2px solid var(--Light); */
    border-radius: 10px;
    min-height: 20rem;
    background-color: var(--Dark3);
    padding: 10px;
-   /* color: var(--Light2); */
 }
 
 .contact-text {
@@ -1078,7 +1060,6 @@ figcaption {
 }
 
 @media screen and (max-width:600px) {
-
    .contact-text {
       font-size: 0.7rem;
    }
@@ -1146,7 +1127,6 @@ figcaption {
    justify-content: center !important;
    align-items: center !important;
    display: flex;
-
 }
 
 /* Animations */
@@ -1403,4 +1383,3 @@ figcaption {
    color: var(--Dark);
    border: 2px solid var(--Dark);
 }
-

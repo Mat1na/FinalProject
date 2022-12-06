@@ -13,7 +13,6 @@ function LabMembers() {
     let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
     let data = await res.json();
     if (res.ok) {
-      console.log(data);
       data.sort(function (a, b) {
         var textA = a.membername.toUpperCase();
         var textB = b.membername.toUpperCase();
@@ -28,7 +27,6 @@ function LabMembers() {
 
   // Delete button
   const Delete = (_id) => {
-    console.log("deleted:", _id);
     fetch(`http://localhost:3001/labmembers/${_id}`, {
       method: "DELETE",
       headers: {
@@ -55,7 +53,6 @@ function LabMembers() {
         },
         {
           label: "No",
-          // onClick: () => alert('Click No')
         },
       ],
     });

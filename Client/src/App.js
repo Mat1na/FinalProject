@@ -15,8 +15,6 @@ import EditProject from "./DashboardComponents/EditProject"
 import Authors from "./DashboardComponents/Authors";
 import CreateAuthor from "./DashboardComponents/CreateAuthor"
 import EditAuthor from "./DashboardComponents/EditAuthor"
-// import Header from './Components/Header';
-// import Footer from "./Components/Footer";
 import LabmemberDetails from './Pages/LabmemberDetails';
 import ProjectDetails from './Pages/ProjectDetails';
 import PublicationDetails from './Pages/PublicationDetails';
@@ -43,8 +41,6 @@ function App() {
         <AuthProvider>
             <BrowserRouter>
                 <ScrollToTop />
-                
-                {/* <Header /> */}
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path='/' element={<Home />} />
@@ -74,7 +70,6 @@ function App() {
                     </Route>
 
                 </Routes>
-                {/* <Footer /> */}
             </BrowserRouter>
         </AuthProvider>
     )

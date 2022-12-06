@@ -39,7 +39,6 @@ function CreatePub() {
   function handleSubmit(event) {
     event.preventDefault();
     input.authors = authArray;
-    console.log(input);
     fetch("http://localhost:3001/publications/create-pub", {
       method: "POST",
       headers: {
@@ -64,7 +63,7 @@ function CreatePub() {
     });
   }
 
-  // Requierd field alert
+  // Required field alert
   function btnClick() {
     if (input.publicationtitle === undefined || input.publicationtitle === "") {
       alert("Title is required");
@@ -91,7 +90,6 @@ function CreatePub() {
   // handle click event of the Add button
   const handleAddClick = (i) => {
     setAuthArray([...authArray, { author: "" }]);
-    console.log("authArray:", authArray);
   };
 
   return (

@@ -26,10 +26,6 @@ function LabmemberDetails() {
       );
       setMember(filtereddata);
       setInterestList(filtereddata.interests)
-      console.log("param:", labmeberParam);
-      console.log(filtereddata)
-        // item => item.membername.toLowerCase().split(" ").toString() === labmeberParam
-        ;
     }
   };
   useEffect(() => {

@@ -11,8 +11,6 @@ function Headermodified() {
         <span className='toggler-icon top-bar'></span>
         <span className='toggler-icon middle-bar'></span>
         <span className='toggler-icon bottom-bar'></span>
-        {/* <MdOutlineSegment size={'2em'} fill='white' className="nav-icon" /> */}
-        {/* <MdOutlineClose size={'2em'} fill='var(--Dark)'  className="social-icon" /> */}
       </Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
         <Nav >

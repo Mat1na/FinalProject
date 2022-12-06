@@ -13,7 +13,6 @@ function Authors() {
     let res = await fetch("http://localhost:3001/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
-      console.log(data);
       data.sort(function (a, b) {
         var textA = a.authorname.toUpperCase();
         var textB = b.authorname.toUpperCase();
@@ -28,7 +27,6 @@ function Authors() {
 
   // Delete button
   const Delete = (_id) => {
-    console.log("deleted:", _id);
     fetch(`http://localhost:3001/authors/${_id}`, {
       method: "DELETE",
       headers: {
@@ -56,7 +54,6 @@ function Authors() {
         },
         {
           label: "No",
-          // onClick: () => alert('Click No')
         },
       ],
     });
@@ -66,10 +63,10 @@ function Authors() {
     <Container>
       <h1 className="dashboardmargin">Authors</h1>
       <Link to={"/authors/create-author"} className="btn btn-secondary m-2">
-      <BsFillPersonPlusFill/> Add new Author</Link>
+        <BsFillPersonPlusFill /> Add new Author</Link>
       <Link to={"/dashboard"} className="btn btn-danger m-2">
-          Go to Dashboard
-        </Link>
+        Go to Dashboard
+      </Link>
       <div>
         <Table striped bordered hover className="m-2">
           <thead>

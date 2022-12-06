@@ -19,7 +19,6 @@ function LabmembersSection({ scrollPosition }) {
     let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
     let data = await res.json();
     setLabmemberList(data);
-    console.log(data);
     var sorted = data.sort((a, b) => sortOrder.indexOf(a.functionbasic
     ) - sortOrder.indexOf(b.functionbasic
     ));
@@ -27,7 +26,6 @@ function LabmembersSection({ scrollPosition }) {
   };
   useEffect(() => {
     fetchLabmembers();
-    // console.log("ref",myRow2.current[0]);
   }, []);
 
 

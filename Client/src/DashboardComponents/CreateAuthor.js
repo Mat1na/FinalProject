@@ -20,8 +20,7 @@ function CreateAuthor() {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
-    console.log(input);
+    event.preventDefault();    
     fetch('http://localhost:3001/authors/create-author', {
       method: 'POST',
       headers: {

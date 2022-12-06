@@ -20,7 +20,7 @@ function ResearchSection() {
         <Col xl={6} >
           <Row className='d-flex align-items-center justify-content-center'>
             <h3 className={`text-center topics-methods mb-xl-0 mb-xxl-3 ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>Topics</h3>
-            
+
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>
                 <LazyLoadImage src="/MicroclimateEcology.jpg" className='jpg-research d-flex' alt='Microclimate ecology' loading="lazy" effect="blur" />

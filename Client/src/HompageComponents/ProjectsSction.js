@@ -12,9 +12,7 @@ function ProjectsSction({ scrollPosition }) {
   const fetchProjectList = async () => {
     let res = await fetch("http://localhost:3001/projects/fetch-projects");
     let data = await res.json();
-    console.log(data);
     setProjects(data);
-
   };
   useEffect(() => {
     fetchProjectList();
