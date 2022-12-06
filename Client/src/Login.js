@@ -4,10 +4,7 @@ import { useAuth } from './Components/auth';
 
 
 export const Login = () => {
-  const [input, setInput] = useState({
-    user: "",
-    password: ""
-  })
+  const [input, setInput] = useState({user: "",password: ""})
   const auth = useAuth()
 
   function handleChange(event) {
@@ -55,7 +52,6 @@ export const Login = () => {
                 push();
               });
             }
-
             push();
           },
         });
@@ -85,10 +81,11 @@ export const Login = () => {
     }
   }
 
+
   return (
     <div>
       <Container>
-      <h1 className="dashboardmargin">Login</h1>
+        <h1 className="dashboardmargin">Login</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className='mb-3'>
             <Form.Label>Username</Form.Label>

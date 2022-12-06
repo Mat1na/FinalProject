@@ -15,7 +15,6 @@ function LabmemberDetails() {
   const [member, setMember] = useState([]);
   const [interestsList, setInterestList] = useState([]);
 
-
   const fetchLabmember = async () => {
     let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
     let data = await res.json();
@@ -49,14 +48,12 @@ function LabmemberDetails() {
               alt={member.membername}
               loading="lazy"
               effect="blur"
-
             />
           </div>
           <div className="d-block text-center">
             <h1 className="pt-3 montserrat">{member.membername}</h1>
             <p className="roboto mb-0 function-details">{member.functionbasic}</p>
             <p className="roboto function-details">{member.functionextra}</p>
-
             <div className="mb-4">
               <hr></hr>
               <h3 className='montserrat intereststitle mb-3'>Interests</h3>
@@ -91,7 +88,6 @@ function LabmemberDetails() {
               ) : (
                 " "
               )}
-
               {member.orcid !== undefined && member.orcid !== "" ? (
                 <a
                   href={member.orcid}
@@ -104,7 +100,6 @@ function LabmemberDetails() {
               ) : (
                 " "
               )}
-
               {member.twitter !== undefined && member.twitter !== "" ? (
                 <a
                   href={member.twitter}
@@ -133,7 +128,6 @@ function LabmemberDetails() {
             </div>
           </div>
         </div>
-
       </Container>
     </>
   );

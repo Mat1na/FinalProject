@@ -1,11 +1,8 @@
-// import React, { useState } from 'react';
 import React from 'react';
-// import { useEffect } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css'
-
 
 function ResearchSection() {
   const { ref: myRef, inView: myRefIsVisible } = useInView({ triggerOnce: true })
@@ -16,9 +13,6 @@ function ResearchSection() {
   const { ref: myRef5, inView: myRef5IsVisible } = useInView({ triggerOnce: true })
   const { ref: myRef6, inView: myRef6IsVisible } = useInView({ triggerOnce: true })
 
-
-
-
   return (
     <Container fluid className='mb-0 mt-0'>
       <h1 className={`pb-0 montserrat lab-title  ${myRefIsVisible ? "divMove" : ""}`} ref={myRef}>Research</h1>
@@ -26,6 +20,7 @@ function ResearchSection() {
         <Col xl={6} >
           <Row className='d-flex align-items-center justify-content-center'>
             <h3 className={`text-center topics-methods mb-xl-0 mb-xxl-3 ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>Topics</h3>
+            
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>
                 <LazyLoadImage src="/MicroclimateEcology.jpg" className='jpg-research d-flex' alt='Microclimate ecology' loading="lazy" effect="blur" />

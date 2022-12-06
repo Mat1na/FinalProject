@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Badge, Button, Card, Carousel, CarouselItem, Col, Container, Row } from "react-bootstrap";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import React, { useEffect, useState } from "react";
+import {  Button, Container} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSpringCarousel } from 'react-spring-carousel'
 import { GrPrevious, GrNext } from "react-icons/gr";
@@ -98,15 +97,9 @@ function PublicationSection() {
     ],
   })
 
-
-
-
-
-
   return (
     <Container fluid className='mt-0 mb-0'>
       <h1 className={`pb-5 lab-title montserrat ${myPub1IsVisible ? "divslide" : ""}`} ref={myPub1}>Recent publications</h1>
-
       <div className={`carousel-bg ${myPub2IsVisible ? "divslide2" : ""}`}>
         <div className="carousel-bg-overlay" ref={myPub2}></div>
         <div className="carousel-fragment">
@@ -119,7 +112,6 @@ function PublicationSection() {
             </Link>
           </div>
         </div>
-
       </div>
     </Container>
   )

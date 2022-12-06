@@ -5,10 +5,9 @@ import { useInView } from "react-intersection-observer";
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
 
-function ProjectsSction({scrollPosition }) {
+function ProjectsSction({ scrollPosition }) {
   const [projects, setProjects] = useState([]);
   const { ref: myProj, inView: myProjIsVisible } = useInView({ triggerOnce: true })
-  
 
   const fetchProjectList = async () => {
     let res = await fetch("http://localhost:3001/projects/fetch-projects");
@@ -30,18 +29,17 @@ function ProjectsSction({scrollPosition }) {
           <Row>
             {projects.map((project, e) => (
               <>
-                <Col md={6} lg={4} className={`row-elem divslide-before  ${myProjIsVisible  ? "divslide2" : ""}`}  >
+                <Col md={6} lg={4} className={`row-elem divslide-before  ${myProjIsVisible ? "divslide2" : ""}`}  >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <div className=" projects d-flex justify-content-center" >
-                          <LazyLoadImage
-                          src={project.image}
-                          className="project-photo" alt={project.title}
-                          loading="lazy"
-                          effect="blur"
-                          scrollPosition={scrollPosition}
-                        
-                        />
-                     <div className="project-photo-overlay" ></div>
+                      <LazyLoadImage
+                        src={project.image}
+                        className="project-photo" alt={project.title}
+                        loading="lazy"
+                        effect="blur"
+                        scrollPosition={scrollPosition}
+                      />
+                      <div className="project-photo-overlay" ></div>
                       <div className="project-text-overlay">
                         <h3 className="montserrat projecttitle pe-3">
                           {project.title}
@@ -59,10 +57,9 @@ function ProjectsSction({scrollPosition }) {
             ))}
           </Row>
         </div>
-
       </Container>
     </>
   );
 }
 
-export default trackWindowScroll (ProjectsSction);
+export default trackWindowScroll(ProjectsSction);
