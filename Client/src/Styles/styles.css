@@ -15,9 +15,9 @@
 
 
 body {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
+    
+    min-height: 100vh;
+    width: 100%;
 }
 
 html {
@@ -26,7 +26,7 @@ html {
    margin: 0;
    padding: 0;
    scroll-behavior: smooth;
-
+   height: 100%;
 }
 
 .montserrat {
@@ -357,10 +357,14 @@ td {
 @media only screen and (min-width:1600px) {
    .row-research {
       margin-bottom: 5rem;
+     
    }
 }
 
 @media only screen and (min-width:2560px) {
+   .row-research {
+      min-height: 25rem !important;
+   }
 
    .research-text {
       font-size: 1.5rem !important;
@@ -673,7 +677,7 @@ td {
 }
 
 .member-details {
-   width: 15vw;
+   width: 25vw;
    overflow: hidden;
    border-radius: 10%;
    margin: auto;
@@ -725,7 +729,7 @@ td {
    border-radius: 25px;
    padding: 1rem;
 }
-@media screen and (max-width:750px) {
+@media screen and (max-width:770px) {
 
    .project-details-text {
     margin: 2rem !important;
@@ -764,6 +768,7 @@ td {
 
 .publicationdetailtitle {
    font-weight: 600;
+   font-size: 1.5rem;
 }
 
 .publicationlisttext {
@@ -791,20 +796,7 @@ td {
    line-height: 1.8;
 }
 
-/* .pub-container-div {
-   margin-bottom: 20rem;
- 
-} */
 
-/* @media (max-width: 650px) {
-   .pub-container-div {
-      margin-bottom: 22rem !important;
-   }
-
-   .member-container {
-      margin-bottom: 22rem !important;
-   }
-} */
 
 /* Alumni */
 .badge-icon {
@@ -837,6 +829,7 @@ td {
 
 .project-summary {
    font-weight: 300;
+   font-size: 0.9;
 }
 
 .project-summary-container {
@@ -1124,7 +1117,7 @@ figcaption {
 }
 
 .footer-icon-list {
-   margin-bottom: 2.8rem;
+   margin-bottom: 2.2rem;
 }
 
 .footer-copyright {
@@ -1147,9 +1140,18 @@ figcaption {
 }
 
 .details{
-   min-height: 73vh;
+   min-height:75vh;
    justify-content: center !important;
    align-items: center  !important;
+   display: flex;
+}
+
+.pub-details{
+   min-height:75vh;
+   justify-content: center !important;
+   align-items: center  !important;
+   display: flex;
+
 }
 
 /* Animations */

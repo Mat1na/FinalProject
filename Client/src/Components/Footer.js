@@ -42,7 +42,7 @@ function Footer() {
           </ul>
         </div>
         <div className='d-block text-center'>
-          <span className="roboto footer-copyright">&copy; 2022 <a href='https://www.linkedin.com/in/matinabampa/' target="_blank" rel="noreferrer" className='footerlink'>Stamatia Bampa</a> and <a href='https://www.linkedin.com/in/winandvanmeerbeek/' target="_blank" rel="noreferrer" className='footerlink'>Winand Van Meerbeek</a></span>
+          <p className="roboto footer-copyright">&copy; 2022 <a href='https://www.linkedin.com/in/matinabampa/' target="_blank" rel="noreferrer" className='footerlink'>Stamatia Bampa</a> and <a href='https://www.linkedin.com/in/winandvanmeerbeek/' target="_blank" rel="noreferrer" className='footerlink'>Winand Van Meerbeek</a></p>
         </div>
       </footer>
     </div>

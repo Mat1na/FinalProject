@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GoMail } from "react-icons/go";
 import { FaTwitter } from "react-icons/fa";
@@ -31,13 +31,14 @@ function Alumni() {
     fetchLabmembers();
   }, []);
   return (
-    <Row className="p-5 text-center ">
+    <Container fluid className="details">
+    <Row className=" text-center d-flex justify-content-center align-items-center ">
       <h1 className="p-5 montserrat">Alumni</h1>
       {labmemberList.map((member, index) => {
         return (
           <>
             {member.currentmember === "No" ? (
-              <Col md={2} className="m-2">
+              <Col md={3} lg={2}  className="m-2 ">
                 <Link className='montserrat'
                   to={`/labmember/${member.membername
                     .replace(/\s/g, "-")
@@ -123,6 +124,7 @@ function Alumni() {
         );
       })}
     </Row>
+    </Container>
   );
 }
 

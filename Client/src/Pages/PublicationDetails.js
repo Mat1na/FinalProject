@@ -24,8 +24,8 @@ function PublicationDetails() {
   }, [pub]);
   return (
     <>
-      <Container fluid className='details'>
-        <div className='pub-container-div'>
+      <Container fluid className='pub-details'>
+        <div className='m-4'>
           <h1 className='montserrat publicationdetailtitle'>{publication.publicationtitle}</h1>
           <p className="journaltitle roboto project-summary">{publication.journal}, {publication.year}</p>
           <p className="authorslist roboto project-summary">{authorsList.length > 0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
