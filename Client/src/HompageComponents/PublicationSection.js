@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSpringCarousel } from 'react-spring-carousel'
-import { GrPrevious, GrNext } from "react-icons/gr";
+import { GrPrevious } from "@react-icons/all-files/gr/GrPrevious";
+import { GrNext } from "@react-icons/all-files/gr/GrNext";
 import { useInView } from "react-intersection-observer";
 
 function PublicationSection() {

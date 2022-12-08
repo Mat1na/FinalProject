@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { GoMail } from "react-icons/go";
-import { FaTwitter } from "react-icons/fa";
-import { FaOrcid } from "react-icons/fa";
-import { SiResearchgate } from "react-icons/si";
-import { SiGooglescholar } from "react-icons/si";
+import { GoMail } from "@react-icons/all-files/go/GoMail";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaOrcid } from "@react-icons/all-files/fa/FaOrcid";
+import { SiResearchgate } from "@react-icons/all-files/si/SiResearchgate";
+import { SiGooglescholar } from "@react-icons/all-files/si/SiGooglescholar";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
