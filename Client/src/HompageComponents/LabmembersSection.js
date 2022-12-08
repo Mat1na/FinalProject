@@ -33,10 +33,10 @@ function LabmembersSection({ scrollPosition }) {
   return (
     <>
       <Container fluid className='mt-0 mb-0'>
-        <h1 className={`pb-2 montserrat lab-title ${myLab1IsVisible ? "divslide" : ""}`} ref={myLab1}>Lab members</h1>
+        <h1 className={`pb-2 montserrat lab-section-title ${myLab1IsVisible ? "divslide" : ""}`} ref={myLab1}>Lab members</h1>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
-          <h2 className={`p-3 montserrat divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Current members</h2>
+          <h2 className={`p-3 montserrat current-title divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Current members</h2>
           {labmemberList.map((member, index) => {
             return (
               <>

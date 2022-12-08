@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { HashLink as Link } from 'react-router-hash-link';
+
 
 function Headermodified() {
 
@@ -14,13 +14,13 @@ function Headermodified() {
       </Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
         <Nav >
-          <Link to='/#top' className='nav-link'>Home</Link>
-          <Link to="/#research" className='nav-link'>Research</Link>
-          <Link to="/#labmembers" className='nav-link'>Lab members</Link>
-          <Link to="/#projects" className='nav-link'>Projects</Link>
-          <Link to="/#publications" className='nav-link'>Publications</Link>
-          <Link to="/#jointhelab" className='nav-link'>Join the lab</Link>
-          <Link to="/#contact" className='nav-link'>Contact</Link>
+        <Nav.Link href='/#top' className='nav-link'>Home</Nav.Link>
+          <Nav.Link  href="/#research" className='nav-link'>Research</Nav.Link>
+          <Nav.Link href="/#labmembers" className='nav-link'>Lab members</Nav.Link>
+          <Nav.Link href="/#projects" className='nav-link'>Projects</Nav.Link>
+          <Nav.Link href="/#publications" className='nav-link'>Publications</Nav.Link>
+          <Nav.Link href="/#jointhelab" className='nav-link'>Join the lab</Nav.Link>
+          <Nav.Link href="/#contact" className='nav-link'>Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
 
