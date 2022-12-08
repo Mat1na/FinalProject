@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar} from "react-bootstrap";
-import { HashLink as Link } from 'react-router-hash-link';
+// import { HashLink as Link } from 'react-router-hash-link';
 
 function Header() {
 

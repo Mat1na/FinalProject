@@ -941,7 +941,7 @@ a {
 
 .carousel-bg {
    position: relative;
-   background-image: linear-gradient(black, black), url('../../src/assets/photo/PublicationBackground.JPG');
+   background-image: linear-gradient(black, black), url('../../src/assets/photo/PublicationBackground.webp');
    background-size: cover;
    background-blend-mode: saturation;
    background-position: 50% 50%;
