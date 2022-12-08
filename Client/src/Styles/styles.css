@@ -261,7 +261,7 @@ td {
 
 @media only screen and (max-width:425px) {
    .containerpaddings2 {
-      padding-top: 3rem;
+      padding-top: 2rem;
    }
    .responsive-video {
       display: none;
