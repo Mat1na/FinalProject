@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-import { AiOutlineUserAdd } from "react-icons/ai";
-import { AiOutlineUserDelete } from "react-icons/ai";
+import { AiOutlineUserAdd } from "@react-icons/all-files/ai/AiOutlineUserAdd";
+import { AiOutlineUserDelete } from "@react-icons/all-files/ai/AiOutlineUserDelete";
 
 
 

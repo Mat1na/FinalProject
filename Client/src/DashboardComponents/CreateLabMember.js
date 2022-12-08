@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CgPlayListAdd } from "react-icons/cg";
-import { RiDeleteBin6Fill } from "react-icons/ri";
+import { CgPlayListAdd } from "@react-icons/all-files/cg/CgPlayListAdd";
+import { RiDeleteBin6Fill } from "@react-icons/all-files/ri/RiDeleteBin6Fill";
 
 function CreateLabMembers() {
   // Handle change for interests and rest inputs

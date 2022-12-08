@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { GoMail } from "react-icons/go";
-import { FaTwitter } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { BsTelephoneFill } from "react-icons/bs";
+import { GoMail } from "@react-icons/all-files/go/GoMail";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaMapMarkerAlt } from "@react-icons/all-files/fa/FaMapMarkerAlt";
+import { FaPhone } from "@react-icons/all-files/fa/FaPhone";
 import { useInView } from "react-intersection-observer";
 
 function ContactSection() {
@@ -21,7 +21,7 @@ function ContactSection() {
                 </div></a>
 
                 <a href="tel:+3216377444" className='footerlink'><div className='m-4'>
-                    <p className="d-flex align-items-center justify-content-center m-3 "> <BsTelephoneFill size={"2.5rem"} className="icons footer-icons me-1" /></p>
+                    <p className="d-flex align-items-center justify-content-center m-3 "> <FaPhone size={"2.5rem"} className="icons footer-icons me-1" /></p>
                     <p className='contact-text text-center d-flex align-items-center justify-content-center'>+32 16 377 444</p>
                 </div></a>
 

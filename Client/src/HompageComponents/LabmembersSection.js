@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { FaArrowCircleRight } from '@react-icons/all-files/fa/FaArrowCircleRight';
 import { useInView } from "react-intersection-observer";
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
@@ -126,7 +126,7 @@ function LabmembersSection({ scrollPosition }) {
             );
           })}
           {/* Alumni Section*/}
-          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myLab4IsVisible ? "divslide" : ""} `} ref={myLab4}><Badge className="badge-icon montserrat">SEE ALUMNI <BsFillArrowRightCircleFill className="arrow-icon" /></Badge></h3></Link>
+          <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myLab4IsVisible ? "divslide" : ""} `} ref={myLab4}><Badge className="badge-icon montserrat">SEE ALUMNI <FaArrowCircleRight className="arrow-icon" /></Badge></h3></Link>
         </Row>
       </Container>
     </>

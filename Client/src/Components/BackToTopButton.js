@@ -1,5 +1,5 @@
 
-import { FaAngleUp } from 'react-icons/fa';
+import { FaAngleUp } from '@react-icons/all-files/fa/FaAngleUp';
 import React, { useState, useEffect } from 'react';
 
 function BackToTopButton() {

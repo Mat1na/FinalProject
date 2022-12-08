@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Container, Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { AiFillEdit } from 'react-icons/ai';
-import { RiDeleteBin6Fill } from 'react-icons/ri';
+import { AiFillEdit } from "@react-icons/all-files/ai/AiFillEdit";
+import { RiDeleteBin6Fill } from "@react-icons/all-files/ri/RiDeleteBin6Fill";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
