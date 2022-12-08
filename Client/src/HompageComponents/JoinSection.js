@@ -12,7 +12,7 @@ function JoinSection() {
 
 
         <Container fluid className='mt-0'>
-            <h1 className={`join-section-title pb-5 montserrat ${myJoin1IsVisible ? "divslide" : ""}`} ref={myJoin1}>Join the lab</h1>
+            <h1 className={`join-section-title pb-4 montserrat ${myJoin1IsVisible ? "divslide" : ""}`} ref={myJoin1}>Join the lab</h1>
             <div className={`join-bg ${myJoin2IsVisible ? "divslide2" : ""}`} ref={myJoin2}>
                 <p className='roboto paragraphtext'> There are no vacancies at the moment, but I am always interested in hearing from motivated students or researchers to collaborate on topics of mutual interest. Have a look at <Link to="/#research" className='join-link'>Research</Link> and our <Link to="/#projects" className='join-link'>Research projects</Link> to see what we are doing. So if you are interested in applying for a PhD or postdoc fellowship, you are always welcome to contact me. The different opportunities are listed below.
                 </p>

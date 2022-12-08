@@ -22,7 +22,7 @@ function ProjectsSction({ scrollPosition }) {
   return (
     <>
       <Container fluid className='mt-0 mb-0'>
-        <h1 className={` proj-section-title montserrat pb-5 divslide-before ${myProjIsVisible ? "divslide" : ""}`} ref={myProj}>Research projects</h1>
+        <h1 className={` proj-section-title montserrat pb-4 divslide-before ${myProjIsVisible ? "divslide" : ""}`} ref={myProj}>Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row>
             {projects.map((project, e) => (
