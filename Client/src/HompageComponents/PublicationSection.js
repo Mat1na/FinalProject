@@ -97,7 +97,7 @@ function PublicationSection() {
 
   return (
     <Container fluid className='mt-0 mb-0'>
-      <h1 className={`pb-5 lab-title montserrat ${myPub1IsVisible ? "divslide" : ""}`} ref={myPub1}>Recent publications</h1>
+      <h1 className={`pb-5 pub-section-title montserrat ${myPub1IsVisible ? "divslide" : ""}`} ref={myPub1}>Recent publications</h1>
       <div className={`carousel-bg ${myPub2IsVisible ? "divslide2" : ""}`}>
         <div className="carousel-bg-overlay" ref={myPub2}></div>
         <div className="carousel-fragment">

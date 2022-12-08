@@ -12,7 +12,7 @@ function ContactSection() {
 
     return (
         <Container fluid className='mt-0'>
-            <h1 className={`pb-2 montserrat lab-title ${myContIsVisible ? "divslide" : ""}`} ref={myCont}>Contact</h1>
+            <h1 className={`pb-2 montserrat cont-section-title ${myContIsVisible ? "divslide" : ""}`} ref={myCont}>Contact</h1>
 
             <div className={`contact d-lg-flex align-items-center justify-content-center ${myCont2IsVisible ? "divslide" : ""}`} ref={myCont2}>
                 <a href={`mailto:koenraad.vanmeerbeek@kuleuven.be`} className='footerlink'><div className='m-4'>

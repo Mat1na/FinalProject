@@ -13,7 +13,7 @@ function Home() {
     <>
     <BackToTopButton />
       <section id="top"><VideoSection /></section>
-      <section id="research" className='containerpaddings'><ResearchSection /></section>
+      <section id="research" className='containerpaddings2'><ResearchSection /></section>
       <section id="labmembers" className='containerpaddings'><LabmembersSection /></section>
       <section id="projects" className='containerpaddings'><ProjectsSction /></section>
       <section id="publications" className='containerpaddings'><PublicationSection/></section>
