@@ -27,8 +27,8 @@ function ResearchSection() {
       <Row className="d-flex align-items-center justify-content-center mx-0 gx-5">
         <Col xl={6} >
           <Row className='d-flex align-items-center justify-content-center '>
-            <h3 className={`text-center topics-methods mb-xl-0 mb-xxl-3 ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>Topics</h3>
-            <div class="topics-methods-border"></div>
+            <h3 className={`text-center topics mb-xl-0 mb-xxl-3 ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>Topics</h3>
+            
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>
                 {deviceSize>767&&<LazyLoadImage src="/MicroclimateEcology.webp" className='jpg-research d-flex' alt='Microclimate ecology' loading="lazy" effect="blur" />}
@@ -66,7 +66,7 @@ function ResearchSection() {
 
         <Col xl={6}>
           <Row className='d-flex align-items-center justify-content-center'>
-            <h3 className={`text-center topics-methods mt-3 mt-lg-0 mb-xl-0 mb-xxl-3 ${myRef4IsVisible ? "divMove1" : ""}`} ref={myRef4}>Methods</h3>
+            <h3 className={`text-center methods mt-3 mt-lg-0 mb-xl-0 mb-xxl-3 ${myRef4IsVisible ? "divMove1" : ""}`} ref={myRef4}>Methods</h3>
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef4IsVisible ? "divMove1" : ""}`} ref={myRef4}>
 

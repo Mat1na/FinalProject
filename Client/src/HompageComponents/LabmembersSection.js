@@ -13,6 +13,8 @@ function LabmembersSection({ scrollPosition }) {
   const { ref: myLab3, inView: myLab3IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab4, inView: myLab4IsVisible } = useInView({ triggerOnce: true })
 
+  
+
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
     var sortOrder = ["Assistant Professor", "Postdoc", "PhD student", "visiting PhD student", "Master student"];
@@ -57,6 +59,7 @@ function LabmembersSection({ scrollPosition }) {
                             className="member-photo"
                             loading="lazy"
                             effect="blur"
+                            width="200" height="200"
                             scrollPosition={scrollPosition}
                           />
                           <div className="member-photo-overlay">
@@ -101,9 +104,10 @@ function LabmembersSection({ scrollPosition }) {
                           <LazyLoadImage
                             alt={member.membername}
                             src={`${member.image}`}
-                            className={`member-photo `}
+                            className='member-photo '
                             loading="lazy"
                             effect="blur"
+                            width="200" height="200"
                             scrollPosition={scrollPosition}
                           />
                           <div className="member-photo-overlay"></div>
