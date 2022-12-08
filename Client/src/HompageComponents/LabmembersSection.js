@@ -80,6 +80,7 @@ function LabmembersSection({ scrollPosition }) {
             );
           })}
           {/* Current members Section*/}
+          {/* eslint-disable-next-line*/}
           <h2 className={`montserrat divslide-before ${myLab3IsVisible ? "divslide2" : ""}`} ref={myLab3}></h2>
           {labmemberList.map((member, index) => {
             return (
