@@ -7,13 +7,13 @@ import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-componen
 
 
 function LabmembersSection({ scrollPosition }) {
-
+  const { ref: myLab, inView: myLabIsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab1, inView: myLab1IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab2, inView: myLab2IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab3, inView: myLab3IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab4, inView: myLab4IsVisible } = useInView({ triggerOnce: true })
 
-  
+
 
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
@@ -36,9 +36,10 @@ function LabmembersSection({ scrollPosition }) {
     <>
       <Container fluid className='mt-0 mb-0'>
         <h1 className={`pb-2 montserrat lab-section-title ${myLab1IsVisible ? "divslide" : ""}`} ref={myLab1}>Lab members</h1>
+        <div className="p-3 d-flex  text-center justify-content-center align-items-center"> <h2 className={`p-3 montserrat current-title divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Current members</h2></div>
         <Row className="p-3 d-flex  text-center justify-content-center align-items-center">
           {/* Principal Investigator Section*/}
-          <h2 className={`p-3 montserrat current-title divslide-before ${myLab2IsVisible ? "divslide" : ""}`} ref={myLab2}>Current members</h2>
+         
           {labmemberList.map((member, index) => {
             return (
               <>
@@ -53,15 +54,19 @@ function LabmembersSection({ scrollPosition }) {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
                         >
+                        
                           <LazyLoadImage
+                            key={member.membername}
                             alt={member.membername}
                             src={`${member.image}`}
                             className="member-photo"
                             loading="lazy"
                             effect="blur"
                             width="200" height="200"
+                            placeholderSrc={`${member.image}`}
                             scrollPosition={scrollPosition}
                           />
+                        
                           <div className="member-photo-overlay">
                           </div>
                           <div className="member-text-overlay">

@@ -13,7 +13,6 @@
 }
 
 
-
 body {
    min-height: 100vh;
    width: 100%;
@@ -813,6 +812,12 @@ td {
    /* Animation */
 }
 
+/* .member-photo::before {
+   content: '';
+   display: block;
+   padding-top: 56.25%; 
+ } */
+
 
 
 /* hover only on larger screens */
@@ -1095,6 +1100,20 @@ td {
 
 
 
+ 
+ /* .lazy-load-image-background {
+   opacity: 0;
+ }
+ 
+.lazy-load-image-loaded{
+   opacity: 1;
+ }
+ 
+ .project-photo::before {
+   content: '';
+   display: block;
+   padding-top: 56.25%; 
+ } */
 
 
 
@@ -1104,6 +1123,7 @@ td {
    overflow: hidden;
    border-radius: 5%;
    margin: 10px;
+   
 }
 
 .project-photo-overlay {
