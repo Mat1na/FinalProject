@@ -35,7 +35,7 @@ function Header() {
       <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
         <Nav >
           <Nav.Link href='/#top' className='nav-link'>Home</Nav.Link>
-          <Nav.Link  href="/#research" className='nav-link'>Research</Nav.Link>
+          <Nav.Link href="/#research" className='nav-link'>Research</Nav.Link>
           <Nav.Link href="/#labmembers" className='nav-link'>Lab members</Nav.Link>
           <Nav.Link href="/#projects" className='nav-link'>Projects</Nav.Link>
           <Nav.Link href="/#publications" className='nav-link'>Publications</Nav.Link>
