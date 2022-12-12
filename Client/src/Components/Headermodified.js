@@ -23,7 +23,7 @@ function Headermodified() {
         <Link to="/#projects" className='nav-link' >Projects</Link>
         <Link to="/#publications" className='nav-link'>Publications</Link>
         <Link to="/#jointhelab" className='nav-link'>Join the lab</Link>
-        <Link to="/#jointhelab" className='nav-link'>Contact</Link>
+        <Link to="/#contact" className='nav-link'>Contact</Link>
       </Nav>
     </Navbar.Collapse>
 

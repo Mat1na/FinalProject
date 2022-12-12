@@ -20,7 +20,7 @@ function Home() {
       <section id="projects" name="projects" className='containerpaddings'><ProjectsSction /></section>
       <section id="publications" name="publications" className='containerpaddings'><PublicationSection/></section>
       <section id="jointhelab" name="jointhelab" className='containerpaddings'><JoinSection /></section>
-      <section id="contact" name="contact"className='containerpaddings'><ContactSection /></section>
+      <section id="contact" name="contact" className='containerpaddings'><ContactSection /></section>
 
     </>
   );
