@@ -29,7 +29,7 @@ function PublicationDetails() {
           <p className="authorslist roboto project-summary">{authorsList.length > 0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
           <h4 className="montserrat roboto">Abstract</h4>
           <p className='roboto project-summary'>{publication.abstract}</p>
-          <p className='roboto publicationdetailtitle publicationdetaillink'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto pub-link'>{`${publication.link}`}</a></p>
+          <p className='roboto publicationdetaillink'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto pub-link'>{`${publication.link}`}</a></p>
         </div>
       </Container>
     </>

@@ -17,7 +17,7 @@ function Headermodified() {
     </Navbar.Toggle>
     <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
       <Nav >
-        <Link to='/#top' className='nav-link' >Home</Link>
+        <Link to='/#top' className='nav-link'>Home</Link>
         <Link to="/#research" className='nav-link'>Research</Link>
         <Link to="/#labmembers" className='nav-link'>Lab members</Link>
         <Link to="/#projects" className='nav-link' >Projects</Link>

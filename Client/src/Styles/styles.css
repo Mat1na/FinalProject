@@ -596,10 +596,6 @@ td {
       font-size: 1.5rem !important;
    }
 
-   .publicationdetailtitle {
-      font-size: 1.5rem !important;
-   }
-
    .publicationlisttext {
       font-size: 1.5rem !important;
    }
@@ -839,7 +835,9 @@ td {
    font-size: 1.2rem;
 }
 
-
+.publicationdetaillink{
+   font-weight: 600;
+}
 
 .interests {
    font-weight: 400;
@@ -1679,8 +1677,6 @@ figcaption {
    }
 
 }
-
-
 
 .divslide-before {
    opacity: 0;
