@@ -34,11 +34,9 @@ function Alumni() {
     <Row className=" text-center d-flex justify-content-center align-items-center ">
       <h1 className="p-5 montserrat">Alumni</h1>
       {labmemberList.map((member, index) => {
-        return (
-          <>
-            {member.currentmember === "No" ? (
-              <Col md={3} lg={2}  className="m-2 ">
-                <Link className='montserrat'
+        return  member.currentmember === "No" ? (
+              <Col md={3} lg={2}  className="m-2" key={member.id}>
+                <Link className='montserrat alumni-link'
                   to={`/labmember/${member.membername
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
@@ -102,7 +100,6 @@ function Alumni() {
                 ) : (
                   " "
                 )}
-
                 {member.email !== undefined && member.email !== "" ? (
                   <a
                     href={`mailto:${member.membername}`}
@@ -116,11 +113,7 @@ function Alumni() {
                   " "
                 )}
               </Col>
-            ) : (
-              ""
-            )}
-          </>
-        );
+            ) : ("")
       })}
     </Row>
     </Container>

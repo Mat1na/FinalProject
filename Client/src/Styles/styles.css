@@ -973,6 +973,15 @@ td {
 
 
 /* Alumni */
+
+.alumni-link {
+   font-size: 1rem;
+   overflow-wrap: break-word;
+}
+
+.alumni-link:hover {
+   color: var(--Dark3);
+}
 .badge-icon {
    background-color: var(--Light2) !important;
    color: var(--Dark4);
