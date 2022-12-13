@@ -56,6 +56,7 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
                 to={`/labmember/${researcher.researcher
                   .replace(/\s/g, "-")
                   .toLowerCase()}`}
+                  key={index}
               >
                 <p className="d-inline project-labmember roboto">{researcher.researcher}</p>
               </Link>
@@ -65,6 +66,7 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
                 to={`/labmember/${researcher.researcher
                   .replace(/\s/g, "-")
                   .toLowerCase()}`}
+                  key={index}
               >
                 <p className="d-inline project-labmember roboto">{researcher.researcher}, </p>
               </Link>
@@ -73,7 +75,6 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
           </h6>
         </Col>
       </Row>
-
     </Container>
   );
 }

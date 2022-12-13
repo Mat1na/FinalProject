@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { HashLink as Link } from 'react-router-hash-link';
 
 
 
 function Headermodified() {
-
-
   return (
     <Navbar collapseOnSelect fixed="top" expand='lg' variant="dark" className="navbar p-2 color-nav" >
     <Navbar.Brand href="/"><img src='/Logo_final_rgba.png' className='logoheader' alt="logo sGlobe Lab"/></Navbar.Brand>
