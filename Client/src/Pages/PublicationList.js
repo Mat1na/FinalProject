@@ -108,18 +108,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2022</b>
         <ul className='publicationlisttext roboto'>
           {publication2022.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2022[index].order} - {publication2022[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2022[index].order} - {publication2022[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -131,18 +131,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2021</b>
         <ul className='publicationlisttext roboto'>
           {publication2021.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2021[index].order} - {publication2021[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2021[index].order} - {publication2021[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -154,18 +154,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2020</b>
         <ul className='publicationlisttext roboto'>
           {publication2020.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2020[index].order} - {publication2020[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2020[index].order} - {publication2020[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -177,18 +177,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2019</b>
         <ul className='publicationlisttext roboto'>
           {publication2019.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2019[index].order} - {publication2019[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2019[index].order} - {publication2019[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -200,18 +200,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2018</b>
         <ul className='publicationlisttext roboto'>
           {publication2018.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2018[index].order} - {publication2018[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2018[index].order} - {publication2018[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -223,18 +223,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2017</b>
         <ul className='publicationlisttext roboto'>
           {publication2017.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2017[index].order} - {publication2017[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2017[index].order} - {publication2017[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -246,18 +246,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2016</b>
         <ul className='publicationlisttext roboto'>
           {publication2016.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2016[index].order} - {publication2016[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2016[index].order} - {publication2016[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -269,18 +269,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2015</b>
         <ul className='publicationlisttext roboto'>
           {publication2015.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2015[index].order} - {publication2015[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2015[index].order} - {publication2015[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -292,18 +292,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2014</b>
         <ul className='publicationlisttext roboto'>
           {publication2014.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2014[index].order} - {publication2014[index].authors.map((author, index, array) => {
+            return <li key={index} className='pb-1 publicationlistarticle'>{publication2014[index].order} - {publication2014[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}
@@ -315,18 +315,18 @@ function PublicationList() {
         <b className='publicationyear montserrat'>2011</b>
         <ul className='publicationlisttext roboto'>
           {publication2011.map((item, index) => {
-            return <li className='pb-1 publicationlistarticle'>{publication2011[index].order} - {publication2011[index].authors.map((author, index, array) => {
+            return <li key={index}className='pb-1 publicationlistarticle'>{publication2011[index].order} - {publication2011[index].authors.map((author, index, array) => {
               if (index + 1 === array.length) {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']} </p>
-                } else { return <p className='authorsforpublicationlist'>{author['author']} </p> }
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author['author']} className='authorsforpublicationlist'>{author['author']} </p> }
               }
               else {
                 if (authorList.includes(author['author'])) {
-                  return <p className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
                 }
                 else {
-                  return <p className='authorsforpublicationlist'>{author['author']}, </p>
+                  return <p key={author['author']} className='authorsforpublicationlist'>{author['author']}, </p>
                 }
               }
             })}

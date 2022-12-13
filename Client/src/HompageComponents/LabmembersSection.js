@@ -50,6 +50,7 @@ function LabmembersSection({ scrollPosition }) {
                       md={5}
                       className={`d-flex justify-content-center align-items-center divslide-before ${myLab2IsVisible ? "divslide" : ""}`}
                       ref={myLab2}
+                      key={index}
                     >
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
@@ -102,11 +103,13 @@ function LabmembersSection({ scrollPosition }) {
                       lg={3}
                       xxl={2}
                       className={`d-flex justify-content-center align-items-center memberpicturepadding divslide-before ${myLab3IsVisible ? "divslide2" : ""} `}
+                      key={index}
                     >
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
                         >
                           <LazyLoadImage
+                          key={member.membername}
                             alt={member.membername}
                             src={`${member.image}`}
                             className='member-photo '

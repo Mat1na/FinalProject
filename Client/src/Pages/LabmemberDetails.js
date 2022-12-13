@@ -54,7 +54,7 @@ function LabmemberDetails() {
               <hr></hr>
               <h3 className='montserrat intereststitle mb-3'>Interests</h3>
               {interestsList.map((item) => (
-                <p><Badge bg="secondary" className="interests roboto">{item.interest}</Badge></p>
+                <p key={item.interest}><Badge bg="secondary" className="interests roboto">{item.interest}</Badge></p>
               ))}
             </div>
             <div>
@@ -108,7 +108,6 @@ function LabmemberDetails() {
               ) : (
                 " "
               )}
-
               {member.email !== undefined && member.email !== "" ? (
                 <a
                   href={`mailto:${member.membername}`}
