@@ -22,14 +22,12 @@ function ProjectsSction() {
 
 
   return (
-    <>
       <Container fluid className='mt-0 mb-0'>
         <h1 className={` proj-section-title montserrat pb-4 divslide-before ${myProjIsVisible ? "divslide" : ""}`} ref={myProj}>Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row ref={myProj2}>
-            {projects.map((project, e) => (
-              <>
-                <Col md={6} lg={4} className={`row-elem divslide-before  ${myProj2IsVisible ? "divslide2" : ""}`}  >
+            {projects.map((project, index) => (
+                  <Col key={index} md={6} lg={4} className={`row-elem divslide-before  ${myProj2IsVisible ? "divslide2" : ""}`}  >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
                     <LazyLoad className=" projects d-flex justify-content-center" >
                     
@@ -37,7 +35,6 @@ function ProjectsSction() {
                         src={project.image}
                         className="project-photo" alt={project.title}
                       />
-                      
                       <div className="project-photo-overlay" ></div>
                       <div className="project-text-overlay">
                         <h3 className="montserrat projecttitle pe-3">
@@ -52,12 +49,11 @@ function ProjectsSction() {
                       </LazyLoad>
                   </Link>
                 </Col>
-              </>
             ))}
           </Row>
         </div>
       </Container>
-    </>
+ 
   );
 }
 
