@@ -40,6 +40,7 @@ function Alumni() {
                   to={`/labmember/${member.membername
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
+                    key={index}
                 >
                   <h5 className='alumni-name'>{member.membername}</h5>
                   <p className="roboto alumni-function">
@@ -54,6 +55,7 @@ function Alumni() {
                     className="d-inline p-2"
                     target="_blank"
                     rel="noreferrer"
+                    key={member.googlescholar}
                   >
                     <SiGooglescholar />
                   </a>
@@ -68,6 +70,7 @@ function Alumni() {
                     className="d-inline p-2"
                     target="_blank"
                     rel="noreferrer"
+                    key={member.researchgate}
                   >
                     <SiResearchgate />
                   </a>
@@ -94,6 +97,7 @@ function Alumni() {
                     className="d-inline p-2"
                     target="_blank"
                     rel="noreferrer"
+                    key={member.twitter}
                   >
                     <FaTwitter />
                   </a>
@@ -106,6 +110,7 @@ function Alumni() {
                     className="d-inline p-2"
                     target="_blank"
                     rel="noreferrer"
+                    key={member.membername}
                   >
                     <GoMail />
                   </a>
