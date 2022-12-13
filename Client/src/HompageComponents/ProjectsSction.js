@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
+import LazyLoad from 'react-lazyload';
 
 
-function ProjectsSction({ scrollPosition }) {
+function ProjectsSction() {
   const [projects, setProjects] = useState([]);
   const { ref: myProj, inView: myProjIsVisible } = useInView({ triggerOnce: true })
   const { ref: myProj2, inView: myProj2IsVisible } = useInView({ triggerOnce: true })
@@ -29,15 +29,11 @@ function ProjectsSction({ scrollPosition }) {
             {projects.map((project, index) => (
                   <Col key={index} md={6} lg={4} className={`row-elem divslide-before  ${myProj2IsVisible ? "divslide2" : ""}`}  >
                   <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
-                    <div className=" projects d-flex justify-content-center" >
-                      <LazyLoadImage
+                    <LazyLoad className=" projects d-flex justify-content-center" >
+                    
+                      <img
                         src={project.image}
                         className="project-photo" alt={project.title}
-                        loading="lazy"
-                        effect="blur"
-                       key={project.title}
-                        placeholderSrc={project.image}
-                        scrollPosition={scrollPosition}
                       />
                       <div className="project-photo-overlay" ></div>
                       <div className="project-text-overlay">
@@ -50,7 +46,7 @@ function ProjectsSction({ scrollPosition }) {
                           {project.summary}.</p><p className='roboto project-summary readmore'> Read more ...
                         </p>
                       </div>
-                    </div>
+                      </LazyLoad>
                   </Link>
                 </Col>
             ))}
@@ -61,4 +57,4 @@ function ProjectsSction({ scrollPosition }) {
   );
 }
 
-export default trackWindowScroll(ProjectsSction);
+export default ProjectsSction;

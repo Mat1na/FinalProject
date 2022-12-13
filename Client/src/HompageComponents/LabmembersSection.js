@@ -3,7 +3,7 @@ import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaArrowCircleRight } from '@react-icons/all-files/fa/FaArrowCircleRight';
 import { useInView } from "react-intersection-observer";
-import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
+import LazyLoad from 'react-lazyload';
 
 
 function LabmembersSection({ scrollPosition }) {
@@ -51,17 +51,14 @@ function LabmembersSection({ scrollPosition }) {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center`}
                         >
-                          <LazyLoadImage
+                        
+                          <LazyLoad><img
                             key={member.membername}
                             alt={member.membername}
                             src={`${member.image}`}
                             className="member-photo"
-                            loading="lazy"
-                            effect="blur"
-                            width="200" height="200"
-                            placeholderSrc={`${member.image}`}
-                            scrollPosition={scrollPosition}
-                          />
+                          /></LazyLoad>
+                        
                           <div className="member-photo-overlay">
                           </div>
                           <div className="member-text-overlay">
@@ -96,16 +93,12 @@ function LabmembersSection({ scrollPosition }) {
                       <Link to={`/labmember/${member.membername.replace(/\s/g, '-').toLowerCase()}`} className="photo-link" >
                         <div className={`members d-flex justify-content-center align-items-center memberpicturepadding `}
                         >
-                          <LazyLoadImage
+                          <LazyLoad><img
                        alt={member.membername}
                        key={member.membername}
                             src={`${member.image}`}
-                            className='member-photo '
-                            loading="lazy"
-                            effect="blur"
-                            width="200" height="200"
-                            scrollPosition={scrollPosition}
-                          />
+                            className='member-photo'
+                          /></LazyLoad>
                           <div className="member-photo-overlay"></div>
                           <div className="member-text-overlay">
                             <h3 className="montserrat membername h5">
@@ -128,4 +121,4 @@ function LabmembersSection({ scrollPosition }) {
   );
 }
 
-export default trackWindowScroll(LabmembersSection);
+export default LabmembersSection;

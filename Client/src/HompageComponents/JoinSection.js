@@ -2,7 +2,6 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { HashLink as Link } from 'react-router-hash-link';
 import { useInView } from "react-intersection-observer";
-
 function JoinSection() {
 
     const { ref: myJoin1, inView: myJoin1IsVisible } = useInView({ triggerOnce: true })

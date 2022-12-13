@@ -6,7 +6,6 @@ import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaOrcid } from "@react-icons/all-files/fa/FaOrcid";
 import { SiResearchgate } from "@react-icons/all-files/si/SiResearchgate";
 import { SiGooglescholar } from "@react-icons/all-files/si/SiGooglescholar";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 
@@ -38,12 +37,10 @@ function LabmemberDetails() {
       <Container fluid className='details'>
         <div className="member-container">
           <div className="member-details pt-5">
-            <LazyLoadImage
+            <img
               src={`${member.image}`}
               className="member-details"
               alt={member.membername}
-              loading="lazy"
-              effect="blur"
             />
           </div>
           <div className="d-block text-center">
