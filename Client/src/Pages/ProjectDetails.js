@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 function ProjectDetails({ width, height, src, alt, ...rest }) {
@@ -39,9 +38,8 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
     <Container fluid className='details'>
       <Row className="d-flex align-items-center justify-content-center">
         <Col md={4} className={`pe-4 ${myRef1IsVisible1 ? "divMove2" : ""}`} ref={myRef1}><div className="research-photo-container-details">
-          <LazyLoadImage
+          <img
             src={project.image} alt={project.title} className='project-details'
-            loading="lazy" effect="blur"
           />
           <div className="project-photo-container-overlay" ></div>
           {project.imagetext !== '' && <figcaption className='roboto'>{project.imagetext}</figcaption>}

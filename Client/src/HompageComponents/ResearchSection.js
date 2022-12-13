@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css'
+import LazyLoad from 'react-lazyload';
 
 function ResearchSection() {
   //this is to check the width of the device. If the device is below 425 width, the video doesn't load
@@ -31,8 +30,10 @@ function ResearchSection() {
             
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef1IsVisible ? "divMove" : ""}`} ref={myRef1}>
-                {deviceSize>767&&<LazyLoadImage src="/MicroclimateEcology.webp" className='jpg-research d-flex' alt='Microclimate ecology' loading="lazy" effect="blur" />}
-                {deviceSize<768&&<LazyLoadImage src="/MicroclimateEcology-mobile.webp" className='jpg-research d-flex' alt='Microclimate ecology' loading="lazy" effect="blur" />}
+                {deviceSize>767&&<LazyLoad><img
+                src="/MicroclimateEcology.webp" className='jpg-research d-flex' alt='Microclimate ecology'
+                /></LazyLoad>}
+                {deviceSize<768&&<LazyLoad><img src="/MicroclimateEcology-mobile.webp" className='jpg-research d-flex' alt='Microclimate ecology' /></LazyLoad>}
                 <div className="research-photo-container-overlay"></div>
               </div>
             </Col>
@@ -41,8 +42,8 @@ function ResearchSection() {
 
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef2IsVisible ? "divMove" : ""}`} ref={myRef2}>
-              {deviceSize>767&&<LazyLoadImage src="/GlobalChangeEffects.webp" className='jpg-research d-flex' alt='Global change effects' loading="lazy" effect="blur" />}
-              {deviceSize<768&&<LazyLoadImage src="/GlobalChangeEffects-mobile.webp" className='jpg-research d-flex' alt='Global change effects' loading="lazy" effect="blur" />}
+              {deviceSize>767&&<LazyLoad><img src="/GlobalChangeEffects.webp" className='jpg-research d-flex' alt='Global change effects' /></LazyLoad>}
+              {deviceSize<768&&<LazyLoad><img src="/GlobalChangeEffects-mobile.webp" className='jpg-research d-flex' alt='Global change effects' /></LazyLoad>}
                 <div className="research-photo-container-overlay"></div>
               </div>
             </Col>
@@ -51,10 +52,10 @@ function ResearchSection() {
 
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef3IsVisible ? "divMove" : ""}`} ref={myRef3}>
-              {deviceSize>767&&<LazyLoadImage src="/BiodiversityConservation.webp" className='jpg-research d-flex' alt='Biodiversity conservation' loading="lazy" effect="blur"
-                />}
-                {deviceSize<768&&<LazyLoadImage src="/BiodiversityConservation-mobile.webp" className='jpg-research d-flex' alt='Biodiversity conservation' loading="lazy" effect="blur"
-                />}
+              {deviceSize>767&&<LazyLoad><img src="/BiodiversityConservation.webp" className='jpg-research d-flex' alt='Biodiversity conservation' 
+                /></LazyLoad>}
+                {deviceSize<768&&<LazyLoad><img src="/BiodiversityConservation-mobile.webp" className='jpg-research d-flex' alt='Biodiversity conservation'
+               /></LazyLoad>}
                 <div className="research-photo-container-overlay"></div>
               </div>
             </Col>
@@ -70,8 +71,8 @@ function ResearchSection() {
             <Col sm={5} className='row-research research-photo mb-lg-3 mb-xl-0'>
               <div className={`research-photo-container ${myRef4IsVisible ? "divMove1" : ""}`} ref={myRef4}>
 
-              {deviceSize>767&&<LazyLoadImage src="/Ecoinformatics.webp" className='jpg-research d-flex' alt='Ecoinformatics' loading="lazy" effect="blur" />}
-              {deviceSize<768&&<LazyLoadImage src="/Ecoinformatics-mobile.webp" className='jpg-research d-flex' alt='Ecoinformatics' loading="lazy" effect="blur" />}
+              {deviceSize>767&&<LazyLoad><img src="/Ecoinformatics.webp" className='jpg-research d-flex' alt='Ecoinformatics' /></LazyLoad>}
+              {deviceSize<768&&<LazyLoad><img src="/Ecoinformatics-mobile.webp" className='jpg-research d-flex' alt='Ecoinformatics' /></LazyLoad>}
 
                 <div className="research-photo-container-overlay"></div>
               </div>
@@ -82,8 +83,8 @@ function ResearchSection() {
               <div className={`research-photo-container ${myRef5IsVisible ? "divMove1" : ""}`} ref={myRef5}>
 
 
-              {deviceSize>767&&<LazyLoadImage src="/FieldWork.webp" className='jpg-research d-flex' alt='Field work' loading="lazy" effect="blur" />}
-              {deviceSize<768&&<LazyLoadImage src="/FieldWork-mobile.webp" className='jpg-research d-flex' alt='Field work' loading="lazy" effect="blur" />}
+              {deviceSize>767&&<LazyLoad><img src="/FieldWork.webp" className='jpg-research d-flex' alt='Field work'  /></LazyLoad>}
+              {deviceSize<768&&<LazyLoad><img src="/FieldWork-mobile.webp" className='jpg-research d-flex' alt='Field work' /></LazyLoad>}
 
                 <div className="research-photo-container-overlay"></div>
               </div>
@@ -94,8 +95,8 @@ function ResearchSection() {
               <div className={`research-photo-container ${myRef6IsVisible ? "divMove1" : ""}`} ref={myRef6}>
 
 
-              {deviceSize>767&&<LazyLoadImage src="/Drones.webp" className='jpg-research d-flex' alt='Drones' loading="lazy" effect="blur" />}
-              {deviceSize<768&&<LazyLoadImage src="/Drones-mobile.webp" className='jpg-research d-flex' alt='Drones' loading="lazy" effect="blur" />}
+              {deviceSize>767&&<LazyLoad><img src="/Drones.webp" className='jpg-research d-flex' alt='Drones' /></LazyLoad>}
+              {deviceSize<768&&<LazyLoad><img src="/Drones-mobile.webp" className='jpg-research d-flex' alt='Drones' /></LazyLoad>}
 
                 <div className="research-photo-container-overlay"></div>
               </div>
